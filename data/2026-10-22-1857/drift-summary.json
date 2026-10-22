@@ -1,0 +1,545 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "status": "drift",
+  "drift": true,
+  "headline": "DRIFT DETECTED - tests 123/129 passed, 6 failed; 64 added, 6 removed",
+  "generated_at": "2026-10-22T18:57:16+11:00",
+  "generated_at_local": "2026-10-22 18:57:16 AEDT",
+  "apic_url": "https://sandboxapicdc.cisco.com",
+  "nac_test_rc": 6,
+  "baseline": {
+    "path": "baseline/data",
+    "info": "frozen 2026-10-22 10:47 AEDT (Australia/Melbourne) by `scripts/drift_report.sh`"
+  },
+  "tests": {
+    "available": true,
+    "total": 129,
+    "passed": 123,
+    "failed": 6,
+    "skipped": 0,
+    "failures": [
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify Tenant TEST-ABC1",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1 not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify VRF TEST-ABC1/VRF-INT-TESTABC1",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/ctx-VRF-INT-TESTABC1 not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify BD TEST-ABC1/BD-INT-TESTABC1",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1 not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify Subnet TEST-ABC1/BD-INT-TESTABC1/10.10.10.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.10.1/24] not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify Subnet TEST-ABC1/BD-INT-TESTABC1/10.10.20.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.20.1/24] not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify BD TEST-ABC1/BD-L2-TESTABC1",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/BD-BD-L2-TESTABC1 not found on APIC"
+      }
+    ]
+  },
+  "counts": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "baseline": 16,
+      "current": 27,
+      "added": 12,
+      "removed": 1
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "baseline": 18,
+      "current": 27,
+      "added": 10,
+      "removed": 1
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "baseline": 23,
+      "current": 33,
+      "added": 12,
+      "removed": 2
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "baseline": 23,
+      "current": 28,
+      "added": 7,
+      "removed": 2
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "baseline": 16,
+      "current": 26,
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "baseline": 33,
+      "current": 46,
+      "added": 13,
+      "removed": 0
+    }
+  ],
+  "added": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "DEMO1",
+      "dn": "uni/tn-DEMO1"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "KoolKid_Tenant",
+      "dn": "uni/tn-KoolKid_Tenant"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "NE-LAB-1021",
+      "dn": "uni/tn-NE-LAB-1021"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Shaver_API",
+      "dn": "uni/tn-Shaver_API"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "WebServer-Demo",
+      "dn": "uni/tn-WebServer-Demo"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Yellow_Tenant",
+      "dn": "uni/tn-Yellow_Tenant"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "tn_TEST1",
+      "dn": "uni/tn-tn_TEST1"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/ctx-cursor_vrf"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "KoolKid_Tenant",
+      "dn": "uni/tn-KoolKid_Tenant/ctx-Context"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "NE-LAB-1021",
+      "dn": "uni/tn-NE-LAB-1021/ctx-NE-VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant/ctx-Prod_VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2/ctx-Prod_VRF2"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/ctx-Prod_VRF22"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "WebServer-Demo",
+      "dn": "uni/tn-WebServer-Demo/ctx-demo_vrf"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Yellow_Tenant",
+      "dn": "uni/tn-Yellow_Tenant/ctx-Context"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/ctx-vrf-a"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/ctx-vrf-b"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/BD-cursor_bd"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "KoolKid_Tenant",
+      "dn": "uni/tn-KoolKid_Tenant/BD-BridgeDomain"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "NE-LAB-1021",
+      "dn": "uni/tn-NE-LAB-1021/BD-NE-BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant/BD-Prod_BD_100"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2/BD-Prod_BD_200"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/BD-Prod_BD_300"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "WebServer-Demo",
+      "dn": "uni/tn-WebServer-Demo/BD-demo_bd"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Yellow_Tenant",
+      "dn": "uni/tn-Yellow_Tenant/BD-BridgeDomain"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/BD-bd-b"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/BD-bd-db"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/BD-bd-shared"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/BD-bd-web"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/BD-cursor_bd/subnet-[10.250.2.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "NE-LAB-1021",
+      "dn": "uni/tn-NE-LAB-1021/BD-NE-BD/subnet-[192.168.100.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "WebServer-Demo",
+      "dn": "uni/tn-WebServer-Demo/BD-demo_bd/subnet-[10.250.1.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/BD-bd-b/subnet-[10.20.1.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/BD-bd-db/subnet-[10.10.2.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/BD-bd-shared/subnet-[10.30.1.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/BD-bd-web/subnet-[10.10.1.1/24]"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/ap-cursor_ap"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "DEMO1",
+      "dn": "uni/tn-DEMO1/ap-AP-DEMO1"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "KoolKid_Tenant",
+      "dn": "uni/tn-KoolKid_Tenant/ap-EPG"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "NE-LAB-1021",
+      "dn": "uni/tn-NE-LAB-1021/ap-NE-APP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant/ap-Prod_App_Profile"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2/ap-Prod_App_Profile2"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/ap-Prod_App_Profile22"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "WebServer-Demo",
+      "dn": "uni/tn-WebServer-Demo/ap-demo_ap"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Yellow_Tenant",
+      "dn": "uni/tn-Yellow_Tenant/ap-Yellow_AppProfile"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/ap-ap-01"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/ap-cursor_ap/epg-web"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "KoolKid_Tenant",
+      "dn": "uni/tn-KoolKid_Tenant/ap-EPG/epg-KoolKid_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "NE-LAB-1021",
+      "dn": "uni/tn-NE-LAB-1021/ap-NE-APP/epg-NE-WEB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant/ap-Prod_App_Profile/epg-Web_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2/ap-Prod_App_Profile2/epg-Web_EPG2"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/ap-Prod_App_Profile22/epg-Web_EPG22"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/ap-Prod_App_Profile22/epg-Web_EPG222"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "WebServer-Demo",
+      "dn": "uni/tn-WebServer-Demo/ap-demo_ap/epg-web"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Yellow_Tenant",
+      "dn": "uni/tn-Yellow_Tenant/ap-Yellow_AppProfile/epg-Yellow_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/ap-ap-01/epg-epg-b"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/ap-ap-01/epg-epg-db"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/ap-ap-01/epg-epg-shared"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "lab-t01",
+      "dn": "uni/tn-lab-t01/ap-ap-01/epg-epg-web"
+    }
+  ],
+  "removed": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/ctx-VRF-INT-TESTABC1"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/BD-BD-L2-TESTABC1"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.10.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.20.1/24]"
+    }
+  ],
+  "faults": {
+    "critical": 11,
+    "major": 23,
+    "minor": 74,
+    "warning": 692,
+    "info": 0,
+    "cleared": 6,
+    "total": 806
+  },
+  "errors": [],
+  "note": "Tenants Production_Tenant, Production_Tenant2, Production_Tenant22, tn_TEST1 already existed on the shared sandbox when the baseline data was pulled (22 Oct 2026 ~10:15 AEDT) but were deliberately left out of scope; they are reported as added since baseline."
+}

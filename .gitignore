@@ -1,0 +1,17 @@
+# never publish raw run artefacts or secrets (scripts/security_scan.py enforces this too)
+.env
+.env.*
+*.cj
+cookies*
+*.zip
+*.log
+output.xml
+log.html
+report.html
+xunit.xml
+robot_results/
+pabot_results/
+live-objects.json
+live-snapshot.json
+nac-data/
+__pycache__/

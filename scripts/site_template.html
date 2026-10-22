@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AOAPIC nac-test status · Cisco Always-On APIC sandbox</title>
+<meta name="description" content="Current nac-test drift and logical-integrity status of the Cisco DevNet Always-On APIC sandbox">
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#16202e;--mut:#5d6b7e;--line:#e3e8f0;--ok:#14a05a;--okb:#e5f6ed;--warn:#d98a00;--warnb:#fff4dc;--bad:#d93a3a;--badb:#fde8e8;--acc:#1f6feb;--hdr1:#0b1d33;--hdr2:#13406e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--acc)}code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em}
+header{background:linear-gradient(135deg,var(--hdr1),var(--hdr2));color:#fff;padding:28px 20px 70px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header .wrap{padding:0}
+.top{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+h1{margin:0;font-size:26px;letter-spacing:-.3px}h1 small{display:block;font-size:14px;font-weight:400;opacity:.8;margin-top:4px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;letter-spacing:.3px}
+.badge .dot{width:10px;height:10px;border-radius:50%;background:currentColor;box-shadow:0 0 0 4px rgba(255,255,255,.25)}
+.b-bad{background:var(--badb);color:var(--bad)}.b-warn{background:var(--warnb);color:#9a6200}.b-ok{background:var(--okb);color:var(--ok)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:16px;font-size:13.5px;opacity:.92}
+.meta b{font-weight:600}
+.headline{margin-top:14px;font-size:15px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:10px 14px;border-radius:10px}
+nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding:8px 20px}
+nav a{white-space:nowrap;text-decoration:none;color:var(--mut);font-size:13.5px;padding:6px 10px;border-radius:8px}nav a:hover{background:#eef2f8;color:var(--ink)}
+main{margin-top:-50px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.kpi .l{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.kpi .v{font-size:30px;font-weight:750;margin-top:4px;line-height:1.1}
+.kpi .s{font-size:12.5px;color:var(--mut);margin-top:6px}
+.kpi.bad .v{color:var(--bad)}.kpi.warn .v{color:var(--warn)}.kpi.ok .v{color:var(--ok)}
+.bar{display:flex;height:8px;border-radius:6px;overflow:hidden;background:#eef1f6;margin-top:10px}
+.bar i{display:block;height:100%}
+section{margin-top:26px}
+h2{font-size:19px;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+h2 .cnt{font-size:12.5px;font-weight:600;background:#eef2f8;color:var(--mut);padding:2px 9px;border-radius:999px}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:14px}@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f8fafc;font-weight:650;color:#334155;position:sticky;top:0;white-space:nowrap}
+th.sort{cursor:pointer;user-select:none}th.sort:hover{color:var(--acc)}th .ar{opacity:.45;font-size:10px;margin-left:3px}
+tr:last-child td{border-bottom:0}tbody tr:hover{background:#fafcff}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.3px}
+.p-HEALTHY{background:var(--okb);color:var(--ok)}.p-WARN{background:var(--warnb);color:#9a6200}.p-BROKEN{background:var(--badb);color:var(--bad)}
+.p-NEW{background:#e8f0fe;color:#1a56c4}.p-cat{background:#eef2f8;color:#475569;font-weight:600}
+.score{display:flex;align-items:center;gap:8px;justify-content:flex-end}.score .sb{width:60px;height:6px;border-radius:4px;background:#eef1f6;overflow:hidden}.score .sb i{display:block;height:100%}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;align-items:center}
+input[type=search],select{font:inherit;font-size:13.5px;padding:7px 11px;border:1px solid var(--line);border-radius:9px;background:#fff;min-width:200px}
+.chip{font:inherit;font-size:12.5px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;color:var(--mut)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dn{min-width:200px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;word-break:break-all;color:#334155}
+.why{color:#334155}.fix{color:#0f5132}
+details{background:#fff;border:1px solid var(--line);border-radius:12px}
+details>summary{cursor:pointer;padding:13px 16px;font-weight:650;list-style:none;display:flex;align-items:center;gap:10px}
+details>summary::-webkit-details-marker{display:none}details>summary:before{content:"▸";transition:.15s;color:var(--mut)}details[open]>summary:before{transform:rotate(90deg)}
+details .inner{padding:0 14px 14px}
+.cmp td:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}
+.up{color:var(--bad);font-weight:650}.down{color:var(--ok);font-weight:650}.same{color:var(--mut)}
+.note{background:#fffbea;border:1px solid #f3e1a5;border-radius:12px;padding:12px 15px;font-size:14px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--mut);margin-top:8px}.legend span:before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+ol.recs{margin:0;padding-left:20px}ol.recs li{margin-bottom:8px}
+footer{margin:40px 0 30px;color:var(--mut);font-size:13px;text-align:center}
+.small{font-size:12.5px;color:var(--mut)}
+svg text{font-family:inherit}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <div class="top">
+  <h1>AOAPIC nac-test status<small>Cisco DevNet Always-On APIC sandbox · <span id="apic"></span></small></h1>
+  <span id="badge" class="badge"><span class="dot"></span><span id="badgeText"></span></span>
+ </div>
+ <div class="meta" id="meta"></div>
+ <div class="headline" id="headline"></div>
+</div></header>
+<nav><div class="wrap">
+ <a href="#kpis">Overview</a><a href="#changes">Since previous morning</a><a href="#chart">Chart</a><a href="#tenants">Tenants</a><a href="#broken">Broken relations</a><a href="#failed">Failed tests</a><a href="#warnings">Warnings</a><a href="#drift">Drift</a><a href="#recs">Recommendations</a><a href="#how">How it's generated</a>
+</div></nav>
+<main class="wrap">
+ <div class="kpis" id="kpis"></div>
+
+ <section id="changes"><h2>Changes since previous morning <span class="cnt" id="chgcnt"></span></h2>
+  <div class="note" id="chgHead"></div>
+  <div class="grid2" style="margin-top:14px">
+   <div class="card"><h2 style="font-size:16px">Tests &amp; totals</h2><div class="tw"><table class="cmp" id="chg"><thead><tr><th>Metric</th><th>Prev morning</th><th>Now</th><th>&Delta;</th></tr></thead><tbody></tbody></table></div></div>
+   <div class="card"><h2 style="font-size:16px">Tenants</h2><div id="chgTen"></div>
+    <h2 style="font-size:16px;margin-top:16px">New critical faults <span class="cnt" id="chgFcnt"></span></h2><div id="chgFlt"></div></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h2 style="font-size:16px">Broken relations added / resolved <span class="cnt" id="chgBcnt"></span></h2><div class="tw"><table id="chgBr"><thead><tr><th>Change</th><th>Tenant</th><th>Check</th><th>Object DN</th><th>Why</th></tr></thead><tbody></tbody></table></div></div>
+  <div class="card" style="margin-top:14px"><h2 style="font-size:16px">Drift object counts: previous morning vs now</h2><div class="tw"><table class="cmp" id="chgDr"><thead><tr><th>Type</th><th>Baseline</th><th>Prev morning</th><th>Now</th><th>&Delta;</th><th>+ vs baseline</th><th>&minus; vs baseline</th></tr></thead><tbody></tbody></table></div></div>
+  <details style="margin-top:14px"><summary>Run history <span class="cnt" id="rhcnt"></span></summary><div class="inner"><div class="tw"><table class="cmp" id="rh"><thead><tr><th>Run</th><th>Kind</th><th>Snapshot</th><th>Integrity tests (failed)</th><th>Drift tests (failed)</th><th>Broken</th><th>Warnings</th><th>Tenants (broken)</th><th>Data</th></tr></thead><tbody></tbody></table></div></div></details>
+ </section>
+
+ <section id="chart"><div class="grid2">
+  <div class="card"><h2>Tenant health scores</h2><div id="scoreChart"></div>
+   <div class="legend"><span style="--c:var(--ok)">Healthy</span><span style="--c:var(--warn)">Warn</span><span style="--c:var(--bad)">Broken</span></div>
+   <div class="small" style="margin-top:6px">Score = 100 − 10 × broken − 3 × warnings (minimum 0).</div></div>
+  <div class="card"><h2>Test results &amp; broken relations</h2><div id="donuts"></div><div id="brkChart" style="margin-top:14px"></div></div>
+ </div></section>
+
+ <section id="tenants"><h2>Per-tenant scorecard <span class="cnt" id="tcnt"></span></h2>
+  <div class="tools">
+   <input type="search" id="tq" placeholder="Filter tenants…" aria-label="Filter tenants">
+   <span id="tchips"></span>
+  </div>
+  <div class="tw"><table id="tt"><thead></thead><tbody></tbody></table></div>
+ </section>
+
+ <section id="broken"><h2>Broken relations <span class="cnt" id="bcnt"></span></h2>
+  <div class="tools"><input type="search" id="bq" placeholder="Filter by tenant, check, DN…" aria-label="Filter broken relations"><select id="bt"></select></div>
+  <div class="tw"><table id="bt_t"><thead><tr><th>Tenant</th><th>Check</th><th>Object DN</th><th>Why</th><th>Fix</th></tr></thead><tbody></tbody></table></div>
+ </section>
+
+ <section id="failed"><h2>Failed nac-test tests <span class="cnt" id="fcnt"></span></h2>
+  <div class="tw"><table id="ft"><thead><tr><th>#</th><th>Suite</th><th>Test</th><th>Reason</th></tr></thead><tbody></tbody></table></div>
+ </section>
+
+ <section id="warnings"><details id="wdet"><summary>Warnings <span class="cnt" id="wcnt"></span><span class="small" style="font-weight:400">click to expand</span></summary>
+  <div class="inner"><div class="tools"><input type="search" id="wq" placeholder="Filter warnings…" aria-label="Filter warnings"><select id="wt"></select></div>
+  <div class="tw"><table id="wt_t"><thead><tr><th>Tenant</th><th>Category</th><th>Check</th><th>Object DN</th><th>Why</th><th>Fix</th></tr></thead><tbody></tbody></table></div></div>
+ </details></section>
+
+ <section id="drift"><h2>Drift vs baseline</h2>
+  <div class="note" id="driftNote"></div>
+  <div class="grid2" style="margin-top:14px">
+   <div class="card"><h2 style="font-size:16px">Object counts</h2><div class="tw"><table class="cmp" id="ct"><thead><tr><th>Type</th><th>Baseline</th><th>Current</th><th>Added</th><th>Removed</th></tr></thead><tbody></tbody></table></div>
+    <h2 style="font-size:16px;margin-top:16px">APIC faults (faultInst, context only)</h2><div id="faults"></div></div>
+   <div class="card"><h2 style="font-size:16px">Tenants vs baseline</h2><div id="tenantDiff"></div>
+    <h2 style="font-size:16px;margin-top:16px">Failed drift tests <span class="cnt" id="dfcnt"></span></h2><div class="tw"><table id="dft"><thead><tr><th>Test</th><th>Kind</th><th>Reason</th></tr></thead><tbody></tbody></table></div></div>
+  </div>
+  <details style="margin-top:14px"><summary>Added / removed objects <span class="cnt" id="arcnt"></span></summary><div class="inner"><div class="tw"><table id="art"><thead><tr><th>Change</th><th>Type</th><th>Tenant</th><th>DN</th></tr></thead><tbody></tbody></table></div></div></details>
+ </section>
+
+
+ <section id="recs"><details><summary>Recommendations <span class="cnt" id="rcnt"></span></summary><div class="inner"><ol class="recs" id="rl"></ol></div></details></section>
+
+ <section id="how"><h2>How this is generated</h2><div class="card">
+  <p style="margin-top:0">A read-only pipeline built on Cisco's <a href="https://github.com/netascode/nac-test">nac-test</a> (Robot Framework tests rendered from Network-as-Code YAML) runs against the public DevNet Always-On APIC. The only POSTs are <code>aaaLogin</code>/<code>aaaLogout</code>; everything else is <code>GET /api/class|mo/…</code>. <b>Nothing is ever pushed to the APIC.</b></p>
+  <ol>
+   <li><a href="scripts/drift_report.sh"><code>scripts/drift_report.sh</code></a> runs nac-test with the frozen baseline (16 tenants, frozen 2026-10-22 10:47 AEDT) against the live APIC, then <a href="scripts/drift_compare.py"><code>drift_compare.py</code></a> diffs tenants/VRFs/BDs/subnets/APs/EPGs by DN and counts faults.</li>
+   <li><a href="scripts/integrity_report.sh"><code>scripts/integrity_report.sh</code></a> uses <a href="scripts/integrity_check.py"><code>integrity_check.py</code></a> to pull ~35 classes plus <code>faultInst</code>, checks the tenant → VRF → BD → EPG → contract → subject → filter graph (using APIC's own <code>state</code>/<code>stateQual</code> on each relation), and runs the nac-test integrity suite, one Robot suite per tenant.</li>
+   <li><a href="scripts/daily_report.sh"><code>scripts/daily_report.sh</code></a> runs both and <a href="scripts/daily_combine.py"><code>daily_combine.py</code></a> writes the combined summary. <a href="scripts/run.sh"><code>run.sh</code></a> and <a href="scripts/build_data.py"><code>build_data.py</code></a> cover the base config suite and the data refresh.</li>
+   <li>This page is a static render of the summary JSON, rebuilt by <a href="scripts/build_site.py"><code>scripts/build_site.py</code></a>. Every run is kept under <code>data/&lt;YYYY-MM-DD-HHMM&gt;/</code> (manifest: <a href="data/runs.json">data/runs.json</a>, newest: <a href="data/latest/">data/latest/</a>), and <a href="scripts/compare_runs.py"><code>scripts/compare_runs.py</code></a> writes <code>changes.json</code>/<code>changes.md</code> against the previous morning run. See <a href="RUNBOOK.md">RUNBOOK.md</a>.</li>
+  </ol>
+  <p class="small" style="margin-bottom:0">Credentials come from environment variables or a local, git-ignored <code>.env</code> file and are never written to output. No credentials, cookies, Robot <code>log.html</code>/<code>output.xml</code>/<code>report.html</code> or console logs are published here. The sandbox is shared, so other DevNet users change it all the time; "broken" findings are mostly other people's lab objects, not faults in this pipeline.</p>
+ </div></section>
+ <footer id="foot"></footer>
+</main>
+<script>
+const D=/*__DATA__*/null;
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const col=s=>s==='BROKEN'?'var(--bad)':s==='WARN'?'var(--warn)':'var(--ok)';
+// header
+$('#apic').innerHTML=`<a style="color:#cfe3ff" href="${esc(D.apic)}">${esc(D.apic.replace('https://',''))}</a>`;
+const st=D.status==='ok'?['b-ok','ALL GOOD']:D.status==='error'?['b-bad','ERROR']:(D.broken>0?['b-bad','ATTENTION · BROKEN RELATIONS']:['b-warn','ATTENTION']);
+$('#badge').classList.add(st[0]);$('#badgeText').textContent=st[1];
+$('#meta').innerHTML=[['APIC snapshot',D.snapshot],['Integrity run',D.integrity_generated],['Drift run',D.drift_generated],['Run',D.stamp],['Page built',D.generated_page],['Time zone','Melbourne, AEDT (UTC+11)']].map(([k,v])=>`<span><b>${k}:</b> ${esc(v)}</span>`).join('');
+$('#headline').innerHTML=`<b>${esc(D.headline)}</b><br>${esc(D.integrity_headline)}<br>${esc(D.drift_headline)}`;
+// KPIs
+const R=D.robot,T=D.tenants,DT=D.drift_tests;
+const bar=parts=>`<div class="bar">${parts.map(([v,c])=>`<i style="width:${v*100}%;background:${c}"></i>`).join('')}</div>`;
+const k=(cls,l,v,s,extra='')=>`<div class="card kpi ${cls}"><div class="l">${l}</div><div class="v">${v}</div><div class="s">${s}</div>${extra}</div>`;
+$('#kpis').innerHTML=
+ k('', 'Integrity tests', R.total, `nac-test integrity suite`, bar([[R.passed/R.total,'var(--ok)'],[R.failed/R.total,'var(--bad)']]))+
+ k('ok','Passed', R.passed, `${(100*R.passed/R.total).toFixed(1)}% pass rate`)+
+ k(R.failed?'bad':'ok','Failed', R.failed, `in ${new Set(D.failures.map(f=>f.suite.toLowerCase())).size} tenant suites`)+
+ k(D.broken?'bad':'ok','Broken relations', D.broken, `${D.info} informational findings`)+
+ k(D.warnings?'warn':'ok','Warnings', D.warnings, 'design / hygiene / security')+
+ k('', 'Tenants', T.total, `<span style="color:var(--ok)">● ${T.healthy} healthy</span> · <span style="color:var(--warn)">● ${T.warn} warn</span> · <span style="color:var(--bad)">● ${T.broken} broken</span>`, bar([[T.healthy/T.total,'var(--ok)'],[T.warn/T.total,'var(--warn)'],[T.broken/T.total,'var(--bad)']]))+
+ k(DT.failed?'bad':'ok','Drift tests', `${DT.passed}/${DT.total}`, `${DT.failed} failed vs baseline · ${D.added.length} added, ${D.removed.length} removed`);
+// score chart (horizontal bars)
+(function(){const sc=[...D.scorecard].sort((a,b)=>a.score-b.score||a.tenant.localeCompare(b.tenant));const rh=18,lw=150,w=560,h=sc.length*rh+24;
+ let s=`<svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Tenant scores">`;
+ [0,25,50,75,100].forEach(x=>{const X=lw+(w-lw-36)*x/100;s+=`<line x1="${X}" y1="0" x2="${X}" y2="${h-18}" stroke="#eef1f6"/><text x="${X}" y="${h-4}" font-size="10" fill="#8a97a8" text-anchor="middle">${x}</text>`});
+ sc.forEach((t,i)=>{const y=i*rh,bw=(w-lw-36)*t.score/100;s+=`<text x="${lw-8}" y="${y+13}" font-size="11.5" text-anchor="end" fill="#334155">${esc(t.tenant)}${t.in_baseline?'':' ★'}</text><rect x="${lw}" y="${y+3}" width="${Math.max(bw,2)}" height="${rh-6}" rx="3" fill="${col(t.status)}"><title>${esc(t.tenant)}: ${t.score} (${t.status}, ${t.broken} broken, ${t.warnings} warn)</title></rect><text x="${lw+bw+5}" y="${y+13}" font-size="10.5" fill="#5d6b7e">${t.score}</text>`});
+ $('#scoreChart').innerHTML=s+'</svg><div class="small">★ = new tenant, not in the baseline</div>';})();
+// donuts
+(function(){const donut=(title,parts,center)=>{const r=42,C=2*Math.PI*r;let off=0,tot=parts.reduce((a,p)=>a+p[0],0);let s=`<svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="${r}" fill="none" stroke="#eef1f6" stroke-width="14"/>`;
+  parts.forEach(([v,c])=>{const L=C*v/tot;s+=`<circle cx="60" cy="60" r="${r}" fill="none" stroke="${c}" stroke-width="14" stroke-dasharray="${L} ${C-L}" stroke-dashoffset="${-off}" transform="rotate(-90 60 60)"/>`;off+=L});
+  return `<div style="text-align:center">${s}<text x="60" y="58" text-anchor="middle" font-size="20" font-weight="700" fill="#16202e">${center}</text><text x="60" y="76" text-anchor="middle" font-size="10" fill="#5d6b7e">${title}</text></svg></div>`};
+ $('#donuts').innerHTML=`<div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:8px">${donut('integrity pass',[[R.passed,'var(--ok)'],[R.failed,'var(--bad)']],Math.round(100*R.passed/R.total)+'%')}${donut('drift pass',[[DT.passed,'var(--ok)'],[DT.failed,'var(--bad)']],Math.round(100*DT.passed/DT.total)+'%')}${donut('tenants',[[T.healthy,'var(--ok)'],[T.warn,'var(--warn)'],[T.broken,'var(--bad)']],T.total)}</div>`;
+ const by={};D.findings.filter(f=>f.severity==='fail').forEach(f=>by[f.check]=(by[f.check]||0)+1);const ent=Object.entries(by).sort((a,b)=>b[1]-a[1]),mx=Math.max(...ent.map(e=>e[1]));
+ $('#brkChart').innerHTML='<div class="small" style="margin-bottom:6px;font-weight:600">Broken relations by check</div>'+ent.map(([c,n])=>`<div style="display:grid;grid-template-columns:1fr 130px 24px;gap:8px;align-items:center;font-size:12.5px;margin:4px 0"><span>${esc(c)}</span><span class="bar" style="margin:0"><i style="width:${100*n/mx}%;background:var(--bad)"></i></span><b style="text-align:right">${n}</b></div>`).join('');})();
+// tenant table
+(function(){const cols=[['tenant','Tenant'],['in_baseline','Baseline'],['vrf','VRF',1],['bd','BD',1],['subnet','Subnet',1],['ap','AP',1],['epg','EPG',1],['contract','Contract',1],['l3out','L3Out',1],['broken','Broken',1],['warnings','Warn',1],['faults_crit_major','Crit/Maj faults',1],['score','Score',1],['status','Status']];
+ let key='score',dir=1,filt='ALL';
+ $('#tt thead').innerHTML='<tr>'+cols.map(([k,l,n])=>`<th class="sort${n?' n':''}" data-k="${k}">${l}<span class="ar"></span></th>`).join('')+'</tr>';
+ const chips=['ALL','BROKEN','WARN','HEALTHY','NEW'];$('#tchips').innerHTML=chips.map(c=>`<button class="chip${c==='ALL'?' on':''}" data-c="${c}">${c==='ALL'?'All':c[0]+c.slice(1).toLowerCase()}</button>`).join(' ');
+ const draw=()=>{const q=$('#tq').value.toLowerCase();let rows=D.scorecard.filter(t=>t.tenant.toLowerCase().includes(q)&&(filt==='ALL'||(filt==='NEW'?!t.in_baseline:t.status===filt)));
+  rows.sort((a,b)=>{let x=a[key],y=b[key];if(typeof x==='string')return dir*x.localeCompare(y);return dir*((x>y)-(x<y))||a.tenant.localeCompare(b.tenant)});
+  $('#tcnt').textContent=`${rows.length} of ${D.scorecard.length}`;
+  $('#tt tbody').innerHTML=rows.map(t=>`<tr><td><b>${esc(t.tenant)}</b>${t.scope&&t.scope!=='full'?` <span class="small">(${esc(t.scope)})</span>`:''}</td><td>${t.in_baseline?'yes':'<span class="pill p-NEW">NEW</span>'}</td>${['vrf','bd','subnet','ap','epg','contract','l3out'].map(c=>`<td class="n">${t[c]}</td>`).join('')}<td class="n" style="${t.broken?'color:var(--bad);font-weight:700':''}">${t.broken}</td><td class="n" style="${t.warnings?'color:#9a6200;font-weight:600':''}">${t.warnings}</td><td class="n">${t.faults_crit_major}</td><td><div class="score"><span class="sb"><i style="width:${t.score}%;background:${col(t.status)}"></i></span><b>${t.score}</b></div></td><td><span class="pill p-${t.status}">${t.status}</span></td></tr>`).join('')||'<tr><td colspan="14" class="small">No tenants match.</td></tr>';
+  document.querySelectorAll('#tt th').forEach(th=>th.querySelector('.ar').textContent=th.dataset.k===key?(dir>0?'▲':'▼'):'↕');};
+ document.querySelectorAll('#tt th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(key===k)dir=-dir;else{key=k;dir=1};draw()});
+ document.querySelectorAll('#tchips .chip').forEach(b=>b.onclick=()=>{filt=b.dataset.c;document.querySelectorAll('#tchips .chip').forEach(x=>x.classList.toggle('on',x===b));draw()});
+ $('#tq').oninput=draw;draw();})();
+// findings tables
+function ftable(sev,tb,qs,ss,cnt,withCat){const rows=D.findings.filter(f=>f.severity===sev);const ten=[...new Set(rows.map(r=>r.tenant))].sort((a,b)=>a.localeCompare(b));
+ $(ss).innerHTML='<option value="">All tenants</option>'+ten.map(t=>`<option>${esc(t)}</option>`).join('');
+ const draw=()=>{const q=$(qs).value.toLowerCase(),t=$(ss).value;const r=rows.filter(f=>(!t||f.tenant===t)&&(!q||[f.tenant,f.check,f.dn,f.reason,f.fix,f.category].join(' ').toLowerCase().includes(q)));
+  $(cnt).textContent=r.length===rows.length?rows.length:`${r.length} of ${rows.length}`;
+  $(tb).innerHTML=r.map(f=>`<tr><td><b>${esc(f.tenant)}</b></td>${withCat?`<td><span class="pill p-cat">${esc(f.category)}</span></td>`:''}<td>${esc(f.check)}</td><td class="dn">${esc(f.dn)}</td><td class="why">${esc(f.reason)}</td><td class="fix">${esc(f.fix)}</td></tr>`).join('')||'<tr><td colspan="6" class="small">Nothing matches.</td></tr>';};
+ $(qs).oninput=draw;$(ss).onchange=draw;draw();}
+ftable('fail','#bt_t tbody','#bq','#bt','#bcnt',false);ftable('warn','#wt_t tbody','#wq','#wt','#wcnt',true);
+// failed tests
+$('#fcnt').textContent=D.failures.length;
+$('#ft tbody').innerHTML=D.failures.map((f,i)=>`<tr><td class="n">${i+1}</td><td><b>${esc(f.suite)}</b></td><td>${esc(f.test)}</td><td class="dn">${esc(f.reason)}</td></tr>`).join('');
+// drift
+const tc=D.counts.find(c=>c.type==='Tenant');
+$('#driftNote').innerHTML=`<b>${esc(D.drift_headline)}</b><br>Baseline: ${esc(D.baseline_info.replace(/`/g,''))} · ${D.baseline_count} baseline tenants still present, ${tc.current} tenants on the APIC now. Drift is reported against a frozen baseline; the shared sandbox changes constantly, so additions are expected.`;
+$('#ct tbody').innerHTML=D.counts.map(c=>`<tr><td>${esc(c.type)}</td><td>${c.baseline}</td><td><b>${c.current}</b></td><td class="${c.added?'up':'same'}">${c.added?'+'+c.added:0}</td><td class="${c.removed?'up':'same'}">${c.removed?'−'+c.removed:0}</td></tr>`).join('');
+const F=D.faults;$('#faults').innerHTML=`<div style="display:flex;gap:8px;flex-wrap:wrap">${[['critical','var(--bad)'],['major','#e4572e'],['minor','var(--warn)'],['warning','#7a8699'],['cleared','#9aa5b4'],['total','#16202e']].map(([k,c])=>`<div style="flex:1;min-width:70px;border:1px solid var(--line);border-radius:10px;padding:8px 10px"><div class="small" style="text-transform:capitalize">${k}</div><div style="font-size:20px;font-weight:700;color:${c}">${F[k]}</div></div>`).join('')}</div>`;
+const nt=D.new_tenants,mt=D.missing_baseline;
+$('#tenantDiff').innerHTML=`<p style="margin:0 0 6px"><b style="color:var(--acc)">${nt.length} new tenants</b> (not in the baseline):</p><div style="display:flex;flex-wrap:wrap;gap:6px">${nt.map(t=>`<span class="pill p-NEW">${esc(t)}</span>`).join('')}</div>
+ <p style="margin:12px 0 6px"><b style="color:${mt.length?'var(--bad)':'var(--ok)'}">${mt.length} baseline tenant${mt.length===1?'':'s'} missing</b>${mt.length?':':''}</p><div style="display:flex;flex-wrap:wrap;gap:6px">${mt.map(t=>`<span class="pill p-BROKEN">${esc(t)} (deleted)</span>`).join('')}</div>`;
+$('#dfcnt').textContent=D.drift_failures.length;
+$('#dft tbody').innerHTML=D.drift_failures.map(f=>`<tr><td>${esc(f.test)}</td><td><span class="pill p-BROKEN">${esc(f.kind)}</span></td><td class="dn">${esc(f.reason)}</td></tr>`).join('')||'<tr><td colspan="3" class="small">No failed drift tests.</td></tr>';
+const ar=[...D.removed.map(x=>['removed',x]),...D.added.map(x=>['added',x])];$('#arcnt').textContent=`${D.added.length} added · ${D.removed.length} removed`;
+$('#art tbody').innerHTML=ar.map(([k,x])=>`<tr><td><span class="pill ${k==='added'?'p-NEW':'p-BROKEN'}">${k}</span></td><td>${esc(x.type)}</td><td>${esc(x.tenant)}</td><td class="dn">${esc(x.dn)}</td></tr>`).join('');
+// changes since previous morning
+(function(){const C=D.changes;
+ const runs=D.runs||[];$('#rhcnt').textContent=runs.length;
+ $('#rh tbody').innerHTML=runs.map(r=>`<tr><td style="text-align:left"><b>${esc(r.stamp)}</b>${r.stamp===D.stamp?' <span class="pill p-NEW">current</span>':''}${C&&r.stamp===C.previous?' <span class="pill p-cat">prev morning</span>':''}</td><td>${esc(r.kind)}${r.morning?' · morning':''}</td><td>${esc(r.snapshot)}</td><td>${r.integrity_tests} (${r.integrity_failed})</td><td>${r.drift_tests} (${r.drift_failed})</td><td>${r.broken}</td><td>${r.warnings}</td><td>${r.tenants} (${r.tenants_broken})</td><td><a href="${esc(r.path)}">${esc(r.path)}</a></td></tr>`).join('');
+ if(!C||!C.previous){$('#chgHead').innerHTML='No earlier morning run to compare with yet.';return;}
+ const t=C.tests,tn=C.tenants,br=C.broken_relations,fl=C.faults;
+ $('#chgHead').innerHTML=`Comparing this run (<b>${esc(C.current)}</b>, APIC snapshot ${esc(C.current_snapshot)}) with the previous morning run (<b>${esc(C.previous)}</b>, snapshot ${esc(C.previous_snapshot)}; data in <a href="data/${esc(C.previous)}/">data/${esc(C.previous)}/</a>). Machine-readable: <a href="data/${esc(C.current)}/changes.json">changes.json</a> · <a href="data/${esc(C.current)}/changes.md">changes.md</a>.<br>
+ <b>${tn.newly_broken.length+tn.added_broken.length}</b> tenant(s) newly broken, <b>${tn.fixed.length}</b> fixed, <b>${tn.added.length}</b> added, <b>${tn.removed.length}</b> removed · broken relations <b>+${br.added.length} / −${br.resolved.length}</b> · <b>${fl.new_critical.length}</b> new critical fault(s).`;
+ $('#chgcnt').textContent=`${C.previous} → ${C.current}`;
+ const rows=[['Integrity tests',t.integrity.total,0],['Integrity passed',t.integrity.passed,-1],['Integrity failed',t.integrity.failed,1],['Drift tests',t.drift.total,0],['Drift passed',t.drift.passed,-1],['Drift failed',t.drift.failed,1],['Broken relations',{prev:br.prev,now:br.now},1],['Warnings',C.warnings,1],['Tenants on APIC',{prev:tn.prev_total,now:tn.now_total},0],['Tenants broken',{prev:tn.broken_prev,now:tn.broken_now},1],['Critical faults (fabric)',fl.fabric_totals.critical,1],['Major faults (fabric)',fl.fabric_totals.major,1]];
+ $('#chg tbody').innerHTML=rows.map(([l,v,bad])=>{const d=v.now-v.prev;const cls=!d||!bad?'same':((d>0)===(bad>0)?'up':'down');return `<tr><td style="text-align:left">${l}</td><td>${v.prev}</td><td><b>${v.now}</b></td><td class="${cls}">${d>0?'+':''}${d||'–'}</td></tr>`}).join('');
+ const pl=(a,cls)=>a.length?`<div style="display:flex;flex-wrap:wrap;gap:6px">${a.map(x=>`<span class="pill ${cls}">${esc(x)}</span>`).join('')}</div>`:'<span class="small">none</span>';
+ $('#chgTen').innerHTML=`<p style="margin:0 0 6px"><b style="color:var(--bad)">Newly broken</b></p>${pl([...tn.newly_broken,...tn.added_broken.map(x=>x+' (new)')],'p-BROKEN')}
+  <p style="margin:12px 0 6px"><b style="color:var(--ok)">Fixed</b></p>${pl(tn.fixed,'p-HEALTHY')}
+  <p style="margin:12px 0 6px"><b style="color:var(--acc)">Added</b></p>${pl(tn.added,'p-NEW')}
+  <p style="margin:12px 0 6px"><b style="color:var(--mut)">Removed</b></p>${pl(tn.removed,'p-cat')}`;
+ $('#chgFcnt').textContent=fl.new_critical.length;
+ $('#chgFlt').innerHTML=fl.new_critical.length?`<div class="tw"><table><thead><tr><th>Code</th><th>Tenant</th><th>Affected</th><th>Description</th></tr></thead><tbody>${fl.new_critical.map(f=>`<tr><td><b>${esc(f.code)}</b></td><td>${esc(f.tenant)}</td><td class="dn">${esc(f.affected)}</td><td class="why">${esc(f.descr)}</td></tr>`).join('')}</tbody></table></div>`:'<span class="small">No new critical faults.</span>';
+ $('#chgBcnt').textContent=`+${br.added.length} / −${br.resolved.length}`;
+ const brr=[...br.added.map(x=>['added',x]),...br.resolved.map(x=>['resolved',x]),...(br.reason_changed||[]).map(x=>['reason changed',x])];
+ $('#chgBr tbody').innerHTML=brr.map(([k,x])=>`<tr><td><span class="pill ${k==='added'?'p-BROKEN':k==='resolved'?'p-HEALTHY':'p-cat'}">${k}</span></td><td><b>${esc(x.tenant)}</b></td><td>${esc(x.check)}</td><td class="dn">${esc(x.dn)}</td><td class="why">${esc(x.reason)}</td></tr>`).join('')||'<tr><td colspan="5" class="small">No broken relations added or resolved.</td></tr>';
+ $('#chgDr tbody').innerHTML=C.drift_table.map(r=>`<tr><td style="text-align:left">${esc(r.type)}</td><td>${r.baseline}</td><td>${r.prev}</td><td><b>${r.now}</b></td><td class="${r.delta?'up':'same'}">${r.delta>0?'+':''}${r.delta||'–'}</td><td>${r.added_vs_baseline}</td><td>${r.removed_vs_baseline}</td></tr>`).join('');
+})();
+// recs
+$('#rcnt').textContent=D.recs.length;$('#rl').innerHTML=D.recs.map(r=>`<li><b>${esc(r.title)}</b><br><span class="small">Found: ${esc(r.found)}</span><br>${esc(r.action)}</li>`).join('');
+$('#foot').innerHTML=`Static snapshot. APIC snapshot ${esc(D.snapshot)}, page built ${esc(D.generated_page)}. Read-only checks against the public Cisco DevNet Always-On APIC sandbox. Not affiliated with Cisco.`;
+</script>
+</body>
+</html>

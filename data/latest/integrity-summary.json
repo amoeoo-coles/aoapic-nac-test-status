@@ -3,16 +3,17 @@
   "date": "2026-10-22",
   "status": "broken",
   "broken": 28,
-  "warnings": 48,
-  "info": 86,
-  "headline": "BROKEN RELATIONS FOUND - 28 broken, 48 warnings (7 of 27 tenants broken: Heroes, MUHC, SnV, TN-DEDUP-LAB, UT, lab-t01, prod)",
-  "generated_at": "2026-10-22T18:58:37+11:00",
-  "generated_at_local": "2026-10-22 18:58:37 AEDT",
-  "pulled_at_local": "2026-10-22 18:57:34 AEDT",
+  "warnings": 50,
+  "info": 89,
+  "headline": "BROKEN RELATIONS FOUND - 28 broken, 50 warnings (7 of 28 tenants broken: Heroes, MUHC, SnV, TN-DEDUP-LAB, UT, lab-t01, prod)",
+  "generated_at": "2026-10-22T19:51:30+11:00",
+  "generated_at_local": "2026-10-22 19:51:30 AEDT",
+  "pulled_at_local": "2026-10-22 19:50:23 AEDT",
   "apic_url": "https://sandboxapicdc.cisco.com",
   "baseline_count": 15,
   "new_tenants": [
     "Cursor_tenant1",
+    "Cursor_Tenant2",
     "DEMO1",
     "KoolKid_Tenant",
     "lab-t01",
@@ -51,6 +52,26 @@
     },
     {
       "tenant": "Cursor_tenant1",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 1,
+      "subnet": 1,
+      "ap": 1,
+      "epg": 1,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 1,
+      "info": 3,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 97,
+      "status": "WARN"
+    },
+    {
+      "tenant": "Cursor_Tenant2",
       "in_baseline": false,
       "scope": "full",
       "vrf": 1,
@@ -458,14 +479,14 @@
       "subnet": 1,
       "ap": 1,
       "epg": 9,
-      "contract": 19,
+      "contract": 18,
       "filter": 10,
       "l3out": 2,
       "broken": 10,
-      "warnings": 4,
+      "warnings": 5,
       "info": 18,
       "faults_crit_major": 0,
-      "faults_total": 40,
+      "faults_total": 41,
       "score": 0,
       "status": "BROKEN"
     },
@@ -854,6 +875,16 @@
     {
       "severity": "warn",
       "check": "EPG isolated (no contracts)",
+      "tenant": "Cursor_Tenant2",
+      "dn": "uni/tn-Cursor_Tenant2/ap-cursor2_ap/epg-web",
+      "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
+      "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "EPG isolated (no contracts)",
       "tenant": "Cursor_tenant1",
       "dn": "uni/tn-Cursor_tenant1/ap-cursor_ap/epg-web",
       "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
@@ -1069,6 +1100,16 @@
       "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
       "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
       "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Config fault F2774",
+      "tenant": "TN-DEDUP-LAB",
+      "dn": "uni/tn-TN-DEDUP-LAB/out-L3OUT-CORP/instP-EXT-CORP/rsintraEpg-C-L3OUT-WEB",
+      "reason": "Failed to form relation to MO brc-C-L3OUT-WEB of class vzBrCP in context ",
+      "fix": "See the APIC fault description and resolve the referenced object.",
+      "category": "fault",
       "system": false
     },
     {
@@ -1329,6 +1370,36 @@
       "reason": "Tenant has no VRF, BD, application profile, contract or L3Out.",
       "fix": "Delete the tenant if it is no longer needed, or bring it under NaC with its intended objects.",
       "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "Cursor_Tenant2",
+      "dn": "uni/tn-Cursor_Tenant2/ap-cursor2_ap/epg-web",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "Cursor_Tenant2",
+      "dn": "uni/tn-Cursor_Tenant2/ap-cursor2_ap/epg-web",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "Cursor_Tenant2",
+      "dn": "uni/tn-Cursor_Tenant2/BD-cursor2_bd",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=flood (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
       "system": false
     },
     {
@@ -2207,15 +2278,15 @@
     },
     {
       "title": "Every contract needs both a provider and a consumer; remove dead/duplicate contracts",
-      "found": "Contract provided, never consumed: 3 (e.g. tn-ROR/brc-ALLOW_ICMP_Ct, tn-ROR/brc-WEB_TO_OUTSIDE); Contract unused: 3 (e.g. tn-mgmt/brc-permit-to-inb, tn-tn-MGK/brc-A2B); EPG isolated (no contracts): 16 (e.g. tn-Cursor_tenant1/ap-cursor_ap/epg-web, tn-Heroes/ap-Save_The_Planet/epg-web); Duplicate contract: 3 (e.g. tn-TN-DEDUP-LAB/brc-C-DNS-FW, tn-TN-DEDUP-LAB/brc-C-MONITORING-OLD)",
+      "found": "Contract provided, never consumed: 3 (e.g. tn-ROR/brc-ALLOW_ICMP_Ct, tn-ROR/brc-WEB_TO_OUTSIDE); Contract unused: 3 (e.g. tn-mgmt/brc-permit-to-inb, tn-tn-MGK/brc-A2B); EPG isolated (no contracts): 17 (e.g. tn-Cursor_Tenant2/ap-cursor2_ap/epg-web, tn-Cursor_tenant1/ap-cursor_ap/epg-web); Duplicate contract: 3 (e.g. tn-TN-DEDUP-LAB/brc-C-DNS-FW, tn-TN-DEDUP-LAB/brc-C-MONITORING-OLD)",
       "action": "Model each flow as provider (server side) + consumer (client side) in NaC; delete unused and duplicate contracts (e.g. *-OLD) so the policy matches the intent.",
-      "count": 25
+      "count": 26
     },
     {
       "title": "Make BD settings match their role (L2 vs L3)",
-      "found": "L3 BD without subnet: 8 (e.g. tn-KoolKid_Tenant/BD-BridgeDomain, tn-Production_Tenant/BD-Prod_BD_100); L3 BD flooding: 14 (e.g. tn-Cursor_tenant1/BD-cursor_bd, tn-MUHC/BD-VLAN_2701_BD)",
+      "found": "L3 BD without subnet: 8 (e.g. tn-KoolKid_Tenant/BD-BridgeDomain, tn-Production_Tenant/BD-Prod_BD_100); L3 BD flooding: 15 (e.g. tn-Cursor_Tenant2/BD-cursor2_bd, tn-Cursor_tenant1/BD-cursor_bd)",
       "action": "L3 BD: unicast routing + gateway subnet, hardware proxy, ARP flooding off, limit IP learning to subnet. L2 BD: unicast routing off, ARP flooding on, unknown unicast flood, no subnets.",
-      "count": 22
+      "count": 23
     },
     {
       "title": "Clean up unused objects",
@@ -2225,33 +2296,33 @@
     },
     {
       "title": "Add descriptions",
-      "found": "178 of 195 VRF/BD/AP/EPG/contract/filter/L3Out objects have no description.",
+      "found": "181 of 198 VRF/BD/AP/EPG/contract/filter/L3Out objects have no description.",
       "action": "Set descr on every object (NaC: description:) - owner, purpose, ticket/change ID.",
       "count": null
     },
     {
       "title": "Tag ownership (annotations) for NaC",
-      "found": "144 of 195 objects have no annotation; in use: 'orchestrator:ansible' x51.",
+      "found": "144 of 198 objects have no annotation; in use: 'orchestrator:ansible' x54.",
       "action": "Push everything through NaC/Terraform so objects carry 'orchestrator:terraform' (or a tag such as nac:owner=<team>); objects without it are hand-made and drift-prone.",
       "count": null
     },
     {
       "title": "Adopt one naming convention",
-      "found": "name styles in use: Mixed 65, UPPER_SNAKE 70, lower 60; 13 generic/VLAN/IP-style names (e.g. tn-OS1/BD-VLAN1, tn-OS1/BD-vlan, tn-TEST/BD-TESTBD, tn-TEST/ap-TEST_AAEP, tn-TEST/ap-TEST_AAEP/epg-TESTEPG).",
+      "found": "name styles in use: Mixed 65, UPPER_SNAKE 69, lower 64; 13 generic/VLAN/IP-style names (e.g. tn-OS1/BD-VLAN1, tn-OS1/BD-vlan, tn-TEST/BD-TESTBD, tn-TEST/ap-TEST_AAEP, tn-TEST/ap-TEST_AAEP/epg-TESTEPG).",
       "action": "e.g. <app>_VRF, <app>_<tier>_BD, <app>_AP, <tier>_EPG, <consumer>-to-<provider>_CON, <proto>-<port>_FLT; enforce it in the NaC schema/linting.",
       "count": null
     },
     {
       "title": "Bind EPGs to a domain",
-      "found": "no domain: 25, missing domain: 2",
+      "found": "no domain: 26, missing domain: 2",
       "action": "Every EPG that should carry endpoints needs a physical/VMM domain whose VLAN pool covers the encap.",
-      "count": 27
+      "count": 28
     }
   ],
   "robot": {
     "available": true,
-    "total": 193,
-    "passed": 183,
+    "total": 196,
+    "passed": 186,
     "failed": 10,
     "skipped": 0,
     "failures": [
@@ -2322,7 +2393,7 @@
   "faults": {
     "by_severity": {
       "minor": 49,
-      "warning": 34,
+      "warning": 35,
       "critical": 9
     },
     "tca": 28,

@@ -2,23 +2,24 @@
 
 ## DRIFT DETECTED | BROKEN RELATIONS FOUND
 
-- Generated: 2026-10-22 18:58:38 AEDT
+- Generated: 2026-10-22 19:51:30 AEDT
 - Overall status: `attention`
 
 ## 1. Drift (baseline vs live)
 
-**DRIFT DETECTED - tests 123/129 passed, 6 failed; 64 added, 6 removed**
+**DRIFT DETECTED - tests 123/129 passed, 6 failed; 70 added, 6 removed**
 
 Details: `drift/drift-summary.md`
 
 ## 2. Tenant logical integrity (tenant -> VRF -> BD -> EPG -> contract)
 
-**BROKEN RELATIONS FOUND - 28 broken, 48 warnings (7 of 27 tenants broken: Heroes, MUHC, SnV, TN-DEDUP-LAB, UT, lab-t01, prod)**
+**BROKEN RELATIONS FOUND - 28 broken, 50 warnings (7 of 28 tenants broken: Heroes, MUHC, SnV, TN-DEDUP-LAB, UT, lab-t01, prod)**
 
 | Tenant | Baseline | Broken | Warn | Score | Status |
 |---|---|---:|---:|---:|---|
 | common | yes | 0 | 0 | 100 | HEALTHY |
 | Cursor_tenant1 | NEW | 0 | 1 | 97 | WARN |
+| Cursor_Tenant2 | NEW | 0 | 1 | 97 | WARN |
 | DEMO1 | NEW | 0 | 1 | 97 | WARN |
 | Heroes | yes | 2 | 2 | 74 | BROKEN |
 | infra | yes | 0 | 1 | 97 | WARN |
@@ -38,7 +39,7 @@ Details: `drift/drift-summary.md`
 | SnV | yes | 4 | 1 | 57 | BROKEN |
 | TEST | yes | 0 | 1 | 97 | WARN |
 | Test-Tenant | yes | 0 | 1 | 97 | WARN |
-| TN-DEDUP-LAB | yes | 10 | 4 | 0 | BROKEN |
+| TN-DEDUP-LAB | yes | 10 | 5 | 0 | BROKEN |
 | tn-MGK | yes | 0 | 2 | 94 | WARN |
 | tn_TEST1 | NEW | 0 | 1 | 97 | WARN |
 | UT | yes | 1 | 3 | 81 | BROKEN |

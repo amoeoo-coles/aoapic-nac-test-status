@@ -1,13 +1,13 @@
 # ACI tenant logical-integrity report: 2026-10-22
 
-## BROKEN RELATIONS FOUND - 28 broken, 48 warnings (7 of 27 tenants broken: Heroes, MUHC, SnV, TN-DEDUP-LAB, UT, lab-t01, prod)
+## BROKEN RELATIONS FOUND - 28 broken, 50 warnings (7 of 28 tenants broken: Heroes, MUHC, SnV, TN-DEDUP-LAB, UT, lab-t01, prod)
 
-- APIC: https://sandboxapicdc.cisco.com (snapshot 2026-10-22 18:57:34 AEDT)
-- Generated: 2026-10-22 18:58:37 AEDT
-- Scope: 27 tenants on the APIC (15 in baseline, new: Cursor_tenant1, DEMO1, KoolKid_Tenant, lab-t01, NE-LAB-1021, Production_Tenant, Production_Tenant2, Production_Tenant22, Shaver_API, tn_TEST1, WebServer-Demo, Yellow_Tenant); infra checked for broken relations + critical/major faults only
+- APIC: https://sandboxapicdc.cisco.com (snapshot 2026-10-22 19:50:23 AEDT)
+- Generated: 2026-10-22 19:51:30 AEDT
+- Scope: 28 tenants on the APIC (15 in baseline, new: Cursor_tenant1, Cursor_Tenant2, DEMO1, KoolKid_Tenant, lab-t01, NE-LAB-1021, Production_Tenant, Production_Tenant2, Production_Tenant22, Shaver_API, tn_TEST1, WebServer-Demo, Yellow_Tenant); infra checked for broken relations + critical/major faults only
 - Graph: tenant -> VRF -> BD -> subnet -> AP -> EPG -> contract -> subject -> filter -> entry, plus vzAny, L3Out/external EPG, domains, service graphs, faults
 
-- nac-test integrity suite (templates/tests/integrity): 193 tests, 183 passed, 10 failed
+- nac-test integrity suite (templates/tests/integrity): 196 tests, 186 passed, 10 failed
 
 ## Per-tenant scorecard
 
@@ -15,6 +15,7 @@
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | common | yes | 2 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 | 0 | 100 | HEALTHY |
 | Cursor_tenant1 | NEW | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 97 | WARN |
+| Cursor_Tenant2 | NEW | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 97 | WARN |
 | DEMO1 | NEW | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 97 | WARN |
 | Heroes | yes | 1 | 1 | 2 | 1 | 3 | 0 | 1 | 2 | 2 | 0 | 74 | BROKEN |
 | infra | yes | 2 | 2 | 1 | 2 | 2 | 0 | 1 | 0 | 1 | 0 | 97 | WARN |
@@ -34,7 +35,7 @@
 | SnV | yes | 1 | 1 | 1 | 4 | 8 | 2 | 0 | 4 | 1 | 4 | 57 | BROKEN |
 | TEST | yes | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 97 | WARN |
 | Test-Tenant | yes | 1 | 1 | 4 | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 97 | WARN |
-| TN-DEDUP-LAB | yes | 1 | 1 | 1 | 1 | 9 | 19 | 2 | 10 | 4 | 0 | 0 | BROKEN |
+| TN-DEDUP-LAB | yes | 1 | 1 | 1 | 1 | 9 | 18 | 2 | 10 | 5 | 0 | 0 | BROKEN |
 | tn-MGK | yes | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 2 | 0 | 94 | WARN |
 | tn_TEST1 | NEW | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 97 | WARN |
 | UT | yes | 2 | 2 | 1 | 1 | 1 | 1 | 1 | 1 | 3 | 1 | 81 | BROKEN |
@@ -74,10 +75,11 @@
 | prod | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-prod/ap-vlans/epg-vlan101` | Configuration failed for uni/tn-prod/ap-vlans/epg-vlan101 node 101 eth1/1 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it; | Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port. |
 | prod | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-prod/ap-vlans/epg-vlan102` | Configuration failed for uni/tn-prod/ap-vlans/epg-vlan102 node 101 eth1/1 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it; | Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port. |
 
-## Warnings (48)
+## Warnings (50)
 
 | Tenant | Check | Object DN | Why | Fix |
 |---|---|---|---|---|
+| Cursor_Tenant2 | EPG isolated (no contracts) | `uni/tn-Cursor_Tenant2/ap-cursor2_ap/epg-web` | EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself. | Add provider/consumer contracts for the flows it needs, or remove the EPG if unused. |
 | Cursor_tenant1 | EPG isolated (no contracts) | `uni/tn-Cursor_tenant1/ap-cursor_ap/epg-web` | EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself. | Add provider/consumer contracts for the flows it needs, or remove the EPG if unused. |
 | DEMO1 | AP without EPGs | `uni/tn-DEMO1/ap-AP-DEMO1` | Application profile contains no EPG. | Remove the empty application profile or add its EPGs. |
 | Heroes | EPG isolated (no contracts) | `uni/tn-Heroes/ap-Save_The_Planet/epg-web` | EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself. | Add provider/consumer contracts for the flows it needs, or remove the EPG if unused. |
@@ -100,6 +102,7 @@
 | Shaver_API | Tenant empty | `uni/tn-Shaver_API` | Tenant has no VRF, BD, application profile, contract or L3Out. | Delete the tenant if it is no longer needed, or bring it under NaC with its intended objects. |
 | SnV | Contract provided, never consumed | `uni/tn-SnV/brc-web` | Provided by 4 object(s) (e.g. tn-SnV/ap-Chaos/epg-Web) but no consumer, so it permits no flow. | Add the consumer EPG(s) or remove the provider relation. |
 | TEST | EPG isolated (no contracts) | `uni/tn-TEST/ap-TEST_AAEP/epg-TESTEPG` | EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself. | Add provider/consumer contracts for the flows it needs, or remove the EPG if unused. |
+| TN-DEDUP-LAB | Config fault F2774 | `uni/tn-TN-DEDUP-LAB/out-L3OUT-CORP/instP-EXT-CORP/rsintraEpg-C-L3OUT-WEB` | Failed to form relation to MO brc-C-L3OUT-WEB of class vzBrCP in context  | See the APIC fault description and resolve the referenced object. |
 | TN-DEDUP-LAB | Duplicate contract | `uni/tn-TN-DEDUP-LAB/brc-C-DNS-FW` | Same filters, providers and consumers as tn-TN-DEDUP-LAB/brc-C-DNS: the contract is redundant. | Delete tn-TN-DEDUP-LAB/brc-C-DNS-FW (keep tn-TN-DEDUP-LAB/brc-C-DNS). |
 | TN-DEDUP-LAB | Duplicate contract | `uni/tn-TN-DEDUP-LAB/brc-C-MONITORING-OLD` | Same filters, providers and consumers as tn-TN-DEDUP-LAB/brc-C-MONITORING: the contract is redundant. | Delete tn-TN-DEDUP-LAB/brc-C-MONITORING-OLD (keep tn-TN-DEDUP-LAB/brc-C-MONITORING). |
 | TN-DEDUP-LAB | Duplicate contract | `uni/tn-TN-DEDUP-LAB/brc-C-NTP-FW` | Same filters, providers and consumers as tn-TN-DEDUP-LAB/brc-C-NTP: the contract is redundant. | Delete tn-TN-DEDUP-LAB/brc-C-NTP-FW (keep tn-TN-DEDUP-LAB/brc-C-NTP). |
@@ -133,25 +136,28 @@
    Do: Create the missing targets (VRF, domain, L3Out, device context) or remove the stale relations; missing-target objects never deploy and APIC may silently fall back to tn-common defaults.
 2. **Contract design: no permit-any, keep vzAny/preferred groups deliberate** - found: Permit-any filter: 1 (e.g. tn-common/brc-default); vzAny contract: 3 (e.g. tn-ROR/ctx-ROR_VRF, tn-TN-DEDUP-LAB/ctx-VRF-LAB); Preferred group enabled: 1 (e.g. tn-Heroes/ctx-Heroes_Only)  
    Do: Use specific filters (protocol + destination port, stateful where possible) instead of common/default or 'ip any'; reserve vzAny for shared services (DNS/NTP/ICMP) with narrow filters; keep every VRF enforced; avoid preferred groups except for migrations.
-3. **Every contract needs both a provider and a consumer; remove dead/duplicate contracts** - found: Contract provided, never consumed: 3 (e.g. tn-ROR/brc-ALLOW_ICMP_Ct, tn-ROR/brc-WEB_TO_OUTSIDE); Contract unused: 3 (e.g. tn-mgmt/brc-permit-to-inb, tn-tn-MGK/brc-A2B); EPG isolated (no contracts): 16 (e.g. tn-Cursor_tenant1/ap-cursor_ap/epg-web, tn-Heroes/ap-Save_The_Planet/epg-web); Duplicate contract: 3 (e.g. tn-TN-DEDUP-LAB/brc-C-DNS-FW, tn-TN-DEDUP-LAB/brc-C-MONITORING-OLD)  
+3. **Every contract needs both a provider and a consumer; remove dead/duplicate contracts** - found: Contract provided, never consumed: 3 (e.g. tn-ROR/brc-ALLOW_ICMP_Ct, tn-ROR/brc-WEB_TO_OUTSIDE); Contract unused: 3 (e.g. tn-mgmt/brc-permit-to-inb, tn-tn-MGK/brc-A2B); EPG isolated (no contracts): 17 (e.g. tn-Cursor_Tenant2/ap-cursor2_ap/epg-web, tn-Cursor_tenant1/ap-cursor_ap/epg-web); Duplicate contract: 3 (e.g. tn-TN-DEDUP-LAB/brc-C-DNS-FW, tn-TN-DEDUP-LAB/brc-C-MONITORING-OLD)  
    Do: Model each flow as provider (server side) + consumer (client side) in NaC; delete unused and duplicate contracts (e.g. *-OLD) so the policy matches the intent.
-4. **Make BD settings match their role (L2 vs L3)** - found: L3 BD without subnet: 8 (e.g. tn-KoolKid_Tenant/BD-BridgeDomain, tn-Production_Tenant/BD-Prod_BD_100); L3 BD flooding: 14 (e.g. tn-Cursor_tenant1/BD-cursor_bd, tn-MUHC/BD-VLAN_2701_BD)  
+4. **Make BD settings match their role (L2 vs L3)** - found: L3 BD without subnet: 8 (e.g. tn-KoolKid_Tenant/BD-BridgeDomain, tn-Production_Tenant/BD-Prod_BD_100); L3 BD flooding: 15 (e.g. tn-Cursor_Tenant2/BD-cursor2_bd, tn-Cursor_tenant1/BD-cursor_bd)  
    Do: L3 BD: unicast routing + gateway subnet, hardware proxy, ARP flooding off, limit IP learning to subnet. L2 BD: unicast routing off, ARP flooding on, unknown unicast flood, no subnets.
 5. **Clean up unused objects** - found: Tenant empty: 3; VRF unused: 3; BD unused: 5; AP without EPGs: 2; Filter unused: 6; L3Out without external EPG: 2  
    Do: Delete leftovers or bring them under NaC; unused objects hide real intent and drift.
-6. **Add descriptions** - found: 178 of 195 VRF/BD/AP/EPG/contract/filter/L3Out objects have no description.  
+6. **Add descriptions** - found: 181 of 198 VRF/BD/AP/EPG/contract/filter/L3Out objects have no description.  
    Do: Set descr on every object (NaC: description:) - owner, purpose, ticket/change ID.
-7. **Tag ownership (annotations) for NaC** - found: 144 of 195 objects have no annotation; in use: 'orchestrator:ansible' x51.  
+7. **Tag ownership (annotations) for NaC** - found: 144 of 198 objects have no annotation; in use: 'orchestrator:ansible' x54.  
    Do: Push everything through NaC/Terraform so objects carry 'orchestrator:terraform' (or a tag such as nac:owner=<team>); objects without it are hand-made and drift-prone.
-8. **Adopt one naming convention** - found: name styles in use: Mixed 65, UPPER_SNAKE 70, lower 60; 13 generic/VLAN/IP-style names (e.g. tn-OS1/BD-VLAN1, tn-OS1/BD-vlan, tn-TEST/BD-TESTBD, tn-TEST/ap-TEST_AAEP, tn-TEST/ap-TEST_AAEP/epg-TESTEPG).  
+8. **Adopt one naming convention** - found: name styles in use: Mixed 65, UPPER_SNAKE 69, lower 64; 13 generic/VLAN/IP-style names (e.g. tn-OS1/BD-VLAN1, tn-OS1/BD-vlan, tn-TEST/BD-TESTBD, tn-TEST/ap-TEST_AAEP, tn-TEST/ap-TEST_AAEP/epg-TESTEPG).  
    Do: e.g. <app>_VRF, <app>_<tier>_BD, <app>_AP, <tier>_EPG, <consumer>-to-<provider>_CON, <proto>-<port>_FLT; enforce it in the NaC schema/linting.
-9. **Bind EPGs to a domain** - found: no domain: 25, missing domain: 2  
+9. **Bind EPGs to a domain** - found: no domain: 26, missing domain: 2  
    Do: Every EPG that should carry endpoints needs a physical/VMM domain whose VLAN pool covers the encap.
 
-## Informational (86)
+## Informational (89)
 
 | Tenant | Check | Object DN | Note |
 |---|---|---|---|
+| Cursor_Tenant2 | EPG without domain | `uni/tn-Cursor_Tenant2/ap-cursor2_ap/epg-web` | No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM. |
+| Cursor_Tenant2 | EPG without static path | `uni/tn-Cursor_Tenant2/ap-cursor2_ap/epg-web` | No static path bindings (fvRsPathAtt). |
+| Cursor_Tenant2 | L3 BD flooding | `uni/tn-Cursor_Tenant2/BD-cursor2_bd` | Routed BD with arpFlood=yes, unkMacUcastAct=flood (legacy/migration style). |
 | Cursor_tenant1 | EPG without domain | `uni/tn-Cursor_tenant1/ap-cursor_ap/epg-web` | No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM. |
 | Cursor_tenant1 | EPG without static path | `uni/tn-Cursor_tenant1/ap-cursor_ap/epg-web` | No static path bindings (fvRsPathAtt). |
 | Cursor_tenant1 | L3 BD flooding | `uni/tn-Cursor_tenant1/BD-cursor_bd` | Routed BD with arpFlood=yes, unkMacUcastAct=flood (legacy/migration style). |
@@ -256,7 +262,7 @@
 
 ## Tenant faults (faultInst)
 
-By severity: minor 49, warning 34, critical 9; TCA/threshold faults (context only): 28
+By severity: minor 49, warning 35, critical 9; TCA/threshold faults (context only): 28
 
 | Tenant | Sev | Code | Affected | Description |
 |---|---|---|---|---|

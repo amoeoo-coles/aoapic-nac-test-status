@@ -3,25 +3,25 @@
   "date": "2026-10-22",
   "status": "attention",
   "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
-  "generated_at": "2026-10-22T18:58:38+11:00",
-  "generated_at_local": "2026-10-22 18:58:38 AEDT",
+  "generated_at": "2026-10-22T19:51:30+11:00",
+  "generated_at_local": "2026-10-22 19:51:30 AEDT",
   "drift": {
     "status": "drift",
-    "headline": "DRIFT DETECTED - tests 123/129 passed, 6 failed; 64 added, 6 removed",
+    "headline": "DRIFT DETECTED - tests 123/129 passed, 6 failed; 70 added, 6 removed",
     "tests": 129,
     "failed": 6,
-    "added": 64,
+    "added": 70,
     "removed": 6,
     "folder": "drift/"
   },
   "integrity": {
     "status": "broken",
-    "headline": "BROKEN RELATIONS FOUND - 28 broken, 48 warnings (7 of 27 tenants broken: Heroes, MUHC, SnV, TN-DEDUP-LAB, UT, lab-t01, prod)",
+    "headline": "BROKEN RELATIONS FOUND - 28 broken, 50 warnings (7 of 28 tenants broken: Heroes, MUHC, SnV, TN-DEDUP-LAB, UT, lab-t01, prod)",
     "broken": 28,
-    "warnings": 48,
+    "warnings": 50,
     "robot": {
-      "total": 193,
-      "passed": 183,
+      "total": 196,
+      "passed": 186,
       "failed": 10
     },
     "scorecard": [
@@ -35,6 +35,14 @@
       },
       {
         "tenant": "Cursor_tenant1",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_Tenant2",
         "in_baseline": false,
         "broken": 0,
         "warnings": 1,
@@ -197,7 +205,7 @@
         "tenant": "TN-DEDUP-LAB",
         "in_baseline": true,
         "broken": 10,
-        "warnings": 4,
+        "warnings": 5,
         "score": 0,
         "status": "BROKEN"
       },

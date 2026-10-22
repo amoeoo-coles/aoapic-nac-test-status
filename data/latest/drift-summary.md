@@ -1,9 +1,9 @@
 # ACI drift report: 2026-10-22
 
-## DRIFT DETECTED - tests 123/129 passed, 6 failed; 64 added, 6 removed
+## DRIFT DETECTED - tests 123/129 passed, 6 failed; 70 added, 6 removed
 
 - APIC: https://sandboxapicdc.cisco.com
-- Generated: 2026-10-22 18:57:16 AEDT (Australia/Melbourne)
+- Generated: 2026-10-22 19:50:06 AEDT (Australia/Melbourne)
 - Baseline: `baseline/data/` (frozen 2026-10-22 10:47 AEDT (Australia/Melbourne) by `scripts/drift_report.sh`)
 - Status: `drift`
 
@@ -26,19 +26,20 @@
 
 | Type | Baseline | Current (APIC, all tenants) | Added | Removed |
 |---|---:|---:|---:|---:|
-| Tenant | 16 | 27 | 12 | 1 |
-| VRF | 18 | 27 | 10 | 1 |
-| BD | 23 | 33 | 12 | 2 |
-| Subnet (BD) | 23 | 28 | 7 | 2 |
-| AP | 16 | 26 | 10 | 0 |
-| EPG | 33 | 46 | 13 | 0 |
+| Tenant | 16 | 28 | 13 | 1 |
+| VRF | 18 | 28 | 11 | 1 |
+| BD | 23 | 34 | 13 | 2 |
+| Subnet (BD) | 23 | 29 | 8 | 2 |
+| AP | 16 | 27 | 11 | 0 |
+| EPG | 33 | 47 | 14 | 0 |
 
 Subnets are bridge-domain subnets only (EPG-level subnets are not in the baseline model).
 
-## Added since baseline (64)
+## Added since baseline (70)
 
 | Type | Tenant | DN |
 |---|---|---|
+| Tenant | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2` |
 | Tenant | Cursor_tenant1 | `uni/tn-Cursor_tenant1` |
 | Tenant | DEMO1 | `uni/tn-DEMO1` |
 | Tenant | KoolKid_Tenant | `uni/tn-KoolKid_Tenant` |
@@ -51,6 +52,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | Tenant | Yellow_Tenant | `uni/tn-Yellow_Tenant` |
 | Tenant | lab-t01 | `uni/tn-lab-t01` |
 | Tenant | tn_TEST1 | `uni/tn-tn_TEST1` |
+| VRF | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/ctx-cursor2_vrf` |
 | VRF | Cursor_tenant1 | `uni/tn-Cursor_tenant1/ctx-cursor_vrf` |
 | VRF | KoolKid_Tenant | `uni/tn-KoolKid_Tenant/ctx-Context` |
 | VRF | NE-LAB-1021 | `uni/tn-NE-LAB-1021/ctx-NE-VRF` |
@@ -61,6 +63,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | VRF | Yellow_Tenant | `uni/tn-Yellow_Tenant/ctx-Context` |
 | VRF | lab-t01 | `uni/tn-lab-t01/ctx-vrf-a` |
 | VRF | lab-t01 | `uni/tn-lab-t01/ctx-vrf-b` |
+| BD | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/BD-cursor2_bd` |
 | BD | Cursor_tenant1 | `uni/tn-Cursor_tenant1/BD-cursor_bd` |
 | BD | KoolKid_Tenant | `uni/tn-KoolKid_Tenant/BD-BridgeDomain` |
 | BD | NE-LAB-1021 | `uni/tn-NE-LAB-1021/BD-NE-BD` |
@@ -73,6 +76,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | BD | lab-t01 | `uni/tn-lab-t01/BD-bd-db` |
 | BD | lab-t01 | `uni/tn-lab-t01/BD-bd-shared` |
 | BD | lab-t01 | `uni/tn-lab-t01/BD-bd-web` |
+| Subnet (BD) | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/BD-cursor2_bd/subnet-[10.250.3.1/24]` |
 | Subnet (BD) | Cursor_tenant1 | `uni/tn-Cursor_tenant1/BD-cursor_bd/subnet-[10.250.2.1/24]` |
 | Subnet (BD) | NE-LAB-1021 | `uni/tn-NE-LAB-1021/BD-NE-BD/subnet-[192.168.100.1/24]` |
 | Subnet (BD) | WebServer-Demo | `uni/tn-WebServer-Demo/BD-demo_bd/subnet-[10.250.1.1/24]` |
@@ -80,6 +84,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | Subnet (BD) | lab-t01 | `uni/tn-lab-t01/BD-bd-db/subnet-[10.10.2.1/24]` |
 | Subnet (BD) | lab-t01 | `uni/tn-lab-t01/BD-bd-shared/subnet-[10.30.1.1/24]` |
 | Subnet (BD) | lab-t01 | `uni/tn-lab-t01/BD-bd-web/subnet-[10.10.1.1/24]` |
+| AP | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/ap-cursor2_ap` |
 | AP | Cursor_tenant1 | `uni/tn-Cursor_tenant1/ap-cursor_ap` |
 | AP | DEMO1 | `uni/tn-DEMO1/ap-AP-DEMO1` |
 | AP | KoolKid_Tenant | `uni/tn-KoolKid_Tenant/ap-EPG` |
@@ -90,6 +95,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | AP | WebServer-Demo | `uni/tn-WebServer-Demo/ap-demo_ap` |
 | AP | Yellow_Tenant | `uni/tn-Yellow_Tenant/ap-Yellow_AppProfile` |
 | AP | lab-t01 | `uni/tn-lab-t01/ap-ap-01` |
+| EPG | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/ap-cursor2_ap/epg-web` |
 | EPG | Cursor_tenant1 | `uni/tn-Cursor_tenant1/ap-cursor_ap/epg-web` |
 | EPG | KoolKid_Tenant | `uni/tn-KoolKid_Tenant/ap-EPG/epg-KoolKid_EPG` |
 | EPG | NE-LAB-1021 | `uni/tn-NE-LAB-1021/ap-NE-APP/epg-NE-WEB` |
@@ -119,7 +125,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 
 | critical | major | minor | warning | info | cleared | total |
 |---:|---:|---:|---:|---:|---:|---:|
-| 11 | 23 | 74 | 692 | 0 | 6 | 806 |
+| 11 | 23 | 74 | 694 | 0 | 7 | 809 |
 
 ## Artifacts
 
