@@ -1,49 +1,43 @@
-# Daily ACI report: 2026-10-22
+# Daily ACI report: 2026-10-23
 
 ## DRIFT DETECTED | BROKEN RELATIONS FOUND
 
-- Generated: 2026-10-22 19:51:30 AEDT
+- Generated: 2026-10-23 08:11:45 AEDT
 - Overall status: `attention`
 
 ## 1. Drift (baseline vs live)
 
-**DRIFT DETECTED - tests 123/129 passed, 6 failed; 70 added, 6 removed**
+**DRIFT DETECTED - tests 71/129 passed, 58 failed; 122 added, 57 removed**
 
 Details: `drift/drift-summary.md`
 
 ## 2. Tenant logical integrity (tenant -> VRF -> BD -> EPG -> contract)
 
-**BROKEN RELATIONS FOUND - 28 broken, 50 warnings (7 of 28 tenants broken: Heroes, MUHC, SnV, TN-DEDUP-LAB, UT, lab-t01, prod)**
+**BROKEN RELATIONS FOUND - 38 broken, 48 warnings (9 of 22 tenants broken: DEV, Heroes, MUHC, POC-LN, SnV, T1, TN-DEDUP-LAB, hacki-tn-a, lab-t01)**
 
 | Tenant | Baseline | Broken | Warn | Score | Status |
 |---|---|---:|---:|---:|---|
 | common | yes | 0 | 0 | 100 | HEALTHY |
 | Cursor_tenant1 | NEW | 0 | 1 | 97 | WARN |
 | Cursor_Tenant2 | NEW | 0 | 1 | 97 | WARN |
-| DEMO1 | NEW | 0 | 1 | 97 | WARN |
-| Heroes | yes | 2 | 2 | 74 | BROKEN |
-| infra | yes | 0 | 1 | 97 | WARN |
-| KoolKid_Tenant | NEW | 0 | 2 | 94 | WARN |
-| lab-t01 | NEW | 1 | 3 | 81 | BROKEN |
-| mgmt | yes | 0 | 4 | 88 | WARN |
-| MUHC | yes | 7 | 0 | 30 | BROKEN |
-| NE-LAB-1021 | NEW | 0 | 1 | 97 | WARN |
-| oneaciapp | yes | 0 | 1 | 97 | WARN |
-| OS1 | yes | 0 | 2 | 94 | WARN |
-| prod | yes | 3 | 3 | 61 | BROKEN |
-| Production_Tenant | NEW | 0 | 2 | 94 | WARN |
-| Production_Tenant2 | NEW | 0 | 2 | 94 | WARN |
-| Production_Tenant22 | NEW | 0 | 3 | 91 | WARN |
+| Cursor_Tenant3 | NEW | 0 | 1 | 97 | WARN |
+| Demo1 | NEW | 0 | 2 | 94 | WARN |
+| DEV | NEW | 3 | 1 | 67 | BROKEN |
+| hacki-tn-a | NEW | 1 | 12 | 54 | BROKEN |
+| Heroes | yes | 3 | 0 | 70 | BROKEN |
+| infra | yes | 0 | 0 | 100 | HEALTHY |
+| LAB-InterVRF | NEW | 0 | 3 | 91 | WARN |
+| LAB-MEIRLAN | NEW | 0 | 1 | 97 | WARN |
+| lab-t01 | NEW | 1 | 4 | 78 | BROKEN |
+| LAB_ASN_01 | NEW | 0 | 3 | 91 | WARN |
+| LAB_ASN_02 | NEW | 0 | 1 | 97 | WARN |
+| mgmt | yes | 0 | 2 | 94 | WARN |
+| MUHC | yes | 4 | 1 | 57 | BROKEN |
+| oneaciapp | yes | 0 | 3 | 91 | WARN |
+| POC-LN | NEW | 10 | 2 | 0 | BROKEN |
 | ROR | yes | 0 | 3 | 91 | WARN |
-| Shaver_API | NEW | 0 | 1 | 97 | WARN |
 | SnV | yes | 4 | 1 | 57 | BROKEN |
-| TEST | yes | 0 | 1 | 97 | WARN |
-| Test-Tenant | yes | 0 | 1 | 97 | WARN |
-| TN-DEDUP-LAB | yes | 10 | 5 | 0 | BROKEN |
-| tn-MGK | yes | 0 | 2 | 94 | WARN |
-| tn_TEST1 | NEW | 0 | 1 | 97 | WARN |
-| UT | yes | 1 | 3 | 81 | BROKEN |
-| WebServer-Demo | NEW | 0 | 1 | 97 | WARN |
-| Yellow_Tenant | NEW | 0 | 2 | 94 | WARN |
+| T1 | NEW | 2 | 2 | 74 | BROKEN |
+| TN-DEDUP-LAB | yes | 10 | 4 | 0 | BROKEN |
 
 Details: `integrity/integrity-summary.md`

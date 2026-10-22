@@ -1,36 +1,78 @@
-# Changes since previous morning (2026-10-22-1105 -> 2026-10-22-1949)
+# Changes since previous morning (2026-10-22-1105 -> 2026-10-23-0809)
 
-Previous snapshot 2026-10-22 11:05:56 AEDT; current snapshot 2026-10-22 19:50:23 AEDT.
+Previous snapshot 2026-10-22 11:05:56 AEDT; current snapshot 2026-10-23 08:10:28 AEDT.
 
 | Tests | Prev | Now | Delta |
 |---|---:|---:|---:|
-| integrity total | 168 | 196 | +28 |
-| integrity passed | 160 | 186 | +26 |
+| integrity total | 168 | 211 | +43 |
+| integrity passed | 160 | 201 | +41 |
 | integrity failed | 8 | 10 | +2 |
 | drift total | 129 | 129 | +0 |
-| drift passed | 129 | 123 | -6 |
-| drift failed | 0 | 6 | +6 |
+| drift passed | 129 | 71 | -58 |
+| drift failed | 0 | 58 | +58 |
 
-Tenants: 22 -> 28; broken 5 -> 7
-- added: Cursor_tenant1, Cursor_Tenant2, DEMO1, KoolKid_Tenant, lab-t01, NE-LAB-1021, Shaver_API, WebServer-Demo, Yellow_Tenant
-- removed: js_10018, js_10118, TEST-ABC1
-- newly broken: Heroes, lab-t01 (new)
+Tenants: 22 -> 22; broken 5 -> 9
+- added: Cursor_tenant1, Cursor_Tenant2, Cursor_Tenant3, Demo1, DEV, hacki-tn-a, LAB-InterVRF, LAB-MEIRLAN, lab-t01, LAB_ASN_01, LAB_ASN_02, POC-LN, T1
+- removed: js_10018, js_10118, OS1, prod, Production_Tenant, Production_Tenant2, Production_Tenant22, TEST, TEST-ABC1, Test-Tenant, tn-MGK, tn_TEST1, UT
+- newly broken: Heroes, DEV (new), hacki-tn-a (new), lab-t01 (new), POC-LN (new), T1 (new)
 - fixed: none
 
-Broken relations: 25 -> 28
-- ADDED Heroes | External EPG contract missing-target | `uni/tn-Heroes/out-Heroes_external_corporate/instP-Heroes_default` | External EPG uses contract 'web' which does not exist.
-- ADDED Heroes | External EPG contract missing-target | `uni/tn-Heroes/out-Heroes_external_corporate/instP-Heroes_default` | External EPG uses contract 'power_up' which does not exist.
+Broken relations: 25 -> 38
+- ADDED DEV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-DEV/ap-VLANS/epg-VLAN200` | Configuration failed for uni/tn-DEV/ap-VLANS/epg-VLAN200 node 102 DEV-SERVER-VPC-PG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;
+- ADDED DEV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-DEV/ap-VLANS/epg-VLAN201` | Configuration failed for uni/tn-DEV/ap-VLANS/epg-VLAN201 node 102 DEV-SERVER-VPC-PG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;
+- ADDED DEV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-DEV/ap-VLANS/epg-VLAN202` | Configuration failed for uni/tn-DEV/ap-VLANS/epg-VLAN202 node 102 DEV-SERVER-VPC-PG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;
+- ADDED Heroes | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-Heroes/ap-Save_The_Planet/epg-app` | Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 102 Heroes_FI-2A due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-201 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;
+- ADDED Heroes | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-Heroes/ap-Save_The_Planet/epg-db` | Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 102 Heroes_FI-2A due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-202 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;
+- ADDED Heroes | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-Heroes/ap-Save_The_Planet/epg-web` | Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 102 Heroes_FI-2A due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-200 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;
+- ADDED MUHC | BD L3Out missing-target | `uni/tn-MUHC/BD-VLAN_2014_BD` | BD is associated to L3Out 'LEGACY_L3OUT' which does not exist; APIC fell back to tn-common/out-default, so the BD subnets are not advertised as intended.
+- ADDED MUHC | BD VRF missing-target | `uni/tn-MUHC/BD-VLAN_2014_BD` | BD points to VRF 'LEGACY_VRF' which does not exist in tenant MUHC or in tenant common (state missing-target). The BD and every EPG in it cannot be deployed.
+- ADDED MUHC | EPG BD missing-target | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2781_EPG` | EPG points to BD 'VLAN_2781_BD' which does not exist (state missing-target).
+- ADDED MUHC | EPG domain missing-target | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2781_EPG` | Domain uni/phys-LEGACY_SRVF_PHY does not exist (state missing-target).
+- ADDED POC-LN | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-APP` | Configuration failed for uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-APP node 101 eth1/41 due to Port Connected to Controller, debug message: port-configured-for-apic: Port is connected to the APIC;
+- ADDED POC-LN | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-DB` | Configuration failed for uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-DB node 101 eth1/41 due to Port Connected to Controller, debug message: port-configured-for-apic: Port is connected to the APIC;
+- ADDED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-LEGACY/cep-46:CD:BB:C0:00:00/ip-[10.193.101.5]` | In Tenant POC-LN, 10.193.101.5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP
+- ADDED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-LEGACY/cep-46:CD:BB:C0:00:00/ip-[2222::65:5]` | In Tenant POC-LN, 2222::65:5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP c
+- ADDED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-LEGACY/cep-47:CD:BB:C0:00:00/ip-[10.193.102.5]` | In Tenant POC-LN, 10.193.102.5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP
+- ADDED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-LEGACY/cep-47:CD:BB:C0:00:00/ip-[2222::66:5]` | In Tenant POC-LN, 2222::66:5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP c
+- ADDED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00/ip-[10.193.101.5]` | In Tenant POC-LN, 10.193.101.5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP
+- ADDED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00/ip-[2222::65:5]` | In Tenant POC-LN, 2222::65:5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP c
+- ADDED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00/ip-[10.193.102.5]` | In Tenant POC-LN, 10.193.102.5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP
+- ADDED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00/ip-[2222::66:5]` | In Tenant POC-LN, 2222::66:5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP c
+- ADDED T1 | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-T1/ap-User_App_Profile/epg-Users_EPG` | Configuration failed for uni/tn-T1/ap-User_App_Profile/epg-Users_EPG node 102 eth1/28 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-60 :STP Segment Id not present for Encap. Either the EpG is not associated with a domain or the domain does not have t
+- ADDED T1 | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-T1/out-L3_OUT_FW` | Configuration failed for uni/tn-T1/out-L3_OUT_FW node 101 eth1/27 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
+- ADDED hacki-tn-a | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-hacki-tn-a/out-L3-OSPF-500` | Configuration failed for uni/tn-hacki-tn-a/out-L3-OSPF-500 node 101 eth1/21 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-500 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either th
 - ADDED lab-t01 | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-lab-t01/out-out-fw` | Configuration failed for uni/tn-lab-t01/out-out-fw node 101 eth1/33 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
-- STILL BROKEN, reason changed: UT | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-UT/ap-UAP/epg-USER_EPG`
+- RESOLVED MUHC | BD L3Out missing-target | `uni/tn-MUHC/BD-VLAN_2701_BD` | BD is associated to L3Out 'LEGACY_L3OUT' which does not exist; APIC fell back to tn-common/out-default, so the BD subnets are not advertised as intended.
+- RESOLVED MUHC | BD VRF missing-target | `uni/tn-MUHC/BD-VLAN_2701_BD` | BD points to VRF 'LEGACY_VRF' which does not exist in tenant MUHC or in tenant common (state missing-target). The BD and every EPG in it cannot be deployed.
+- RESOLVED MUHC | BD VRF missing-target | `uni/tn-MUHC/BD-VLAN_2780_BD` | BD points to VRF 'LEGACY_VRF' which does not exist in tenant MUHC or in tenant common (state missing-target). The BD and every EPG in it cannot be deployed.
+- RESOLVED MUHC | EPG chain broken (BD has no VRF) | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2701_EPG` | EPG -> tn-MUHC/BD-VLAN_2701_BD resolves, but that BD's VRF 'LEGACY_VRF' is missing, so the EPG cannot be deployed (APIC fault F0523 'Context Not present').
+- RESOLVED MUHC | EPG chain broken (BD has no VRF) | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2780_EPG` | EPG -> tn-MUHC/BD-VLAN_2780_BD resolves, but that BD's VRF 'LEGACY_VRF' is missing, so the EPG cannot be deployed (APIC fault F0523 'Context Not present').
+- RESOLVED MUHC | EPG domain missing-target | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2701_EPG` | Domain uni/phys-LEGACY_SRVF_PHY does not exist (state missing-target).
+- RESOLVED MUHC | EPG domain missing-target | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2780_EPG` | Domain uni/phys-LEGACY_SRVF_PHY does not exist (state missing-target).
+- RESOLVED UT | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-UT/ap-UAP/epg-USER_EPG` | Configuration failed for uni/tn-UT/ap-UAP/epg-USER_EPG node 101 eth1/27 due to Invalid Path Configuration, debug message: invalid-path: vlan-101 :There is no domain, associated with both EPG and Port, that has required VLAN;
+- RESOLVED prod | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-prod/ap-vlans/epg-vlan100` | Configuration failed for uni/tn-prod/ap-vlans/epg-vlan100 node 101 eth1/1 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
+- RESOLVED prod | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-prod/ap-vlans/epg-vlan101` | Configuration failed for uni/tn-prod/ap-vlans/epg-vlan101 node 101 eth1/1 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
+- RESOLVED prod | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-prod/ap-vlans/epg-vlan102` | Configuration failed for uni/tn-prod/ap-vlans/epg-vlan102 node 101 eth1/1 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
 
 New critical faults:
+- F0467 DEV `uni/tn-DEV/ap-VLANS/epg-VLAN200`: Configuration failed for uni/tn-DEV/ap-VLANS/epg-VLAN200 node 101 DEV-SERVER-VPC-PG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;
+- F0467 DEV `uni/tn-DEV/ap-VLANS/epg-VLAN201`: Configuration failed for uni/tn-DEV/ap-VLANS/epg-VLAN201 node 101 DEV-SERVER-VPC-PG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;
+- F0467 DEV `uni/tn-DEV/ap-VLANS/epg-VLAN202`: Configuration failed for uni/tn-DEV/ap-VLANS/epg-VLAN202 node 101 DEV-SERVER-VPC-PG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;
+- F0467 Heroes `uni/tn-Heroes/ap-Save_The_Planet/epg-app`: Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 101 Heroes_FI-2B due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-201 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;
+- F0467 Heroes `uni/tn-Heroes/ap-Save_The_Planet/epg-db`: Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 101 Heroes_FI-2B due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-202 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;
+- F0467 Heroes `uni/tn-Heroes/ap-Save_The_Planet/epg-web`: Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 101 Heroes_FI-2A due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-200 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;
+- F0467 POC-LN `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-APP`: Configuration failed for uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-APP node 101 eth1/41 due to Port Connected to Controller, debug message: port-configured-for-apic: Port is connected to the APIC;
+- F0467 POC-LN `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-DB`: Configuration failed for uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-DB node 101 eth1/41 due to Port Connected to Controller, debug message: port-configured-for-apic: Port is connected to the APIC;
+- F0467 T1 `uni/tn-T1/ap-User_App_Profile/epg-Users_EPG`: Configuration failed for uni/tn-T1/ap-User_App_Profile/epg-Users_EPG node 102 eth1/28 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-60 :STP Segment Id not present for Encap. Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: vlan-60 :There is no domain, associated with both EPG and Port, that has required VLAN;
+- F0467 T1 `uni/tn-T1/out-L3_OUT_FW`: Configuration failed for uni/tn-T1/out-L3_OUT_FW node 101 eth1/27 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
+- F0467 hacki-tn-a `uni/tn-hacki-tn-a/out-L3-OSPF-500`: Configuration failed for uni/tn-hacki-tn-a/out-L3-OSPF-500 node 101 eth1/21 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-500 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
 - F0467 lab-t01 `uni/tn-lab-t01/out-out-fw`: Configuration failed for uni/tn-lab-t01/out-out-fw node 101 eth1/33 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
 
 | Drift type | Baseline | Prev | Now | Delta | +vs baseline | -vs baseline |
 |---|---:|---:|---:|---:|---:|---:|
-| Tenant | 16 | 22 | 28 | +6 | 13 | 1 |
-| VRF | 18 | 22 | 28 | +6 | 11 | 1 |
-| BD | 23 | 27 | 34 | +7 | 13 | 2 |
-| Subnet (BD) | 23 | 23 | 29 | +6 | 8 | 2 |
-| AP | 16 | 19 | 27 | +8 | 11 | 0 |
-| EPG | 33 | 37 | 47 | +10 | 14 | 0 |
+| Tenant | 16 | 22 | 22 | +0 | 13 | 7 |
+| VRF | 18 | 22 | 33 | +11 | 23 | 8 |
+| BD | 23 | 27 | 34 | +7 | 25 | 14 |
+| Subnet (BD) | 23 | 23 | 35 | +12 | 26 | 14 |
+| AP | 16 | 19 | 22 | +3 | 11 | 5 |
+| EPG | 33 | 37 | 48 | +11 | 24 | 9 |

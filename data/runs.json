@@ -1,8 +1,27 @@
 {
  "schema": 1,
- "generated_at": "2026-10-22T19:55:57+11:00",
+ "generated_at": "2026-10-23T08:11:45+11:00",
  "morning_cutoff_hour": 12,
  "runs": [
+  {
+   "stamp": "2026-10-23-0809",
+   "date": "2026-10-23",
+   "time_local": "08:09 AEDT",
+   "morning": true,
+   "kind": "scheduled",
+   "snapshot": "2026-10-23 08:10:28 AEDT",
+   "status": "attention",
+   "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+   "integrity_tests": 211,
+   "integrity_failed": 10,
+   "drift_tests": 129,
+   "drift_failed": 58,
+   "broken": 38,
+   "warnings": 48,
+   "tenants": 22,
+   "tenants_broken": 9,
+   "path": "data/2026-10-23-0809/"
+  },
   {
    "stamp": "2026-10-22-1949",
    "date": "2026-10-22",
