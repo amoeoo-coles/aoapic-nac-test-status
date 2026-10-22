@@ -1,0 +1,207 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-10-22T11:06:58+11:00",
+  "generated_at_local": "2026-10-22 11:06:58 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 129/129 passed, 0 failed; 21 added, 0 removed",
+    "tests": 129,
+    "failed": 0,
+    "added": 21,
+    "removed": 0,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 25 broken, 39 warnings (5 of 22 tenants broken: MUHC, SnV, TN-DEDUP-LAB, UT, prod)",
+    "broken": 25,
+    "warnings": 39,
+    "robot": {
+      "total": 168,
+      "passed": 160,
+      "failed": 8
+    },
+    "scorecard": [
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "Heroes",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "js_10018",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "js_10118",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 4,
+        "score": 88,
+        "status": "WARN"
+      },
+      {
+        "tenant": "MUHC",
+        "in_baseline": true,
+        "broken": 7,
+        "warnings": 0,
+        "score": 30,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "OS1",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "prod",
+        "in_baseline": true,
+        "broken": 3,
+        "warnings": 3,
+        "score": 61,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "Production_Tenant",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Production_Tenant2",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Production_Tenant22",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "ROR",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "SnV",
+        "in_baseline": true,
+        "broken": 4,
+        "warnings": 1,
+        "score": 57,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "TEST",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TEST-ABC1",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Test-Tenant",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TN-DEDUP-LAB",
+        "in_baseline": true,
+        "broken": 10,
+        "warnings": 4,
+        "score": 0,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "tn-MGK",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "tn_TEST1",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "UT",
+        "in_baseline": true,
+        "broken": 1,
+        "warnings": 3,
+        "score": 81,
+        "status": "BROKEN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}

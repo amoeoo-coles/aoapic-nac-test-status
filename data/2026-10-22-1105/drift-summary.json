@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "status": "drift",
+  "drift": true,
+  "headline": "DRIFT DETECTED - tests 129/129 passed, 0 failed; 21 added, 0 removed",
+  "generated_at": "2026-10-22T11:05:38+11:00",
+  "generated_at_local": "2026-10-22 11:05:38 AEDT",
+  "apic_url": "https://sandboxapicdc.cisco.com",
+  "nac_test_rc": 0,
+  "baseline": {
+    "path": "baseline/data",
+    "info": "frozen 2026-10-22 10:47 AEDT (Australia/Melbourne) by `scripts/drift_report.sh`"
+  },
+  "tests": {
+    "available": true,
+    "total": 129,
+    "passed": 129,
+    "failed": 0,
+    "skipped": 0,
+    "failures": []
+  },
+  "counts": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "baseline": 16,
+      "current": 22,
+      "added": 6,
+      "removed": 0
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "baseline": 18,
+      "current": 22,
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "baseline": 23,
+      "current": 27,
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "baseline": 23,
+      "current": 23,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "baseline": 16,
+      "current": 19,
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "baseline": 33,
+      "current": 37,
+      "added": 4,
+      "removed": 0
+    }
+  ],
+  "added": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "js_10018",
+      "dn": "uni/tn-js_10018"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "js_10118",
+      "dn": "uni/tn-js_10118"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "tn_TEST1",
+      "dn": "uni/tn-tn_TEST1"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant/ctx-Prod_VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2/ctx-Prod_VRF2"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/ctx-Prod_VRF22"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "js_10118",
+      "dn": "uni/tn-js_10118/ctx-prod_vrf"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant/BD-Prod_BD_100"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2/BD-Prod_BD_200"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/BD-Prod_BD_300"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "js_10118",
+      "dn": "uni/tn-js_10118/BD-prod_bd"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant/ap-Prod_App_Profile"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2/ap-Prod_App_Profile2"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/ap-Prod_App_Profile22"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Production_Tenant",
+      "dn": "uni/tn-Production_Tenant/ap-Prod_App_Profile/epg-Web_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Production_Tenant2",
+      "dn": "uni/tn-Production_Tenant2/ap-Prod_App_Profile2/epg-Web_EPG2"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/ap-Prod_App_Profile22/epg-Web_EPG22"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Production_Tenant22",
+      "dn": "uni/tn-Production_Tenant22/ap-Prod_App_Profile22/epg-Web_EPG222"
+    }
+  ],
+  "removed": [],
+  "faults": {
+    "critical": 10,
+    "major": 17,
+    "minor": 74,
+    "warning": 692,
+    "info": 0,
+    "cleared": 15,
+    "total": 808
+  },
+  "errors": [],
+  "note": "Tenants Production_Tenant, Production_Tenant2, Production_Tenant22, tn_TEST1 already existed on the shared sandbox when the baseline data was pulled (22 Oct 2026 ~10:15 AEDT) but were deliberately left out of scope; they are reported as added since baseline."
+}
