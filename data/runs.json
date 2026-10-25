@@ -1,8 +1,27 @@
 {
  "schema": 1,
- "generated_at": "2026-10-23T08:11:45+11:00",
+ "generated_at": "2026-10-26T08:07:44+11:00",
  "morning_cutoff_hour": 12,
  "runs": [
+  {
+   "stamp": "2026-10-26-0807",
+   "date": "2026-10-26",
+   "time_local": "08:07 AEDT",
+   "morning": true,
+   "kind": "scheduled",
+   "snapshot": "2026-10-26 08:07:40 AEDT",
+   "status": "attention",
+   "headline": "DRIFT DETECTED | HEALTHY",
+   "integrity_tests": 18,
+   "integrity_failed": 0,
+   "drift_tests": 129,
+   "drift_failed": 109,
+   "broken": 0,
+   "warnings": 8,
+   "tenants": 5,
+   "tenants_broken": 0,
+   "path": "data/2026-10-26-0807/"
+  },
   {
    "stamp": "2026-10-23-0809",
    "date": "2026-10-23",

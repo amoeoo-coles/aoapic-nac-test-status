@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | HEALTHY",
+  "generated_at": "2026-10-26T08:07:44+11:00",
+  "generated_at_local": "2026-10-26 08:07:44 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 3 added, 109 removed",
+    "tests": 129,
+    "failed": 109,
+    "added": 3,
+    "removed": 109,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "warnings",
+    "headline": "HEALTHY - 0 broken relations, 8 warnings across 5 tenants",
+    "broken": 0,
+    "warnings": 8,
+    "robot": {
+      "total": 18,
+      "passed": 18,
+      "failed": 0
+    },
+    "scorecard": [
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TF_LAB_SAMAN",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}

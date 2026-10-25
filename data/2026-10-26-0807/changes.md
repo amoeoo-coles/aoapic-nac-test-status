@@ -1,0 +1,70 @@
+# Changes since previous morning (2026-10-23-0809 -> 2026-10-26-0807)
+
+Previous snapshot 2026-10-23 08:10:28 AEDT; current snapshot 2026-10-26 08:07:40 AEDT.
+
+| Tests | Prev | Now | Delta |
+|---|---:|---:|---:|
+| integrity total | 211 | 18 | -193 |
+| integrity passed | 201 | 18 | -183 |
+| integrity failed | 10 | 0 | -10 |
+| drift total | 129 | 129 | +0 |
+| drift passed | 71 | 20 | -51 |
+| drift failed | 58 | 109 | +51 |
+
+Tenants: 22 -> 5; broken 9 -> 0
+- added: TF_LAB_SAMAN
+- removed: Cursor_tenant1, Cursor_Tenant2, Cursor_Tenant3, Demo1, DEV, hacki-tn-a, Heroes, LAB-InterVRF, LAB-MEIRLAN, lab-t01, LAB_ASN_01, LAB_ASN_02, MUHC, POC-LN, ROR, SnV, T1, TN-DEDUP-LAB
+- newly broken: none
+- fixed: none
+
+Broken relations: 38 -> 0
+- RESOLVED DEV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-DEV/ap-VLANS/epg-VLAN200` | Configuration failed for uni/tn-DEV/ap-VLANS/epg-VLAN200 node 102 DEV-SERVER-VPC-PG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;
+- RESOLVED DEV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-DEV/ap-VLANS/epg-VLAN201` | Configuration failed for uni/tn-DEV/ap-VLANS/epg-VLAN201 node 102 DEV-SERVER-VPC-PG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;
+- RESOLVED DEV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-DEV/ap-VLANS/epg-VLAN202` | Configuration failed for uni/tn-DEV/ap-VLANS/epg-VLAN202 node 102 DEV-SERVER-VPC-PG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;
+- RESOLVED Heroes | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-Heroes/ap-Save_The_Planet/epg-app` | Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 102 Heroes_FI-2A due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-201 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;
+- RESOLVED Heroes | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-Heroes/ap-Save_The_Planet/epg-db` | Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 102 Heroes_FI-2A due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-202 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;
+- RESOLVED Heroes | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-Heroes/ap-Save_The_Planet/epg-web` | Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 102 Heroes_FI-2A due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-200 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;
+- RESOLVED MUHC | BD L3Out missing-target | `uni/tn-MUHC/BD-VLAN_2014_BD` | BD is associated to L3Out 'LEGACY_L3OUT' which does not exist; APIC fell back to tn-common/out-default, so the BD subnets are not advertised as intended.
+- RESOLVED MUHC | BD VRF missing-target | `uni/tn-MUHC/BD-VLAN_2014_BD` | BD points to VRF 'LEGACY_VRF' which does not exist in tenant MUHC or in tenant common (state missing-target). The BD and every EPG in it cannot be deployed.
+- RESOLVED MUHC | EPG BD missing-target | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2781_EPG` | EPG points to BD 'VLAN_2781_BD' which does not exist (state missing-target).
+- RESOLVED MUHC | EPG domain missing-target | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2781_EPG` | Domain uni/phys-LEGACY_SRVF_PHY does not exist (state missing-target).
+- RESOLVED POC-LN | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-APP` | Configuration failed for uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-APP node 101 eth1/41 due to Port Connected to Controller, debug message: port-configured-for-apic: Port is connected to the APIC;
+- RESOLVED POC-LN | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-DB` | Configuration failed for uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-DB node 101 eth1/41 due to Port Connected to Controller, debug message: port-configured-for-apic: Port is connected to the APIC;
+- RESOLVED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-LEGACY/cep-46:CD:BB:C0:00:00/ip-[10.193.101.5]` | In Tenant POC-LN, 10.193.101.5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP
+- RESOLVED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-LEGACY/cep-46:CD:BB:C0:00:00/ip-[2222::65:5]` | In Tenant POC-LN, 2222::65:5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP c
+- RESOLVED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-LEGACY/cep-47:CD:BB:C0:00:00/ip-[10.193.102.5]` | In Tenant POC-LN, 10.193.102.5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP
+- RESOLVED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-LEGACY/cep-47:CD:BB:C0:00:00/ip-[2222::66:5]` | In Tenant POC-LN, 2222::66:5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP c
+- RESOLVED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00/ip-[10.193.101.5]` | In Tenant POC-LN, 10.193.101.5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP
+- RESOLVED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00/ip-[2222::65:5]` | In Tenant POC-LN, 2222::65:5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-46:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP c
+- RESOLVED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00/ip-[10.193.102.5]` | In Tenant POC-LN, 10.193.102.5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP
+- RESOLVED POC-LN | Major fault F3083 | `uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00/ip-[2222::66:5]` | In Tenant POC-LN, 2222::66:5 is detected on multiple MACs (Context: 2424832. First 3 fvCEps: uni/tn-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB/cep-47:CD:BB:C0:00:00;). This can happen when different MACs                     are sourcing traffic with the same IP due to NIC teaming, duplicate external IP c
+- RESOLVED SnV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-SnV/ap-Chaos/epg-Web` | Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;
+- RESOLVED SnV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-SnV/ap-Evolution_X/epg-Web` | Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;
+- RESOLVED SnV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-SnV/ap-Power_Up/epg-Web` | Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;
+- RESOLVED SnV | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-SnV/ap-Rescue/epg-Web` | Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;
+- RESOLVED T1 | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-T1/ap-User_App_Profile/epg-Users_EPG` | Configuration failed for uni/tn-T1/ap-User_App_Profile/epg-Users_EPG node 102 eth1/28 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-60 :STP Segment Id not present for Encap. Either the EpG is not associated with a domain or the domain does not have t
+- RESOLVED T1 | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-T1/out-L3_OUT_FW` | Configuration failed for uni/tn-T1/out-L3_OUT_FW node 101 eth1/27 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-APP-DB-FW` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-BACKUP-FW` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-DNS` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-DNS-FW` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-L3OUT-MGMT-FW` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-L3OUT-WEB-FW` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-LDAP-FW` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-MONITORING-FW` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-SMTP-FW` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED TN-DEDUP-LAB | Contract service graph not instantiated | `uni/tn-TN-DEDUP-LAB/brc-C-WEB-APP-FW` | Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped.
+- RESOLVED hacki-tn-a | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-hacki-tn-a/out-L3-OSPF-500` | Configuration failed for uni/tn-hacki-tn-a/out-L3-OSPF-500 node 101 eth1/21 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-500 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either th
+- RESOLVED lab-t01 | Critical fault F0467 (EPG deployment on path failed) | `uni/tn-lab-t01/out-out-fw` | Configuration failed for uni/tn-lab-t01/out-out-fw node 101 eth1/33 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;
+
+New critical faults:
+- none
+
+| Drift type | Baseline | Prev | Now | Delta | +vs baseline | -vs baseline |
+|---|---:|---:|---:|---:|---:|---:|
+| Tenant | 16 | 22 | 5 | -17 | 1 | 12 |
+| VRF | 18 | 33 | 7 | -26 | 1 | 12 |
+| BD | 23 | 34 | 5 | -29 | 1 | 19 |
+| Subnet (BD) | 23 | 35 | 1 | -34 | 0 | 22 |
+| AP | 16 | 22 | 3 | -19 | 0 | 13 |
+| EPG | 33 | 48 | 2 | -46 | 0 | 31 |

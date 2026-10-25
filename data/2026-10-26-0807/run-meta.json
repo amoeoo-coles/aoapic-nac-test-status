@@ -1,0 +1,14 @@
+{
+ "stamp": "2026-10-26-0807",
+ "kind": "scheduled",
+ "morning": true,
+ "published_at": "2026-10-26T08:07:44+11:00",
+ "files": [
+  "daily-summary.json",
+  "daily-summary.md",
+  "drift-summary.json",
+  "drift-summary.md",
+  "integrity-summary.json",
+  "integrity-summary.md"
+ ]
+}
