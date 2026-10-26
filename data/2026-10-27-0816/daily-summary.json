@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-10-27T08:16:53+11:00",
+  "generated_at_local": "2026-10-27 08:16:53 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 44/129 passed, 85 failed; 50 added, 84 removed",
+    "tests": 129,
+    "failed": 85,
+    "added": 50,
+    "removed": 84,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 10 broken, 35 warnings (2 of 11 tenants broken: Pune-Lab, TN-DEDUP-LAB)",
+    "broken": 10,
+    "warnings": 35,
+    "robot": {
+      "total": 122,
+      "passed": 121,
+      "failed": 1
+    },
+    "scorecard": [
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 6,
+        "score": 82,
+        "status": "WARN"
+      },
+      {
+        "tenant": "DEMO",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Pune-Lab",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 2,
+        "score": 84,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "ROR",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TF_LAB_SAMAN",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TN-DEDUP-LAB",
+        "in_baseline": true,
+        "broken": 9,
+        "warnings": 5,
+        "score": 0,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "TN-POC-LN",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 10,
+        "score": 70,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TN-PROD",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}

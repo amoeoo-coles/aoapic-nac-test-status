@@ -1,0 +1,721 @@
+{
+ "schema": 1,
+ "current": "2026-10-27-0816",
+ "previous": "2026-10-26-0807",
+ "current_snapshot": "2026-10-27 08:16:45 AEDT",
+ "previous_snapshot": "2026-10-26 08:07:40 AEDT",
+ "current_status": "attention",
+ "current_headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+ "tests": {
+  "integrity": {
+   "total": {
+    "prev": 18,
+    "now": 122,
+    "delta": 104
+   },
+   "passed": {
+    "prev": 18,
+    "now": 121,
+    "delta": 103
+   },
+   "failed": {
+    "prev": 0,
+    "now": 1,
+    "delta": 1
+   }
+  },
+  "drift": {
+   "total": {
+    "prev": 129,
+    "now": 129,
+    "delta": 0
+   },
+   "passed": {
+    "prev": 20,
+    "now": 44,
+    "delta": 24
+   },
+   "failed": {
+    "prev": 109,
+    "now": 85,
+    "delta": -24
+   }
+  }
+ },
+ "tests_newly_failing": [
+  "Pune-Lab :: Integrity contract Pune-Lab/Pune-Ping-allow: subjects and filters"
+ ],
+ "tests_fixed": [
+  "ROR :: Verify AP ROR/ROR_WEB_AP",
+  "ROR :: Verify BD ROR/ROR_DB_BD",
+  "ROR :: Verify BD ROR/ROR_WEB_BD",
+  "ROR :: Verify EPG ROR/ROR_WEB_AP/ROR_DB_EPG",
+  "ROR :: Verify EPG ROR/ROR_WEB_AP/ROR_WEB_EPG",
+  "ROR :: Verify Subnet ROR/ROR_DB_BD/10.33.6.1/24",
+  "ROR :: Verify Subnet ROR/ROR_DB_BD/fd00:a:17:6::1/64",
+  "ROR :: Verify Subnet ROR/ROR_WEB_BD/203.0.113.1/24",
+  "ROR :: Verify Subnet ROR/ROR_WEB_BD/3fff:cb:0:71::1/64",
+  "ROR :: Verify Tenant ROR",
+  "ROR :: Verify VRF ROR/ROR_VRF",
+  "TN-DEDUP-LAB :: Verify AP TN-DEDUP-LAB/AP-LAB",
+  "TN-DEDUP-LAB :: Verify BD TN-DEDUP-LAB/BD-LAB",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-App",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Backup",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-DB",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Dir",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Infra",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Mail",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Mgmt",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Mon",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Web",
+  "TN-DEDUP-LAB :: Verify Subnet TN-DEDUP-LAB/BD-LAB/10.99.1.1/24",
+  "TN-DEDUP-LAB :: Verify VRF TN-DEDUP-LAB/VRF-LAB"
+ ],
+ "tenants": {
+  "prev_total": 5,
+  "now_total": 11,
+  "added": [
+   "DEMO",
+   "Pune-Lab",
+   "ROR",
+   "TN-DEDUP-LAB",
+   "TN-POC-LN",
+   "TN-PROD"
+  ],
+  "removed": [],
+  "newly_broken": [],
+  "added_broken": [
+   "Pune-Lab",
+   "TN-DEDUP-LAB"
+  ],
+  "fixed": [],
+  "status_changes": [
+   {
+    "tenant": "common",
+    "prev": "WARN",
+    "now": "WARN",
+    "prev_score": 91,
+    "now_score": 82
+   },
+   {
+    "tenant": "mgmt",
+    "prev": "WARN",
+    "now": "WARN",
+    "prev_score": 94,
+    "now_score": 91
+   },
+   {
+    "tenant": "oneaciapp",
+    "prev": "WARN",
+    "now": "WARN",
+    "prev_score": 97,
+    "now_score": 91
+   },
+   {
+    "tenant": "TF_LAB_SAMAN",
+    "prev": "WARN",
+    "now": "WARN",
+    "prev_score": 94,
+    "now_score": 97
+   }
+  ],
+  "broken_prev": 0,
+  "broken_now": 2
+ },
+ "broken_relations": {
+  "prev": 0,
+  "now": 10,
+  "added": [
+   {
+    "tenant": "Pune-Lab",
+    "check": "Subject without filters",
+    "dn": "uni/tn-Pune-Lab/brc-Pune-Ping-allow/subj-HTTPS-SERVICE",
+    "reason": "Contract subject has no filter, so it permits nothing."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-BACKUP-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-DNS",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-DNS-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F0758: Service graph  for tenant TN-DEDUP-LAB could not be instantiated. Info: Unable to find LDevCtx for node:); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-L3OUT-MGMT-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-L3OUT-WEB-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-LDAP-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-MONITORING-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-SMTP-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-WEB-APP-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   }
+  ],
+  "resolved": [],
+  "reason_changed": []
+ },
+ "warnings": {
+  "prev": 8,
+  "now": 35,
+  "delta": 27
+ },
+ "faults": {
+  "new_critical": [],
+  "new_major": [],
+  "cleared_critical_major": [],
+  "fabric_totals": {
+   "critical": {
+    "prev": 2,
+    "now": 1
+   },
+   "major": {
+    "prev": 4,
+    "now": 4
+   },
+   "minor": {
+    "prev": 3,
+    "now": 85
+   },
+   "warning": {
+    "prev": 626,
+    "now": 4
+   },
+   "total": {
+    "prev": 640,
+    "now": 96
+   }
+  }
+ },
+ "drift_table": [
+  {
+   "type": "Tenant",
+   "baseline": 16,
+   "prev": 5,
+   "now": 11,
+   "delta": 6,
+   "added_vs_baseline": 5,
+   "removed_vs_baseline": 10
+  },
+  {
+   "type": "VRF",
+   "baseline": 18,
+   "prev": 7,
+   "now": 15,
+   "delta": 8,
+   "added_vs_baseline": 7,
+   "removed_vs_baseline": 10
+  },
+  {
+   "type": "BD",
+   "baseline": 23,
+   "prev": 5,
+   "now": 19,
+   "delta": 14,
+   "added_vs_baseline": 12,
+   "removed_vs_baseline": 16
+  },
+  {
+   "type": "Subnet (BD)",
+   "baseline": 23,
+   "prev": 1,
+   "now": 17,
+   "delta": 16,
+   "added_vs_baseline": 11,
+   "removed_vs_baseline": 17
+  },
+  {
+   "type": "AP",
+   "baseline": 16,
+   "prev": 3,
+   "now": 10,
+   "delta": 7,
+   "added_vs_baseline": 5,
+   "removed_vs_baseline": 11
+  },
+  {
+   "type": "EPG",
+   "baseline": 33,
+   "prev": 2,
+   "now": 23,
+   "delta": 21,
+   "added_vs_baseline": 10,
+   "removed_vs_baseline": 20
+  }
+ ],
+ "drift_objects": {
+  "appeared": [
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "DEMO",
+    "dn": "uni/tn-DEMO"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "DEMO",
+    "dn": "uni/tn-DEMO/BD-DEMO_prod_web1_BD"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "DEMO",
+    "dn": "uni/tn-DEMO/ap-DEMO_prod_AP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "DEMO",
+    "dn": "uni/tn-DEMO/ap-DEMO_prod_AP/epg-DEMO_prod_web1_201_EPG"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "DEMO",
+    "dn": "uni/tn-DEMO/ctx-prod"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Pune-Lab",
+    "dn": "uni/tn-Pune-Lab"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Pune-Lab",
+    "dn": "uni/tn-Pune-Lab/BD-Pune-BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Pune-Lab",
+    "dn": "uni/tn-Pune-Lab/BD-Pune-BD/subnet-[10.10.10.20/8]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Pune-Lab",
+    "dn": "uni/tn-Pune-Lab/ap-APP-BD"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Pune-Lab",
+    "dn": "uni/tn-Pune-Lab/ap-APP-BD/epg-EPG-Web"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "Pune-Lab",
+    "dn": "uni/tn-Pune-Lab/ctx-Pune-VRF"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TF_LAB_SAMAN",
+    "dn": "uni/tn-TF_LAB_SAMAN/BD-BD_10/subnet-[10.100.0.1/24]"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TF_LAB_SAMAN",
+    "dn": "uni/tn-TF_LAB_SAMAN/BD-BD_10/subnet-[10.101.0.1/24]"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/BD-BD-FW-POC"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/BD-BD-FW-POC/subnet-[10.31.99.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/BD-BD-POC-APP"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/BD-BD-POC-APP/subnet-[10.31.20.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/BD-BD-POC-DB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/BD-BD-POC-DB/subnet-[10.31.30.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/BD-BD-POC-LEGACY"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/BD-BD-POC-WEB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/BD-BD-POC-WEB/subnet-[10.31.10.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/ap-AP-POC-SHOP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-APP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-DB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-LEGACY"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/ap-AP-POC-SHOP/epg-EPG-POC-WEB"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN-POC-LN",
+    "dn": "uni/tn-TN-POC-LN/ctx-VRF-POC-PROD"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/BD-BD-DEMO-CRM-APP"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/BD-BD-DEMO-CRM-APP/subnet-[10.10.20.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/BD-BD-DEMO-CRM-DB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/BD-BD-DEMO-CRM-DB/subnet-[10.10.30.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/BD-BD-DEMO-CRM-WEB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/BD-BD-DEMO-CRM-WEB/subnet-[10.10.10.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/ap-AP-DEMO-CRM"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/ap-AP-DEMO-CRM/epg-EPG-DEMO-CRM-APP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/ap-AP-DEMO-CRM/epg-EPG-DEMO-CRM-DB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/ap-AP-DEMO-CRM/epg-EPG-DEMO-CRM-WEB"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN-PROD",
+    "dn": "uni/tn-TN-PROD/ctx-VRF-PROD"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/BD-OneAciApp_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/BD-OneAciApp_BD/subnet-[192.168.50.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/ap-OneAciApp_AP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/ap-OneAciApp_AP/epg-EPG1"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/ctx-OneaciApp_VRF"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/ctx-VRF1"
+   }
+  ],
+  "disappeared_again": [],
+  "newly_removed_from_baseline": [],
+  "restored_to_baseline": [
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_DB_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_DB_BD/subnet-[10.33.6.1/24]"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_DB_BD/subnet-[fd00:a:17:6::1/64]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_WEB_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_WEB_BD/subnet-[203.0.113.1/24]"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_WEB_BD/subnet-[3fff:cb:0:71::1/64]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/ap-ROR_WEB_AP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_DB_EPG"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_WEB_EPG"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/ctx-ROR_VRF"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/BD-BD-LAB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/BD-BD-LAB/subnet-[10.99.1.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-App"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Backup"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-DB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Dir"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Infra"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mail"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mgmt"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mon"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Web"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ctx-VRF-LAB"
+   }
+  ]
+ }
+}
