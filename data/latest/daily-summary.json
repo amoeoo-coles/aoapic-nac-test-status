@@ -1,44 +1,76 @@
 {
   "schema": 1,
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "status": "attention",
   "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
-  "generated_at": "2026-10-27T08:16:53+11:00",
-  "generated_at_local": "2026-10-27 08:16:53 AEDT",
+  "generated_at": "2026-10-28T08:22:42+11:00",
+  "generated_at_local": "2026-10-28 08:22:42 AEDT",
   "drift": {
     "status": "drift",
-    "headline": "DRIFT DETECTED - tests 44/129 passed, 85 failed; 50 added, 84 removed",
+    "headline": "DRIFT DETECTED - tests 48/129 passed, 81 failed; 3289 added, 80 removed",
     "tests": 129,
-    "failed": 85,
-    "added": 50,
-    "removed": 84,
+    "failed": 81,
+    "added": 3289,
+    "removed": 80,
     "folder": "drift/"
   },
   "integrity": {
     "status": "broken",
-    "headline": "BROKEN RELATIONS FOUND - 10 broken, 35 warnings (2 of 11 tenants broken: Pune-Lab, TN-DEDUP-LAB)",
-    "broken": 10,
-    "warnings": 35,
+    "headline": "BROKEN RELATIONS FOUND - 49 broken, 1104 warnings (9 of 22 tenants broken: ACME, Learning, MUHC, Pune-Lab, TN-DEDUP-LAB, TN-POC-LN, Test, mgmt, oneaciapp)",
+    "broken": 49,
+    "warnings": 1104,
     "robot": {
-      "total": 122,
-      "passed": 121,
-      "failed": 1
+      "total": 2319,
+      "passed": 2301,
+      "failed": 18
     },
     "scorecard": [
+      {
+        "tenant": "ACME",
+        "in_baseline": false,
+        "broken": 2,
+        "warnings": 3,
+        "score": 71,
+        "status": "BROKEN"
+      },
       {
         "tenant": "common",
         "in_baseline": true,
         "broken": 0,
-        "warnings": 6,
-        "score": 82,
+        "warnings": 3,
+        "score": 91,
         "status": "WARN"
       },
       {
-        "tenant": "DEMO",
+        "tenant": "DC_Test",
         "in_baseline": false,
         "broken": 0,
-        "warnings": 2,
-        "score": 94,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "DEV",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "hacki-tenant-t",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "hacki-tn-a",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 7,
+        "score": 79,
         "status": "WARN"
       },
       {
@@ -50,27 +82,59 @@
         "status": "HEALTHY"
       },
       {
+        "tenant": "LAB",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Learning",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 4,
+        "score": 78,
+        "status": "BROKEN"
+      },
+      {
         "tenant": "mgmt",
         "in_baseline": true,
-        "broken": 0,
+        "broken": 1,
         "warnings": 3,
-        "score": 91,
-        "status": "WARN"
+        "score": 81,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "MUHC",
+        "in_baseline": true,
+        "broken": 13,
+        "warnings": 0,
+        "score": 0,
+        "status": "BROKEN"
       },
       {
         "tenant": "oneaciapp",
         "in_baseline": true,
+        "broken": 1,
+        "warnings": 7,
+        "score": 69,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "PROVA1",
+        "in_baseline": false,
         "broken": 0,
-        "warnings": 3,
-        "score": 91,
+        "warnings": 2,
+        "score": 94,
         "status": "WARN"
       },
       {
         "tenant": "Pune-Lab",
         "in_baseline": false,
-        "broken": 1,
-        "warnings": 2,
-        "score": 84,
+        "broken": 2,
+        "warnings": 1,
+        "score": 77,
         "status": "BROKEN"
       },
       {
@@ -82,36 +146,60 @@
         "status": "WARN"
       },
       {
-        "tenant": "TF_LAB_SAMAN",
+        "tenant": "T1",
         "in_baseline": false,
         "broken": 0,
-        "warnings": 1,
-        "score": 97,
+        "warnings": 1050,
+        "score": 0,
         "status": "WARN"
+      },
+      {
+        "tenant": "Test",
+        "in_baseline": false,
+        "broken": 10,
+        "warnings": 2,
+        "score": 0,
+        "status": "BROKEN"
       },
       {
         "tenant": "TN-DEDUP-LAB",
         "in_baseline": true,
         "broken": 9,
-        "warnings": 5,
+        "warnings": 6,
         "score": 0,
         "status": "BROKEN"
       },
       {
-        "tenant": "TN-POC-LN",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 10,
-        "score": 70,
-        "status": "WARN"
-      },
-      {
-        "tenant": "TN-PROD",
+        "tenant": "tn-DEMO-CRM-DEV",
         "in_baseline": false,
         "broken": 0,
         "warnings": 0,
         "score": 100,
         "status": "HEALTHY"
+      },
+      {
+        "tenant": "TN-POC-LN",
+        "in_baseline": false,
+        "broken": 10,
+        "warnings": 3,
+        "score": 0,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "tn-PORTAIL-DEV",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "tn_BFT",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 6,
+        "score": 82,
+        "status": "WARN"
       }
     ],
     "folder": "integrity/"
