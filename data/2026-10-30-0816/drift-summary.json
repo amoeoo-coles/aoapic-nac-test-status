@@ -1,0 +1,1613 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "status": "drift",
+  "drift": true,
+  "headline": "DRIFT DETECTED - tests 35/129 passed, 94 failed; 67 added, 93 removed",
+  "generated_at": "2026-10-30T08:16:24+11:00",
+  "generated_at_local": "2026-10-30 08:16:24 AEDT",
+  "apic_url": "https://sandboxapicdc.cisco.com",
+  "nac_test_rc": 94,
+  "baseline": {
+    "path": "baseline/data",
+    "info": "frozen 2026-10-22 10:47 AEDT (Australia/Melbourne) by `scripts/drift_report.sh`"
+  },
+  "tests": {
+    "available": true,
+    "total": 129,
+    "passed": 35,
+    "failed": 94,
+    "skipped": 0,
+    "failures": [
+      {
+        "suite": "Heroes",
+        "test": "Verify Tenant Heroes",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify VRF Heroes/Heroes_Only",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ctx-Heroes_Only not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify BD Heroes/Hero_Land",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/BD-Hero_Land not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify Subnet Heroes/Hero_Land/10.1.120.1/22",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/BD-Hero_Land/subnet-[10.1.120.1/22] not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify Subnet Heroes/Hero_Land/192.168.120.1/22",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/BD-Hero_Land/subnet-[192.168.120.1/22] not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify AP Heroes/Save_The_Planet",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ap-Save_The_Planet not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify EPG Heroes/Save_The_Planet/web",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ap-Save_The_Planet/epg-web not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify EPG Heroes/Save_The_Planet/app",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ap-Save_The_Planet/epg-app not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify EPG Heroes/Save_The_Planet/db",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ap-Save_The_Planet/epg-db not found on APIC"
+      },
+      {
+        "suite": "MUHC",
+        "test": "Verify BD MUHC/VLAN_2780_BD",
+        "kind": "missing",
+        "reason": "Object uni/tn-MUHC/BD-VLAN_2780_BD not found on APIC"
+      },
+      {
+        "suite": "MUHC",
+        "test": "Verify BD MUHC/VLAN_2701_BD",
+        "kind": "missing",
+        "reason": "Object uni/tn-MUHC/BD-VLAN_2701_BD not found on APIC"
+      },
+      {
+        "suite": "MUHC",
+        "test": "Verify Subnet MUHC/VLAN_2701_BD/172.26.200.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-MUHC/BD-VLAN_2701_BD/subnet-[172.26.200.1/24] not found on APIC"
+      },
+      {
+        "suite": "MUHC",
+        "test": "Verify EPG MUHC/LEGACY_APR/VLAN_2780_EPG",
+        "kind": "missing",
+        "reason": "Object uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2780_EPG not found on APIC"
+      },
+      {
+        "suite": "MUHC",
+        "test": "Verify EPG MUHC/LEGACY_APR/VLAN_2701_EPG",
+        "kind": "missing",
+        "reason": "Object uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2701_EPG not found on APIC"
+      },
+      {
+        "suite": "OS1",
+        "test": "Verify Tenant OS1",
+        "kind": "missing",
+        "reason": "Object uni/tn-OS1 not found on APIC"
+      },
+      {
+        "suite": "OS1",
+        "test": "Verify VRF OS1/OS1",
+        "kind": "missing",
+        "reason": "Object uni/tn-OS1/ctx-OS1 not found on APIC"
+      },
+      {
+        "suite": "OS1",
+        "test": "Verify BD OS1/VLAN1",
+        "kind": "missing",
+        "reason": "Object uni/tn-OS1/BD-VLAN1 not found on APIC"
+      },
+      {
+        "suite": "OS1",
+        "test": "Verify BD OS1/vlan",
+        "kind": "missing",
+        "reason": "Object uni/tn-OS1/BD-vlan not found on APIC"
+      },
+      {
+        "suite": "OS1",
+        "test": "Verify Subnet OS1/vlan/10.10.10.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-OS1/BD-vlan/subnet-[10.10.10.1/24] not found on APIC"
+      },
+      {
+        "suite": "OS1",
+        "test": "Verify AP OS1/APP-Prod",
+        "kind": "missing",
+        "reason": "Object uni/tn-OS1/ap-APP-Prod not found on APIC"
+      },
+      {
+        "suite": "OS1",
+        "test": "Verify EPG OS1/APP-Prod/APP-WEB",
+        "kind": "missing",
+        "reason": "Object uni/tn-OS1/ap-APP-Prod/epg-APP-WEB not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify Tenant prod",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify VRF prod/prod.prod-vrf",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/ctx-prod.prod-vrf not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify BD prod/10.1.103.0_24",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/BD-10.1.103.0_24 not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify Subnet prod/10.1.103.0_24/10.1.103.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/BD-10.1.103.0_24/subnet-[10.1.103.1/24] not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify BD prod/10.1.102.0_24",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/BD-10.1.102.0_24 not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify Subnet prod/10.1.102.0_24/10.1.102.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/BD-10.1.102.0_24/subnet-[10.1.102.1/24] not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify BD prod/10.1.101.0_24",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/BD-10.1.101.0_24 not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify Subnet prod/10.1.101.0_24/10.1.101.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/BD-10.1.101.0_24/subnet-[10.1.101.1/24] not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify BD prod/10.1.100.0_24",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/BD-10.1.100.0_24 not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify Subnet prod/10.1.100.0_24/10.1.100.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/BD-10.1.100.0_24/subnet-[10.1.100.1/24] not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify AP prod/vlans",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/ap-vlans not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify EPG prod/vlans/vlan102",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/ap-vlans/epg-vlan102 not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify EPG prod/vlans/vlan100",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/ap-vlans/epg-vlan100 not found on APIC"
+      },
+      {
+        "suite": "Prod",
+        "test": "Verify EPG prod/vlans/vlan101",
+        "kind": "missing",
+        "reason": "Object uni/tn-prod/ap-vlans/epg-vlan101 not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify Tenant ROR",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify VRF ROR/ROR_VRF",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/ctx-ROR_VRF not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify BD ROR/ROR_WEB_BD",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/BD-ROR_WEB_BD not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify Subnet ROR/ROR_WEB_BD/203.0.113.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/BD-ROR_WEB_BD/subnet-[203.0.113.1/24] not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify Subnet ROR/ROR_WEB_BD/3fff:cb:0:71::1/64",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/BD-ROR_WEB_BD/subnet-[3fff:cb:0:71::1/64] not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify BD ROR/ROR_DB_BD",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/BD-ROR_DB_BD not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify Subnet ROR/ROR_DB_BD/10.33.6.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/BD-ROR_DB_BD/subnet-[10.33.6.1/24] not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify Subnet ROR/ROR_DB_BD/fd00:a:17:6::1/64",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/BD-ROR_DB_BD/subnet-[fd00:a:17:6::1/64] not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify AP ROR/ROR_WEB_AP",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/ap-ROR_WEB_AP not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify EPG ROR/ROR_WEB_AP/ROR_WEB_EPG",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_WEB_EPG not found on APIC"
+      },
+      {
+        "suite": "ROR",
+        "test": "Verify EPG ROR/ROR_WEB_AP/ROR_DB_EPG",
+        "kind": "missing",
+        "reason": "Object uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_DB_EPG not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify Tenant SnV",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify VRF SnV/Superverse",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ctx-Superverse not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify BD SnV/antigravity",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/BD-antigravity not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify Subnet SnV/antigravity/10.2.10.1/23",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/BD-antigravity/subnet-[10.2.10.1/23] not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify AP SnV/Rescue",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Rescue not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify EPG SnV/Rescue/Web",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Rescue/epg-Web not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify EPG SnV/Rescue/Database",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Rescue/epg-Database not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify AP SnV/Evolution_X",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Evolution_X not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify EPG SnV/Evolution_X/Database",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Evolution_X/epg-Database not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify EPG SnV/Evolution_X/Web",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Evolution_X/epg-Web not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify AP SnV/Chaos",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Chaos not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify EPG SnV/Chaos/Web",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Chaos/epg-Web not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify EPG SnV/Chaos/Database",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Chaos/epg-Database not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify AP SnV/Power_Up",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Power_Up not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify EPG SnV/Power_Up/Web",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Power_Up/epg-Web not found on APIC"
+      },
+      {
+        "suite": "SnV",
+        "test": "Verify EPG SnV/Power_Up/Database",
+        "kind": "missing",
+        "reason": "Object uni/tn-SnV/ap-Power_Up/epg-Database not found on APIC"
+      },
+      {
+        "suite": "TEST",
+        "test": "Verify Tenant TEST",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST not found on APIC"
+      },
+      {
+        "suite": "TEST",
+        "test": "Verify VRF TEST/TEST",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST/ctx-TEST not found on APIC"
+      },
+      {
+        "suite": "TEST",
+        "test": "Verify BD TEST/TESTBD",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST/BD-TESTBD not found on APIC"
+      },
+      {
+        "suite": "TEST",
+        "test": "Verify Subnet TEST/TESTBD/1.1.1.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST/BD-TESTBD/subnet-[1.1.1.1/24] not found on APIC"
+      },
+      {
+        "suite": "TEST",
+        "test": "Verify AP TEST/TEST_AAEP",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST/ap-TEST_AAEP not found on APIC"
+      },
+      {
+        "suite": "TEST",
+        "test": "Verify EPG TEST/TEST_AAEP/TESTEPG",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST/ap-TEST_AAEP/epg-TESTEPG not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify Tenant TEST-ABC1",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1 not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify VRF TEST-ABC1/VRF-INT-TESTABC1",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/ctx-VRF-INT-TESTABC1 not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify BD TEST-ABC1/BD-INT-TESTABC1",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1 not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify Subnet TEST-ABC1/BD-INT-TESTABC1/10.10.10.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.10.1/24] not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify Subnet TEST-ABC1/BD-INT-TESTABC1/10.10.20.1/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.20.1/24] not found on APIC"
+      },
+      {
+        "suite": "TEST-ABC1",
+        "test": "Verify BD TEST-ABC1/BD-L2-TESTABC1",
+        "kind": "missing",
+        "reason": "Object uni/tn-TEST-ABC1/BD-BD-L2-TESTABC1 not found on APIC"
+      },
+      {
+        "suite": "TN-DEDUP-LAB",
+        "test": "Verify Tenant TN-DEDUP-LAB",
+        "kind": "changed",
+        "reason": "Ansible test running != Testumgebung fuer aci_contract_dedup.yml"
+      },
+      {
+        "suite": "Test-Tenant",
+        "test": "Verify Tenant Test-Tenant",
+        "kind": "missing",
+        "reason": "Object uni/tn-Test-Tenant not found on APIC"
+      },
+      {
+        "suite": "Test-Tenant",
+        "test": "Verify VRF Test-Tenant/Test-VRF",
+        "kind": "missing",
+        "reason": "Object uni/tn-Test-Tenant/ctx-Test-VRF not found on APIC"
+      },
+      {
+        "suite": "Test-Tenant",
+        "test": "Verify BD Test-Tenant/test-BD-01",
+        "kind": "missing",
+        "reason": "Object uni/tn-Test-Tenant/BD-test-BD-01 not found on APIC"
+      },
+      {
+        "suite": "Test-Tenant",
+        "test": "Verify Subnet Test-Tenant/test-BD-01/10.10.14.254/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.14.254/24] not found on APIC"
+      },
+      {
+        "suite": "Test-Tenant",
+        "test": "Verify Subnet Test-Tenant/test-BD-01/10.10.11.254/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.11.254/24] not found on APIC"
+      },
+      {
+        "suite": "Test-Tenant",
+        "test": "Verify Subnet Test-Tenant/test-BD-01/10.10.10.254/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.10.254/24] not found on APIC"
+      },
+      {
+        "suite": "Test-Tenant",
+        "test": "Verify Subnet Test-Tenant/test-BD-01/10.10.12.254/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.12.254/24] not found on APIC"
+      },
+      {
+        "suite": "Test-Tenant",
+        "test": "Verify AP Test-Tenant/Test-APP-Profile-01",
+        "kind": "missing",
+        "reason": "Object uni/tn-Test-Tenant/ap-Test-APP-Profile-01 not found on APIC"
+      },
+      {
+        "suite": "Test-Tenant",
+        "test": "Verify EPG Test-Tenant/Test-APP-Profile-01/test-epg-01",
+        "kind": "missing",
+        "reason": "Object uni/tn-Test-Tenant/ap-Test-APP-Profile-01/epg-test-epg-01 not found on APIC"
+      },
+      {
+        "suite": "UT",
+        "test": "Verify Tenant UT",
+        "kind": "missing",
+        "reason": "Object uni/tn-UT not found on APIC"
+      },
+      {
+        "suite": "UT",
+        "test": "Verify VRF UT/UVRF",
+        "kind": "missing",
+        "reason": "Object uni/tn-UT/ctx-UVRF not found on APIC"
+      },
+      {
+        "suite": "UT",
+        "test": "Verify VRF UT/FWVRF",
+        "kind": "missing",
+        "reason": "Object uni/tn-UT/ctx-FWVRF not found on APIC"
+      },
+      {
+        "suite": "UT",
+        "test": "Verify BD UT/UBD",
+        "kind": "missing",
+        "reason": "Object uni/tn-UT/BD-UBD not found on APIC"
+      },
+      {
+        "suite": "UT",
+        "test": "Verify Subnet UT/UBD/192.168.10.254/24",
+        "kind": "missing",
+        "reason": "Object uni/tn-UT/BD-UBD/subnet-[192.168.10.254/24] not found on APIC"
+      },
+      {
+        "suite": "UT",
+        "test": "Verify BD UT/FBD",
+        "kind": "missing",
+        "reason": "Object uni/tn-UT/BD-FBD not found on APIC"
+      },
+      {
+        "suite": "UT",
+        "test": "Verify AP UT/UAP",
+        "kind": "missing",
+        "reason": "Object uni/tn-UT/ap-UAP not found on APIC"
+      },
+      {
+        "suite": "UT",
+        "test": "Verify EPG UT/UAP/USER_EPG",
+        "kind": "missing",
+        "reason": "Object uni/tn-UT/ap-UAP/epg-USER_EPG not found on APIC"
+      },
+      {
+        "suite": "tn-MGK",
+        "test": "Verify Tenant tn-MGK",
+        "kind": "missing",
+        "reason": "Object uni/tn-tn-MGK not found on APIC"
+      },
+      {
+        "suite": "tn-MGK",
+        "test": "Verify VRF tn-MGK/ctx-MGK",
+        "kind": "missing",
+        "reason": "Object uni/tn-tn-MGK/ctx-ctx-MGK not found on APIC"
+      }
+    ]
+  },
+  "counts": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "baseline": 16,
+      "current": 17,
+      "added": 11,
+      "removed": 10
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "baseline": 18,
+      "current": 20,
+      "added": 13,
+      "removed": 11
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "baseline": 23,
+      "current": 16,
+      "added": 11,
+      "removed": 18
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "baseline": 23,
+      "current": 12,
+      "added": 10,
+      "removed": 21
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "baseline": 16,
+      "current": 10,
+      "added": 5,
+      "removed": 11
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "baseline": 33,
+      "current": 28,
+      "added": 17,
+      "removed": 22
+    }
+  ],
+  "added": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "ASN-02",
+      "dn": "uni/tn-ASN-02"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "ASN_01",
+      "dn": "uni/tn-ASN_01"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Automation-Test",
+      "dn": "uni/tn-Automation-Test"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Irelia-TEST",
+      "dn": "uni/tn-Irelia-TEST"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "T1_FIRST",
+      "dn": "uni/tn-T1_FIRST"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TN-AUTO",
+      "dn": "uni/tn-TN-AUTO"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TN_PROD",
+      "dn": "uni/tn-TN_PROD"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TestTenant",
+      "dn": "uni/tn-TestTenant"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "ddso",
+      "dn": "uni/tn-ddso"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "ASN-02",
+      "dn": "uni/tn-ASN-02/ctx-VRF_ASN-02A"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "ASN-02",
+      "dn": "uni/tn-ASN-02/ctx-VRF_PRUEBA"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "ASN_01",
+      "dn": "uni/tn-ASN_01/ctx-VRF_A1"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "ASN_01",
+      "dn": "uni/tn-ASN_01/ctx-VRF_A2"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "ASN_01",
+      "dn": "uni/tn-ASN_01/ctx-VRF_A3"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "T1_FIRST",
+      "dn": "uni/tn-T1_FIRST/ctx-V1_First"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TN-AUTO",
+      "dn": "uni/tn-TN-AUTO/ctx-VRF_AUTO"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TN_PROD",
+      "dn": "uni/tn-TN_PROD/ctx-VRF_PROD"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/ctx-DEV"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/ctx-PROD"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TestTenant",
+      "dn": "uni/tn-TestTenant/ctx-TestVRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "ddso",
+      "dn": "uni/tn-ddso/ctx-VRF11"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ctx-gtest-vrf"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "ASN_01",
+      "dn": "uni/tn-ASN_01/BD-BD01"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/BD-VLAN_2341_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/BD-VLAN_2342_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "T1_FIRST",
+      "dn": "uni/tn-T1_FIRST/BD-BD_FIRST"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TN-AUTO",
+      "dn": "uni/tn-TN-AUTO/BD-BD_AUTO"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/BD-BD10"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/BD-BD100"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/BD-BD20"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/BD-BD200"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "ddso",
+      "dn": "uni/tn-ddso/BD-BD11"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/BD-gtest-bridge"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "ASN_01",
+      "dn": "uni/tn-ASN_01/BD-BD01/subnet-[10.1.1.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "ASN_01",
+      "dn": "uni/tn-ASN_01/BD-BD01/subnet-[11.1.1.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "ASN_01",
+      "dn": "uni/tn-ASN_01/BD-BD01/subnet-[12.1.1.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/BD-VLAN_2341_BD/subnet-[172.26.193.97/27]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/BD-VLAN_2342_BD/subnet-[172.26.193.129/27]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "T1_FIRST",
+      "dn": "uni/tn-T1_FIRST/BD-BD_FIRST/subnet-[192.168.20.254/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/BD-BD10/subnet-[192.168.10.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/BD-BD100/subnet-[192.168.100.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/BD-BD20/subnet-[192.168.20.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/BD-BD200/subnet-[192.168.200.1/24]"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "ASN-02",
+      "dn": "uni/tn-ASN-02/ap-AP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "T1_FIRST",
+      "dn": "uni/tn-T1_FIRST/ap-Users_APP_Profile"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/ap-DEV"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/ap-PROD"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2341_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2342_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "T1_FIRST",
+      "dn": "uni/tn-T1_FIRST/ap-Users_APP_Profile/epg-USERS_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/ap-DEV/epg-DEV-APP"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/ap-DEV/epg-DEV-DB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/ap-PROD/epg-PROD-APP"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Test101",
+      "dn": "uni/tn-Test101/ap-PROD/epg-PROD-DB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-Arizona"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-California"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-Florida"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-Idaho"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-Nebraska"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-Nevada"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-Oklahoma"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-Texas"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-Utah"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "gtest",
+      "dn": "uni/tn-gtest/ap-gtest-apps/epg-Washington"
+    }
+  ],
+  "removed": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "OS1",
+      "dn": "uni/tn-OS1"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TEST",
+      "dn": "uni/tn-TEST"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Test-Tenant",
+      "dn": "uni/tn-Test-Tenant"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "UT",
+      "dn": "uni/tn-UT"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "prod",
+      "dn": "uni/tn-prod"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "tn-MGK",
+      "dn": "uni/tn-tn-MGK"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ctx-Heroes_Only"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "OS1",
+      "dn": "uni/tn-OS1/ctx-OS1"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/ctx-ROR_VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ctx-Superverse"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/ctx-VRF-INT-TESTABC1"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TEST",
+      "dn": "uni/tn-TEST/ctx-TEST"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Test-Tenant",
+      "dn": "uni/tn-Test-Tenant/ctx-Test-VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "UT",
+      "dn": "uni/tn-UT/ctx-FWVRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "UT",
+      "dn": "uni/tn-UT/ctx-UVRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/ctx-prod.prod-vrf"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "tn-MGK",
+      "dn": "uni/tn-tn-MGK/ctx-ctx-MGK"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/BD-Hero_Land"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/BD-VLAN_2701_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/BD-VLAN_2780_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "OS1",
+      "dn": "uni/tn-OS1/BD-VLAN1"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "OS1",
+      "dn": "uni/tn-OS1/BD-vlan"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/BD-ROR_DB_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/BD-ROR_WEB_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/BD-antigravity"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/BD-BD-L2-TESTABC1"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TEST",
+      "dn": "uni/tn-TEST/BD-TESTBD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Test-Tenant",
+      "dn": "uni/tn-Test-Tenant/BD-test-BD-01"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "UT",
+      "dn": "uni/tn-UT/BD-FBD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "UT",
+      "dn": "uni/tn-UT/BD-UBD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/BD-10.1.100.0_24"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/BD-10.1.101.0_24"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/BD-10.1.102.0_24"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/BD-10.1.103.0_24"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/BD-Hero_Land/subnet-[10.1.120.1/22]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/BD-Hero_Land/subnet-[192.168.120.1/22]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/BD-VLAN_2701_BD/subnet-[172.26.200.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "OS1",
+      "dn": "uni/tn-OS1/BD-vlan/subnet-[10.10.10.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/BD-ROR_DB_BD/subnet-[10.33.6.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/BD-ROR_DB_BD/subnet-[fd00:a:17:6::1/64]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/BD-ROR_WEB_BD/subnet-[203.0.113.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/BD-ROR_WEB_BD/subnet-[3fff:cb:0:71::1/64]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/BD-antigravity/subnet-[10.2.10.1/23]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.10.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TEST-ABC1",
+      "dn": "uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.20.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TEST",
+      "dn": "uni/tn-TEST/BD-TESTBD/subnet-[1.1.1.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Test-Tenant",
+      "dn": "uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.10.254/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Test-Tenant",
+      "dn": "uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.11.254/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Test-Tenant",
+      "dn": "uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.12.254/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Test-Tenant",
+      "dn": "uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.14.254/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "UT",
+      "dn": "uni/tn-UT/BD-UBD/subnet-[192.168.10.254/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/BD-10.1.100.0_24/subnet-[10.1.100.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/BD-10.1.101.0_24/subnet-[10.1.101.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/BD-10.1.102.0_24/subnet-[10.1.102.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/BD-10.1.103.0_24/subnet-[10.1.103.1/24]"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "OS1",
+      "dn": "uni/tn-OS1/ap-APP-Prod"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/ap-ROR_WEB_AP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Chaos"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Evolution_X"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Power_Up"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Rescue"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "TEST",
+      "dn": "uni/tn-TEST/ap-TEST_AAEP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Test-Tenant",
+      "dn": "uni/tn-Test-Tenant/ap-Test-APP-Profile-01"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "UT",
+      "dn": "uni/tn-UT/ap-UAP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/ap-vlans"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-app"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-db"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-web"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2701_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "MUHC",
+      "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2780_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "OS1",
+      "dn": "uni/tn-OS1/ap-APP-Prod/epg-APP-WEB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_DB_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "ROR",
+      "dn": "uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_WEB_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Chaos/epg-Database"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Chaos/epg-Web"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Evolution_X/epg-Database"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Evolution_X/epg-Web"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Power_Up/epg-Database"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Power_Up/epg-Web"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Rescue/epg-Database"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Rescue/epg-Web"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TEST",
+      "dn": "uni/tn-TEST/ap-TEST_AAEP/epg-TESTEPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Test-Tenant",
+      "dn": "uni/tn-Test-Tenant/ap-Test-APP-Profile-01/epg-test-epg-01"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "UT",
+      "dn": "uni/tn-UT/ap-UAP/epg-USER_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/ap-vlans/epg-vlan100"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/ap-vlans/epg-vlan101"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "prod",
+      "dn": "uni/tn-prod/ap-vlans/epg-vlan102"
+    }
+  ],
+  "faults": {
+    "critical": 17,
+    "major": 9,
+    "minor": 49,
+    "warning": 604,
+    "info": 0,
+    "cleared": 6,
+    "total": 685
+  },
+  "errors": [],
+  "note": null
+}
