@@ -1,15 +1,15 @@
-# ACI drift report: 2026-10-30
+# ACI drift report: 2026-10-31
 
-## DRIFT DETECTED - tests 35/129 passed, 94 failed; 67 added, 93 removed
+## DRIFT DETECTED - tests 31/129 passed, 98 failed; 50 added, 98 removed
 
 - APIC: https://sandboxapicdc.cisco.com
-- Generated: 2026-10-30 08:16:24 AEDT (Australia/Melbourne)
+- Generated: 2026-10-31 08:22:01 AEDT (Australia/Melbourne)
 - Baseline: `baseline/data/` (frozen 2026-10-22 10:47 AEDT (Australia/Melbourne) by `scripts/drift_report.sh`)
 - Status: `drift`
 
 ## nac-test
 
-- Tests: **129** total, **35** passed, **94** failed, 0 skipped (nac-test exit code 94)
+- Tests: **129** total, **31** passed, **98** failed, 0 skipped (nac-test exit code 98)
 
 | Suite | Test | Kind | Reason |
 |---|---|---|---|
@@ -22,9 +22,11 @@
 | Heroes | Verify EPG Heroes/Save_The_Planet/web | missing | Object uni/tn-Heroes/ap-Save_The_Planet/epg-web not found on APIC |
 | Heroes | Verify EPG Heroes/Save_The_Planet/app | missing | Object uni/tn-Heroes/ap-Save_The_Planet/epg-app not found on APIC |
 | Heroes | Verify EPG Heroes/Save_The_Planet/db | missing | Object uni/tn-Heroes/ap-Save_The_Planet/epg-db not found on APIC |
+| MUHC | Verify Tenant MUHC | missing | Object uni/tn-MUHC not found on APIC |
 | MUHC | Verify BD MUHC/VLAN_2780_BD | missing | Object uni/tn-MUHC/BD-VLAN_2780_BD not found on APIC |
 | MUHC | Verify BD MUHC/VLAN_2701_BD | missing | Object uni/tn-MUHC/BD-VLAN_2701_BD not found on APIC |
 | MUHC | Verify Subnet MUHC/VLAN_2701_BD/172.26.200.1/24 | missing | Object uni/tn-MUHC/BD-VLAN_2701_BD/subnet-[172.26.200.1/24] not found on APIC |
+| MUHC | Verify AP MUHC/LEGACY_APR | missing | Object uni/tn-MUHC/ap-LEGACY_APR not found on APIC |
 | MUHC | Verify EPG MUHC/LEGACY_APR/VLAN_2780_EPG | missing | Object uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2780_EPG not found on APIC |
 | MUHC | Verify EPG MUHC/LEGACY_APR/VLAN_2701_EPG | missing | Object uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2701_EPG not found on APIC |
 | OS1 | Verify Tenant OS1 | missing | Object uni/tn-OS1 not found on APIC |
@@ -48,17 +50,6 @@
 | Prod | Verify EPG prod/vlans/vlan102 | missing | Object uni/tn-prod/ap-vlans/epg-vlan102 not found on APIC |
 | Prod | Verify EPG prod/vlans/vlan100 | missing | Object uni/tn-prod/ap-vlans/epg-vlan100 not found on APIC |
 | Prod | Verify EPG prod/vlans/vlan101 | missing | Object uni/tn-prod/ap-vlans/epg-vlan101 not found on APIC |
-| ROR | Verify Tenant ROR | missing | Object uni/tn-ROR not found on APIC |
-| ROR | Verify VRF ROR/ROR_VRF | missing | Object uni/tn-ROR/ctx-ROR_VRF not found on APIC |
-| ROR | Verify BD ROR/ROR_WEB_BD | missing | Object uni/tn-ROR/BD-ROR_WEB_BD not found on APIC |
-| ROR | Verify Subnet ROR/ROR_WEB_BD/203.0.113.1/24 | missing | Object uni/tn-ROR/BD-ROR_WEB_BD/subnet-[203.0.113.1/24] not found on APIC |
-| ROR | Verify Subnet ROR/ROR_WEB_BD/3fff:cb:0:71::1/64 | missing | Object uni/tn-ROR/BD-ROR_WEB_BD/subnet-[3fff:cb:0:71::1/64] not found on APIC |
-| ROR | Verify BD ROR/ROR_DB_BD | missing | Object uni/tn-ROR/BD-ROR_DB_BD not found on APIC |
-| ROR | Verify Subnet ROR/ROR_DB_BD/10.33.6.1/24 | missing | Object uni/tn-ROR/BD-ROR_DB_BD/subnet-[10.33.6.1/24] not found on APIC |
-| ROR | Verify Subnet ROR/ROR_DB_BD/fd00:a:17:6::1/64 | missing | Object uni/tn-ROR/BD-ROR_DB_BD/subnet-[fd00:a:17:6::1/64] not found on APIC |
-| ROR | Verify AP ROR/ROR_WEB_AP | missing | Object uni/tn-ROR/ap-ROR_WEB_AP not found on APIC |
-| ROR | Verify EPG ROR/ROR_WEB_AP/ROR_WEB_EPG | missing | Object uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_WEB_EPG not found on APIC |
-| ROR | Verify EPG ROR/ROR_WEB_AP/ROR_DB_EPG | missing | Object uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_DB_EPG not found on APIC |
 | SnV | Verify Tenant SnV | missing | Object uni/tn-SnV not found on APIC |
 | SnV | Verify VRF SnV/Superverse | missing | Object uni/tn-SnV/ctx-Superverse not found on APIC |
 | SnV | Verify BD SnV/antigravity | missing | Object uni/tn-SnV/BD-antigravity not found on APIC |
@@ -87,7 +78,20 @@
 | TEST-ABC1 | Verify Subnet TEST-ABC1/BD-INT-TESTABC1/10.10.10.1/24 | missing | Object uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.10.1/24] not found on APIC |
 | TEST-ABC1 | Verify Subnet TEST-ABC1/BD-INT-TESTABC1/10.10.20.1/24 | missing | Object uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.20.1/24] not found on APIC |
 | TEST-ABC1 | Verify BD TEST-ABC1/BD-L2-TESTABC1 | missing | Object uni/tn-TEST-ABC1/BD-BD-L2-TESTABC1 not found on APIC |
-| TN-DEDUP-LAB | Verify Tenant TN-DEDUP-LAB | changed | Ansible test running != Testumgebung fuer aci_contract_dedup.yml |
+| TN-DEDUP-LAB | Verify Tenant TN-DEDUP-LAB | missing | Object uni/tn-TN-DEDUP-LAB not found on APIC |
+| TN-DEDUP-LAB | Verify VRF TN-DEDUP-LAB/VRF-LAB | missing | Object uni/tn-TN-DEDUP-LAB/ctx-VRF-LAB not found on APIC |
+| TN-DEDUP-LAB | Verify BD TN-DEDUP-LAB/BD-LAB | missing | Object uni/tn-TN-DEDUP-LAB/BD-BD-LAB not found on APIC |
+| TN-DEDUP-LAB | Verify Subnet TN-DEDUP-LAB/BD-LAB/10.99.1.1/24 | missing | Object uni/tn-TN-DEDUP-LAB/BD-BD-LAB/subnet-[10.99.1.1/24] not found on APIC |
+| TN-DEDUP-LAB | Verify AP TN-DEDUP-LAB/AP-LAB | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB not found on APIC |
+| TN-DEDUP-LAB | Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Mon | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mon not found on APIC |
+| TN-DEDUP-LAB | Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Infra | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Infra not found on APIC |
+| TN-DEDUP-LAB | Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Mail | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mail not found on APIC |
+| TN-DEDUP-LAB | Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Dir | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Dir not found on APIC |
+| TN-DEDUP-LAB | Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Web | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Web not found on APIC |
+| TN-DEDUP-LAB | Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-App | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-App not found on APIC |
+| TN-DEDUP-LAB | Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-DB | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-DB not found on APIC |
+| TN-DEDUP-LAB | Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Mgmt | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mgmt not found on APIC |
+| TN-DEDUP-LAB | Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Backup | missing | Object uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Backup not found on APIC |
 | Test-Tenant | Verify Tenant Test-Tenant | missing | Object uni/tn-Test-Tenant not found on APIC |
 | Test-Tenant | Verify VRF Test-Tenant/Test-VRF | missing | Object uni/tn-Test-Tenant/ctx-Test-VRF not found on APIC |
 | Test-Tenant | Verify BD Test-Tenant/test-BD-01 | missing | Object uni/tn-Test-Tenant/BD-test-BD-01 not found on APIC |
@@ -112,107 +116,91 @@
 
 | Type | Baseline | Current (APIC, all tenants) | Added | Removed |
 |---|---:|---:|---:|---:|
-| Tenant | 16 | 17 | 11 | 10 |
-| VRF | 18 | 20 | 13 | 11 |
-| BD | 23 | 16 | 11 | 18 |
-| Subnet (BD) | 23 | 12 | 10 | 21 |
-| AP | 16 | 10 | 5 | 11 |
-| EPG | 33 | 28 | 17 | 22 |
+| Tenant | 16 | 14 | 9 | 11 |
+| VRF | 18 | 13 | 6 | 11 |
+| BD | 23 | 15 | 9 | 17 |
+| Subnet (BD) | 23 | 11 | 6 | 18 |
+| AP | 16 | 11 | 7 | 12 |
+| EPG | 33 | 17 | 13 | 29 |
 
 Subnets are bridge-domain subnets only (EPG-level subnets are not in the baseline model).
 
-## Added since baseline (67)
+## Added since baseline (50)
 
 | Type | Tenant | DN |
 |---|---|---|
-| Tenant | ASN-02 | `uni/tn-ASN-02` |
-| Tenant | ASN_01 | `uni/tn-ASN_01` |
-| Tenant | Automation-Test | `uni/tn-Automation-Test` |
-| Tenant | Irelia-TEST | `uni/tn-Irelia-TEST` |
-| Tenant | T1_FIRST | `uni/tn-T1_FIRST` |
-| Tenant | TN-AUTO | `uni/tn-TN-AUTO` |
-| Tenant | TN_PROD | `uni/tn-TN_PROD` |
-| Tenant | Test101 | `uni/tn-Test101` |
-| Tenant | TestTenant | `uni/tn-TestTenant` |
-| Tenant | ddso | `uni/tn-ddso` |
-| Tenant | gtest | `uni/tn-gtest` |
-| VRF | ASN-02 | `uni/tn-ASN-02/ctx-VRF_ASN-02A` |
-| VRF | ASN-02 | `uni/tn-ASN-02/ctx-VRF_PRUEBA` |
-| VRF | ASN_01 | `uni/tn-ASN_01/ctx-VRF_A1` |
-| VRF | ASN_01 | `uni/tn-ASN_01/ctx-VRF_A2` |
-| VRF | ASN_01 | `uni/tn-ASN_01/ctx-VRF_A3` |
-| VRF | T1_FIRST | `uni/tn-T1_FIRST/ctx-V1_First` |
-| VRF | TN-AUTO | `uni/tn-TN-AUTO/ctx-VRF_AUTO` |
-| VRF | TN_PROD | `uni/tn-TN_PROD/ctx-VRF_PROD` |
-| VRF | Test101 | `uni/tn-Test101/ctx-DEV` |
-| VRF | Test101 | `uni/tn-Test101/ctx-PROD` |
-| VRF | TestTenant | `uni/tn-TestTenant/ctx-TestVRF` |
-| VRF | ddso | `uni/tn-ddso/ctx-VRF11` |
-| VRF | gtest | `uni/tn-gtest/ctx-gtest-vrf` |
-| BD | ASN_01 | `uni/tn-ASN_01/BD-BD01` |
-| BD | MUHC | `uni/tn-MUHC/BD-VLAN_2341_BD` |
-| BD | MUHC | `uni/tn-MUHC/BD-VLAN_2342_BD` |
-| BD | T1_FIRST | `uni/tn-T1_FIRST/BD-BD_FIRST` |
-| BD | TN-AUTO | `uni/tn-TN-AUTO/BD-BD_AUTO` |
-| BD | Test101 | `uni/tn-Test101/BD-BD10` |
-| BD | Test101 | `uni/tn-Test101/BD-BD100` |
-| BD | Test101 | `uni/tn-Test101/BD-BD20` |
-| BD | Test101 | `uni/tn-Test101/BD-BD200` |
-| BD | ddso | `uni/tn-ddso/BD-BD11` |
-| BD | gtest | `uni/tn-gtest/BD-gtest-bridge` |
-| Subnet (BD) | ASN_01 | `uni/tn-ASN_01/BD-BD01/subnet-[10.1.1.1/24]` |
-| Subnet (BD) | ASN_01 | `uni/tn-ASN_01/BD-BD01/subnet-[11.1.1.1/24]` |
-| Subnet (BD) | ASN_01 | `uni/tn-ASN_01/BD-BD01/subnet-[12.1.1.1/24]` |
-| Subnet (BD) | MUHC | `uni/tn-MUHC/BD-VLAN_2341_BD/subnet-[172.26.193.97/27]` |
-| Subnet (BD) | MUHC | `uni/tn-MUHC/BD-VLAN_2342_BD/subnet-[172.26.193.129/27]` |
-| Subnet (BD) | T1_FIRST | `uni/tn-T1_FIRST/BD-BD_FIRST/subnet-[192.168.20.254/24]` |
-| Subnet (BD) | Test101 | `uni/tn-Test101/BD-BD10/subnet-[192.168.10.1/24]` |
-| Subnet (BD) | Test101 | `uni/tn-Test101/BD-BD100/subnet-[192.168.100.1/24]` |
-| Subnet (BD) | Test101 | `uni/tn-Test101/BD-BD20/subnet-[192.168.20.1/24]` |
-| Subnet (BD) | Test101 | `uni/tn-Test101/BD-BD200/subnet-[192.168.200.1/24]` |
-| AP | ASN-02 | `uni/tn-ASN-02/ap-AP` |
-| AP | T1_FIRST | `uni/tn-T1_FIRST/ap-Users_APP_Profile` |
-| AP | Test101 | `uni/tn-Test101/ap-DEV` |
-| AP | Test101 | `uni/tn-Test101/ap-PROD` |
-| AP | gtest | `uni/tn-gtest/ap-gtest-apps` |
-| EPG | MUHC | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2341_EPG` |
-| EPG | MUHC | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2342_EPG` |
-| EPG | T1_FIRST | `uni/tn-T1_FIRST/ap-Users_APP_Profile/epg-USERS_EPG` |
-| EPG | Test101 | `uni/tn-Test101/ap-DEV/epg-DEV-APP` |
-| EPG | Test101 | `uni/tn-Test101/ap-DEV/epg-DEV-DB` |
-| EPG | Test101 | `uni/tn-Test101/ap-PROD/epg-PROD-APP` |
-| EPG | Test101 | `uni/tn-Test101/ap-PROD/epg-PROD-DB` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-Arizona` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-California` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-Florida` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-Idaho` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-Nebraska` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-Nevada` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-Oklahoma` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-Texas` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-Utah` |
-| EPG | gtest | `uni/tn-gtest/ap-gtest-apps/epg-Washington` |
+| Tenant | Atul_tenant | `uni/tn-Atul_tenant` |
+| Tenant | BCC-222 | `uni/tn-BCC-222` |
+| Tenant | DEMO1 | `uni/tn-DEMO1` |
+| Tenant | MS-T | `uni/tn-MS-T` |
+| Tenant | PY-TN | `uni/tn-PY-TN` |
+| Tenant | Tenant_Test | `uni/tn-Tenant_Test` |
+| Tenant | aaaaa | `uni/tn-aaaaa` |
+| Tenant | iacdemo-contractors | `uni/tn-iacdemo-contractors` |
+| Tenant | iacdemo-prod | `uni/tn-iacdemo-prod` |
+| VRF | BCC-222 | `uni/tn-BCC-222/ctx-VRF-BCC-222` |
+| VRF | DEMO1 | `uni/tn-DEMO1/ctx-vrf-demo1` |
+| VRF | PY-TN | `uni/tn-PY-TN/ctx-PY-VRF` |
+| VRF | Tenant_Test | `uni/tn-Tenant_Test/ctx-VRF_1` |
+| VRF | iacdemo-contractors | `uni/tn-iacdemo-contractors/ctx-VRF-Contractors` |
+| VRF | iacdemo-prod | `uni/tn-iacdemo-prod/ctx-VRF-Prod` |
+| BD | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan300-web-demo1` |
+| BD | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan301-dab-demo1` |
+| BD | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan302-web2-demo1` |
+| BD | PY-TN | `uni/tn-PY-TN/BD-PY-BD` |
+| BD | Tenant_Test | `uni/tn-Tenant_Test/BD-BD_1` |
+| BD | iacdemo-contractors | `uni/tn-iacdemo-contractors/BD-Contractors-BD` |
+| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-App-BD` |
+| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Db-BD` |
+| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Web-BD` |
+| Subnet (BD) | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan300-web-demo1/subnet-[10.10.10.1/24]` |
+| Subnet (BD) | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan300-web-demo1/subnet-[20.20.20.1/24]` |
+| Subnet (BD) | iacdemo-contractors | `uni/tn-iacdemo-contractors/BD-Contractors-BD/subnet-[10.30.0.1/24]` |
+| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-App-BD/subnet-[10.20.20.1/24]` |
+| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Db-BD/subnet-[10.20.30.1/24]` |
+| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Web-BD/subnet-[10.20.10.1/24]` |
+| AP | DEMO1 | `uni/tn-DEMO1/ap-app-demo1` |
+| AP | MS-T | `uni/tn-MS-T/ap-MS-AP01` |
+| AP | MS-T | `uni/tn-MS-T/ap-MS-AP02` |
+| AP | PY-TN | `uni/tn-PY-TN/ap-PY-AP` |
+| AP | Tenant_Test | `uni/tn-Tenant_Test/ap-App_P_1` |
+| AP | iacdemo-contractors | `uni/tn-iacdemo-contractors/ap-Remote-Access-AP` |
+| AP | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP` |
+| EPG | DEMO1 | `uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan300-web-demo1` |
+| EPG | DEMO1 | `uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan301-dab-demo1` |
+| EPG | DEMO1 | `uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan302-web2-demo1` |
+| EPG | MS-T | `uni/tn-MS-T/ap-MS-AP01/epg-MS-EPG01` |
+| EPG | PY-TN | `uni/tn-PY-TN/ap-PY-AP/epg-PY-EPG` |
+| EPG | Tenant_Test | `uni/tn-Tenant_Test/ap-App_P_1/epg-EPG_App` |
+| EPG | Tenant_Test | `uni/tn-Tenant_Test/ap-App_P_1/epg-EPG_Web` |
+| EPG | iacdemo-contractors | `uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Jump-Hosts` |
+| EPG | iacdemo-contractors | `uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Vendors` |
+| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-App` |
+| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-Db` |
+| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-Web` |
+| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-test` |
 
-## Removed since baseline (93)
+## Removed since baseline (98)
 
 | Type | Tenant | DN |
 |---|---|---|
 | Tenant | Heroes | `uni/tn-Heroes` |
+| Tenant | MUHC | `uni/tn-MUHC` |
 | Tenant | OS1 | `uni/tn-OS1` |
-| Tenant | ROR | `uni/tn-ROR` |
 | Tenant | SnV | `uni/tn-SnV` |
 | Tenant | TEST | `uni/tn-TEST` |
 | Tenant | TEST-ABC1 | `uni/tn-TEST-ABC1` |
+| Tenant | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB` |
 | Tenant | Test-Tenant | `uni/tn-Test-Tenant` |
 | Tenant | UT | `uni/tn-UT` |
 | Tenant | prod | `uni/tn-prod` |
 | Tenant | tn-MGK | `uni/tn-tn-MGK` |
 | VRF | Heroes | `uni/tn-Heroes/ctx-Heroes_Only` |
 | VRF | OS1 | `uni/tn-OS1/ctx-OS1` |
-| VRF | ROR | `uni/tn-ROR/ctx-ROR_VRF` |
 | VRF | SnV | `uni/tn-SnV/ctx-Superverse` |
 | VRF | TEST-ABC1 | `uni/tn-TEST-ABC1/ctx-VRF-INT-TESTABC1` |
 | VRF | TEST | `uni/tn-TEST/ctx-TEST` |
+| VRF | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ctx-VRF-LAB` |
 | VRF | Test-Tenant | `uni/tn-Test-Tenant/ctx-Test-VRF` |
 | VRF | UT | `uni/tn-UT/ctx-FWVRF` |
 | VRF | UT | `uni/tn-UT/ctx-UVRF` |
@@ -223,12 +211,11 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | BD | MUHC | `uni/tn-MUHC/BD-VLAN_2780_BD` |
 | BD | OS1 | `uni/tn-OS1/BD-VLAN1` |
 | BD | OS1 | `uni/tn-OS1/BD-vlan` |
-| BD | ROR | `uni/tn-ROR/BD-ROR_DB_BD` |
-| BD | ROR | `uni/tn-ROR/BD-ROR_WEB_BD` |
 | BD | SnV | `uni/tn-SnV/BD-antigravity` |
 | BD | TEST-ABC1 | `uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1` |
 | BD | TEST-ABC1 | `uni/tn-TEST-ABC1/BD-BD-L2-TESTABC1` |
 | BD | TEST | `uni/tn-TEST/BD-TESTBD` |
+| BD | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/BD-BD-LAB` |
 | BD | Test-Tenant | `uni/tn-Test-Tenant/BD-test-BD-01` |
 | BD | UT | `uni/tn-UT/BD-FBD` |
 | BD | UT | `uni/tn-UT/BD-UBD` |
@@ -240,14 +227,11 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | Subnet (BD) | Heroes | `uni/tn-Heroes/BD-Hero_Land/subnet-[192.168.120.1/22]` |
 | Subnet (BD) | MUHC | `uni/tn-MUHC/BD-VLAN_2701_BD/subnet-[172.26.200.1/24]` |
 | Subnet (BD) | OS1 | `uni/tn-OS1/BD-vlan/subnet-[10.10.10.1/24]` |
-| Subnet (BD) | ROR | `uni/tn-ROR/BD-ROR_DB_BD/subnet-[10.33.6.1/24]` |
-| Subnet (BD) | ROR | `uni/tn-ROR/BD-ROR_DB_BD/subnet-[fd00:a:17:6::1/64]` |
-| Subnet (BD) | ROR | `uni/tn-ROR/BD-ROR_WEB_BD/subnet-[203.0.113.1/24]` |
-| Subnet (BD) | ROR | `uni/tn-ROR/BD-ROR_WEB_BD/subnet-[3fff:cb:0:71::1/64]` |
 | Subnet (BD) | SnV | `uni/tn-SnV/BD-antigravity/subnet-[10.2.10.1/23]` |
 | Subnet (BD) | TEST-ABC1 | `uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.10.1/24]` |
 | Subnet (BD) | TEST-ABC1 | `uni/tn-TEST-ABC1/BD-BD-INT-TESTABC1/subnet-[10.10.20.1/24]` |
 | Subnet (BD) | TEST | `uni/tn-TEST/BD-TESTBD/subnet-[1.1.1.1/24]` |
+| Subnet (BD) | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/BD-BD-LAB/subnet-[10.99.1.1/24]` |
 | Subnet (BD) | Test-Tenant | `uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.10.254/24]` |
 | Subnet (BD) | Test-Tenant | `uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.11.254/24]` |
 | Subnet (BD) | Test-Tenant | `uni/tn-Test-Tenant/BD-test-BD-01/subnet-[10.10.12.254/24]` |
@@ -258,13 +242,14 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | Subnet (BD) | prod | `uni/tn-prod/BD-10.1.102.0_24/subnet-[10.1.102.1/24]` |
 | Subnet (BD) | prod | `uni/tn-prod/BD-10.1.103.0_24/subnet-[10.1.103.1/24]` |
 | AP | Heroes | `uni/tn-Heroes/ap-Save_The_Planet` |
+| AP | MUHC | `uni/tn-MUHC/ap-LEGACY_APR` |
 | AP | OS1 | `uni/tn-OS1/ap-APP-Prod` |
-| AP | ROR | `uni/tn-ROR/ap-ROR_WEB_AP` |
 | AP | SnV | `uni/tn-SnV/ap-Chaos` |
 | AP | SnV | `uni/tn-SnV/ap-Evolution_X` |
 | AP | SnV | `uni/tn-SnV/ap-Power_Up` |
 | AP | SnV | `uni/tn-SnV/ap-Rescue` |
 | AP | TEST | `uni/tn-TEST/ap-TEST_AAEP` |
+| AP | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB` |
 | AP | Test-Tenant | `uni/tn-Test-Tenant/ap-Test-APP-Profile-01` |
 | AP | UT | `uni/tn-UT/ap-UAP` |
 | AP | prod | `uni/tn-prod/ap-vlans` |
@@ -274,8 +259,6 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | EPG | MUHC | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2701_EPG` |
 | EPG | MUHC | `uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2780_EPG` |
 | EPG | OS1 | `uni/tn-OS1/ap-APP-Prod/epg-APP-WEB` |
-| EPG | ROR | `uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_DB_EPG` |
-| EPG | ROR | `uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_WEB_EPG` |
 | EPG | SnV | `uni/tn-SnV/ap-Chaos/epg-Database` |
 | EPG | SnV | `uni/tn-SnV/ap-Chaos/epg-Web` |
 | EPG | SnV | `uni/tn-SnV/ap-Evolution_X/epg-Database` |
@@ -285,6 +268,15 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | EPG | SnV | `uni/tn-SnV/ap-Rescue/epg-Database` |
 | EPG | SnV | `uni/tn-SnV/ap-Rescue/epg-Web` |
 | EPG | TEST | `uni/tn-TEST/ap-TEST_AAEP/epg-TESTEPG` |
+| EPG | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-App` |
+| EPG | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Backup` |
+| EPG | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-DB` |
+| EPG | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Dir` |
+| EPG | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Infra` |
+| EPG | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mail` |
+| EPG | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mgmt` |
+| EPG | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mon` |
+| EPG | TN-DEDUP-LAB | `uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Web` |
 | EPG | Test-Tenant | `uni/tn-Test-Tenant/ap-Test-APP-Profile-01/epg-test-epg-01` |
 | EPG | UT | `uni/tn-UT/ap-UAP/epg-USER_EPG` |
 | EPG | prod | `uni/tn-prod/ap-vlans/epg-vlan100` |
@@ -295,7 +287,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 
 | critical | major | minor | warning | info | cleared | total |
 |---:|---:|---:|---:|---:|---:|---:|
-| 17 | 9 | 49 | 604 | 0 | 6 | 685 |
+| 2 | 2 | 5 | 118 | 0 | 10 | 137 |
 
 ## Artifacts
 

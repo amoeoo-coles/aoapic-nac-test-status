@@ -1,0 +1,1395 @@
+{
+ "schema": 1,
+ "current": "2026-10-31-0821",
+ "previous": "2026-10-30-0816",
+ "current_snapshot": "2026-10-31 08:22:07 AEDT",
+ "previous_snapshot": "2026-10-30 08:16:31 AEDT",
+ "current_status": "attention",
+ "current_headline": "DRIFT DETECTED | HEALTHY",
+ "tests": {
+  "integrity": {
+   "total": {
+    "prev": 127,
+    "now": 66,
+    "delta": -61
+   },
+   "passed": {
+    "prev": 116,
+    "now": 66,
+    "delta": -50
+   },
+   "failed": {
+    "prev": 11,
+    "now": 0,
+    "delta": -11
+   }
+  },
+  "drift": {
+   "total": {
+    "prev": 129,
+    "now": 129,
+    "delta": 0
+   },
+   "passed": {
+    "prev": 35,
+    "now": 31,
+    "delta": -4
+   },
+   "failed": {
+    "prev": 94,
+    "now": 98,
+    "delta": 4
+   }
+  }
+ },
+ "tests_newly_failing": [
+  "MUHC :: Verify AP MUHC/LEGACY_APR",
+  "MUHC :: Verify Tenant MUHC",
+  "TN-DEDUP-LAB :: Verify AP TN-DEDUP-LAB/AP-LAB",
+  "TN-DEDUP-LAB :: Verify BD TN-DEDUP-LAB/BD-LAB",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-App",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Backup",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-DB",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Dir",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Infra",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Mail",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Mgmt",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Mon",
+  "TN-DEDUP-LAB :: Verify EPG TN-DEDUP-LAB/AP-LAB/EPG-Web",
+  "TN-DEDUP-LAB :: Verify Subnet TN-DEDUP-LAB/BD-LAB/10.99.1.1/24",
+  "TN-DEDUP-LAB :: Verify VRF TN-DEDUP-LAB/VRF-LAB"
+ ],
+ "tests_fixed": [
+  "ASN-02 :: Integrity ASN-02: no critical or major faults",
+  "MUHC :: Integrity BD MUHC/VLAN_2341_BD: VRF resolves",
+  "MUHC :: Integrity BD MUHC/VLAN_2342_BD: VRF resolves",
+  "MUHC :: Integrity EPG MUHC/LEGACY_APR/VLAN_2341_EPG: BD and VRF chain resolves",
+  "MUHC :: Integrity EPG MUHC/LEGACY_APR/VLAN_2342_EPG: BD and VRF chain resolves",
+  "MUHC :: Integrity MUHC: all named relations resolve",
+  "Mgmt :: Integrity mgmt: no critical or major faults",
+  "T1 FIRST :: Integrity T1_FIRST: no critical or major faults",
+  "TN PROD :: Integrity TN_PROD: no critical or major faults",
+  "TN-AUTO :: Integrity TN-AUTO: no critical or major faults",
+  "Test101 :: Integrity Test101: no critical or major faults",
+  "ROR :: Verify AP ROR/ROR_WEB_AP",
+  "ROR :: Verify BD ROR/ROR_DB_BD",
+  "ROR :: Verify BD ROR/ROR_WEB_BD",
+  "ROR :: Verify EPG ROR/ROR_WEB_AP/ROR_DB_EPG",
+  "ROR :: Verify EPG ROR/ROR_WEB_AP/ROR_WEB_EPG",
+  "ROR :: Verify Subnet ROR/ROR_DB_BD/10.33.6.1/24",
+  "ROR :: Verify Subnet ROR/ROR_DB_BD/fd00:a:17:6::1/64",
+  "ROR :: Verify Subnet ROR/ROR_WEB_BD/203.0.113.1/24",
+  "ROR :: Verify Subnet ROR/ROR_WEB_BD/3fff:cb:0:71::1/64",
+  "ROR :: Verify Tenant ROR",
+  "ROR :: Verify VRF ROR/ROR_VRF"
+ ],
+ "tenants": {
+  "prev_total": 17,
+  "now_total": 14,
+  "added": [
+   "aaaaa",
+   "Atul_tenant",
+   "BCC-222",
+   "DEMO1",
+   "iacdemo-contractors",
+   "iacdemo-prod",
+   "MS-T",
+   "PY-TN",
+   "ROR",
+   "Tenant_Test"
+  ],
+  "removed": [
+   "ASN-02",
+   "ASN_01",
+   "Automation-Test",
+   "ddso",
+   "gtest",
+   "Irelia-TEST",
+   "MUHC",
+   "T1_FIRST",
+   "Test101",
+   "TestTenant",
+   "TN-AUTO",
+   "TN-DEDUP-LAB",
+   "TN_PROD"
+  ],
+  "newly_broken": [],
+  "added_broken": [],
+  "fixed": [
+   "mgmt"
+  ],
+  "status_changes": [
+   {
+    "tenant": "common",
+    "prev": "WARN",
+    "now": "WARN",
+    "prev_score": 82,
+    "now_score": 94
+   },
+   {
+    "tenant": "mgmt",
+    "prev": "BROKEN",
+    "now": "WARN",
+    "prev_score": 81,
+    "now_score": 94
+   }
+  ],
+  "broken_prev": 8,
+  "broken_now": 0
+ },
+ "broken_relations": {
+  "prev": 31,
+  "now": 0,
+  "added": [],
+  "resolved": [
+   {
+    "tenant": "ASN-02",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-ASN-02/out-VRF_PRUEBA",
+    "reason": "Configuration failed for uni/tn-ASN-02/out-VRF_PRUEBA node 101 eth1/25 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
+   },
+   {
+    "tenant": "MUHC",
+    "check": "BD L3Out missing-target",
+    "dn": "uni/tn-MUHC/BD-VLAN_2341_BD",
+    "reason": "BD is associated to L3Out 'LEGACY_L3OUT' which does not exist; APIC fell back to tn-common/out-default, so the BD subnets are not advertised as intended."
+   },
+   {
+    "tenant": "MUHC",
+    "check": "BD L3Out missing-target",
+    "dn": "uni/tn-MUHC/BD-VLAN_2342_BD",
+    "reason": "BD is associated to L3Out 'LEGACY_L3OUT' which does not exist; APIC fell back to tn-common/out-default, so the BD subnets are not advertised as intended."
+   },
+   {
+    "tenant": "MUHC",
+    "check": "BD VRF missing-target",
+    "dn": "uni/tn-MUHC/BD-VLAN_2341_BD",
+    "reason": "BD points to VRF 'LEGACY_VRF' which does not exist in tenant MUHC or in tenant common (state missing-target). The BD and every EPG in it cannot be deployed."
+   },
+   {
+    "tenant": "MUHC",
+    "check": "BD VRF missing-target",
+    "dn": "uni/tn-MUHC/BD-VLAN_2342_BD",
+    "reason": "BD points to VRF 'LEGACY_VRF' which does not exist in tenant MUHC or in tenant common (state missing-target). The BD and every EPG in it cannot be deployed."
+   },
+   {
+    "tenant": "MUHC",
+    "check": "EPG chain broken (BD has no VRF)",
+    "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2341_EPG",
+    "reason": "EPG -> tn-MUHC/BD-VLAN_2341_BD resolves, but that BD's VRF 'LEGACY_VRF' is missing, so the EPG cannot be deployed (APIC fault F0523 'Context Not present')."
+   },
+   {
+    "tenant": "MUHC",
+    "check": "EPG chain broken (BD has no VRF)",
+    "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2342_EPG",
+    "reason": "EPG -> tn-MUHC/BD-VLAN_2342_BD resolves, but that BD's VRF 'LEGACY_VRF' is missing, so the EPG cannot be deployed (APIC fault F0523 'Context Not present')."
+   },
+   {
+    "tenant": "MUHC",
+    "check": "EPG domain missing-target",
+    "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2341_EPG",
+    "reason": "Domain uni/phys-LEGACY_SRVF_PHY does not exist (state missing-target)."
+   },
+   {
+    "tenant": "MUHC",
+    "check": "EPG domain missing-target",
+    "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2342_EPG",
+    "reason": "Domain uni/phys-LEGACY_SRVF_PHY does not exist (state missing-target)."
+   },
+   {
+    "tenant": "T1_FIRST",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-T1_FIRST/ap-Users_APP_Profile/epg-USERS_EPG",
+    "reason": "Configuration failed for uni/tn-T1_FIRST/ap-Users_APP_Profile/epg-USERS_EPG node 101 eth1/26 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-20 :STP Segment Id not present for Encap. Either the EpG is not associated with a domain or the domain does not"
+   },
+   {
+    "tenant": "TN-AUTO",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-TN-AUTO/out-L3OUT_ROUTER_BGP",
+    "reason": "Configuration failed for uni/tn-TN-AUTO/out-L3OUT_ROUTER_BGP node 101 PC_ROUTER due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
+   },
+   {
+    "tenant": "TN-AUTO",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-TN-AUTO/out-L3OUT_ROUTER_STATIC",
+    "reason": "Configuration failed for uni/tn-TN-AUTO/out-L3OUT_ROUTER_STATIC node 101 PC_ROUTER due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-BACKUP-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-DNS",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-DNS-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-L3OUT-MGMT-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-L3OUT-WEB-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-LDAP-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-MONITORING-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-SMTP-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN-DEDUP-LAB",
+    "check": "Contract service graph not instantiated",
+    "dn": "uni/tn-TN-DEDUP-LAB/brc-C-WEB-APP-FW",
+    "reason": "Contract redirects through service graph tn-TN-DEDUP-LAB/AbsGraph-SG-FW which cannot be deployed (4 faults, e.g. F1690: Configuration is invalid due to No device context found for LDev); traffic on this contract is dropped."
+   },
+   {
+    "tenant": "TN_PROD",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-TN_PROD/out-L3OUT_SW_DISTR_2a",
+    "reason": "Configuration failed for uni/tn-TN_PROD/out-L3OUT_SW_DISTR_2a node 102 SRVR01 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-833 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either "
+   },
+   {
+    "tenant": "Test101",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-Test101/ap-DEV/epg-DEV-APP",
+    "reason": "Configuration failed for uni/tn-Test101/ap-DEV/epg-DEV-APP node 102 SRVR01 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-30 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "Test101",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-Test101/ap-DEV/epg-DEV-DB",
+    "reason": "Configuration failed for uni/tn-Test101/ap-DEV/epg-DEV-DB node 102 SRVR01 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-40 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "Test101",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-Test101/ap-PROD/epg-PROD-APP",
+    "reason": "Configuration failed for uni/tn-Test101/ap-PROD/epg-PROD-APP node 102 SRVR01 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-10 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "Test101",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-Test101/ap-PROD/epg-PROD-DB",
+    "reason": "Configuration failed for uni/tn-Test101/ap-PROD/epg-PROD-DB node 102 SRVR01 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-20 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "Test101",
+    "check": "Major fault F606347",
+    "dn": "uni/tn-Test101/ap-DEV/epg-DEV-APP",
+    "reason": "[FSM:FAILED]: Addition or Deletion of Port Group for: (uni/tn-Test101/ap-DEV/epg-DEV-APP) Tenant: Test101 associated with either EPG:(Ap: DEV Epg: DEV-APP) or Services:(LDevInst:   EPpInfo:   ) on VM Controller: vcenter-SI VM Domain: DVS VM Provider: VMware, failed with error: (TASK:ifc:vmmmgr:CompE"
+   },
+   {
+    "tenant": "Test101",
+    "check": "Major fault F606347",
+    "dn": "uni/tn-Test101/ap-DEV/epg-DEV-DB",
+    "reason": "[FSM:FAILED]: Addition or Deletion of Port Group for: (uni/tn-Test101/ap-DEV/epg-DEV-DB) Tenant: Test101 associated with either EPG:(Ap: DEV Epg: DEV-DB) or Services:(LDevInst:   EPpInfo:   ) on VM Controller: vcenter-SI VM Domain: DVS VM Provider: VMware, failed with error: (TASK:ifc:vmmmgr:CompEpP"
+   },
+   {
+    "tenant": "Test101",
+    "check": "Major fault F606347",
+    "dn": "uni/tn-Test101/ap-PROD/epg-PROD-APP",
+    "reason": "[FSM:FAILED]: Addition or Deletion of Port Group for: (uni/tn-Test101/ap-PROD/epg-PROD-APP) Tenant: Test101 associated with either EPG:(Ap: PROD Epg: PROD-APP) or Services:(LDevInst:   EPpInfo:   ) on VM Controller: vcenter-SI VM Domain: DVS VM Provider: VMware, failed with error: (TASK:ifc:vmmmgr:C"
+   },
+   {
+    "tenant": "Test101",
+    "check": "Major fault F606347",
+    "dn": "uni/tn-Test101/ap-PROD/epg-PROD-DB",
+    "reason": "[FSM:FAILED]: Addition or Deletion of Port Group for: (uni/tn-Test101/ap-PROD/epg-PROD-DB) Tenant: Test101 associated with either EPG:(Ap: PROD Epg: PROD-DB) or Services:(LDevInst:   EPpInfo:   ) on VM Controller: vcenter-SI VM Domain: DVS VM Provider: VMware, failed with error: (TASK:ifc:vmmmgr:Com"
+   },
+   {
+    "tenant": "mgmt",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-mgmt/out-l3out_mgmt_inb",
+    "reason": "Configuration failed for uni/tn-mgmt/out-l3out_mgmt_inb node 101 eth1/5 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
+   }
+  ],
+  "reason_changed": []
+ },
+ "warnings": {
+  "prev": 44,
+  "now": 29,
+  "delta": -15
+ },
+ "faults": {
+  "new_critical": [],
+  "new_major": [],
+  "cleared_critical_major": [
+   {
+    "tenant": "ASN-02",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-ASN-02/out-VRF_PRUEBA",
+    "descr": "Configuration failed for uni/tn-ASN-02/out-VRF_PRUEBA node 101 eth1/25 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
+   },
+   {
+    "tenant": "T1_FIRST",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-T1_FIRST/ap-Users_APP_Profile/epg-USERS_EPG",
+    "descr": "Configuration failed for uni/tn-T1_FIRST/ap-Users_APP_Profile/epg-USERS_EPG node 101 eth1/26 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-20 :STP Segment Id not present for Encap. Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: vlan-20 :There is no domain, associated with both EPG and Port, that has required VLAN;"
+   },
+   {
+    "tenant": "TN-AUTO",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-TN-AUTO/out-L3OUT_ROUTER_BGP",
+    "descr": "Configuration failed for uni/tn-TN-AUTO/out-L3OUT_ROUTER_BGP node 101 PC_ROUTER due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
+   },
+   {
+    "tenant": "TN-AUTO",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-TN-AUTO/out-L3OUT_ROUTER_STATIC",
+    "descr": "Configuration failed for uni/tn-TN-AUTO/out-L3OUT_ROUTER_STATIC node 101 PC_ROUTER due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
+   },
+   {
+    "tenant": "TN_PROD",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-TN_PROD/out-L3OUT_SW_DISTR_2a",
+    "descr": "Configuration failed for uni/tn-TN_PROD/out-L3OUT_SW_DISTR_2a node 101 SRVR01 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-833 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
+   },
+   {
+    "tenant": "Test101",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-Test101/ap-DEV/epg-DEV-APP",
+    "descr": "Configuration failed for uni/tn-Test101/ap-DEV/epg-DEV-APP node 101 SRVR01 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-30 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "Test101",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-Test101/ap-DEV/epg-DEV-DB",
+    "descr": "Configuration failed for uni/tn-Test101/ap-DEV/epg-DEV-DB node 101 SRVR01 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-40 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "Test101",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-Test101/ap-PROD/epg-PROD-APP",
+    "descr": "Configuration failed for uni/tn-Test101/ap-PROD/epg-PROD-APP node 101 SRVR01 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-10 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "Test101",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-Test101/ap-PROD/epg-PROD-DB",
+    "descr": "Configuration failed for uni/tn-Test101/ap-PROD/epg-PROD-DB node 101 SRVR01 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-20 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "mgmt",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-mgmt/out-l3out_mgmt_inb",
+    "descr": "Configuration failed for uni/tn-mgmt/out-l3out_mgmt_inb node 101 eth1/5 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
+   },
+   {
+    "tenant": "Test101",
+    "severity": "major",
+    "code": "F606347",
+    "affected": "uni/tn-Test101/ap-DEV/epg-DEV-APP",
+    "descr": "[FSM:FAILED]: Addition or Deletion of Port Group for: (uni/tn-Test101/ap-DEV/epg-DEV-APP) Tenant: Test101 associated with either EPG:(Ap: DEV Epg: DEV-APP) or Services:(LDevInst:   EPpInfo:   ) on VM Controller: vcenter-SI VM Domain: DVS VM Provider: VMware, failed with error: (TASK:ifc:vmmmgr:CompEpPDAddorDelExtPol)"
+   },
+   {
+    "tenant": "Test101",
+    "severity": "major",
+    "code": "F606347",
+    "affected": "uni/tn-Test101/ap-DEV/epg-DEV-DB",
+    "descr": "[FSM:FAILED]: Addition or Deletion of Port Group for: (uni/tn-Test101/ap-DEV/epg-DEV-DB) Tenant: Test101 associated with either EPG:(Ap: DEV Epg: DEV-DB) or Services:(LDevInst:   EPpInfo:   ) on VM Controller: vcenter-SI VM Domain: DVS VM Provider: VMware, failed with error: (TASK:ifc:vmmmgr:CompEpPDAddorDelExtPol)"
+   },
+   {
+    "tenant": "Test101",
+    "severity": "major",
+    "code": "F606347",
+    "affected": "uni/tn-Test101/ap-PROD/epg-PROD-APP",
+    "descr": "[FSM:FAILED]: Addition or Deletion of Port Group for: (uni/tn-Test101/ap-PROD/epg-PROD-APP) Tenant: Test101 associated with either EPG:(Ap: PROD Epg: PROD-APP) or Services:(LDevInst:   EPpInfo:   ) on VM Controller: vcenter-SI VM Domain: DVS VM Provider: VMware, failed with error: (TASK:ifc:vmmmgr:CompEpPDAddorDelExtPol)"
+   },
+   {
+    "tenant": "Test101",
+    "severity": "major",
+    "code": "F606347",
+    "affected": "uni/tn-Test101/ap-PROD/epg-PROD-DB",
+    "descr": "[FSM:FAILED]: Addition or Deletion of Port Group for: (uni/tn-Test101/ap-PROD/epg-PROD-DB) Tenant: Test101 associated with either EPG:(Ap: PROD Epg: PROD-DB) or Services:(LDevInst:   EPpInfo:   ) on VM Controller: vcenter-SI VM Domain: DVS VM Provider: VMware, failed with error: (TASK:ifc:vmmmgr:CompEpPDAddorDelExtPol)"
+   }
+  ],
+  "fabric_totals": {
+   "critical": {
+    "prev": 17,
+    "now": 2
+   },
+   "major": {
+    "prev": 9,
+    "now": 2
+   },
+   "minor": {
+    "prev": 49,
+    "now": 5
+   },
+   "warning": {
+    "prev": 604,
+    "now": 118
+   },
+   "total": {
+    "prev": 685,
+    "now": 137
+   }
+  }
+ },
+ "drift_table": [
+  {
+   "type": "Tenant",
+   "baseline": 16,
+   "prev": 17,
+   "now": 14,
+   "delta": -3,
+   "added_vs_baseline": 9,
+   "removed_vs_baseline": 11
+  },
+  {
+   "type": "VRF",
+   "baseline": 18,
+   "prev": 20,
+   "now": 13,
+   "delta": -7,
+   "added_vs_baseline": 6,
+   "removed_vs_baseline": 11
+  },
+  {
+   "type": "BD",
+   "baseline": 23,
+   "prev": 16,
+   "now": 15,
+   "delta": -1,
+   "added_vs_baseline": 9,
+   "removed_vs_baseline": 17
+  },
+  {
+   "type": "Subnet (BD)",
+   "baseline": 23,
+   "prev": 12,
+   "now": 11,
+   "delta": -1,
+   "added_vs_baseline": 6,
+   "removed_vs_baseline": 18
+  },
+  {
+   "type": "AP",
+   "baseline": 16,
+   "prev": 10,
+   "now": 11,
+   "delta": 1,
+   "added_vs_baseline": 7,
+   "removed_vs_baseline": 12
+  },
+  {
+   "type": "EPG",
+   "baseline": 33,
+   "prev": 28,
+   "now": 17,
+   "delta": -11,
+   "added_vs_baseline": 13,
+   "removed_vs_baseline": 29
+  }
+ ],
+ "drift_objects": {
+  "appeared": [
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Atul_tenant",
+    "dn": "uni/tn-Atul_tenant"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "BCC-222",
+    "dn": "uni/tn-BCC-222"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "BCC-222",
+    "dn": "uni/tn-BCC-222/ctx-VRF-BCC-222"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/BD-bd-vlan300-web-demo1"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/BD-bd-vlan300-web-demo1/subnet-[10.10.10.1/24]"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/BD-bd-vlan300-web-demo1/subnet-[20.20.20.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/BD-bd-vlan301-dab-demo1"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/BD-bd-vlan302-web2-demo1"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/ap-app-demo1"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan300-web-demo1"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan301-dab-demo1"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan302-web2-demo1"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "DEMO1",
+    "dn": "uni/tn-DEMO1/ctx-vrf-demo1"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "MS-T",
+    "dn": "uni/tn-MS-T"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "MS-T",
+    "dn": "uni/tn-MS-T/ap-MS-AP01"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "MS-T",
+    "dn": "uni/tn-MS-T/ap-MS-AP01/epg-MS-EPG01"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "MS-T",
+    "dn": "uni/tn-MS-T/ap-MS-AP02"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "PY-TN",
+    "dn": "uni/tn-PY-TN"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "PY-TN",
+    "dn": "uni/tn-PY-TN/BD-PY-BD"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "PY-TN",
+    "dn": "uni/tn-PY-TN/ap-PY-AP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "PY-TN",
+    "dn": "uni/tn-PY-TN/ap-PY-AP/epg-PY-EPG"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "PY-TN",
+    "dn": "uni/tn-PY-TN/ctx-PY-VRF"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Tenant_Test",
+    "dn": "uni/tn-Tenant_Test"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Tenant_Test",
+    "dn": "uni/tn-Tenant_Test/BD-BD_1"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Tenant_Test",
+    "dn": "uni/tn-Tenant_Test/ap-App_P_1"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tenant_Test",
+    "dn": "uni/tn-Tenant_Test/ap-App_P_1/epg-EPG_App"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tenant_Test",
+    "dn": "uni/tn-Tenant_Test/ap-App_P_1/epg-EPG_Web"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "Tenant_Test",
+    "dn": "uni/tn-Tenant_Test/ctx-VRF_1"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "aaaaa",
+    "dn": "uni/tn-aaaaa"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "iacdemo-contractors",
+    "dn": "uni/tn-iacdemo-contractors"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "iacdemo-contractors",
+    "dn": "uni/tn-iacdemo-contractors/BD-Contractors-BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "iacdemo-contractors",
+    "dn": "uni/tn-iacdemo-contractors/BD-Contractors-BD/subnet-[10.30.0.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "iacdemo-contractors",
+    "dn": "uni/tn-iacdemo-contractors/ap-Remote-Access-AP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "iacdemo-contractors",
+    "dn": "uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Jump-Hosts"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "iacdemo-contractors",
+    "dn": "uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Vendors"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "iacdemo-contractors",
+    "dn": "uni/tn-iacdemo-contractors/ctx-VRF-Contractors"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/BD-App-BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/BD-App-BD/subnet-[10.20.20.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/BD-Db-BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/BD-Db-BD/subnet-[10.20.30.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/BD-Web-BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/BD-Web-BD/subnet-[10.20.10.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/ap-Shop-AP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/ap-Shop-AP/epg-App"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/ap-Shop-AP/epg-Db"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/ap-Shop-AP/epg-Web"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/ap-Shop-AP/epg-test"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "iacdemo-prod",
+    "dn": "uni/tn-iacdemo-prod/ctx-VRF-Prod"
+   }
+  ],
+  "disappeared_again": [
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "ASN-02",
+    "dn": "uni/tn-ASN-02"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "ASN-02",
+    "dn": "uni/tn-ASN-02/ap-AP"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "ASN-02",
+    "dn": "uni/tn-ASN-02/ctx-VRF_ASN-02A"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "ASN-02",
+    "dn": "uni/tn-ASN-02/ctx-VRF_PRUEBA"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "ASN_01",
+    "dn": "uni/tn-ASN_01"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "ASN_01",
+    "dn": "uni/tn-ASN_01/BD-BD01"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ASN_01",
+    "dn": "uni/tn-ASN_01/BD-BD01/subnet-[10.1.1.1/24]"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ASN_01",
+    "dn": "uni/tn-ASN_01/BD-BD01/subnet-[11.1.1.1/24]"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ASN_01",
+    "dn": "uni/tn-ASN_01/BD-BD01/subnet-[12.1.1.1/24]"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "ASN_01",
+    "dn": "uni/tn-ASN_01/ctx-VRF_A1"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "ASN_01",
+    "dn": "uni/tn-ASN_01/ctx-VRF_A2"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "ASN_01",
+    "dn": "uni/tn-ASN_01/ctx-VRF_A3"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Automation-Test",
+    "dn": "uni/tn-Automation-Test"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Irelia-TEST",
+    "dn": "uni/tn-Irelia-TEST"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "MUHC",
+    "dn": "uni/tn-MUHC/BD-VLAN_2341_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "MUHC",
+    "dn": "uni/tn-MUHC/BD-VLAN_2341_BD/subnet-[172.26.193.97/27]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "MUHC",
+    "dn": "uni/tn-MUHC/BD-VLAN_2342_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "MUHC",
+    "dn": "uni/tn-MUHC/BD-VLAN_2342_BD/subnet-[172.26.193.129/27]"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "MUHC",
+    "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2341_EPG"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "MUHC",
+    "dn": "uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2342_EPG"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "T1_FIRST",
+    "dn": "uni/tn-T1_FIRST"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "T1_FIRST",
+    "dn": "uni/tn-T1_FIRST/BD-BD_FIRST"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "T1_FIRST",
+    "dn": "uni/tn-T1_FIRST/BD-BD_FIRST/subnet-[192.168.20.254/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "T1_FIRST",
+    "dn": "uni/tn-T1_FIRST/ap-Users_APP_Profile"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "T1_FIRST",
+    "dn": "uni/tn-T1_FIRST/ap-Users_APP_Profile/epg-USERS_EPG"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "T1_FIRST",
+    "dn": "uni/tn-T1_FIRST/ctx-V1_First"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN-AUTO",
+    "dn": "uni/tn-TN-AUTO"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-AUTO",
+    "dn": "uni/tn-TN-AUTO/BD-BD_AUTO"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN-AUTO",
+    "dn": "uni/tn-TN-AUTO/ctx-VRF_AUTO"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN_PROD",
+    "dn": "uni/tn-TN_PROD"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN_PROD",
+    "dn": "uni/tn-TN_PROD/ctx-VRF_PROD"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/BD-BD10"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/BD-BD10/subnet-[192.168.10.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/BD-BD100"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/BD-BD100/subnet-[192.168.100.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/BD-BD20"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/BD-BD20/subnet-[192.168.20.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/BD-BD200"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/BD-BD200/subnet-[192.168.200.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/ap-DEV"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/ap-DEV/epg-DEV-APP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/ap-DEV/epg-DEV-DB"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/ap-PROD"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/ap-PROD/epg-PROD-APP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/ap-PROD/epg-PROD-DB"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/ctx-DEV"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "Test101",
+    "dn": "uni/tn-Test101/ctx-PROD"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TestTenant",
+    "dn": "uni/tn-TestTenant"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TestTenant",
+    "dn": "uni/tn-TestTenant/ctx-TestVRF"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "ddso",
+    "dn": "uni/tn-ddso"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "ddso",
+    "dn": "uni/tn-ddso/BD-BD11"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "ddso",
+    "dn": "uni/tn-ddso/ctx-VRF11"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/BD-gtest-bridge"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-Arizona"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-California"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-Florida"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-Idaho"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-Nebraska"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-Nevada"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-Oklahoma"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-Texas"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-Utah"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ap-gtest-apps/epg-Washington"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "gtest",
+    "dn": "uni/tn-gtest/ctx-gtest-vrf"
+   }
+  ],
+  "newly_removed_from_baseline": [
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "MUHC",
+    "dn": "uni/tn-MUHC"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "MUHC",
+    "dn": "uni/tn-MUHC/ap-LEGACY_APR"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/BD-BD-LAB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/BD-BD-LAB/subnet-[10.99.1.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-App"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Backup"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-DB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Dir"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Infra"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mail"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mgmt"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Mon"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ap-AP-LAB/epg-EPG-Web"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN-DEDUP-LAB",
+    "dn": "uni/tn-TN-DEDUP-LAB/ctx-VRF-LAB"
+   }
+  ],
+  "restored_to_baseline": [
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_DB_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_DB_BD/subnet-[10.33.6.1/24]"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_DB_BD/subnet-[fd00:a:17:6::1/64]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_WEB_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_WEB_BD/subnet-[203.0.113.1/24]"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/BD-ROR_WEB_BD/subnet-[3fff:cb:0:71::1/64]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/ap-ROR_WEB_AP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_DB_EPG"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/ap-ROR_WEB_AP/epg-ROR_WEB_EPG"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "ROR",
+    "dn": "uni/tn-ROR/ctx-ROR_VRF"
+   }
+  ]
+ }
+}
