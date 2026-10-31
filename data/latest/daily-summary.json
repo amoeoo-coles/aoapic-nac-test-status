@@ -1,85 +1,69 @@
 {
   "schema": 1,
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "status": "attention",
-  "headline": "DRIFT DETECTED | HEALTHY",
-  "generated_at": "2026-10-31T08:22:19+11:00",
-  "generated_at_local": "2026-10-31 08:22:19 AEDT",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-11-01T08:21:37+11:00",
+  "generated_at_local": "2026-11-01 08:21:37 AEDT",
   "drift": {
     "status": "drift",
-    "headline": "DRIFT DETECTED - tests 31/129 passed, 98 failed; 50 added, 98 removed",
+    "headline": "DRIFT DETECTED - tests 45/129 passed, 84 failed; 15 added, 84 removed",
     "tests": 129,
-    "failed": 98,
-    "added": 50,
-    "removed": 98,
+    "failed": 84,
+    "added": 15,
+    "removed": 84,
     "folder": "drift/"
   },
   "integrity": {
-    "status": "warnings",
-    "headline": "HEALTHY - 0 broken relations, 29 warnings across 14 tenants",
-    "broken": 0,
-    "warnings": 29,
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 4 broken, 20 warnings (1 of 10 tenants broken: SnV)",
+    "broken": 4,
+    "warnings": 20,
     "robot": {
-      "total": 66,
-      "passed": 66,
-      "failed": 0
+      "total": 61,
+      "passed": 60,
+      "failed": 1
     },
     "scorecard": [
       {
-        "tenant": "aaaaa",
+        "tenant": "Ansible-PROD",
         "in_baseline": false,
         "broken": 0,
-        "warnings": 1,
-        "score": 97,
+        "warnings": 4,
+        "score": 88,
         "status": "WARN"
       },
       {
-        "tenant": "Atul_tenant",
+        "tenant": "Ansible-QA",
         "in_baseline": false,
         "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
-        "tenant": "BCC-222",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
+        "warnings": 10,
+        "score": 70,
         "status": "WARN"
       },
       {
         "tenant": "common",
         "in_baseline": true,
         "broken": 0,
-        "warnings": 2,
-        "score": 94,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "daa",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
         "status": "WARN"
       },
       {
-        "tenant": "DEMO1",
-        "in_baseline": false,
+        "tenant": "Heroes",
+        "in_baseline": true,
         "broken": 0,
-        "warnings": 5,
-        "score": 85,
-        "status": "WARN"
-      },
-      {
-        "tenant": "iacdemo-contractors",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 2,
-        "score": 94,
-        "status": "WARN"
-      },
-      {
-        "tenant": "iacdemo-prod",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 4,
-        "score": 88,
-        "status": "WARN"
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
       },
       {
         "tenant": "infra",
@@ -98,14 +82,6 @@
         "status": "WARN"
       },
       {
-        "tenant": "MS-T",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 2,
-        "score": 94,
-        "status": "WARN"
-      },
-      {
         "tenant": "oneaciapp",
         "in_baseline": true,
         "broken": 0,
@@ -114,27 +90,19 @@
         "status": "WARN"
       },
       {
-        "tenant": "PY-TN",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 2,
-        "score": 94,
-        "status": "WARN"
-      },
-      {
-        "tenant": "ROR",
+        "tenant": "SnV",
         "in_baseline": true,
-        "broken": 0,
-        "warnings": 3,
-        "score": 91,
-        "status": "WARN"
+        "broken": 4,
+        "warnings": 1,
+        "score": 57,
+        "status": "BROKEN"
       },
       {
-        "tenant": "Tenant_Test",
+        "tenant": "TENANT_MYTEST",
         "in_baseline": false,
         "broken": 0,
-        "warnings": 3,
-        "score": 91,
+        "warnings": 1,
+        "score": 97,
         "status": "WARN"
       }
     ],
