@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "date": "2026-11-02",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-11-02T08:17:11+11:00",
+  "generated_at_local": "2026-11-02 08:17:11 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 45/129 passed, 84 failed; 68 added, 84 removed",
+    "tests": 129,
+    "failed": 84,
+    "added": 68,
+    "removed": 84,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 8 broken, 43 warnings (5 of 16 tenants broken: Graph, Heroes, SnV, daa, oneaciapp)",
+    "broken": 8,
+    "warnings": 43,
+    "robot": {
+      "total": 103,
+      "passed": 99,
+      "failed": 4
+    },
+    "scorecard": [
+      {
+        "tenant": "Ansible-PROD",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 4,
+        "score": 88,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Ansible-QA",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 10,
+        "score": 70,
+        "status": "WARN"
+      },
+      {
+        "tenant": "BCC-222",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "daa",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 1,
+        "score": 87,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "DEMO1",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 8,
+        "score": 76,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Graph",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 4,
+        "score": 78,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "Heroes",
+        "in_baseline": true,
+        "broken": 1,
+        "warnings": 0,
+        "score": 90,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "iacdemo-contractors",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "iacdemo-prod",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 1,
+        "warnings": 0,
+        "score": 90,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "SnV",
+        "in_baseline": true,
+        "broken": 4,
+        "warnings": 1,
+        "score": 57,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "TENANT_MYTEST",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 6,
+        "score": 82,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TEST-POM",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}

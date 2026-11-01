@@ -1,9 +1,9 @@
-# ACI drift report: 2026-11-01
+# ACI drift report: 2026-11-02
 
-## DRIFT DETECTED - tests 45/129 passed, 84 failed; 15 added, 84 removed
+## DRIFT DETECTED - tests 45/129 passed, 84 failed; 68 added, 84 removed
 
 - APIC: https://sandboxapicdc.cisco.com
-- Generated: 2026-11-01 08:21:17 AEDT (Australia/Melbourne)
+- Generated: 2026-11-02 08:16:27 AEDT (Australia/Melbourne)
 - Baseline: `baseline/data/` (frozen 2026-10-22 10:47 AEDT (Australia/Melbourne) by `scripts/drift_report.sh`)
 - Status: `drift`
 
@@ -102,27 +102,69 @@
 
 | Type | Baseline | Current (APIC, all tenants) | Added | Removed |
 |---|---:|---:|---:|---:|
-| Tenant | 16 | 10 | 4 | 10 |
-| VRF | 18 | 8 | 0 | 10 |
-| BD | 23 | 6 | 0 | 17 |
-| Subnet (BD) | 23 | 4 | 0 | 19 |
-| AP | 16 | 12 | 4 | 8 |
-| EPG | 33 | 20 | 7 | 20 |
+| Tenant | 16 | 16 | 10 | 10 |
+| VRF | 18 | 17 | 9 | 10 |
+| BD | 23 | 20 | 14 | 17 |
+| Subnet (BD) | 23 | 13 | 9 | 19 |
+| AP | 16 | 16 | 8 | 8 |
+| EPG | 33 | 31 | 18 | 20 |
 
 Subnets are bridge-domain subnets only (EPG-level subnets are not in the baseline model).
 
-## Added since baseline (15)
+## Added since baseline (68)
 
 | Type | Tenant | DN |
 |---|---|---|
 | Tenant | Ansible-PROD | `uni/tn-Ansible-PROD` |
 | Tenant | Ansible-QA | `uni/tn-Ansible-QA` |
+| Tenant | BCC-222 | `uni/tn-BCC-222` |
+| Tenant | DEMO1 | `uni/tn-DEMO1` |
+| Tenant | Graph | `uni/tn-Graph` |
 | Tenant | TENANT_MYTEST | `uni/tn-TENANT_MYTEST` |
+| Tenant | TEST-POM | `uni/tn-TEST-POM` |
 | Tenant | daa | `uni/tn-daa` |
+| Tenant | iacdemo-contractors | `uni/tn-iacdemo-contractors` |
+| Tenant | iacdemo-prod | `uni/tn-iacdemo-prod` |
+| VRF | BCC-222 | `uni/tn-BCC-222/ctx-VRF-BCC-222` |
+| VRF | DEMO1 | `uni/tn-DEMO1/ctx-Test-01` |
+| VRF | DEMO1 | `uni/tn-DEMO1/ctx-vrf-demo1` |
+| VRF | Graph | `uni/tn-Graph/ctx-Graph` |
+| VRF | TENANT_MYTEST | `uni/tn-TENANT_MYTEST/ctx-VRF-MyTest1` |
+| VRF | TEST-POM | `uni/tn-TEST-POM/ctx-TEST-PRD` |
+| VRF | daa | `uni/tn-daa/ctx-Test-VRF` |
+| VRF | iacdemo-contractors | `uni/tn-iacdemo-contractors/ctx-VRF-Contractors` |
+| VRF | iacdemo-prod | `uni/tn-iacdemo-prod/ctx-VRF-Prod` |
+| BD | DEMO1 | `uni/tn-DEMO1/BD-Test` |
+| BD | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan300-web-demo1` |
+| BD | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan301-dab-demo1` |
+| BD | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan302-web2-demo1` |
+| BD | Graph | `uni/tn-Graph/BD-BD1` |
+| BD | Graph | `uni/tn-Graph/BD-BD2` |
+| BD | TENANT_MYTEST | `uni/tn-TENANT_MYTEST/BD-BD-MyTest1-192.168.1.0` |
+| BD | TENANT_MYTEST | `uni/tn-TENANT_MYTEST/BD-BD1` |
+| BD | TENANT_MYTEST | `uni/tn-TENANT_MYTEST/BD-BD2` |
+| BD | daa | `uni/tn-daa/BD-TEST_BD` |
+| BD | iacdemo-contractors | `uni/tn-iacdemo-contractors/BD-Contractors-BD` |
+| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-App-BD` |
+| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Db-BD` |
+| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Web-BD` |
+| Subnet (BD) | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan300-web-demo1/subnet-[10.10.10.1/24]` |
+| Subnet (BD) | DEMO1 | `uni/tn-DEMO1/BD-bd-vlan300-web-demo1/subnet-[20.20.20.1/24]` |
+| Subnet (BD) | TENANT_MYTEST | `uni/tn-TENANT_MYTEST/BD-BD1/subnet-[192.168.2.254/24]` |
+| Subnet (BD) | TENANT_MYTEST | `uni/tn-TENANT_MYTEST/BD-BD2/subnet-[192.168.3.254/24]` |
+| Subnet (BD) | daa | `uni/tn-daa/BD-TEST_BD/subnet-[10.1.1.254/24]` |
+| Subnet (BD) | iacdemo-contractors | `uni/tn-iacdemo-contractors/BD-Contractors-BD/subnet-[10.10.0.1/24]` |
+| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-App-BD/subnet-[10.20.20.1/24]` |
+| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Db-BD/subnet-[10.20.30.1/24]` |
+| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Web-BD/subnet-[10.20.10.1/24]` |
 | AP | Ansible-PROD | `uni/tn-Ansible-PROD/ap-Hypervisors` |
 | AP | Ansible-QA | `uni/tn-Ansible-QA/ap-Bare-Metals` |
 | AP | Ansible-QA | `uni/tn-Ansible-QA/ap-Hypervisors` |
+| AP | DEMO1 | `uni/tn-DEMO1/ap-app-demo1` |
+| AP | Graph | `uni/tn-Graph/ap-APP` |
 | AP | daa | `uni/tn-daa/ap-ap1` |
+| AP | iacdemo-contractors | `uni/tn-iacdemo-contractors/ap-Remote-Access-AP` |
+| AP | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP` |
 | EPG | Ansible-PROD | `uni/tn-Ansible-PROD/ap-Hypervisors/epg-Subnet-192-168-1-0` |
 | EPG | Ansible-PROD | `uni/tn-Ansible-PROD/ap-Hypervisors/epg-Subnet-192-168-2-0` |
 | EPG | Ansible-QA | `uni/tn-Ansible-QA/ap-Bare-Metals/epg-Subnet-192-168-13-0` |
@@ -130,6 +172,17 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 | EPG | Ansible-QA | `uni/tn-Ansible-QA/ap-Bare-Metals/epg-Subnet-192-168-15-0` |
 | EPG | Ansible-QA | `uni/tn-Ansible-QA/ap-Hypervisors/epg-Subnet-192-168-11-0` |
 | EPG | Ansible-QA | `uni/tn-Ansible-QA/ap-Hypervisors/epg-Subnet-192-168-12-0` |
+| EPG | DEMO1 | `uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan300-web-demo1` |
+| EPG | DEMO1 | `uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan301-dab-demo1` |
+| EPG | DEMO1 | `uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan302-web2-demo1` |
+| EPG | Graph | `uni/tn-Graph/ap-APP/epg-EGP1` |
+| EPG | Graph | `uni/tn-Graph/ap-APP/epg-EPG2` |
+| EPG | daa | `uni/tn-daa/ap-ap1/epg-TEST_EPG` |
+| EPG | iacdemo-contractors | `uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Jump-Hosts` |
+| EPG | iacdemo-contractors | `uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Vendors` |
+| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-App` |
+| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-Db` |
+| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-Web` |
 
 ## Removed since baseline (84)
 
@@ -224,7 +277,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 
 | critical | major | minor | warning | info | cleared | total |
 |---:|---:|---:|---:|---:|---:|---:|
-| 6 | 4 | 0 | 675 | 0 | 16 | 701 |
+| 13 | 8 | 13 | 680 | 0 | 7 | 721 |
 
 ## Artifacts
 
