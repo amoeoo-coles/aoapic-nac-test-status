@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "date": "2026-11-03",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-11-03T08:23:57+11:00",
+  "generated_at_local": "2026-11-03 08:23:57 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 45/129 passed, 84 failed; 46 added, 84 removed",
+    "tests": 129,
+    "failed": 84,
+    "added": 46,
+    "removed": 84,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 5 broken, 33 warnings (2 of 11 tenants broken: SnV, TenantAPPC3750)",
+    "broken": 5,
+    "warnings": 33,
+    "robot": {
+      "total": 87,
+      "passed": 85,
+      "failed": 2
+    },
+    "scorecard": [
+      {
+        "tenant": "Bank-Demo",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Heroes",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 4,
+        "score": 88,
+        "status": "WARN"
+      },
+      {
+        "tenant": "iacdemo-contractors",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "iacdemo-prod",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 5,
+        "score": 85,
+        "status": "WARN"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "SIS_PROD",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 6,
+        "score": 82,
+        "status": "WARN"
+      },
+      {
+        "tenant": "SnV",
+        "in_baseline": true,
+        "broken": 4,
+        "warnings": 9,
+        "score": 33,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "TenantAPPC3750",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 2,
+        "score": 84,
+        "status": "BROKEN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}

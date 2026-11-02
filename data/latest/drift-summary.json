@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "date": "2026-11-02",
+  "date": "2026-11-03",
   "status": "drift",
   "drift": true,
-  "headline": "DRIFT DETECTED - tests 45/129 passed, 84 failed; 68 added, 84 removed",
-  "generated_at": "2026-11-02T08:16:27+11:00",
-  "generated_at_local": "2026-11-02 08:16:27 AEDT",
+  "headline": "DRIFT DETECTED - tests 45/129 passed, 84 failed; 46 added, 84 removed",
+  "generated_at": "2026-11-03T08:23:18+11:00",
+  "generated_at_local": "2026-11-03 08:23:18 AEDT",
   "apic_url": "https://sandboxapicdc.cisco.com",
   "nac_test_rc": 84,
   "baseline": {
@@ -530,48 +530,48 @@
       "type": "Tenant",
       "class": "fvTenant",
       "baseline": 16,
-      "current": 16,
-      "added": 10,
+      "current": 11,
+      "added": 5,
       "removed": 10
     },
     {
       "type": "VRF",
       "class": "fvCtx",
       "baseline": 18,
-      "current": 17,
-      "added": 9,
+      "current": 13,
+      "added": 5,
       "removed": 10
     },
     {
       "type": "BD",
       "class": "fvBD",
       "baseline": 23,
-      "current": 20,
-      "added": 14,
+      "current": 16,
+      "added": 10,
       "removed": 17
     },
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
       "baseline": 23,
-      "current": 13,
-      "added": 9,
+      "current": 12,
+      "added": 8,
       "removed": 19
     },
     {
       "type": "AP",
       "class": "fvAp",
       "baseline": 16,
-      "current": 16,
-      "added": 8,
+      "current": 13,
+      "added": 5,
       "removed": 8
     },
     {
       "type": "EPG",
       "class": "fvAEPg",
       "baseline": 33,
-      "current": 31,
-      "added": 18,
+      "current": 26,
+      "added": 13,
       "removed": 20
     }
   ],
@@ -579,50 +579,20 @@
     {
       "type": "Tenant",
       "class": "fvTenant",
-      "tenant": "Ansible-PROD",
-      "dn": "uni/tn-Ansible-PROD"
+      "tenant": "Bank-Demo",
+      "dn": "uni/tn-Bank-Demo"
     },
     {
       "type": "Tenant",
       "class": "fvTenant",
-      "tenant": "Ansible-QA",
-      "dn": "uni/tn-Ansible-QA"
+      "tenant": "SIS_PROD",
+      "dn": "uni/tn-SIS_PROD"
     },
     {
       "type": "Tenant",
       "class": "fvTenant",
-      "tenant": "BCC-222",
-      "dn": "uni/tn-BCC-222"
-    },
-    {
-      "type": "Tenant",
-      "class": "fvTenant",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1"
-    },
-    {
-      "type": "Tenant",
-      "class": "fvTenant",
-      "tenant": "Graph",
-      "dn": "uni/tn-Graph"
-    },
-    {
-      "type": "Tenant",
-      "class": "fvTenant",
-      "tenant": "TENANT_MYTEST",
-      "dn": "uni/tn-TENANT_MYTEST"
-    },
-    {
-      "type": "Tenant",
-      "class": "fvTenant",
-      "tenant": "TEST-POM",
-      "dn": "uni/tn-TEST-POM"
-    },
-    {
-      "type": "Tenant",
-      "class": "fvTenant",
-      "tenant": "daa",
-      "dn": "uni/tn-daa"
+      "tenant": "TenantAPPC3750",
+      "dn": "uni/tn-TenantAPPC3750"
     },
     {
       "type": "Tenant",
@@ -639,44 +609,20 @@
     {
       "type": "VRF",
       "class": "fvCtx",
-      "tenant": "BCC-222",
-      "dn": "uni/tn-BCC-222/ctx-VRF-BCC-222"
+      "tenant": "Bank-Demo",
+      "dn": "uni/tn-Bank-Demo/ctx-VRF-CoreBanking"
     },
     {
       "type": "VRF",
       "class": "fvCtx",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/ctx-Test-01"
+      "tenant": "SIS_PROD",
+      "dn": "uni/tn-SIS_PROD/ctx-SIS_VRF"
     },
     {
       "type": "VRF",
       "class": "fvCtx",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/ctx-vrf-demo1"
-    },
-    {
-      "type": "VRF",
-      "class": "fvCtx",
-      "tenant": "Graph",
-      "dn": "uni/tn-Graph/ctx-Graph"
-    },
-    {
-      "type": "VRF",
-      "class": "fvCtx",
-      "tenant": "TENANT_MYTEST",
-      "dn": "uni/tn-TENANT_MYTEST/ctx-VRF-MyTest1"
-    },
-    {
-      "type": "VRF",
-      "class": "fvCtx",
-      "tenant": "TEST-POM",
-      "dn": "uni/tn-TEST-POM/ctx-TEST-PRD"
-    },
-    {
-      "type": "VRF",
-      "class": "fvCtx",
-      "tenant": "daa",
-      "dn": "uni/tn-daa/ctx-Test-VRF"
+      "tenant": "TenantAPPC3750",
+      "dn": "uni/tn-TenantAPPC3750/ctx-VRFN"
     },
     {
       "type": "VRF",
@@ -693,62 +639,26 @@
     {
       "type": "BD",
       "class": "fvBD",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/BD-Test"
+      "tenant": "Bank-Demo",
+      "dn": "uni/tn-Bank-Demo/BD-BD-CoreBanking"
     },
     {
       "type": "BD",
       "class": "fvBD",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/BD-bd-vlan300-web-demo1"
+      "tenant": "SIS_PROD",
+      "dn": "uni/tn-SIS_PROD/BD-vlan-10"
     },
     {
       "type": "BD",
       "class": "fvBD",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/BD-bd-vlan301-dab-demo1"
+      "tenant": "SIS_PROD",
+      "dn": "uni/tn-SIS_PROD/BD-vlan-16"
     },
     {
       "type": "BD",
       "class": "fvBD",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/BD-bd-vlan302-web2-demo1"
-    },
-    {
-      "type": "BD",
-      "class": "fvBD",
-      "tenant": "Graph",
-      "dn": "uni/tn-Graph/BD-BD1"
-    },
-    {
-      "type": "BD",
-      "class": "fvBD",
-      "tenant": "Graph",
-      "dn": "uni/tn-Graph/BD-BD2"
-    },
-    {
-      "type": "BD",
-      "class": "fvBD",
-      "tenant": "TENANT_MYTEST",
-      "dn": "uni/tn-TENANT_MYTEST/BD-BD-MyTest1-192.168.1.0"
-    },
-    {
-      "type": "BD",
-      "class": "fvBD",
-      "tenant": "TENANT_MYTEST",
-      "dn": "uni/tn-TENANT_MYTEST/BD-BD1"
-    },
-    {
-      "type": "BD",
-      "class": "fvBD",
-      "tenant": "TENANT_MYTEST",
-      "dn": "uni/tn-TENANT_MYTEST/BD-BD2"
-    },
-    {
-      "type": "BD",
-      "class": "fvBD",
-      "tenant": "daa",
-      "dn": "uni/tn-daa/BD-TEST_BD"
+      "tenant": "TenantAPPC3750",
+      "dn": "uni/tn-TenantAPPC3750/BD-BDN"
     },
     {
       "type": "BD",
@@ -766,6 +676,12 @@
       "type": "BD",
       "class": "fvBD",
       "tenant": "iacdemo-prod",
+      "dn": "uni/tn-iacdemo-prod/BD-Cache-BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "iacdemo-prod",
       "dn": "uni/tn-iacdemo-prod/BD-Db-BD"
     },
     {
@@ -775,34 +691,22 @@
       "dn": "uni/tn-iacdemo-prod/BD-Web-BD"
     },
     {
-      "type": "Subnet (BD)",
-      "class": "fvSubnet",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/BD-bd-vlan300-web-demo1/subnet-[10.10.10.1/24]"
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "iacdemo-prod",
+      "dn": "uni/tn-iacdemo-prod/BD-jols-BD"
     },
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/BD-bd-vlan300-web-demo1/subnet-[20.20.20.1/24]"
+      "tenant": "Bank-Demo",
+      "dn": "uni/tn-Bank-Demo/BD-BD-CoreBanking/subnet-[10.10.10.1/24]"
     },
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
-      "tenant": "TENANT_MYTEST",
-      "dn": "uni/tn-TENANT_MYTEST/BD-BD1/subnet-[192.168.2.254/24]"
-    },
-    {
-      "type": "Subnet (BD)",
-      "class": "fvSubnet",
-      "tenant": "TENANT_MYTEST",
-      "dn": "uni/tn-TENANT_MYTEST/BD-BD2/subnet-[192.168.3.254/24]"
-    },
-    {
-      "type": "Subnet (BD)",
-      "class": "fvSubnet",
-      "tenant": "daa",
-      "dn": "uni/tn-daa/BD-TEST_BD/subnet-[10.1.1.254/24]"
+      "tenant": "TenantAPPC3750",
+      "dn": "uni/tn-TenantAPPC3750/BD-BDN/subnet-[10.0.10.1/24]"
     },
     {
       "type": "Subnet (BD)",
@@ -820,6 +724,12 @@
       "type": "Subnet (BD)",
       "class": "fvSubnet",
       "tenant": "iacdemo-prod",
+      "dn": "uni/tn-iacdemo-prod/BD-Cache-BD/subnet-[10.20.40.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "iacdemo-prod",
       "dn": "uni/tn-iacdemo-prod/BD-Db-BD/subnet-[10.20.30.1/24]"
     },
     {
@@ -829,40 +739,28 @@
       "dn": "uni/tn-iacdemo-prod/BD-Web-BD/subnet-[10.20.10.1/24]"
     },
     {
-      "type": "AP",
-      "class": "fvAp",
-      "tenant": "Ansible-PROD",
-      "dn": "uni/tn-Ansible-PROD/ap-Hypervisors"
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "iacdemo-prod",
+      "dn": "uni/tn-iacdemo-prod/BD-jols-BD/subnet-[10.20.0.1/24]"
     },
     {
       "type": "AP",
       "class": "fvAp",
-      "tenant": "Ansible-QA",
-      "dn": "uni/tn-Ansible-QA/ap-Bare-Metals"
+      "tenant": "Bank-Demo",
+      "dn": "uni/tn-Bank-Demo/ap-Core-Banking"
     },
     {
       "type": "AP",
       "class": "fvAp",
-      "tenant": "Ansible-QA",
-      "dn": "uni/tn-Ansible-QA/ap-Hypervisors"
+      "tenant": "SIS_PROD",
+      "dn": "uni/tn-SIS_PROD/ap-SIS_AP"
     },
     {
       "type": "AP",
       "class": "fvAp",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/ap-app-demo1"
-    },
-    {
-      "type": "AP",
-      "class": "fvAp",
-      "tenant": "Graph",
-      "dn": "uni/tn-Graph/ap-APP"
-    },
-    {
-      "type": "AP",
-      "class": "fvAp",
-      "tenant": "daa",
-      "dn": "uni/tn-daa/ap-ap1"
+      "tenant": "TenantAPPC3750",
+      "dn": "uni/tn-TenantAPPC3750/ap-AppN"
     },
     {
       "type": "AP",
@@ -879,80 +777,44 @@
     {
       "type": "EPG",
       "class": "fvAEPg",
-      "tenant": "Ansible-PROD",
-      "dn": "uni/tn-Ansible-PROD/ap-Hypervisors/epg-Subnet-192-168-1-0"
+      "tenant": "Bank-Demo",
+      "dn": "uni/tn-Bank-Demo/ap-Core-Banking/epg-App"
     },
     {
       "type": "EPG",
       "class": "fvAEPg",
-      "tenant": "Ansible-PROD",
-      "dn": "uni/tn-Ansible-PROD/ap-Hypervisors/epg-Subnet-192-168-2-0"
+      "tenant": "Bank-Demo",
+      "dn": "uni/tn-Bank-Demo/ap-Core-Banking/epg-DB"
     },
     {
       "type": "EPG",
       "class": "fvAEPg",
-      "tenant": "Ansible-QA",
-      "dn": "uni/tn-Ansible-QA/ap-Bare-Metals/epg-Subnet-192-168-13-0"
+      "tenant": "Bank-Demo",
+      "dn": "uni/tn-Bank-Demo/ap-Core-Banking/epg-Web"
     },
     {
       "type": "EPG",
       "class": "fvAEPg",
-      "tenant": "Ansible-QA",
-      "dn": "uni/tn-Ansible-QA/ap-Bare-Metals/epg-Subnet-192-168-14-0"
+      "tenant": "SIS_PROD",
+      "dn": "uni/tn-SIS_PROD/ap-SIS_AP/epg-EPG-10"
     },
     {
       "type": "EPG",
       "class": "fvAEPg",
-      "tenant": "Ansible-QA",
-      "dn": "uni/tn-Ansible-QA/ap-Bare-Metals/epg-Subnet-192-168-15-0"
+      "tenant": "SIS_PROD",
+      "dn": "uni/tn-SIS_PROD/ap-SIS_AP/epg-EPG-16"
     },
     {
       "type": "EPG",
       "class": "fvAEPg",
-      "tenant": "Ansible-QA",
-      "dn": "uni/tn-Ansible-QA/ap-Hypervisors/epg-Subnet-192-168-11-0"
+      "tenant": "TenantAPPC3750",
+      "dn": "uni/tn-TenantAPPC3750/ap-AppN/epg-EPGN"
     },
     {
       "type": "EPG",
       "class": "fvAEPg",
-      "tenant": "Ansible-QA",
-      "dn": "uni/tn-Ansible-QA/ap-Hypervisors/epg-Subnet-192-168-12-0"
-    },
-    {
-      "type": "EPG",
-      "class": "fvAEPg",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan300-web-demo1"
-    },
-    {
-      "type": "EPG",
-      "class": "fvAEPg",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan301-dab-demo1"
-    },
-    {
-      "type": "EPG",
-      "class": "fvAEPg",
-      "tenant": "DEMO1",
-      "dn": "uni/tn-DEMO1/ap-app-demo1/epg-epg-vlan302-web2-demo1"
-    },
-    {
-      "type": "EPG",
-      "class": "fvAEPg",
-      "tenant": "Graph",
-      "dn": "uni/tn-Graph/ap-APP/epg-EGP1"
-    },
-    {
-      "type": "EPG",
-      "class": "fvAEPg",
-      "tenant": "Graph",
-      "dn": "uni/tn-Graph/ap-APP/epg-EPG2"
-    },
-    {
-      "type": "EPG",
-      "class": "fvAEPg",
-      "tenant": "daa",
-      "dn": "uni/tn-daa/ap-ap1/epg-TEST_EPG"
+      "tenant": "TenantAPPC3750",
+      "dn": "uni/tn-TenantAPPC3750/ap-AppN/epg-EPGN2"
     },
     {
       "type": "EPG",
@@ -971,6 +833,12 @@
       "class": "fvAEPg",
       "tenant": "iacdemo-prod",
       "dn": "uni/tn-iacdemo-prod/ap-Shop-AP/epg-App"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "iacdemo-prod",
+      "dn": "uni/tn-iacdemo-prod/ap-Shop-AP/epg-Cache"
     },
     {
       "type": "EPG",
@@ -1492,13 +1360,13 @@
     }
   ],
   "faults": {
-    "critical": 13,
-    "major": 8,
-    "minor": 13,
-    "warning": 680,
+    "critical": 7,
+    "major": 2,
+    "minor": 37,
+    "warning": 284,
     "info": 0,
-    "cleared": 7,
-    "total": 721
+    "cleared": 10,
+    "total": 340
   },
   "errors": [],
   "note": null
