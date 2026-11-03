@@ -1,56 +1,40 @@
 {
   "schema": 1,
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "status": "attention",
   "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
-  "generated_at": "2026-11-03T08:23:57+11:00",
-  "generated_at_local": "2026-11-03 08:23:57 AEDT",
+  "generated_at": "2026-11-04T08:20:12+11:00",
+  "generated_at_local": "2026-11-04 08:20:12 AEDT",
   "drift": {
     "status": "drift",
-    "headline": "DRIFT DETECTED - tests 45/129 passed, 84 failed; 46 added, 84 removed",
+    "headline": "DRIFT DETECTED - tests 45/129 passed, 84 failed; 10 added, 84 removed",
     "tests": 129,
     "failed": 84,
-    "added": 46,
+    "added": 10,
     "removed": 84,
     "folder": "drift/"
   },
   "integrity": {
     "status": "broken",
-    "headline": "BROKEN RELATIONS FOUND - 5 broken, 33 warnings (2 of 11 tenants broken: SnV, TenantAPPC3750)",
-    "broken": 5,
-    "warnings": 33,
+    "headline": "BROKEN RELATIONS FOUND - 12 broken, 9 warnings (2 of 8 tenants broken: Heroes, SnV)",
+    "broken": 12,
+    "warnings": 9,
     "robot": {
-      "total": 87,
-      "passed": 85,
+      "total": 55,
+      "passed": 53,
       "failed": 2
     },
     "scorecard": [
       {
-        "tenant": "Bank-Demo",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
         "tenant": "common",
         "in_baseline": true,
         "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
       },
       {
-        "tenant": "Heroes",
-        "in_baseline": true,
-        "broken": 0,
-        "warnings": 4,
-        "score": 88,
-        "status": "WARN"
-      },
-      {
-        "tenant": "iacdemo-contractors",
+        "tenant": "dev-demo",
         "in_baseline": false,
         "broken": 0,
         "warnings": 2,
@@ -58,12 +42,12 @@
         "status": "WARN"
       },
       {
-        "tenant": "iacdemo-prod",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 5,
-        "score": 85,
-        "status": "WARN"
+        "tenant": "Heroes",
+        "in_baseline": true,
+        "broken": 4,
+        "warnings": 0,
+        "score": 60,
+        "status": "BROKEN"
       },
       {
         "tenant": "infra",
@@ -77,8 +61,8 @@
         "tenant": "mgmt",
         "in_baseline": true,
         "broken": 0,
-        "warnings": 2,
-        "score": 94,
+        "warnings": 3,
+        "score": 91,
         "status": "WARN"
       },
       {
@@ -90,28 +74,20 @@
         "status": "WARN"
       },
       {
-        "tenant": "SIS_PROD",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 6,
-        "score": 82,
-        "status": "WARN"
-      },
-      {
         "tenant": "SnV",
         "in_baseline": true,
-        "broken": 4,
-        "warnings": 9,
-        "score": 33,
+        "broken": 8,
+        "warnings": 1,
+        "score": 17,
         "status": "BROKEN"
       },
       {
-        "tenant": "TenantAPPC3750",
+        "tenant": "TENANT-LAB",
         "in_baseline": false,
-        "broken": 1,
+        "broken": 0,
         "warnings": 2,
-        "score": 84,
-        "status": "BROKEN"
+        "score": 94,
+        "status": "WARN"
       }
     ],
     "folder": "integrity/"

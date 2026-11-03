@@ -1,9 +1,9 @@
-# ACI drift report: 2026-11-03
+# ACI drift report: 2026-11-04
 
-## DRIFT DETECTED - tests 45/129 passed, 84 failed; 46 added, 84 removed
+## DRIFT DETECTED - tests 45/129 passed, 84 failed; 10 added, 84 removed
 
 - APIC: https://sandboxapicdc.cisco.com
-- Generated: 2026-11-03 08:23:18 AEDT (Australia/Melbourne)
+- Generated: 2026-11-04 08:19:36 AEDT (Australia/Melbourne)
 - Baseline: `baseline/data/` (frozen 2026-10-22 10:47 AEDT (Australia/Melbourne) by `scripts/drift_report.sh`)
 - Status: `drift`
 
@@ -102,65 +102,29 @@
 
 | Type | Baseline | Current (APIC, all tenants) | Added | Removed |
 |---|---:|---:|---:|---:|
-| Tenant | 16 | 11 | 5 | 10 |
-| VRF | 18 | 13 | 5 | 10 |
-| BD | 23 | 16 | 10 | 17 |
-| Subnet (BD) | 23 | 12 | 8 | 19 |
-| AP | 16 | 13 | 5 | 8 |
-| EPG | 33 | 26 | 13 | 20 |
+| Tenant | 16 | 8 | 2 | 10 |
+| VRF | 18 | 10 | 2 | 10 |
+| BD | 23 | 9 | 3 | 17 |
+| Subnet (BD) | 23 | 7 | 3 | 19 |
+| AP | 16 | 8 | 0 | 8 |
+| EPG | 33 | 13 | 0 | 20 |
 
 Subnets are bridge-domain subnets only (EPG-level subnets are not in the baseline model).
 
-## Added since baseline (46)
+## Added since baseline (10)
 
 | Type | Tenant | DN |
 |---|---|---|
-| Tenant | Bank-Demo | `uni/tn-Bank-Demo` |
-| Tenant | SIS_PROD | `uni/tn-SIS_PROD` |
-| Tenant | TenantAPPC3750 | `uni/tn-TenantAPPC3750` |
-| Tenant | iacdemo-contractors | `uni/tn-iacdemo-contractors` |
-| Tenant | iacdemo-prod | `uni/tn-iacdemo-prod` |
-| VRF | Bank-Demo | `uni/tn-Bank-Demo/ctx-VRF-CoreBanking` |
-| VRF | SIS_PROD | `uni/tn-SIS_PROD/ctx-SIS_VRF` |
-| VRF | TenantAPPC3750 | `uni/tn-TenantAPPC3750/ctx-VRFN` |
-| VRF | iacdemo-contractors | `uni/tn-iacdemo-contractors/ctx-VRF-Contractors` |
-| VRF | iacdemo-prod | `uni/tn-iacdemo-prod/ctx-VRF-Prod` |
-| BD | Bank-Demo | `uni/tn-Bank-Demo/BD-BD-CoreBanking` |
-| BD | SIS_PROD | `uni/tn-SIS_PROD/BD-vlan-10` |
-| BD | SIS_PROD | `uni/tn-SIS_PROD/BD-vlan-16` |
-| BD | TenantAPPC3750 | `uni/tn-TenantAPPC3750/BD-BDN` |
-| BD | iacdemo-contractors | `uni/tn-iacdemo-contractors/BD-Contractors-BD` |
-| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-App-BD` |
-| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Cache-BD` |
-| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Db-BD` |
-| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Web-BD` |
-| BD | iacdemo-prod | `uni/tn-iacdemo-prod/BD-jols-BD` |
-| Subnet (BD) | Bank-Demo | `uni/tn-Bank-Demo/BD-BD-CoreBanking/subnet-[10.10.10.1/24]` |
-| Subnet (BD) | TenantAPPC3750 | `uni/tn-TenantAPPC3750/BD-BDN/subnet-[10.0.10.1/24]` |
-| Subnet (BD) | iacdemo-contractors | `uni/tn-iacdemo-contractors/BD-Contractors-BD/subnet-[10.10.0.1/24]` |
-| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-App-BD/subnet-[10.20.20.1/24]` |
-| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Cache-BD/subnet-[10.20.40.1/24]` |
-| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Db-BD/subnet-[10.20.30.1/24]` |
-| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-Web-BD/subnet-[10.20.10.1/24]` |
-| Subnet (BD) | iacdemo-prod | `uni/tn-iacdemo-prod/BD-jols-BD/subnet-[10.20.0.1/24]` |
-| AP | Bank-Demo | `uni/tn-Bank-Demo/ap-Core-Banking` |
-| AP | SIS_PROD | `uni/tn-SIS_PROD/ap-SIS_AP` |
-| AP | TenantAPPC3750 | `uni/tn-TenantAPPC3750/ap-AppN` |
-| AP | iacdemo-contractors | `uni/tn-iacdemo-contractors/ap-Remote-Access-AP` |
-| AP | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP` |
-| EPG | Bank-Demo | `uni/tn-Bank-Demo/ap-Core-Banking/epg-App` |
-| EPG | Bank-Demo | `uni/tn-Bank-Demo/ap-Core-Banking/epg-DB` |
-| EPG | Bank-Demo | `uni/tn-Bank-Demo/ap-Core-Banking/epg-Web` |
-| EPG | SIS_PROD | `uni/tn-SIS_PROD/ap-SIS_AP/epg-EPG-10` |
-| EPG | SIS_PROD | `uni/tn-SIS_PROD/ap-SIS_AP/epg-EPG-16` |
-| EPG | TenantAPPC3750 | `uni/tn-TenantAPPC3750/ap-AppN/epg-EPGN` |
-| EPG | TenantAPPC3750 | `uni/tn-TenantAPPC3750/ap-AppN/epg-EPGN2` |
-| EPG | iacdemo-contractors | `uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Jump-Hosts` |
-| EPG | iacdemo-contractors | `uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Vendors` |
-| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-App` |
-| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-Cache` |
-| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-Db` |
-| EPG | iacdemo-prod | `uni/tn-iacdemo-prod/ap-Shop-AP/epg-Web` |
+| Tenant | TENANT-LAB | `uni/tn-TENANT-LAB` |
+| Tenant | dev-demo | `uni/tn-dev-demo` |
+| VRF | TENANT-LAB | `uni/tn-TENANT-LAB/ctx-VRF-PRODUCAO` |
+| VRF | dev-demo | `uni/tn-dev-demo/ctx-vrf-dev-poc` |
+| BD | TENANT-LAB | `uni/tn-TENANT-LAB/BD-BD-APP` |
+| BD | TENANT-LAB | `uni/tn-TENANT-LAB/BD-BD-WEB` |
+| BD | dev-demo | `uni/tn-dev-demo/BD-BD-INTERNAL-POC` |
+| Subnet (BD) | TENANT-LAB | `uni/tn-TENANT-LAB/BD-BD-APP/subnet-[10.10.20.1/24]` |
+| Subnet (BD) | TENANT-LAB | `uni/tn-TENANT-LAB/BD-BD-WEB/subnet-[10.10.10.1/24]` |
+| Subnet (BD) | mgmt | `uni/tn-mgmt/BD-inb/subnet-[192.168.1.1/24]` |
 
 ## Removed since baseline (84)
 
@@ -255,7 +219,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 
 | critical | major | minor | warning | info | cleared | total |
 |---:|---:|---:|---:|---:|---:|---:|
-| 7 | 2 | 37 | 284 | 0 | 10 | 340 |
+| 51 | 2 | 14 | 595 | 0 | 12 | 674 |
 
 ## Artifacts
 

@@ -1,0 +1,1197 @@
+{
+  "schema": 1,
+  "date": "2026-11-04",
+  "status": "broken",
+  "broken": 12,
+  "warnings": 9,
+  "info": 21,
+  "headline": "BROKEN RELATIONS FOUND - 12 broken, 9 warnings (2 of 8 tenants broken: Heroes, SnV)",
+  "generated_at": "2026-11-04T08:20:12+11:00",
+  "generated_at_local": "2026-11-04 08:20:12 AEDT",
+  "pulled_at_local": "2026-11-04 08:19:50 AEDT",
+  "apic_url": "https://sandboxapicdc.cisco.com",
+  "baseline_count": 6,
+  "new_tenants": [
+    "dev-demo",
+    "TENANT-LAB"
+  ],
+  "missing_baseline_tenants": [
+    "MUHC",
+    "OS1",
+    "ROR",
+    "TEST",
+    "TEST-ABC1",
+    "TN-DEDUP-LAB",
+    "Test-Tenant",
+    "UT",
+    "prod",
+    "tn-MGK"
+  ],
+  "scorecard": [
+    {
+      "tenant": "common",
+      "in_baseline": true,
+      "scope": "full",
+      "vrf": 2,
+      "bd": 1,
+      "subnet": 0,
+      "ap": 1,
+      "epg": 0,
+      "contract": 4,
+      "filter": 9,
+      "l3out": 1,
+      "broken": 0,
+      "warnings": 0,
+      "info": 12,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 100,
+      "status": "HEALTHY"
+    },
+    {
+      "tenant": "dev-demo",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 1,
+      "subnet": 0,
+      "ap": 0,
+      "epg": 0,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 2,
+      "info": 0,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 94,
+      "status": "WARN"
+    },
+    {
+      "tenant": "Heroes",
+      "in_baseline": true,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 1,
+      "subnet": 2,
+      "ap": 1,
+      "epg": 3,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 1,
+      "broken": 4,
+      "warnings": 0,
+      "info": 5,
+      "faults_crit_major": 14,
+      "faults_total": 14,
+      "score": 60,
+      "status": "BROKEN"
+    },
+    {
+      "tenant": "infra",
+      "in_baseline": true,
+      "scope": "relations+faults only (fabric-internal)",
+      "vrf": 2,
+      "bd": 2,
+      "subnet": 1,
+      "ap": 2,
+      "epg": 2,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 0,
+      "info": 0,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 100,
+      "status": "HEALTHY"
+    },
+    {
+      "tenant": "mgmt",
+      "in_baseline": true,
+      "scope": "full",
+      "vrf": 2,
+      "bd": 1,
+      "subnet": 1,
+      "ap": 0,
+      "epg": 0,
+      "contract": 1,
+      "filter": 2,
+      "l3out": 1,
+      "broken": 0,
+      "warnings": 3,
+      "info": 1,
+      "faults_crit_major": 0,
+      "faults_total": 1,
+      "score": 91,
+      "status": "WARN"
+    },
+    {
+      "tenant": "oneaciapp",
+      "in_baseline": true,
+      "scope": "full",
+      "vrf": 0,
+      "bd": 0,
+      "subnet": 0,
+      "ap": 0,
+      "epg": 0,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 1,
+      "info": 0,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 97,
+      "status": "WARN"
+    },
+    {
+      "tenant": "SnV",
+      "in_baseline": true,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 1,
+      "subnet": 1,
+      "ap": 4,
+      "epg": 8,
+      "contract": 2,
+      "filter": 2,
+      "l3out": 0,
+      "broken": 8,
+      "warnings": 1,
+      "info": 1,
+      "faults_crit_major": 36,
+      "faults_total": 36,
+      "score": 17,
+      "status": "BROKEN"
+    },
+    {
+      "tenant": "TENANT-LAB",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 2,
+      "subnet": 2,
+      "ap": 0,
+      "epg": 0,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 2,
+      "info": 2,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 94,
+      "status": "WARN"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-app",
+      "reason": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 102 Heroes_FI-2B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-db",
+      "reason": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 102 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-web",
+      "reason": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 102 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/out-Heroes_external_corporate",
+      "reason": "Configuration failed for uni/tn-Heroes/out-Heroes_external_corporate node 102 eth1/47 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Chaos/epg-Database",
+      "reason": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Database node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Chaos/epg-Web",
+      "reason": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Evolution_X/epg-Database",
+      "reason": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Evolution_X/epg-Web",
+      "reason": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Power_Up/epg-Database",
+      "reason": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Power_Up/epg-Web",
+      "reason": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Rescue/epg-Database",
+      "reason": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/ap-Rescue/epg-Web",
+      "reason": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Contract provided, never consumed",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/brc-web",
+      "reason": "Provided by 4 object(s) (e.g. tn-SnV/ap-Chaos/epg-Web) but no consumer, so it permits no flow.",
+      "fix": "Add the consumer EPG(s) or remove the provider relation.",
+      "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "BD unused",
+      "tenant": "TENANT-LAB",
+      "dn": "uni/tn-TENANT-LAB/BD-BD-APP",
+      "reason": "No EPG is attached to this bridge domain.",
+      "fix": "Remove the BD or attach the intended EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "BD unused",
+      "tenant": "TENANT-LAB",
+      "dn": "uni/tn-TENANT-LAB/BD-BD-WEB",
+      "reason": "No EPG is attached to this bridge domain.",
+      "fix": "Remove the BD or attach the intended EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "BD unused",
+      "tenant": "dev-demo",
+      "dn": "uni/tn-dev-demo/BD-BD-INTERNAL-POC",
+      "reason": "No EPG is attached to this bridge domain.",
+      "fix": "Remove the BD or attach the intended EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "L3 BD without subnet",
+      "tenant": "dev-demo",
+      "dn": "uni/tn-dev-demo/BD-BD-INTERNAL-POC",
+      "reason": "Unicast routing is enabled but the BD has no subnet (no gateway; IP learning without a subnet).",
+      "fix": "Add the gateway subnet, or disable unicast routing if the BD is meant to be Layer-2 only.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Config fault F0523",
+      "tenant": "mgmt",
+      "dn": "uni/tn-mgmt/mgmtp-default/inb-default",
+      "reason": "Configuration failed for EPG default due to Not Associated With Management Zone",
+      "fix": "Fix the EPG's dependency named in the fault (BD/VRF, management zone, etc.).",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Contract unused",
+      "tenant": "mgmt",
+      "dn": "uni/tn-mgmt/brc-ctr_inb_mgmt",
+      "reason": "Contract is neither provided nor consumed.",
+      "fix": "Delete it or attach it to the intended provider and consumer EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "L3Out without external EPG",
+      "tenant": "mgmt",
+      "dn": "uni/tn-mgmt/out-inb_L3Out",
+      "reason": "L3Out has no external EPG (l3extInstP), so no external prefix is classified and no contract can apply.",
+      "fix": "Add an external EPG with the external subnets and contracts.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Tenant empty",
+      "tenant": "oneaciapp",
+      "dn": "uni/tn-oneaciapp",
+      "reason": "Tenant has no VRF, BD, application profile, contract or L3Out.",
+      "fix": "Delete the tenant if it is no longer needed, or bring it under NaC with its intended objects.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG uses common contract",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-app",
+      "reason": "EPG provides 'power_up' resolved to tn-common/brc-power_up.",
+      "fix": "OK for shared contracts; a same-named contract in the tenant would silently take precedence.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG uses common contract",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-app",
+      "reason": "EPG consumes 'sql' resolved to tn-common/brc-sql.",
+      "fix": "OK for shared contracts; a same-named contract in the tenant would silently take precedence.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG uses common contract",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-db",
+      "reason": "EPG provides 'sql' resolved to tn-common/brc-sql.",
+      "fix": "OK for shared contracts; a same-named contract in the tenant would silently take precedence.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG uses common contract",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-web",
+      "reason": "EPG provides 'web' resolved to tn-common/brc-web.",
+      "fix": "OK for shared contracts; a same-named contract in the tenant would silently take precedence.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG uses common contract",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-web",
+      "reason": "EPG consumes 'sql' resolved to tn-common/brc-sql.",
+      "fix": "OK for shared contracts; a same-named contract in the tenant would silently take precedence.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "Contract scope limits pairs",
+      "tenant": "SnV",
+      "dn": "uni/tn-SnV/brc-database",
+      "reason": "Scope 'application-profile' blocks 12 of 16 provider/consumer combinations (e.g. tn-SnV/ap-Power_Up/epg-Database -> tn-SnV/ap-Chaos/epg-Web); every user still has an in-scope partner.",
+      "fix": "OK if intended (per-AP isolation); otherwise widen the scope.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "TENANT-LAB",
+      "dn": "uni/tn-TENANT-LAB/BD-BD-APP",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "TENANT-LAB",
+      "dn": "uni/tn-TENANT-LAB/BD-BD-WEB",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "AP without EPGs",
+      "tenant": "common",
+      "dn": "uni/tn-common/ap-default",
+      "reason": "Application profile contains no EPG. (APIC system default object - informational)",
+      "fix": "Remove the empty application profile or add its EPGs.",
+      "category": "hygiene",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "BD VRF fallback to common",
+      "tenant": "common",
+      "dn": "uni/tn-common/BD-default",
+      "reason": "BD has no VRF name (tnFvCtxName empty) and silently falls back to tn-common/ctx-default. (APIC system default object - informational)",
+      "fix": "Set the VRF explicitly on the BD.",
+      "category": "relation",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "BD unused",
+      "tenant": "common",
+      "dn": "uni/tn-common/BD-default",
+      "reason": "No EPG is attached to this bridge domain. (APIC system default object - informational)",
+      "fix": "Remove the BD or attach the intended EPGs.",
+      "category": "hygiene",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "Contract unused",
+      "tenant": "common",
+      "dn": "uni/tn-common/brc-default",
+      "reason": "Contract is neither provided nor consumed. (APIC system default object - informational)",
+      "fix": "Delete it or attach it to the intended provider and consumer EPGs.",
+      "category": "hygiene",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "Filter unused",
+      "tenant": "common",
+      "dn": "uni/tn-common/flt-arp",
+      "reason": "Filter is not referenced by any contract subject.",
+      "fix": "Delete it if not needed.",
+      "category": "hygiene",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "Filter unused",
+      "tenant": "common",
+      "dn": "uni/tn-common/flt-est",
+      "reason": "Filter is not referenced by any contract subject.",
+      "fix": "Delete it if not needed.",
+      "category": "hygiene",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "Filter unused",
+      "tenant": "common",
+      "dn": "uni/tn-common/flt-icmp",
+      "reason": "Filter is not referenced by any contract subject.",
+      "fix": "Delete it if not needed.",
+      "category": "hygiene",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD without subnet",
+      "tenant": "common",
+      "dn": "uni/tn-common/BD-default",
+      "reason": "Unicast routing is enabled but the BD has no subnet (no gateway; IP learning without a subnet). (APIC system default object - informational)",
+      "fix": "Add the gateway subnet, or disable unicast routing if the BD is meant to be Layer-2 only.",
+      "category": "design",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "L3Out VRF fallback to common",
+      "tenant": "common",
+      "dn": "uni/tn-common/out-default",
+      "reason": "L3Out has no VRF name and falls back to tn-common/ctx-default. (APIC system default object - informational)",
+      "fix": "Set the VRF explicitly.",
+      "category": "relation",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "L3Out without external EPG",
+      "tenant": "common",
+      "dn": "uni/tn-common/out-default",
+      "reason": "L3Out has no external EPG (l3extInstP), so no external prefix is classified and no contract can apply. (APIC system default object - informational)",
+      "fix": "Add an external EPG with the external subnets and contracts.",
+      "category": "design",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "Permit-any filter",
+      "tenant": "common",
+      "dn": "uni/tn-common/brc-default",
+      "reason": "Contract permits ALL traffic via tn-common/flt-default entry default (etherType/protocol unspecified). (APIC system default object - informational)",
+      "fix": "Replace with specific filters (protocol + destination port), e.g. tcp/443; keep 'common/default' for lab use only.",
+      "category": "security",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "VRF unused",
+      "tenant": "common",
+      "dn": "uni/tn-common/ctx-copy",
+      "reason": "No bridge domain or L3Out is attached to this VRF. (APIC system default object - informational)",
+      "fix": "Remove the VRF or attach the BDs that should live in it.",
+      "category": "hygiene",
+      "system": true
+    },
+    {
+      "severity": "info",
+      "check": "VRF unused",
+      "tenant": "mgmt",
+      "dn": "uni/tn-mgmt/ctx-oob",
+      "reason": "No bridge domain or L3Out is attached to this VRF. (APIC system default object - informational)",
+      "fix": "Remove the VRF or attach the BDs that should live in it.",
+      "category": "hygiene",
+      "system": true
+    }
+  ],
+  "recommendations": [
+    {
+      "title": "Fix the broken relations first",
+      "found": "12 broken relation(s) in 2 tenant(s): Critical fault F0467 (EPG deployment on path failed) (12)",
+      "action": "Create the missing targets (VRF, domain, L3Out, device context) or remove the stale relations; missing-target objects never deploy and APIC may silently fall back to tn-common defaults.",
+      "count": 12
+    },
+    {
+      "title": "Contract design: no permit-any, keep vzAny/preferred groups deliberate",
+      "found": "Permit-any filter: 1 (e.g. tn-common/brc-default)",
+      "action": "Use specific filters (protocol + destination port, stateful where possible) instead of common/default or 'ip any'; reserve vzAny for shared services (DNS/NTP/ICMP) with narrow filters; keep every VRF enforced; avoid preferred groups except for migrations.",
+      "count": 1
+    },
+    {
+      "title": "Every contract needs both a provider and a consumer; remove dead/duplicate contracts",
+      "found": "Contract provided, never consumed: 1 (e.g. tn-SnV/brc-web); Contract unused: 2 (e.g. tn-mgmt/brc-ctr_inb_mgmt, tn-common/brc-default)",
+      "action": "Model each flow as provider (server side) + consumer (client side) in NaC; delete unused and duplicate contracts (e.g. *-OLD) so the policy matches the intent.",
+      "count": 3
+    },
+    {
+      "title": "Make BD settings match their role (L2 vs L3)",
+      "found": "L3 BD without subnet: 2 (e.g. tn-dev-demo/BD-BD-INTERNAL-POC, tn-common/BD-default); L3 BD flooding: 2 (e.g. tn-TENANT-LAB/BD-BD-APP, tn-TENANT-LAB/BD-BD-WEB)",
+      "action": "L3 BD: unicast routing + gateway subnet, hardware proxy, ARP flooding off, limit IP learning to subnet. L2 BD: unicast routing off, ARP flooding on, unknown unicast flood, no subnets.",
+      "count": 4
+    },
+    {
+      "title": "Clean up unused objects",
+      "found": "Tenant empty: 1; VRF unused: 2; BD unused: 4; AP without EPGs: 1; Filter unused: 3; L3Out without external EPG: 2",
+      "action": "Delete leftovers or bring them under NaC; unused objects hide real intent and drift.",
+      "count": 13
+    },
+    {
+      "title": "Add descriptions",
+      "found": "39 of 43 VRF/BD/AP/EPG/contract/filter/L3Out objects have no description.",
+      "action": "Set descr on every object (NaC: description:) - owner, purpose, ticket/change ID.",
+      "count": null
+    },
+    {
+      "title": "Tag ownership (annotations) for NaC",
+      "found": "39 of 43 objects have no annotation; in use: 'orchestrator:ansible' x4.",
+      "action": "Push everything through NaC/Terraform so objects carry 'orchestrator:terraform' (or a tag such as nac:owner=<team>); objects without it are hand-made and drift-prone.",
+      "count": null
+    },
+    {
+      "title": "Adopt one naming convention",
+      "found": "name styles in use: Mixed 20, lower 19, UPPER_SNAKE 4; 0 generic/VLAN/IP-style names (e.g. ).",
+      "action": "e.g. <app>_VRF, <app>_<tier>_BD, <app>_AP, <tier>_EPG, <consumer>-to-<provider>_CON, <proto>-<port>_FLT; enforce it in the NaC schema/linting.",
+      "count": null
+    }
+  ],
+  "robot": {
+    "available": true,
+    "total": 55,
+    "passed": 53,
+    "failed": 2,
+    "skipped": 0,
+    "failures": [
+      {
+        "suite": "Heroes",
+        "test": "Integrity Heroes: no critical or major faults",
+        "reason": "Critical/major faults: ['F0467 critical: Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 101 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interfac', 'F0467 critical: Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 101 Heroes_FI-2B due to Invalid Path Configuration, debug message: invalid-path: Interfac', 'F0467 critical:",
+        "kind": "integrity"
+      },
+      {
+        "suite": "SnV",
+        "test": "Integrity SnV: no critical or major faults",
+        "reason": "Critical/major faults: ['F0467 critical: Configuration failed for uni/tn-SnV/ap-Chaos/epg-Database node 101 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not ', 'F0467 critical: Configuration failed for uni/tn-SnV/ap-Chaos/epg-Database node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not ', 'F0467 critical:",
+        "kind": "integrity"
+      }
+    ],
+    "run_errors": 0
+  },
+  "robot_rc": 2,
+  "faults": {
+    "by_severity": {
+      "minor": 1,
+      "critical": 50
+    },
+    "tca": 0,
+    "critical_major": [
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Chaos/epg-Database]/node-102/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Chaos/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Database node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Rescue/epg-Web]/node-102/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Rescue/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Evolution_X/epg-Database]/node-102/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Evolution_X/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Power_Up/epg-Web]/node-102/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Power_Up/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Power_Up/epg-Web]/node-102/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Power_Up/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-app]/node-102/stpathatt-[Heroes_FI-2B]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-app",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 102 Heroes_FI-2B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-app]/node-102/stpathatt-[Heroes_FI-2A]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-app",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 102 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Evolution_X/epg-Web]/node-102/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Evolution_X/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Rescue/epg-Database]/node-102/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Rescue/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Power_Up/epg-Database]/node-102/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Power_Up/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Power_Up/epg-Database]/node-102/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Power_Up/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Database node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-web]/node-102/stpathatt-[Heroes_FI-2A]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-web",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 102 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-web]/node-102/stpathatt-[Heroes_FI-2B]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-web",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 102 Heroes_FI-2B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-db]/node-102/stpathatt-[Heroes_FI-2A]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-db",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 102 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-db]/node-102/stpathatt-[Heroes_FI-2B]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-db",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 102 Heroes_FI-2B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Chaos/epg-Database]/node-102/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Chaos/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Rescue/epg-Web]/node-102/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Rescue/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Chaos/epg-Web]/node-102/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Chaos/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/resPolCont/rtdOutCont/rtdOutDef-[uni/tn-Heroes/out-Heroes_external_corporate]/node-102/stpathatt-[eth1/47]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/out-Heroes_external_corporate",
+        "descr": "Configuration failed for uni/tn-Heroes/out-Heroes_external_corporate node 102 eth1/47 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Chaos/epg-Web]/node-102/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Chaos/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Evolution_X/epg-Database]/node-102/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Evolution_X/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Database node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Rescue/epg-Database]/node-102/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Rescue/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Database node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Evolution_X/epg-Web]/node-102/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Evolution_X/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Rescue/epg-Web]/node-101/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Rescue/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 101 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-web]/node-101/stpathatt-[Heroes_FI-2B]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-web",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 101 Heroes_FI-2B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-web]/node-101/stpathatt-[Heroes_FI-2A]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-web",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 101 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Chaos/epg-Database]/node-101/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Chaos/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Database node 101 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Power_Up/epg-Web]/node-101/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Power_Up/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 101 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Evolution_X/epg-Web]/node-101/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Evolution_X/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 101 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Rescue/epg-Database]/node-101/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Rescue/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Database node 101 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Power_Up/epg-Database]/node-101/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Power_Up/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Database node 101 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Chaos/epg-Web]/node-101/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Chaos/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 101 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Power_Up/epg-Database]/node-101/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Power_Up/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Database node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Evolution_X/epg-Web]/node-101/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Evolution_X/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Evolution_X/epg-Database]/node-101/stpathatt-[SnV_FI-1A]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Evolution_X/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Database node 101 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/resPolCont/rtdOutCont/rtdOutDef-[uni/tn-Heroes/out-Heroes_external_corporate]/node-101/stpathatt-[eth1/47]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/out-Heroes_external_corporate",
+        "descr": "Configuration failed for uni/tn-Heroes/out-Heroes_external_corporate node 101 eth1/47 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Evolution_X/epg-Database]/node-101/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Evolution_X/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Database node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Chaos/epg-Web]/node-101/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Chaos/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Power_Up/epg-Web]/node-101/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Power_Up/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Rescue/epg-Database]/node-101/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Rescue/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Database node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Chaos/epg-Database]/node-101/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Chaos/epg-Database",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Database node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Chaos/epg-Web]/node-101/stpathatt-[eth1/10]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Chaos/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 101 eth1/10 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-125 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Evolution_X/epg-Web]/node-101/stpathatt-[eth1/10]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Evolution_X/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 101 eth1/10 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-121 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Rescue/epg-Web]/node-101/stpathatt-[eth1/10]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Rescue/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 101 eth1/10 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-123 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Power_Up/epg-Web]/node-101/stpathatt-[eth1/10]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Power_Up/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 101 eth1/10 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-127 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-app]/node-101/stpathatt-[Heroes_FI-2B]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-app",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 101 Heroes_FI-2B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-app]/node-101/stpathatt-[Heroes_FI-2A]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-app",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 101 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-db]/node-101/stpathatt-[Heroes_FI-2B]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-db",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 101 Heroes_FI-2B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Heroes",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Heroes/ap-Save_The_Planet/epg-db]/node-101/stpathatt-[Heroes_FI-2A]/nwissues/fault-F0467",
+        "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-db",
+        "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 101 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "SnV",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-101/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-SnV/ap-Rescue/epg-Web]/node-101/stpathatt-[SnV_FI-1B]/nwissues/fault-F0467",
+        "affected": "uni/tn-SnV/ap-Rescue/epg-Web",
+        "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": true
+      }
+    ]
+  },
+  "errors": []
+}
