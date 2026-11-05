@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "date": "2026-11-06",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-11-06T08:18:35+11:00",
+  "generated_at_local": "2026-11-06 08:18:35 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 167 added, 109 removed",
+    "tests": 129,
+    "failed": 109,
+    "added": 167,
+    "removed": 109,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 12 broken, 68 warnings (8 of 27 tenants broken: ASN_550, My-Tenant, TEST_TENANT, iTenant, mgmt, oneaciapp, task_ansible_aci_6th, test)",
+    "broken": 12,
+    "warnings": 68,
+    "robot": {
+      "total": 146,
+      "passed": 134,
+      "failed": 12
+    },
+    "scorecard": [
+      {
+        "tenant": "AAL001",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "ASN_550",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 1,
+        "score": 87,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "CiscoU-Tenant-03",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "CiscoU-Tenant-04",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 10,
+        "score": 70,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Demo1",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "dev-demo",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "global-NBK-Tenant",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "iacdemo-contractors",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "iacdemo-prod",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 5,
+        "score": 85,
+        "status": "WARN"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "iTenant",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 4,
+        "score": 78,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "juan",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "L3TenantL",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 2,
+        "warnings": 3,
+        "score": 71,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "MOJ_TENANAT",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "My-Tenant",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 4,
+        "score": 78,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "NP-DEMO",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 4,
+        "warnings": 4,
+        "score": 48,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "SCADAAA",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "T1_VMM",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "task_ansible_aci_6th",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 2,
+        "score": 84,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "TeamTest-Bakker",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TECCRT-3778-01",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 8,
+        "score": 76,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TECCRT-3778-02",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 4,
+        "score": 88,
+        "status": "WARN"
+      },
+      {
+        "tenant": "test",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 1,
+        "score": 87,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "TF_LAB_SAMAN",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}
