@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "date": "2026-11-07",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-11-07T08:20:31+11:00",
+  "generated_at_local": "2026-11-07 08:20:31 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 45/129 passed, 84 failed; 55 added, 84 removed",
+    "tests": 129,
+    "failed": 84,
+    "added": 55,
+    "removed": 84,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 8 broken, 19 warnings (4 of 12 tenants broken: MOJ_TENANT, PSCF, SnV, oneaciapp)",
+    "broken": 8,
+    "warnings": 19,
+    "robot": {
+      "total": 91,
+      "passed": 87,
+      "failed": 4
+    },
+    "scorecard": [
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "Heroes",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "iacdemo-contractors",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "iacdemo-prod",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 5,
+        "score": 85,
+        "status": "WARN"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "MOJ_TENANT",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 1,
+        "score": 87,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 2,
+        "warnings": 3,
+        "score": 71,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "PSCF",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 2,
+        "score": 84,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "SnV",
+        "in_baseline": true,
+        "broken": 4,
+        "warnings": 1,
+        "score": 57,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "Tai_API_Tenant",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Tai_Tenant",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}

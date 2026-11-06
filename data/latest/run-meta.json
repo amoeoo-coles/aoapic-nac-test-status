@@ -1,8 +1,8 @@
 {
- "stamp": "2026-11-06-0817",
+ "stamp": "2026-11-07-0819",
  "kind": "scheduled",
  "morning": true,
- "published_at": "2026-11-06T08:18:35+11:00",
+ "published_at": "2026-11-07T08:20:32+11:00",
  "files": [
   "daily-summary.json",
   "daily-summary.md",

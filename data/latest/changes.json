@@ -1,27 +1,27 @@
 {
  "schema": 1,
- "current": "2026-11-06-0817",
- "previous": "2026-11-04-0819",
- "current_snapshot": "2026-11-06 08:18:14 AEDT",
- "previous_snapshot": "2026-11-04 08:19:50 AEDT",
+ "current": "2026-11-07-0819",
+ "previous": "2026-11-06-0817",
+ "current_snapshot": "2026-11-07 08:20:19 AEDT",
+ "previous_snapshot": "2026-11-06 08:18:14 AEDT",
  "current_status": "attention",
  "current_headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
  "tests": {
   "integrity": {
    "total": {
-    "prev": 55,
-    "now": 146,
-    "delta": 91
+    "prev": 146,
+    "now": 91,
+    "delta": -55
    },
    "passed": {
-    "prev": 53,
-    "now": 134,
-    "delta": 81
+    "prev": 134,
+    "now": 87,
+    "delta": -47
    },
    "failed": {
-    "prev": 2,
-    "now": 12,
-    "delta": 10
+    "prev": 12,
+    "now": 4,
+    "delta": -8
    }
   },
   "drift": {
@@ -31,18 +31,24 @@
     "delta": 0
    },
    "passed": {
-    "prev": 45,
-    "now": 20,
-    "delta": -25
+    "prev": 20,
+    "now": 45,
+    "delta": 25
    },
    "failed": {
-    "prev": 84,
-    "now": 109,
-    "delta": 25
+    "prev": 109,
+    "now": 84,
+    "delta": -25
    }
   }
  },
  "tests_newly_failing": [
+  "MOJ TENANT :: Integrity MOJ_TENANT: no critical or major faults",
+  "Oneaciapp :: Integrity oneaciapp: no critical or major faults",
+  "PSCF :: Integrity PSCF: no critical or major faults",
+  "SnV :: Integrity SnV: no critical or major faults"
+ ],
+ "tests_fixed": [
   "ASN 550 :: Integrity ASN_550: no critical or major faults",
   "Mgmt :: Integrity contract mgmt/MOJ_CT_AP_vC: subjects and filters",
   "Mgmt :: Integrity mgmt: no critical or major faults",
@@ -81,22 +87,25 @@
   "SnV :: Verify Tenant SnV",
   "SnV :: Verify VRF SnV/Superverse"
  ],
- "tests_fixed": [
-  "Heroes :: Integrity Heroes: no critical or major faults",
-  "SnV :: Integrity SnV: no critical or major faults"
- ],
  "tenants": {
-  "prev_total": 8,
-  "now_total": 27,
+  "prev_total": 27,
+  "now_total": 12,
   "added": [
+   "Heroes",
+   "MOJ_TENANT",
+   "PSCF",
+   "SnV",
+   "Tai_API_Tenant",
+   "Tai_Tenant"
+  ],
+  "removed": [
    "AAL001",
    "ASN_550",
    "CiscoU-Tenant-03",
    "CiscoU-Tenant-04",
    "Demo1",
+   "dev-demo",
    "global-NBK-Tenant",
-   "iacdemo-contractors",
-   "iacdemo-prod",
    "iTenant",
    "juan",
    "L3TenantL",
@@ -112,60 +121,95 @@
    "test",
    "TF_LAB_SAMAN"
   ],
-  "removed": [
-   "Heroes",
-   "SnV",
-   "TENANT-LAB"
-  ],
-  "newly_broken": [
-   "mgmt",
-   "oneaciapp"
-  ],
+  "newly_broken": [],
   "added_broken": [
-   "ASN_550",
-   "iTenant",
-   "My-Tenant",
-   "task_ansible_aci_6th",
-   "test"
+   "MOJ_TENANT",
+   "PSCF",
+   "SnV"
   ],
-  "fixed": [],
+  "fixed": [
+   "mgmt"
+  ],
   "status_changes": [
    {
     "tenant": "common",
-    "prev": "HEALTHY",
-    "now": "WARN",
-    "prev_score": 100,
-    "now_score": 70
-   },
-   {
-    "tenant": "dev-demo",
     "prev": "WARN",
     "now": "HEALTHY",
-    "prev_score": 94,
+    "prev_score": 70,
     "now_score": 100
    },
    {
     "tenant": "mgmt",
-    "prev": "WARN",
-    "now": "BROKEN",
-    "prev_score": 91,
-    "now_score": 71
+    "prev": "BROKEN",
+    "now": "WARN",
+    "prev_score": 71,
+    "now_score": 91
    },
    {
     "tenant": "oneaciapp",
-    "prev": "WARN",
+    "prev": "BROKEN",
     "now": "BROKEN",
-    "prev_score": 97,
-    "now_score": 48
+    "prev_score": 48,
+    "now_score": 71
    }
   ],
-  "broken_prev": 2,
-  "broken_now": 7
+  "broken_prev": 7,
+  "broken_now": 4
  },
  "broken_relations": {
   "prev": 12,
-  "now": 12,
+  "now": 8,
   "added": [
+   {
+    "tenant": "MOJ_TENANT",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-MOJ_TENANT/out-MOJ_L3out",
+    "reason": "Configuration failed for uni/tn-MOJ_TENANT/out-MOJ_L3out node 102 MOJ_VPC_FW1 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-255 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either "
+   },
+   {
+    "tenant": "PSCF",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-PSCF/ap-ANP_TESTING/epg-USEG_TESTING",
+    "reason": "Configuration failed for uni/tn-PSCF/ap-ANP_TESTING/epg-USEG_TESTING due to VRF Not Present, debug message: "
+   },
+   {
+    "tenant": "SnV",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-SnV/ap-Chaos/epg-Web",
+    "reason": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;"
+   },
+   {
+    "tenant": "SnV",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-SnV/ap-Evolution_X/epg-Web",
+    "reason": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;"
+   },
+   {
+    "tenant": "SnV",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-SnV/ap-Power_Up/epg-Web",
+    "reason": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;"
+   },
+   {
+    "tenant": "SnV",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-SnV/ap-Rescue/epg-Web",
+    "reason": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;"
+   },
+   {
+    "tenant": "oneaciapp",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-oneaciapp/ap-TEST/epg-TEST1",
+    "reason": "Configuration failed for uni/tn-oneaciapp/ap-TEST/epg-TEST1 due to VRF Not Present, debug message: "
+   },
+   {
+    "tenant": "oneaciapp",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-oneaciapp/ap-TEST/epg-TEST2",
+    "reason": "Configuration failed for uni/tn-oneaciapp/ap-TEST/epg-TEST2 due to VRF Not Present, debug message: "
+   }
+  ],
+  "resolved": [
    {
     "tenant": "ASN_550",
     "check": "Critical fault F0467 (EPG deployment on path failed)",
@@ -239,89 +283,74 @@
     "reason": "Configuration failed for uni/tn-test/ap-test/epg-test node 101 eth1/5 due to Encap Already Used in Another EPG,Invalid Path Configuration, debug message: encap-already-in-use: Encap (vlan-10) is already in use by My-Tenant:My-APP-Profile:My-DB-EPG;invalid-path: Either the EpG/L3Out is not associated"
    }
   ],
-  "resolved": [
-   {
-    "tenant": "Heroes",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-app",
-    "reason": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 102 Heroes_FI-2B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "Heroes",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-db",
-    "reason": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 102 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "Heroes",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-web",
-    "reason": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 102 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "Heroes",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-Heroes/out-Heroes_external_corporate",
-    "reason": "Configuration failed for uni/tn-Heroes/out-Heroes_external_corporate node 102 eth1/47 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
-   },
-   {
-    "tenant": "SnV",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-SnV/ap-Chaos/epg-Database",
-    "reason": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Database node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-SnV/ap-Chaos/epg-Web",
-    "reason": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-SnV/ap-Evolution_X/epg-Database",
-    "reason": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-SnV/ap-Evolution_X/epg-Web",
-    "reason": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-SnV/ap-Power_Up/epg-Database",
-    "reason": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-SnV/ap-Power_Up/epg-Web",
-    "reason": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-SnV/ap-Rescue/epg-Database",
-    "reason": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Database node 102 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "check": "Critical fault F0467 (EPG deployment on path failed)",
-    "dn": "uni/tn-SnV/ap-Rescue/epg-Web",
-    "reason": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 102 SnV_FI-1A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   }
-  ],
   "reason_changed": []
  },
  "warnings": {
-  "prev": 9,
-  "now": 68,
-  "delta": 59
+  "prev": 68,
+  "now": 19,
+  "delta": -49
  },
  "faults": {
   "new_critical": [
+   {
+    "tenant": "MOJ_TENANT",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-MOJ_TENANT/out-MOJ_L3out",
+    "descr": "Configuration failed for uni/tn-MOJ_TENANT/out-MOJ_L3out node 101 MOJ_VPC_FW2 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-255 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
+   },
+   {
+    "tenant": "PSCF",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-PSCF/ap-ANP_TESTING/epg-USEG_TESTING",
+    "descr": "Configuration failed for uni/tn-PSCF/ap-ANP_TESTING/epg-USEG_TESTING due to VRF Not Present, debug message: "
+   },
+   {
+    "tenant": "SnV",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-SnV/ap-Chaos/epg-Web",
+    "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;"
+   },
+   {
+    "tenant": "SnV",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-SnV/ap-Evolution_X/epg-Web",
+    "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;"
+   },
+   {
+    "tenant": "SnV",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-SnV/ap-Power_Up/epg-Web",
+    "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;"
+   },
+   {
+    "tenant": "SnV",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-SnV/ap-Rescue/epg-Web",
+    "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 101 eth1/10 due to Port is Member of Port Channel, debug message: port-part-of-port-channel: Port is part of a port-channel with name SnV_FI-1B;"
+   },
+   {
+    "tenant": "oneaciapp",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-oneaciapp/ap-TEST/epg-TEST1",
+    "descr": "Configuration failed for uni/tn-oneaciapp/ap-TEST/epg-TEST1 due to VRF Not Present, debug message: "
+   },
+   {
+    "tenant": "oneaciapp",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-oneaciapp/ap-TEST/epg-TEST2",
+    "descr": "Configuration failed for uni/tn-oneaciapp/ap-TEST/epg-TEST2 due to VRF Not Present, debug message: "
+   }
+  ],
+  "new_major": [],
+  "cleared_critical_major": [
    {
     "tenant": "ASN_550",
     "severity": "critical",
@@ -358,113 +387,26 @@
     "descr": "Configuration failed for uni/tn-test/ap-test/epg-test node 101 eth1/5 due to Encap Already Used in Another EPG,Invalid Path Configuration, debug message: encap-already-in-use: Encap (vlan-10) is already in use by My-Tenant:My-APP-Profile:My-DB-EPG;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
    }
   ],
-  "new_major": [],
-  "cleared_critical_major": [
-   {
-    "tenant": "Heroes",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-app",
-    "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-app node 101 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "Heroes",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-db",
-    "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-db node 101 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "Heroes",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-Heroes/ap-Save_The_Planet/epg-web",
-    "descr": "Configuration failed for uni/tn-Heroes/ap-Save_The_Planet/epg-web node 101 Heroes_FI-2A due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "Heroes",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-Heroes/out-Heroes_external_corporate",
-    "descr": "Configuration failed for uni/tn-Heroes/out-Heroes_external_corporate node 101 eth1/47 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
-   },
-   {
-    "tenant": "SnV",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-SnV/ap-Chaos/epg-Database",
-    "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Database node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-SnV/ap-Chaos/epg-Web",
-    "descr": "Configuration failed for uni/tn-SnV/ap-Chaos/epg-Web node 101 eth1/10 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-125 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
-   },
-   {
-    "tenant": "SnV",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-SnV/ap-Evolution_X/epg-Database",
-    "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Database node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-SnV/ap-Evolution_X/epg-Web",
-    "descr": "Configuration failed for uni/tn-SnV/ap-Evolution_X/epg-Web node 101 eth1/10 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-121 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
-   },
-   {
-    "tenant": "SnV",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-SnV/ap-Power_Up/epg-Database",
-    "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Database node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-SnV/ap-Power_Up/epg-Web",
-    "descr": "Configuration failed for uni/tn-SnV/ap-Power_Up/epg-Web node 101 eth1/10 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-127 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
-   },
-   {
-    "tenant": "SnV",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-SnV/ap-Rescue/epg-Database",
-    "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Database node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   },
-   {
-    "tenant": "SnV",
-    "severity": "critical",
-    "code": "F0467",
-    "affected": "uni/tn-SnV/ap-Rescue/epg-Web",
-    "descr": "Configuration failed for uni/tn-SnV/ap-Rescue/epg-Web node 101 SnV_FI-1B due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
-   }
-  ],
   "fabric_totals": {
    "critical": {
-    "prev": 51,
-    "now": 7
+    "prev": 7,
+    "now": 14
    },
    "major": {
-    "prev": 2,
-    "now": 9
+    "prev": 9,
+    "now": 7
    },
    "minor": {
-    "prev": 14,
-    "now": 54
+    "prev": 54,
+    "now": 1
    },
    "warning": {
-    "prev": 595,
-    "now": 503
+    "prev": 503,
+    "now": 707
    },
    "total": {
-    "prev": 674,
-    "now": 588
+    "prev": 588,
+    "now": 734
    }
   }
  },
@@ -472,60 +414,248 @@
   {
    "type": "Tenant",
    "baseline": 16,
-   "prev": 8,
-   "now": 27,
-   "delta": 19,
-   "added_vs_baseline": 23,
-   "removed_vs_baseline": 12
+   "prev": 27,
+   "now": 12,
+   "delta": -15,
+   "added_vs_baseline": 6,
+   "removed_vs_baseline": 10
   },
   {
    "type": "VRF",
    "baseline": 18,
-   "prev": 10,
-   "now": 28,
-   "delta": 18,
-   "added_vs_baseline": 22,
-   "removed_vs_baseline": 12
+   "prev": 28,
+   "now": 14,
+   "delta": -14,
+   "added_vs_baseline": 6,
+   "removed_vs_baseline": 10
   },
   {
    "type": "BD",
    "baseline": 23,
-   "prev": 9,
-   "now": 36,
-   "delta": 27,
-   "added_vs_baseline": 32,
-   "removed_vs_baseline": 19
+   "prev": 36,
+   "now": 15,
+   "delta": -21,
+   "added_vs_baseline": 9,
+   "removed_vs_baseline": 17
   },
   {
    "type": "Subnet (BD)",
    "baseline": 23,
-   "prev": 7,
-   "now": 34,
-   "delta": 27,
-   "added_vs_baseline": 33,
-   "removed_vs_baseline": 22
+   "prev": 34,
+   "now": 13,
+   "delta": -21,
+   "added_vs_baseline": 9,
+   "removed_vs_baseline": 19
   },
   {
    "type": "AP",
    "baseline": 16,
-   "prev": 8,
-   "now": 25,
-   "delta": 17,
-   "added_vs_baseline": 22,
-   "removed_vs_baseline": 13
+   "prev": 25,
+   "now": 16,
+   "delta": -9,
+   "added_vs_baseline": 8,
+   "removed_vs_baseline": 8
   },
   {
    "type": "EPG",
    "baseline": 33,
-   "prev": 13,
-   "now": 37,
-   "delta": 24,
-   "added_vs_baseline": 35,
-   "removed_vs_baseline": 31
+   "prev": 37,
+   "now": 30,
+   "delta": -7,
+   "added_vs_baseline": 17,
+   "removed_vs_baseline": 20
   }
  ],
  "drift_objects": {
   "appeared": [
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "MOJ_TENANT",
+    "dn": "uni/tn-MOJ_TENANT"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "MOJ_TENANT",
+    "dn": "uni/tn-MOJ_TENANT/ctx-MOJ_VRF"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "PSCF",
+    "dn": "uni/tn-PSCF"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "PSCF",
+    "dn": "uni/tn-PSCF/ap-ANP_TESTING"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "PSCF",
+    "dn": "uni/tn-PSCF/ap-ANP_TESTING/epg-USEG_TESTING"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "PSCF",
+    "dn": "uni/tn-PSCF/ctx-VRF_PSCF"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Tai_API_Tenant",
+    "dn": "uni/tn-Tai_API_Tenant"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Tai_API_Tenant",
+    "dn": "uni/tn-Tai_API_Tenant/BD-Tai_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Tai_API_Tenant",
+    "dn": "uni/tn-Tai_API_Tenant/BD-Tai_BD/subnet-[10.10.10.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Tai_API_Tenant",
+    "dn": "uni/tn-Tai_API_Tenant/ap-Tai_App"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tai_API_Tenant",
+    "dn": "uni/tn-Tai_API_Tenant/ap-Tai_App/epg-App"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tai_API_Tenant",
+    "dn": "uni/tn-Tai_API_Tenant/ap-Tai_App/epg-DB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tai_API_Tenant",
+    "dn": "uni/tn-Tai_API_Tenant/ap-Tai_App/epg-Web"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "Tai_API_Tenant",
+    "dn": "uni/tn-Tai_API_Tenant/ctx-Tai_VRF"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Tai_Tenant",
+    "dn": "uni/tn-Tai_Tenant"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Tai_Tenant",
+    "dn": "uni/tn-Tai_Tenant/BD-Tai_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Tai_Tenant",
+    "dn": "uni/tn-Tai_Tenant/BD-Tai_BD/subnet-[10.10.10.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Tai_Tenant",
+    "dn": "uni/tn-Tai_Tenant/ap-Tai_App"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tai_Tenant",
+    "dn": "uni/tn-Tai_Tenant/ap-Tai_App/epg-App"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tai_Tenant",
+    "dn": "uni/tn-Tai_Tenant/ap-Tai_App/epg-DB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tai_Tenant",
+    "dn": "uni/tn-Tai_Tenant/ap-Tai_App/epg-Web"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "Tai_Tenant",
+    "dn": "uni/tn-Tai_Tenant/ctx-Tai_VRF"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "mgmt",
+    "dn": "uni/tn-mgmt/BD-EsxiMGMT"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "mgmt",
+    "dn": "uni/tn-mgmt/BD-EsxiMGMT/subnet-[10.10.10.1/29]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "mgmt",
+    "dn": "uni/tn-mgmt/ap-MOJ_APP_ESXiMGMT"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "mgmt",
+    "dn": "uni/tn-mgmt/ap-MOJ_APP_ESXiMGMT/epg-MOJ_EPG_ESXi_MGMT"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/BD-TEST"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/BD-TEST/subnet-[10.1.1.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/ap-TEST"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/ap-TEST/epg-TEST1"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "oneaciapp",
+    "dn": "uni/tn-oneaciapp/ap-TEST/epg-TEST2"
+   }
+  ],
+  "disappeared_again": [
    {
     "type": "Tenant",
     "class": "fvTenant",
@@ -1007,6 +1137,12 @@
     "dn": "uni/tn-common/BD-BD-PAN-NS/subnet-[10.255.100.1/29]"
    },
    {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "dev-demo",
+    "dn": "uni/tn-dev-demo"
+   },
+   {
     "type": "BD",
     "class": "fvBD",
     "tenant": "dev-demo",
@@ -1147,150 +1283,6 @@
    {
     "type": "Tenant",
     "class": "fvTenant",
-    "tenant": "iacdemo-contractors",
-    "dn": "uni/tn-iacdemo-contractors"
-   },
-   {
-    "type": "BD",
-    "class": "fvBD",
-    "tenant": "iacdemo-contractors",
-    "dn": "uni/tn-iacdemo-contractors/BD-Contractors-BD"
-   },
-   {
-    "type": "Subnet (BD)",
-    "class": "fvSubnet",
-    "tenant": "iacdemo-contractors",
-    "dn": "uni/tn-iacdemo-contractors/BD-Contractors-BD/subnet-[10.10.0.1/24]"
-   },
-   {
-    "type": "AP",
-    "class": "fvAp",
-    "tenant": "iacdemo-contractors",
-    "dn": "uni/tn-iacdemo-contractors/ap-Remote-Access-AP"
-   },
-   {
-    "type": "EPG",
-    "class": "fvAEPg",
-    "tenant": "iacdemo-contractors",
-    "dn": "uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Jump-Hosts"
-   },
-   {
-    "type": "EPG",
-    "class": "fvAEPg",
-    "tenant": "iacdemo-contractors",
-    "dn": "uni/tn-iacdemo-contractors/ap-Remote-Access-AP/epg-Vendors"
-   },
-   {
-    "type": "VRF",
-    "class": "fvCtx",
-    "tenant": "iacdemo-contractors",
-    "dn": "uni/tn-iacdemo-contractors/ctx-VRF-Contractors"
-   },
-   {
-    "type": "Tenant",
-    "class": "fvTenant",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod"
-   },
-   {
-    "type": "BD",
-    "class": "fvBD",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/BD-App-BD"
-   },
-   {
-    "type": "Subnet (BD)",
-    "class": "fvSubnet",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/BD-App-BD/subnet-[10.20.20.1/24]"
-   },
-   {
-    "type": "BD",
-    "class": "fvBD",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/BD-Booking-BD"
-   },
-   {
-    "type": "Subnet (BD)",
-    "class": "fvSubnet",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/BD-Booking-BD/subnet-[10.20.0.1/24]"
-   },
-   {
-    "type": "BD",
-    "class": "fvBD",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/BD-Db-BD"
-   },
-   {
-    "type": "Subnet (BD)",
-    "class": "fvSubnet",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/BD-Db-BD/subnet-[10.20.30.1/24]"
-   },
-   {
-    "type": "BD",
-    "class": "fvBD",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/BD-Web-BD"
-   },
-   {
-    "type": "Subnet (BD)",
-    "class": "fvSubnet",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/BD-Web-BD/subnet-[10.20.10.1/24]"
-   },
-   {
-    "type": "AP",
-    "class": "fvAp",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/ap-Booking-AP"
-   },
-   {
-    "type": "EPG",
-    "class": "fvAEPg",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/ap-Booking-AP/epg-Db"
-   },
-   {
-    "type": "EPG",
-    "class": "fvAEPg",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/ap-Booking-AP/epg-Web"
-   },
-   {
-    "type": "AP",
-    "class": "fvAp",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/ap-Shop-AP"
-   },
-   {
-    "type": "EPG",
-    "class": "fvAEPg",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/ap-Shop-AP/epg-App"
-   },
-   {
-    "type": "EPG",
-    "class": "fvAEPg",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/ap-Shop-AP/epg-Db"
-   },
-   {
-    "type": "EPG",
-    "class": "fvAEPg",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/ap-Shop-AP/epg-Web"
-   },
-   {
-    "type": "VRF",
-    "class": "fvCtx",
-    "tenant": "iacdemo-prod",
-    "dn": "uni/tn-iacdemo-prod/ctx-VRF-Prod"
-   },
-   {
-    "type": "Tenant",
-    "class": "fvTenant",
     "tenant": "juan",
     "dn": "uni/tn-juan"
    },
@@ -1329,6 +1321,12 @@
     "class": "fvSubnet",
     "tenant": "mgmt",
     "dn": "uni/tn-mgmt/BD-default/subnet-[10.60.100.1/29]"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "mgmt",
+    "dn": "uni/tn-mgmt/BD-inb/subnet-[192.168.1.1/24]"
    },
    {
     "type": "AP",
@@ -1517,57 +1515,8 @@
     "dn": "uni/tn-test/ctx-test"
    }
   ],
-  "disappeared_again": [
-   {
-    "type": "Tenant",
-    "class": "fvTenant",
-    "tenant": "TENANT-LAB",
-    "dn": "uni/tn-TENANT-LAB"
-   },
-   {
-    "type": "BD",
-    "class": "fvBD",
-    "tenant": "TENANT-LAB",
-    "dn": "uni/tn-TENANT-LAB/BD-BD-APP"
-   },
-   {
-    "type": "Subnet (BD)",
-    "class": "fvSubnet",
-    "tenant": "TENANT-LAB",
-    "dn": "uni/tn-TENANT-LAB/BD-BD-APP/subnet-[10.10.20.1/24]"
-   },
-   {
-    "type": "BD",
-    "class": "fvBD",
-    "tenant": "TENANT-LAB",
-    "dn": "uni/tn-TENANT-LAB/BD-BD-WEB"
-   },
-   {
-    "type": "Subnet (BD)",
-    "class": "fvSubnet",
-    "tenant": "TENANT-LAB",
-    "dn": "uni/tn-TENANT-LAB/BD-BD-WEB/subnet-[10.10.10.1/24]"
-   },
-   {
-    "type": "VRF",
-    "class": "fvCtx",
-    "tenant": "TENANT-LAB",
-    "dn": "uni/tn-TENANT-LAB/ctx-VRF-PRODUCAO"
-   },
-   {
-    "type": "BD",
-    "class": "fvBD",
-    "tenant": "dev-demo",
-    "dn": "uni/tn-dev-demo/BD-BD-INTERNAL-POC"
-   },
-   {
-    "type": "VRF",
-    "class": "fvCtx",
-    "tenant": "dev-demo",
-    "dn": "uni/tn-dev-demo/ctx-vrf-dev-poc"
-   }
-  ],
-  "newly_removed_from_baseline": [
+  "newly_removed_from_baseline": [],
+  "restored_to_baseline": [
    {
     "type": "Tenant",
     "class": "fvTenant",
@@ -1718,7 +1667,6 @@
     "tenant": "SnV",
     "dn": "uni/tn-SnV/ctx-Superverse"
    }
-  ],
-  "restored_to_baseline": []
+  ]
  }
 }
