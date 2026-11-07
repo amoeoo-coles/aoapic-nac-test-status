@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "date": "2026-11-08",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-11-08T08:18:06+11:00",
+  "generated_at_local": "2026-11-08 08:18:06 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 28 added, 109 removed",
+    "tests": 129,
+    "failed": 109,
+    "added": 28,
+    "removed": 109,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 6 broken, 16 warnings (3 of 9 tenants broken: RB-Tenant, Tenant_RG, VY-TN)",
+    "broken": 6,
+    "warnings": 16,
+    "robot": {
+      "total": 43,
+      "passed": 38,
+      "failed": 5
+    },
+    "scorecard": [
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "LAB-TENANT",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 4,
+        "score": 88,
+        "status": "WARN"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "RB-Tenant",
+        "in_baseline": false,
+        "broken": 3,
+        "warnings": 3,
+        "score": 61,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "tenant_mylab",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Tenant_RG",
+        "in_baseline": false,
+        "broken": 2,
+        "warnings": 4,
+        "score": 68,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "VY-TN",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 1,
+        "score": 87,
+        "status": "BROKEN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}

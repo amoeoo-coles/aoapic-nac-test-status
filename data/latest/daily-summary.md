@@ -1,33 +1,30 @@
-# Daily ACI report: 2026-11-07
+# Daily ACI report: 2026-11-08
 
 ## DRIFT DETECTED | BROKEN RELATIONS FOUND
 
-- Generated: 2026-11-07 08:20:31 AEDT
+- Generated: 2026-11-08 08:18:06 AEDT
 - Overall status: `attention`
 
 ## 1. Drift (baseline vs live)
 
-**DRIFT DETECTED - tests 45/129 passed, 84 failed; 55 added, 84 removed**
+**DRIFT DETECTED - tests 20/129 passed, 109 failed; 28 added, 109 removed**
 
 Details: `drift/drift-summary.md`
 
 ## 2. Tenant logical integrity (tenant -> VRF -> BD -> EPG -> contract)
 
-**BROKEN RELATIONS FOUND - 8 broken, 19 warnings (4 of 12 tenants broken: MOJ_TENANT, PSCF, SnV, oneaciapp)**
+**BROKEN RELATIONS FOUND - 6 broken, 16 warnings (3 of 9 tenants broken: RB-Tenant, Tenant_RG, VY-TN)**
 
 | Tenant | Baseline | Broken | Warn | Score | Status |
 |---|---|---:|---:|---:|---|
 | common | yes | 0 | 0 | 100 | HEALTHY |
-| Heroes | yes | 0 | 0 | 100 | HEALTHY |
-| iacdemo-contractors | NEW | 0 | 2 | 94 | WARN |
-| iacdemo-prod | NEW | 0 | 5 | 85 | WARN |
 | infra | yes | 0 | 0 | 100 | HEALTHY |
-| mgmt | yes | 0 | 3 | 91 | WARN |
-| MOJ_TENANT | NEW | 1 | 1 | 87 | BROKEN |
-| oneaciapp | yes | 2 | 3 | 71 | BROKEN |
-| PSCF | NEW | 1 | 2 | 84 | BROKEN |
-| SnV | yes | 4 | 1 | 57 | BROKEN |
-| Tai_API_Tenant | NEW | 0 | 1 | 97 | WARN |
-| Tai_Tenant | NEW | 0 | 1 | 97 | WARN |
+| LAB-TENANT | NEW | 0 | 4 | 88 | WARN |
+| mgmt | yes | 0 | 2 | 94 | WARN |
+| oneaciapp | yes | 0 | 1 | 97 | WARN |
+| RB-Tenant | NEW | 3 | 3 | 61 | BROKEN |
+| tenant_mylab | NEW | 0 | 1 | 97 | WARN |
+| Tenant_RG | NEW | 2 | 4 | 68 | BROKEN |
+| VY-TN | NEW | 1 | 1 | 87 | BROKEN |
 
 Details: `integrity/integrity-summary.md`
