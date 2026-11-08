@@ -68,7 +68,28 @@ footer{margin:40px 0 30px;color:var(--mut);font-size:13px;text-align:center}
 svg text{font-family:inherit}
 </style>
 </head>
-<body><div style="background:#302d20;border-left:4px solid #fc6;color:#eee;padding:10px 14px;margin:0 0 14px;font:14px system-ui,sans-serif"><b>Archived version v19</b> of /aoapic-nac-test-status/ — commit <a style="color:#8cf" href="https://github.com/amoeoo-coles/aoapic-nac-test-status/commit/3e6b0217cc985c1333402c447571ca3db03fd181">3e6b021</a>, 09 Nov 2026 06:33 AEDT (Melbourne time). Not live. Recovered from git; links, images and downloads open the current files. <a style="color:#8cf" href="../../">Latest version →</a></div>
+<body>
+<!-- theme-toggle v1 -->
+<style id="tt-style">
+html.tt-invert{filter:invert(1) hue-rotate(180deg);background:#fff}
+html.tt-invert img,html.tt-invert video,html.tt-invert picture,html.tt-invert iframe,html.tt-invert .tt-keep{filter:invert(1) hue-rotate(180deg)}
+#tt-btn{position:fixed;top:6px;right:10px;z-index:2147483000;font:600 12px/1 system-ui,Arial,sans-serif;padding:6px 10px;border-radius:16px;border:1px solid #888;background:#222;color:#fff;cursor:pointer;opacity:.9}
+#tt-btn:hover{opacity:1}
+html.tt-invert #tt-btn{filter:invert(1) hue-rotate(180deg)}
+</style>
+<script id="tt-script">(function(){
+function lum(c){var m=(c||'').match(/\d+(\.\d+)?/g);if(!m||(m.length>3&&+m[3]===0))return null;return (0.299*m[0]+0.587*m[1]+0.114*m[2])/255;}
+var b=document.body,h=document.documentElement;
+var l=lum(getComputedStyle(b).backgroundColor);if(l===null)l=lum(getComputedStyle(h).backgroundColor);if(l===null)l=1;
+var nativeMode=l<0.5?'dark':'light';
+function cur(){try{return localStorage.getItem('siteTheme')||nativeMode}catch(e){return nativeMode}}
+function apply(m){h.classList.toggle('tt-invert',m!==nativeMode);var btn=document.getElementById('tt-btn');if(btn)btn.textContent=(m==='dark'?'\u2600\uFE0F Light':'\uD83C\uDF19 Dark');if(btn)btn.title='Switch to '+(m==='dark'?'white':'black')+' background';}
+var btn=document.createElement('button');btn.id='tt-btn';btn.type='button';b.insertBefore(btn,b.firstChild);
+btn.onclick=function(){var m=cur()==='dark'?'light':'dark';try{localStorage.setItem('siteTheme',m)}catch(e){}apply(m);};
+apply(cur());
+})();</script>
+<!-- site-menu v1 --><nav class="site" style="padding:8px 12px;font:14px system-ui,Arial,sans-serif;background:#111;color:#bbb;border-bottom:1px solid #333"><a style="color:#8ecbff" href="/">Home</a> | <a style="color:#8ecbff" href="/report17-aoapic-monitoring/tenants/">Tenants Detail</a> | <a style="color:#8ecbff" href="/netbox-aci-tenants/">NetBox ACI Tenants</a> | <a style="color:#8ecbff" href="/netbox-yaml-model/">YAML Model</a> | <a style="color:#8ecbff" href="/report17-aoapic-monitoring/pending-provisioning/">Pending Provisioning</a> | <a style="color:#8ecbff" href="/report17-aoapic-monitoring/universal-provisioning/">Universal Provisioning</a> | <a style="color:#8ecbff" href="/report17-aoapic-monitoring/objects/">Object Drill-down</a> | <a style="color:#8ecbff" href="/report17-aoapic-monitoring/">Report 17</a> | <a style="color:#8ecbff" href="/grafana-screenshots/">Group 1</a> | <a style="color:#8ecbff" href="/grafana-screenshots-part2/">Group 2</a> | <a style="color:#8ecbff" href="/visitors/">Visitors</a> | <a style="color:#8ecbff" href="https://amoeoo-coles.github.io/aoapic-nac-test-status/">nac-test Status</a></nav>
+<div style="background:#302d20;border-left:4px solid #fc6;color:#eee;padding:10px 14px;margin:0 0 14px;font:14px system-ui,sans-serif"><b>Archived version v19</b> of /aoapic-nac-test-status/ — commit <a style="color:#8cf" href="https://github.com/amoeoo-coles/aoapic-nac-test-status/commit/3e6b0217cc985c1333402c447571ca3db03fd181">3e6b021</a>, 09 Nov 2026 06:33 AEDT (Melbourne time). Not live. Recovered from git; links, images and downloads open the current files. <a style="color:#8cf" href="../../">Latest version →</a></div>
 <header><div class="wrap">
  <div class="top">
   <h1>AOAPIC nac-test status<small>Cisco DevNet Always-On APIC sandbox · <span id="apic"></span></small></h1>
