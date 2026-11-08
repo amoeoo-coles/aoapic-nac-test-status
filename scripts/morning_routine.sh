@@ -4,7 +4,8 @@
 #   2. scripts/daily_report.sh in the scratch copy (drift + integrity, aaaLogin + GETs only)
 #   3. publish_run.py   -> data/<YYYY-MM-DD-HHMM>/ summaries only, data/latest/, data/runs.json
 #   4. compare_runs.py  -> data/<stamp>/changes.{json,md} vs the previous MORNING run (auto)
-#   5. build_site.py    -> index.html ; build_email.py -> /tmp/aoapic-email-<stamp>.html (not published)
+#   4b. versions.py     -> data/<stamp>/versions.json (APIC/switch firmware via read-only GETs, nac-test/Python from the venv)
+#   5. build_site.py    -> index.html (+ Versions panel) ; pagehistory.py -> Version history + versions/v<N>-<commit>/ snapshots ; build_email.py -> /tmp/aoapic-email-<stamp>.html (not published)
 #   6. security_scan.py -> aborts before git if anything sensitive would be published
 #   7. git commit + push to main (skip with --no-push); then poll the Pages URL for the new run stamp
 # Email is sent separately by the agent with the Gmail connector (subject printed at the end).
@@ -30,9 +31,11 @@ mkdir -p "$S/results"; ln -s "$VENV" "$S/.venv"
 log "daily report (read-only)"; (cd "$S" && scripts/daily_report.sh) || true
 cd "$SITE"
 python3 scripts/publish_run.py --daily-dir "$S/results/daily-$DAY" --stamp "$STAMP" ${KIND:+--kind "$KIND"}
+python3 scripts/versions.py --stamp "$STAMP" --venv "$VENV" --nac-src "$NAC_SRC" || log "WARN versions not recorded"   # read-only APIC GETs
 python3 scripts/compare_runs.py --current "$STAMP" ${PREV:+--prev "$PREV"}
 python3 scripts/publish_run.py --reindex >/dev/null      # refresh data/latest with changes.*
 python3 scripts/build_site.py --run "$STAMP"
+python3 scripts/pagehistory.py . "AOAPIC run $STAMP (scheduled morning routine)" "</main>" || log "WARN version history not updated"
 python3 scripts/build_email.py --run "$STAMP" $SAMPLE
 python3 scripts/security_scan.py || { log "SECURITY SCAN FAILED - not committing"; exit 1; }
 if [[ $PUSH -eq 1 ]]; then

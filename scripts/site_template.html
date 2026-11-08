@@ -78,9 +78,10 @@ svg text{font-family:inherit}
  <div class="headline" id="headline"></div>
 </div></header>
 <nav><div class="wrap">
- <a href="#kpis">Overview</a><a href="#changes">Since previous morning</a><a href="#chart">Chart</a><a href="#tenants">Tenants</a><a href="#broken">Broken relations</a><a href="#failed">Failed tests</a><a href="#warnings">Warnings</a><a href="#drift">Drift</a><a href="#recs">Recommendations</a><a href="#how">How it's generated</a>
+ <a href="#versions">Versions</a><a href="#kpis">Overview</a><a href="#changes">Since previous morning</a><a href="#chart">Chart</a><a href="#tenants">Tenants</a><a href="#broken">Broken relations</a><a href="#failed">Failed tests</a><a href="#warnings">Warnings</a><a href="#drift">Drift</a><a href="#recs">Recommendations</a><a href="#how">How it's generated</a><a href="#version-history">Version history</a>
 </div></nav>
 <main class="wrap">
+ <section id="versions"><h2>Versions <span class="cnt" id="vcnt"></span></h2><div class="card" id="verbox"><span class="small">No versions recorded for this run.</span></div></section>
  <div class="kpis" id="kpis"></div>
 
  <section id="changes"><h2>Changes since previous morning <span class="cnt" id="chgcnt"></span></h2>
@@ -247,6 +248,24 @@ $('#art tbody').innerHTML=ar.map(([k,x])=>`<tr><td><span class="pill ${k==='adde
 // recs
 $('#rcnt').textContent=D.recs.length;$('#rl').innerHTML=D.recs.map(r=>`<li><b>${esc(r.title)}</b><br><span class="small">Found: ${esc(r.found)}</span><br>${esc(r.action)}</li>`).join('');
 $('#foot').innerHTML=`Static snapshot. APIC snapshot ${esc(D.snapshot)}, page built ${esc(D.generated_page)}. Read-only checks against the public Cisco DevNet Always-On APIC sandbox. Not affiliated with Cisco.`;
+</script>
+<script>
+(function(){const V=D.versions,el=document.getElementById('verbox');if(!el)return;const e=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ const runAt=(D.runs.find(r=>r.stamp===D.stamp)||{}).snapshot||D.snapshot;
+ if(!V){el.innerHTML='<span class="small">Run '+e(D.stamp)+' (APIC snapshot '+e(runAt)+', Melbourne time) did not record versions. Versions are recorded from the run after 9 Nov 2026 06:30 AEDT.</span>';return}
+ const ap=V.apic||{},rows=[];
+ (ap.controllers||[]).forEach(c=>rows.push(['APIC controller '+(c.name||('node '+c.node)),c.version,'APIC '+c.source+' (read-only GET)']));
+ (ap.switches||[]).forEach(s=>rows.push(['Switch '+s.name+' ('+s.role+', node '+s.node+')',s.version,'APIC '+s.source+' (read-only GET)']));
+ Object.entries(V.tools||{}).forEach(([k,v])=>rows.push([k,v,V.tools_source||'test venv']));
+ if(V.python)rows.push(['Python',V.python,V.tools_source||'test venv']);
+ if(V.nac_validate)rows.push(['nac-validate',V.nac_validate.version,'not used by this run: '+V.nac_validate.note]);
+ if(V.data_model)rows.push(['Data model target APIC version',V.data_model.defaults_apic_version,V.data_model.source+'; '+V.data_model.data_files+' tenant data files. This is the version the data model is written for, not the running APIC version.']);
+ document.getElementById('vcnt').textContent=rows.length;
+ let h='<p style="margin:0 0 10px"><b>Run '+e(D.stamp)+'</b> · APIC snapshot '+e(runAt)+' · versions read '+e(V.read_at_local)+' (Melbourne time)'+(V.note?'<br><span class="small">'+e(V.note)+'</span>':'')+'</p>';
+ h+='<div class="tw"><table><thead><tr><th>Component</th><th>Version</th><th>Read from</th></tr></thead><tbody>'+rows.map(r=>'<tr><td>'+e(r[0])+'</td><td><b>'+e(r[1])+'</b></td><td class="small">'+e(r[2])+'</td></tr>').join('')+'</tbody></table></div>';
+ if((V.errors||[]).length)h+='<p class="small" style="color:var(--bad)">Not read: '+e(V.errors.join('; '))+'</p>';
+ const R=D.versions_runs||[];if(R.length)h+='<details style="margin-top:10px"><summary>Versions per run ('+R.length+' runs recorded)</summary><div class="inner"><div class="tw"><table class="cmp"><thead><tr><th style="text-align:left">Run</th><th>APIC</th><th>Switches</th><th>nac-test</th><th>Python</th><th>Read (Melbourne)</th></tr></thead><tbody>'+R.slice().reverse().map(r=>'<tr><td style="text-align:left">'+e(r.stamp)+'</td><td>'+e(r.apic||'not read')+'</td><td>'+e(r.switches||'not read')+'</td><td>'+e(r.nac_test||'not read')+'</td><td>'+e(r.python||'not read')+'</td><td>'+e(r.read_at_local)+'</td></tr>').join('')+'</tbody></table></div><p class="small">Runs before 9 Nov 2026 did not record versions, so they are not listed.</p></div></details>';
+ el.innerHTML=h})();
 </script>
 <script data-goatcounter="https://amoeoo-coles.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><script>fetch("/data/visitors.json?"+Date.now()).then(r=>r.json()).then(d=>{const p=location.pathname.replace(/\/+$/,"")||"/";const h=(d.pages||[]).find(x=>x.path===p);document.querySelectorAll(".uvc").forEach(e=>e.textContent=h?h.count:"0")}).catch(()=>{document.querySelectorAll(".uvc").forEach(e=>e.textContent="0")})</script></body>
 </html>

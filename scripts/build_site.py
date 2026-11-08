@@ -20,6 +20,18 @@ def load(p, default=None):
         return {} if default is None else default
 
 
+def versions_runs():
+    """Per-run version summary for every run folder that recorded versions.json (older runs did not record versions)."""
+    out = []
+    for p in sorted(DATA.glob("????-??-??-????/versions.json")):
+        v = load(p); ap = v.get("apic") or {}
+        out.append({"stamp": p.parent.name, "read_at_local": v.get("read_at_local"), "note": v.get("note", ""),
+                    "apic": ", ".join(sorted({c.get("version") for c in ap.get("controllers", []) if c.get("version")})) or None,
+                    "switches": ", ".join(sorted({s.get("version") for s in ap.get("switches", []) if s.get("version")})) or None,
+                    "nac_test": (v.get("tools") or {}).get("nac-test"), "python": v.get("python")})
+    return out
+
+
 def build(stamp):
     d = DATA / stamp
     daily, drift, integ = (load(d / f) for f in ("daily-summary.json", "drift-summary.json", "integrity-summary.json"))
@@ -50,6 +62,8 @@ def build(stamp):
         "faults": drift.get("faults", {}), "recs": integ.get("recommendations", []),
         "changes": load(d / "changes.json") or None,
         "runs": load(DATA / "runs.json").get("runs", []),
+        "versions": load(d / "versions.json") or None,
+        "versions_runs": versions_runs(),
     }
     return D
 
