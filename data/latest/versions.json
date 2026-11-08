@@ -1,9 +1,9 @@
 {
  "schema": 1,
- "stamp": "2026-11-08-0817",
- "read_at": "2026-11-09T06:33:10+11:00",
- "read_at_local": "2026-11-09 06:33:10 AEDT",
- "note": "Recorded on 9 Nov 2026 after this run (when the Versions panel was added); the scheduled run itself did not record versions. Each morning run records its own from now on.",
+ "stamp": "2026-11-09-0824",
+ "read_at": "2026-11-09T08:25:34+11:00",
+ "read_at_local": "2026-11-09 08:25:34 AEDT",
+ "note": "",
  "errors": [],
  "apic": {
   "controllers": [
@@ -16,21 +16,21 @@
   ],
   "switches": [
    {
-    "name": "LF101",
+    "name": "Leaf-101",
     "node": "101",
     "role": "leaf",
     "version": "simsw-6.1(4h)",
     "source": "topSystem"
    },
    {
-    "name": "LF102",
+    "name": "Leaf-102",
     "node": "102",
     "role": "leaf",
     "version": "simsw-6.1(4h)",
     "source": "topSystem"
    },
    {
-    "name": "SP103",
+    "name": "Spine-201",
     "node": "103",
     "role": "spine",
     "version": "simsw-6.1(4h)",

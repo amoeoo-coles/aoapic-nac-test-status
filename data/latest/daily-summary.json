@@ -1,28 +1,28 @@
 {
   "schema": 1,
-  "date": "2026-11-08",
+  "date": "2026-11-09",
   "status": "attention",
   "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
-  "generated_at": "2026-11-08T08:18:06+11:00",
-  "generated_at_local": "2026-11-08 08:18:06 AEDT",
+  "generated_at": "2026-11-09T08:25:34+11:00",
+  "generated_at_local": "2026-11-09 08:25:34 AEDT",
   "drift": {
     "status": "drift",
-    "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 28 added, 109 removed",
+    "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 85 added, 109 removed",
     "tests": 129,
     "failed": 109,
-    "added": 28,
+    "added": 85,
     "removed": 109,
     "folder": "drift/"
   },
   "integrity": {
     "status": "broken",
-    "headline": "BROKEN RELATIONS FOUND - 6 broken, 16 warnings (3 of 9 tenants broken: RB-Tenant, Tenant_RG, VY-TN)",
-    "broken": 6,
-    "warnings": 16,
+    "headline": "BROKEN RELATIONS FOUND - 8 broken, 40 warnings (4 of 14 tenants broken: LAB-TENANT, RB-Tenant, Tenant_RG, VY-TN)",
+    "broken": 8,
+    "warnings": 40,
     "robot": {
-      "total": 43,
-      "passed": 38,
-      "failed": 5
+      "total": 82,
+      "passed": 76,
+      "failed": 6
     },
     "scorecard": [
       {
@@ -32,6 +32,46 @@
         "warnings": 0,
         "score": 100,
         "status": "HEALTHY"
+      },
+      {
+        "tenant": "CORP_PROD",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 10,
+        "score": 70,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_tenant1",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_Tenant2",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_Tenant3",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_tenant5",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 7,
+        "score": 79,
+        "status": "WARN"
       },
       {
         "tenant": "infra",
@@ -44,10 +84,10 @@
       {
         "tenant": "LAB-TENANT",
         "in_baseline": false,
-        "broken": 0,
+        "broken": 1,
         "warnings": 4,
-        "score": 88,
-        "status": "WARN"
+        "score": 78,
+        "status": "BROKEN"
       },
       {
         "tenant": "mgmt",
@@ -92,9 +132,9 @@
       {
         "tenant": "VY-TN",
         "in_baseline": false,
-        "broken": 1,
-        "warnings": 1,
-        "score": 87,
+        "broken": 2,
+        "warnings": 5,
+        "score": 65,
         "status": "BROKEN"
       }
     ],

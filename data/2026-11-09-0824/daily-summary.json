@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "date": "2026-11-09",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-11-09T08:25:34+11:00",
+  "generated_at_local": "2026-11-09 08:25:34 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 85 added, 109 removed",
+    "tests": 129,
+    "failed": 109,
+    "added": 85,
+    "removed": 109,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 8 broken, 40 warnings (4 of 14 tenants broken: LAB-TENANT, RB-Tenant, Tenant_RG, VY-TN)",
+    "broken": 8,
+    "warnings": 40,
+    "robot": {
+      "total": 82,
+      "passed": 76,
+      "failed": 6
+    },
+    "scorecard": [
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "CORP_PROD",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 10,
+        "score": 70,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_tenant1",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_Tenant2",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_Tenant3",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_tenant5",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 7,
+        "score": 79,
+        "status": "WARN"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "LAB-TENANT",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 4,
+        "score": 78,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "RB-Tenant",
+        "in_baseline": false,
+        "broken": 3,
+        "warnings": 3,
+        "score": 61,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "tenant_mylab",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Tenant_RG",
+        "in_baseline": false,
+        "broken": 2,
+        "warnings": 4,
+        "score": 68,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "VY-TN",
+        "in_baseline": false,
+        "broken": 2,
+        "warnings": 5,
+        "score": 65,
+        "status": "BROKEN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}

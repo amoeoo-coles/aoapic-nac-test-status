@@ -1,9 +1,9 @@
-# ACI drift report: 2026-11-08
+# ACI drift report: 2026-11-09
 
-## DRIFT DETECTED - tests 20/129 passed, 109 failed; 28 added, 109 removed
+## DRIFT DETECTED - tests 20/129 passed, 109 failed; 85 added, 109 removed
 
 - APIC: https://sandboxapicdc.cisco.com
-- Generated: 2026-11-08 08:17:57 AEDT (Australia/Melbourne)
+- Generated: 2026-11-09 08:24:55 AEDT (Australia/Melbourne)
 - Baseline: `baseline/data/` (frozen 2026-10-22 10:47 AEDT (Australia/Melbourne) by `scripts/drift_report.sh`)
 - Status: `drift`
 
@@ -127,47 +127,104 @@
 
 | Type | Baseline | Current (APIC, all tenants) | Added | Removed |
 |---|---:|---:|---:|---:|
-| Tenant | 16 | 9 | 5 | 12 |
-| VRF | 18 | 11 | 5 | 12 |
-| BD | 23 | 9 | 5 | 19 |
-| Subnet (BD) | 23 | 3 | 2 | 22 |
-| AP | 16 | 8 | 5 | 13 |
-| EPG | 33 | 8 | 6 | 31 |
+| Tenant | 16 | 14 | 10 | 12 |
+| VRF | 18 | 18 | 12 | 12 |
+| BD | 23 | 22 | 18 | 19 |
+| Subnet (BD) | 23 | 13 | 12 | 22 |
+| AP | 16 | 14 | 11 | 13 |
+| EPG | 33 | 24 | 22 | 31 |
 
 Subnets are bridge-domain subnets only (EPG-level subnets are not in the baseline model).
 
-## Added since baseline (28)
+## Added since baseline (85)
 
 | Type | Tenant | DN |
 |---|---|---|
+| Tenant | CORP_PROD | `uni/tn-CORP_PROD` |
+| Tenant | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2` |
+| Tenant | Cursor_Tenant3 | `uni/tn-Cursor_Tenant3` |
+| Tenant | Cursor_tenant1 | `uni/tn-Cursor_tenant1` |
+| Tenant | Cursor_tenant5 | `uni/tn-Cursor_tenant5` |
 | Tenant | LAB-TENANT | `uni/tn-LAB-TENANT` |
 | Tenant | RB-Tenant | `uni/tn-RB-Tenant` |
 | Tenant | Tenant_RG | `uni/tn-Tenant_RG` |
 | Tenant | VY-TN | `uni/tn-VY-TN` |
 | Tenant | tenant_mylab | `uni/tn-tenant_mylab` |
+| VRF | CORP_PROD | `uni/tn-CORP_PROD/ctx-xxx` |
+| VRF | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/ctx-cursor2_vrf` |
+| VRF | Cursor_Tenant3 | `uni/tn-Cursor_Tenant3/ctx-cursor3_vrf` |
+| VRF | Cursor_tenant1 | `uni/tn-Cursor_tenant1/ctx-cursor_vrf` |
+| VRF | Cursor_tenant5 | `uni/tn-Cursor_tenant5/ctx-cursor5_vrf` |
 | VRF | LAB-TENANT | `uni/tn-LAB-TENANT/ctx-LAB-VRF` |
 | VRF | RB-Tenant | `uni/tn-RB-Tenant/ctx-RB-VRF` |
 | VRF | Tenant_RG | `uni/tn-Tenant_RG/ctx-RG_EXT_VRF` |
 | VRF | Tenant_RG | `uni/tn-Tenant_RG/ctx-VRF_RG` |
 | VRF | VY-TN | `uni/tn-VY-TN/ctx-VY-VRF` |
+| VRF | VY-TN | `uni/tn-VY-TN/ctx-VY-VRF02` |
+| VRF | VY-TN | `uni/tn-VY-TN/ctx-VY-VRF03` |
+| BD | CORP_PROD | `uni/tn-CORP_PROD/BD-xxx` |
+| BD | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/BD-cursor2_bd` |
+| BD | Cursor_Tenant3 | `uni/tn-Cursor_Tenant3/BD-cursor3_bd` |
+| BD | Cursor_tenant1 | `uni/tn-Cursor_tenant1/BD-cursor_bd` |
+| BD | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_app_bd` |
+| BD | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_db_bd` |
+| BD | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_fw_app_bd` |
+| BD | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_fw_db_bd` |
+| BD | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_fw_dmz_bd` |
+| BD | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_fw_web_bd` |
+| BD | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_web_bd` |
 | BD | LAB-TENANT | `uni/tn-LAB-TENANT/BD-LAB-BD` |
 | BD | RB-Tenant | `uni/tn-RB-Tenant/BD-RB-BD` |
 | BD | Tenant_RG | `uni/tn-Tenant_RG/BD-L2_BD_RG` |
 | BD | Tenant_RG | `uni/tn-Tenant_RG/BD-RG_BD_EXT_L2` |
 | BD | VY-TN | `uni/tn-VY-TN/BD-VY-BD` |
+| BD | VY-TN | `uni/tn-VY-TN/BD-VY-BD02` |
+| BD | VY-TN | `uni/tn-VY-TN/BD-VY-BD03` |
+| Subnet (BD) | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/BD-cursor2_bd/subnet-[10.250.3.1/24]` |
+| Subnet (BD) | Cursor_Tenant3 | `uni/tn-Cursor_Tenant3/BD-cursor3_bd/subnet-[10.250.4.1/24]` |
+| Subnet (BD) | Cursor_tenant1 | `uni/tn-Cursor_tenant1/BD-cursor_bd/subnet-[10.250.2.1/24]` |
+| Subnet (BD) | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_app_bd/subnet-[10.250.52.1/24]` |
+| Subnet (BD) | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_db_bd/subnet-[10.250.53.1/24]` |
+| Subnet (BD) | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_fw_app_bd/subnet-[10.250.59.33/28]` |
+| Subnet (BD) | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_fw_db_bd/subnet-[10.250.59.49/28]` |
+| Subnet (BD) | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_fw_dmz_bd/subnet-[10.250.59.1/28]` |
+| Subnet (BD) | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_fw_web_bd/subnet-[10.250.59.17/28]` |
+| Subnet (BD) | Cursor_tenant5 | `uni/tn-Cursor_tenant5/BD-cursor5_web_bd/subnet-[10.250.51.1/24]` |
 | Subnet (BD) | RB-Tenant | `uni/tn-RB-Tenant/BD-RB-BD/subnet-[10.10.10.1/24]` |
 | Subnet (BD) | VY-TN | `uni/tn-VY-TN/BD-VY-BD/subnet-[10.2.2.254/24]` |
+| AP | CORP_PROD | `uni/tn-CORP_PROD/ap-CORP-PROD-APP` |
+| AP | CORP_PROD | `uni/tn-CORP_PROD/ap-HYDDC2_Corp_Prod_F2` |
+| AP | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/ap-cursor2_ap` |
+| AP | Cursor_Tenant3 | `uni/tn-Cursor_Tenant3/ap-cursor3_ap` |
+| AP | Cursor_tenant1 | `uni/tn-Cursor_tenant1/ap-cursor_ap` |
+| AP | Cursor_tenant5 | `uni/tn-Cursor_tenant5/ap-cursor5_ap` |
 | AP | LAB-TENANT | `uni/tn-LAB-TENANT/ap-LAB-APP` |
 | AP | RB-Tenant | `uni/tn-RB-Tenant/ap-FTP` |
 | AP | RB-Tenant | `uni/tn-RB-Tenant/ap-WWW` |
 | AP | Tenant_RG | `uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3` |
 | AP | VY-TN | `uni/tn-VY-TN/ap-VY-AP` |
+| EPG | CORP_PROD | `uni/tn-CORP_PROD/ap-CORP-PROD-APP/epg-Vlan_1601_EPG` |
+| EPG | CORP_PROD | `uni/tn-CORP_PROD/ap-HYDDC2_Corp_Prod_F2/epg-EPG_VL1201_IBANK_Netbackup_VLAN1201` |
+| EPG | CORP_PROD | `uni/tn-CORP_PROD/ap-HYDDC2_Corp_Prod_F2/epg-EPG_VL1253_Bare_Metal_MGMT_VLAN1253` |
+| EPG | CORP_PROD | `uni/tn-CORP_PROD/ap-HYDDC2_Corp_Prod_F2/epg-EPG_VL1501_PROD_WEB_VLAN1501` |
+| EPG | CORP_PROD | `uni/tn-CORP_PROD/ap-HYDDC2_Corp_Prod_F2/epg-EPG_VL1701_PROD_DB_VLAN1701` |
+| EPG | CORP_PROD | `uni/tn-CORP_PROD/ap-HYDDC2_Corp_Prod_F2/epg-EPG_VL1902_IBANK_iMobile_VLAN1902` |
+| EPG | CORP_PROD | `uni/tn-CORP_PROD/ap-HYDDC2_Corp_Prod_F2/epg-EPG_VL1903_IBANK_MFA_VLAN1903` |
+| EPG | CORP_PROD | `uni/tn-CORP_PROD/ap-HYDDC2_Corp_Prod_F2/epg-Vlan_1251_IBANK_AHV_Hypervisor_MGMT` |
+| EPG | Cursor_Tenant2 | `uni/tn-Cursor_Tenant2/ap-cursor2_ap/epg-web` |
+| EPG | Cursor_Tenant3 | `uni/tn-Cursor_Tenant3/ap-cursor3_ap/epg-web` |
+| EPG | Cursor_tenant1 | `uni/tn-Cursor_tenant1/ap-cursor_ap/epg-web` |
+| EPG | Cursor_tenant5 | `uni/tn-Cursor_tenant5/ap-cursor5_ap/epg-app` |
+| EPG | Cursor_tenant5 | `uni/tn-Cursor_tenant5/ap-cursor5_ap/epg-db` |
+| EPG | Cursor_tenant5 | `uni/tn-Cursor_tenant5/ap-cursor5_ap/epg-web` |
 | EPG | LAB-TENANT | `uni/tn-LAB-TENANT/ap-LAB-APP/epg-WEB-EPG` |
 | EPG | RB-Tenant | `uni/tn-RB-Tenant/ap-FTP/epg-FTP-EPG` |
 | EPG | RB-Tenant | `uni/tn-RB-Tenant/ap-WWW/epg-WWW` |
 | EPG | Tenant_RG | `uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3/epg-EXT_L2` |
 | EPG | VY-TN | `uni/tn-VY-TN/ap-VY-AP/epg-EPG2` |
 | EPG | VY-TN | `uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG` |
+| EPG | VY-TN | `uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG02` |
+| EPG | VY-TN | `uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG03` |
 
 ## Removed since baseline (109)
 
@@ -287,7 +344,7 @@ Subnets are bridge-domain subnets only (EPG-level subnets are not in the baselin
 
 | critical | major | minor | warning | info | cleared | total |
 |---:|---:|---:|---:|---:|---:|---:|
-| 6 | 4 | 2 | 597 | 0 | 34 | 643 |
+| 6 | 4 | 21 | 633 | 0 | 5 | 669 |
 
 ## Artifacts
 
