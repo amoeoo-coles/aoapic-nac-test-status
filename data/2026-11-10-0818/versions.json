@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "stamp": "2026-11-10-0818",
+ "read_at": "2026-11-10T08:19:14+11:00",
+ "read_at_local": "2026-11-10 08:19:14 AEDT",
+ "note": "",
+ "errors": [],
+ "apic": {
+  "controllers": [
+   {
+    "name": "apic1",
+    "node": "1",
+    "version": "6.1(4h)",
+    "source": "firmwareCtrlrRunning"
+   }
+  ],
+  "switches": [
+   {
+    "name": "Leaf-101",
+    "node": "101",
+    "role": "leaf",
+    "version": "simsw-6.1(4h)",
+    "source": "topSystem"
+   },
+   {
+    "name": "Leaf-102",
+    "node": "102",
+    "role": "leaf",
+    "version": "simsw-6.1(4h)",
+    "source": "topSystem"
+   },
+   {
+    "name": "Spine-201",
+    "node": "103",
+    "role": "spine",
+    "version": "simsw-6.1(4h)",
+    "source": "topSystem"
+   }
+  ]
+ },
+ "python": "3.13.5",
+ "tools": {
+  "nac-test": "2.0.1",
+  "nac-test-pyats-common": "0.3.0",
+  "nac-yaml": "2.0.0",
+  "robotframework": "7.5",
+  "robotframework-pabot": "5.2.2",
+  "robotframework-requests": "0.9.7",
+  "requests": "2.34.2",
+  "PyYAML": "6.0.3"
+ },
+ "tools_source": "test venv (/workspace/aci-nac/.venv)",
+ "nac_validate": {
+  "version": "2.1.0",
+  "used_by_this_run": false,
+  "note": "installed for the NetBox YAML Model page validation; the nac-test run does not call nac-validate"
+ },
+ "data_model": {
+  "defaults_apic_version": "5.2.1g",
+  "source": "nac-test defaults/defaults.yaml (defaults.apic.version)",
+  "data_files": 16
+ }
+}

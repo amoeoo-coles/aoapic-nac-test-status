@@ -1,0 +1,271 @@
+{
+  "schema": 1,
+  "date": "2026-11-10",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-11-10T08:19:14+11:00",
+  "generated_at_local": "2026-11-10 08:19:14 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 190 added, 109 removed",
+    "tests": 129,
+    "failed": 109,
+    "added": 190,
+    "removed": 109,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 17 broken, 77 warnings (7 of 30 tenants broken: LAB-TENANT, RB-Tenant, Tenant_RG, Test100, Test_9112026, VY-TN, tenant_mylab)",
+    "broken": 17,
+    "warnings": 77,
+    "robot": {
+      "total": 200,
+      "passed": 188,
+      "failed": 12
+    },
+    "scorecard": [
+      {
+        "tenant": "billing-test-DPYD6hPFFmE9",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "Cursor_tenant1",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_Tenant2",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_Tenant3",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "Cursor_tenant5",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 7,
+        "score": 79,
+        "status": "WARN"
+      },
+      {
+        "tenant": "EM-LAB",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "iTenant",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "LAB-TENANT",
+        "in_baseline": false,
+        "broken": 3,
+        "warnings": 4,
+        "score": 58,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "MGMT_LAN",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "mjay_dev",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "NZ-ACI-LAB",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "RB-Tenant",
+        "in_baseline": false,
+        "broken": 3,
+        "warnings": 4,
+        "score": 58,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "Tenant-Ahmed",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "tenant_mylab",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 1,
+        "score": 87,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "Tenant_RG",
+        "in_baseline": false,
+        "broken": 2,
+        "warnings": 4,
+        "score": 68,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "Test100",
+        "in_baseline": false,
+        "broken": 1,
+        "warnings": 8,
+        "score": 66,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "Test_9112026",
+        "in_baseline": false,
+        "broken": 5,
+        "warnings": 3,
+        "score": 41,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "TESTING123",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TN-LAB-ANS01",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "TN-LAB-K01",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "TN-LAB-K02",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "tn_example_tenant",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 6,
+        "score": 82,
+        "status": "WARN"
+      },
+      {
+        "tenant": "VY-TN",
+        "in_baseline": false,
+        "broken": 2,
+        "warnings": 5,
+        "score": 65,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "Zangief",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "zzzps4021",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 8,
+        "score": 76,
+        "status": "WARN"
+      },
+      {
+        "tenant": "zzzps4021_BGP",
+        "in_baseline": false,
+        "broken": 0,
+        "warnings": 5,
+        "score": 85,
+        "status": "WARN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}
