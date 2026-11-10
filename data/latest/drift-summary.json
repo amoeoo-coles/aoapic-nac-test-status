@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "status": "drift",
   "drift": true,
-  "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 190 added, 109 removed",
-  "generated_at": "2026-11-10T08:18:59+11:00",
-  "generated_at_local": "2026-11-10 08:18:59 AEDT",
+  "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 254 added, 109 removed",
+  "generated_at": "2026-11-11T08:35:55+11:00",
+  "generated_at_local": "2026-11-11 08:35:55 AEDT",
   "apic_url": "https://sandboxapicdc.cisco.com",
   "nac_test_rc": 109,
   "baseline": {
@@ -680,48 +680,48 @@
       "type": "Tenant",
       "class": "fvTenant",
       "baseline": 16,
-      "current": 30,
-      "added": 26,
+      "current": 37,
+      "added": 33,
       "removed": 12
     },
     {
       "type": "VRF",
       "class": "fvCtx",
       "baseline": 18,
-      "current": 33,
-      "added": 27,
+      "current": 40,
+      "added": 34,
       "removed": 12
     },
     {
       "type": "BD",
       "class": "fvBD",
       "baseline": 23,
-      "current": 46,
-      "added": 42,
+      "current": 59,
+      "added": 55,
       "removed": 19
     },
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
       "baseline": 23,
-      "current": 36,
-      "added": 35,
+      "current": 46,
+      "added": 45,
       "removed": 22
     },
     {
       "type": "AP",
       "class": "fvAp",
       "baseline": 16,
-      "current": 25,
-      "added": 22,
+      "current": 38,
+      "added": 35,
       "removed": 13
     },
     {
       "type": "EPG",
       "class": "fvAEPg",
       "baseline": 33,
-      "current": 40,
-      "added": 38,
+      "current": 54,
+      "added": 52,
       "removed": 31
     }
   ],
@@ -765,14 +765,32 @@
     {
       "type": "Tenant",
       "class": "fvTenant",
+      "tenant": "MAD",
+      "dn": "uni/tn-MAD"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
       "tenant": "MGMT_LAN",
       "dn": "uni/tn-MGMT_LAN"
     },
     {
       "type": "Tenant",
       "class": "fvTenant",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB"
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Prod",
+      "dn": "uni/tn-Prod"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Production",
+      "dn": "uni/tn-Production"
     },
     {
       "type": "Tenant",
@@ -783,8 +801,14 @@
     {
       "type": "Tenant",
       "class": "fvTenant",
-      "tenant": "TESTING123",
-      "dn": "uni/tn-TESTING123"
+      "tenant": "TN-CONSUMER",
+      "dn": "uni/tn-TN-CONSUMER"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TN-CONSUMER-BGS",
+      "dn": "uni/tn-TN-CONSUMER-BGS"
     },
     {
       "type": "Tenant",
@@ -807,14 +831,38 @@
     {
       "type": "Tenant",
       "class": "fvTenant",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
       "tenant": "Tenant-Ahmed",
       "dn": "uni/tn-Tenant-Ahmed"
     },
     {
       "type": "Tenant",
       "class": "fvTenant",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
       "tenant": "Tenant_RG",
       "dn": "uni/tn-Tenant_RG"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Test",
+      "dn": "uni/tn-Test"
     },
     {
       "type": "Tenant",
@@ -857,12 +905,6 @@
       "class": "fvTenant",
       "tenant": "mjay_dev",
       "dn": "uni/tn-mjay_dev"
-    },
-    {
-      "type": "Tenant",
-      "class": "fvTenant",
-      "tenant": "tenant_mylab",
-      "dn": "uni/tn-tenant_mylab"
     },
     {
       "type": "Tenant",
@@ -915,14 +957,38 @@
     {
       "type": "VRF",
       "class": "fvCtx",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/ctx-VRF-PROD"
+      "tenant": "MAD",
+      "dn": "uni/tn-MAD/ctx-test"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse/ctx-vrf-mouse"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/ctx-PROD-VRF"
     },
     {
       "type": "VRF",
       "class": "fvCtx",
       "tenant": "RB-Tenant",
       "dn": "uni/tn-RB-Tenant/ctx-RB-VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TN-CONSUMER-BGS",
+      "dn": "uni/tn-TN-CONSUMER-BGS/ctx-VRF-CONSUMER"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TN-CONSUMER",
+      "dn": "uni/tn-TN-CONSUMER/ctx-VRF-CONSUMER"
     },
     {
       "type": "VRF",
@@ -945,8 +1011,26 @@
     {
       "type": "VRF",
       "class": "fvCtx",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/ctx-VRF-PROVIDER"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/ctx-VRF-PROVIDER"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
       "tenant": "Tenant-Ahmed",
       "dn": "uni/tn-Tenant-Ahmed/ctx-VRF-1"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ctx-VRF-2"
     },
     {
       "type": "VRF",
@@ -1065,6 +1149,12 @@
     {
       "type": "BD",
       "class": "fvBD",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/BD-p2bd"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
       "tenant": "Cursor_tenant5",
       "dn": "uni/tn-Cursor_tenant5/BD-cursor5_app_bd"
     },
@@ -1107,32 +1197,56 @@
     {
       "type": "BD",
       "class": "fvBD",
+      "tenant": "EM-LAB",
+      "dn": "uni/tn-EM-LAB/BD-AABD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
       "tenant": "LAB-TENANT",
       "dn": "uni/tn-LAB-TENANT/BD-LAB-BD"
     },
     {
       "type": "BD",
       "class": "fvBD",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-APP"
+      "tenant": "MAD",
+      "dn": "uni/tn-MAD/BD-MAD_test_test_BD"
     },
     {
       "type": "BD",
       "class": "fvBD",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-DB"
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse/BD-BD-10"
     },
     {
       "type": "BD",
       "class": "fvBD",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-WEB"
+      "tenant": "Production",
+      "dn": "uni/tn-Production/BD-BD-APP"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/BD-BD-WEB"
     },
     {
       "type": "BD",
       "class": "fvBD",
       "tenant": "RB-Tenant",
       "dn": "uni/tn-RB-Tenant/BD-RB-BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TN-CONSUMER-BGS",
+      "dn": "uni/tn-TN-CONSUMER-BGS/BD-BD-CONSUMER"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TN-CONSUMER",
+      "dn": "uni/tn-TN-CONSUMER/BD-BD-WEB"
     },
     {
       "type": "BD",
@@ -1187,6 +1301,36 @@
       "class": "fvBD",
       "tenant": "TN-LAB-K02",
       "dn": "uni/tn-TN-LAB-K02/BD-BD-WE"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-APP"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-DB"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/BD-BD-APP"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/BD-BD-DB"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/BD-BD2"
     },
     {
       "type": "BD",
@@ -1247,6 +1391,24 @@
       "class": "fvBD",
       "tenant": "billing-test-DPYD6hPFFmE9",
       "dn": "uni/tn-billing-test-DPYD6hPFFmE9/BD-bd-vlan102"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_111_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_222_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_333_BD"
     },
     {
       "type": "BD",
@@ -1317,6 +1479,12 @@
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/BD-p2bd/subnet-[10.94.72.5/25]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
       "tenant": "Cursor_tenant5",
       "dn": "uni/tn-Cursor_tenant5/BD-cursor5_app_bd/subnet-[10.250.52.1/24]"
     },
@@ -1359,26 +1527,44 @@
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-APP/subnet-[10.10.20.1/24]"
+      "tenant": "EM-LAB",
+      "dn": "uni/tn-EM-LAB/BD-AABD/subnet-[10.10.11.254/24]"
     },
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-DB/subnet-[10.10.30.1/24]"
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse/BD-BD-10/subnet-[10.10.10.1/24]"
     },
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-WEB/subnet-[10.10.10.1/24]"
+      "tenant": "Production",
+      "dn": "uni/tn-Production/BD-BD-APP/subnet-[10.10.20.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/BD-BD-WEB/subnet-[10.10.10.1/24]"
     },
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
       "tenant": "RB-Tenant",
       "dn": "uni/tn-RB-Tenant/BD-RB-BD/subnet-[10.10.10.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TN-CONSUMER-BGS",
+      "dn": "uni/tn-TN-CONSUMER-BGS/BD-BD-CONSUMER/subnet-[10.10.10.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TN-CONSUMER",
+      "dn": "uni/tn-TN-CONSUMER/BD-BD-WEB/subnet-[10.10.10.1/24]"
     },
     {
       "type": "Subnet (BD)",
@@ -1437,6 +1623,30 @@
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-APP/subnet-[10.10.20.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-DB/subnet-[10.10.30.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/BD-BD-APP/subnet-[10.10.20.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/BD-BD-DB/subnet-[10.10.30.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
       "tenant": "Test100",
       "dn": "uni/tn-Test100/BD-DEV-APP/subnet-[192.168.3.1/24]"
     },
@@ -1469,6 +1679,18 @@
       "class": "fvSubnet",
       "tenant": "billing-test-DPYD6hPFFmE9",
       "dn": "uni/tn-billing-test-DPYD6hPFFmE9/BD-bd-vlan102/subnet-[10.102.0.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_111_BD/subnet-[10.9.9.9/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_222_BD/subnet-[10.10.10.10/24]"
     },
     {
       "type": "Subnet (BD)",
@@ -1533,14 +1755,50 @@
     {
       "type": "AP",
       "class": "fvAp",
+      "tenant": "EM-LAB",
+      "dn": "uni/tn-EM-LAB/ap-AAAP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
       "tenant": "LAB-TENANT",
       "dn": "uni/tn-LAB-TENANT/ap-LAB-APP"
     },
     {
       "type": "AP",
       "class": "fvAp",
+      "tenant": "MAD",
+      "dn": "uni/tn-MAD/ap-MAD_test_AP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
       "tenant": "MGMT_LAN",
       "dn": "uni/tn-MGMT_LAN/ap-AP-MGMT"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse/ap-network-segment"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/ap-EPG-APP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/ap-EPG-DATABASE"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/ap-EPG-WEB"
     },
     {
       "type": "AP",
@@ -1553,6 +1811,18 @@
       "class": "fvAp",
       "tenant": "RB-Tenant",
       "dn": "uni/tn-RB-Tenant/ap-WWW"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "TN-CONSUMER-BGS",
+      "dn": "uni/tn-TN-CONSUMER-BGS/ap-AP-WEB"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "TN-CONSUMER",
+      "dn": "uni/tn-TN-CONSUMER/ap-AP-WEB"
     },
     {
       "type": "AP",
@@ -1575,8 +1845,32 @@
     {
       "type": "AP",
       "class": "fvAp",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/ap-AP-APP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
       "tenant": "Tenant-Ahmed",
       "dn": "uni/tn-Tenant-Ahmed/ap-App-X"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-XYZ"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-Y"
     },
     {
       "type": "AP",
@@ -1613,6 +1907,12 @@
       "class": "fvAp",
       "tenant": "billing-test-DPYD6hPFFmE9",
       "dn": "uni/tn-billing-test-DPYD6hPFFmE9/ap-billing-portal"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP"
     },
     {
       "type": "AP",
@@ -1677,8 +1977,26 @@
     {
       "type": "EPG",
       "class": "fvAEPg",
+      "tenant": "EM-LAB",
+      "dn": "uni/tn-EM-LAB/ap-AAAP/epg-AAEPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
       "tenant": "LAB-TENANT",
       "dn": "uni/tn-LAB-TENANT/ap-LAB-APP/epg-WEB-EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "MAD",
+      "dn": "uni/tn-MAD/ap-MAD_test_AP/epg-MAD_test_test_2101_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse/ap-network-segment/epg-EPG-10"
     },
     {
       "type": "EPG",
@@ -1691,6 +2009,18 @@
       "class": "fvAEPg",
       "tenant": "RB-Tenant",
       "dn": "uni/tn-RB-Tenant/ap-WWW/epg-WWW"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TN-CONSUMER-BGS",
+      "dn": "uni/tn-TN-CONSUMER-BGS/ap-AP-WEB/epg-EPG-WEB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TN-CONSUMER",
+      "dn": "uni/tn-TN-CONSUMER/ap-AP-WEB/epg-EPG-WEB"
     },
     {
       "type": "EPG",
@@ -1745,6 +2075,42 @@
       "class": "fvAEPg",
       "tenant": "TN-LAB-K02",
       "dn": "uni/tn-TN-LAB-K02/ap-WEB-APP/epg-EGP-WEB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP/epg-EPG-APP"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP/epg-EPG-BD"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/ap-AP-APP/epg-EPG-APP"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/ap-AP-APP/epg-EPG-DB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-XYZ/epg-EPG-B"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-Y/epg-EPG-B"
     },
     {
       "type": "EPG",
@@ -1817,6 +2183,24 @@
       "class": "fvAEPg",
       "tenant": "billing-test-DPYD6hPFFmE9",
       "dn": "uni/tn-billing-test-DPYD6hPFFmE9/ap-billing-portal/epg-testers"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-app-profile/epg-201_EPG"
     },
     {
       "type": "EPG",
@@ -2524,13 +2908,13 @@
     }
   ],
   "faults": {
-    "critical": 13,
-    "major": 4,
-    "minor": 492,
-    "warning": 727,
+    "critical": 19,
+    "major": 5,
+    "minor": 363,
+    "warning": 962,
     "info": 0,
-    "cleared": 6,
-    "total": 1242
+    "cleared": 2,
+    "total": 1351
   },
   "errors": [],
   "note": null

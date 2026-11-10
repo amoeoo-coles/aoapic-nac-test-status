@@ -1,0 +1,812 @@
+{
+ "schema": 1,
+ "current": "2026-11-11-0835",
+ "previous": "2026-11-10-0818",
+ "current_snapshot": "2026-11-11 08:35:58 AEDT",
+ "previous_snapshot": "2026-11-10 08:19:02 AEDT",
+ "current_status": "attention",
+ "current_headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+ "tests": {
+  "integrity": {
+   "total": {
+    "prev": 200,
+    "now": 253,
+    "delta": 53
+   },
+   "passed": {
+    "prev": 188,
+    "now": 236,
+    "delta": 48
+   },
+   "failed": {
+    "prev": 12,
+    "now": 17,
+    "delta": 5
+   }
+  },
+  "drift": {
+   "total": {
+    "prev": 129,
+    "now": 129,
+    "delta": 0
+   },
+   "passed": {
+    "prev": 20,
+    "now": 20,
+    "delta": 0
+   },
+   "failed": {
+    "prev": 109,
+    "now": 109,
+    "delta": 0
+   }
+  }
+ },
+ "tests_newly_failing": [
+  "Cursor tenant1 :: Integrity BD Cursor_tenant1/p2bd: VRF resolves",
+  "Cursor tenant1 :: Integrity Cursor_tenant1: all named relations resolve",
+  "Production :: Integrity contract Production/BD-APP: subjects and filters",
+  "Production :: Integrity contract Production/BD-DB: subjects and filters",
+  "Tn Example Tenant :: Integrity tn_example_tenant: no critical or major faults",
+  "zzzps4021 BGP :: Integrity zzzps4021_BGP: no critical or major faults"
+ ],
+ "tests_fixed": [
+  "Tenant Mylab :: Integrity tenant_mylab: no critical or major faults"
+ ],
+ "tenants": {
+  "prev_total": 30,
+  "now_total": 37,
+  "added": [
+   "MAD",
+   "Mouse",
+   "Prod",
+   "Production",
+   "Tenant2",
+   "Test",
+   "TN-CONSUMER",
+   "TN-CONSUMER-BGS",
+   "TN-PROVIDER",
+   "TN-PROVIDER-BGS"
+  ],
+  "removed": [
+   "NZ-ACI-LAB",
+   "tenant_mylab",
+   "TESTING123"
+  ],
+  "newly_broken": [
+   "Cursor_tenant1",
+   "tn_example_tenant",
+   "zzzps4021_BGP"
+  ],
+  "added_broken": [
+   "Production"
+  ],
+  "fixed": [],
+  "status_changes": [
+   {
+    "tenant": "Cursor_tenant1",
+    "prev": "WARN",
+    "now": "BROKEN",
+    "prev_score": 97,
+    "now_score": 81
+   },
+   {
+    "tenant": "EM-LAB",
+    "prev": "WARN",
+    "now": "WARN",
+    "prev_score": 97,
+    "now_score": 94
+   },
+   {
+    "tenant": "tn_example_tenant",
+    "prev": "WARN",
+    "now": "BROKEN",
+    "prev_score": 82,
+    "now_score": 56
+   },
+   {
+    "tenant": "VY-TN",
+    "prev": "BROKEN",
+    "now": "BROKEN",
+    "prev_score": 65,
+    "now_score": 55
+   },
+   {
+    "tenant": "zzzps4021_BGP",
+    "prev": "WARN",
+    "now": "BROKEN",
+    "prev_score": 85,
+    "now_score": 75
+   }
+  ],
+  "broken_prev": 7,
+  "broken_now": 10
+ },
+ "broken_relations": {
+  "prev": 17,
+  "now": 24,
+  "added": [
+   {
+    "tenant": "Cursor_tenant1",
+    "check": "BD VRF missing-target",
+    "dn": "uni/tn-Cursor_tenant1/BD-p2bd",
+    "reason": "BD points to VRF 'p2v' which does not exist in tenant Cursor_tenant1 or in tenant common (state missing-target). The BD and every EPG in it cannot be deployed."
+   },
+   {
+    "tenant": "Production",
+    "check": "Contract without subjects",
+    "dn": "uni/tn-Production/brc-BD-APP",
+    "reason": "Contract has no subject, so it permits nothing."
+   },
+   {
+    "tenant": "Production",
+    "check": "Contract without subjects",
+    "dn": "uni/tn-Production/brc-BD-DB",
+    "reason": "Contract has no subject, so it permits nothing."
+   },
+   {
+    "tenant": "VY-TN",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG",
+    "reason": "Configuration failed for uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG node 102 PG-VPC-20 due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
+   },
+   {
+    "tenant": "tn_example_tenant",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG",
+    "reason": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG node 102 eth1/1 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-333 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned t"
+   },
+   {
+    "tenant": "tn_example_tenant",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG",
+    "reason": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG node 102 vPC_20 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-111 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "zzzps4021_BGP",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-zzzps4021_BGP/out-test-L3OUT",
+    "reason": "Configuration failed for uni/tn-zzzps4021_BGP/out-test-L3OUT node 102 INT_VPC_RG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
+   }
+  ],
+  "resolved": [],
+  "reason_changed": [
+   {
+    "tenant": "Tenant_RG",
+    "check": "Critical fault F0467 (EPG deployment on path failed)",
+    "dn": "uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3/epg-EXT_L2",
+    "reason": "Configuration failed for node 102 due to Interface Configured as L3, debug message: port-configured-as-l3: Interface is already configured under other VRF named LAB-TENANT:LAB-VRF;",
+    "prev_reason": "Configuration failed for uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3/epg-EXT_L2 node 101 eth1/4 due to Invalid Path Configuration, debug message: invalid-path: vlan-1410 :There is no domain, associated with both EPG and Port, that has required VLAN;"
+   }
+  ]
+ },
+ "warnings": {
+  "prev": 77,
+  "now": 99,
+  "delta": 22
+ },
+ "faults": {
+  "new_critical": [
+   {
+    "tenant": "VY-TN",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG",
+    "descr": "Configuration failed for uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG node 102 PG-VPC-20 due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
+   },
+   {
+    "tenant": "tn_example_tenant",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG",
+    "descr": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG node 102 eth1/6 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-333 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;"
+   },
+   {
+    "tenant": "tn_example_tenant",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG",
+    "descr": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG node 102 vPC_19 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-222 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;"
+   },
+   {
+    "tenant": "zzzps4021_BGP",
+    "severity": "critical",
+    "code": "F0467",
+    "affected": "uni/tn-zzzps4021_BGP/out-test-L3OUT",
+    "descr": "Configuration failed for uni/tn-zzzps4021_BGP/out-test-L3OUT node 102 INT_VPC_RG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;"
+   }
+  ],
+  "new_major": [],
+  "cleared_critical_major": [],
+  "fabric_totals": {
+   "critical": {
+    "prev": 13,
+    "now": 19
+   },
+   "major": {
+    "prev": 4,
+    "now": 5
+   },
+   "minor": {
+    "prev": 492,
+    "now": 363
+   },
+   "warning": {
+    "prev": 727,
+    "now": 962
+   },
+   "total": {
+    "prev": 1242,
+    "now": 1351
+   }
+  }
+ },
+ "drift_table": [
+  {
+   "type": "Tenant",
+   "baseline": 16,
+   "prev": 30,
+   "now": 37,
+   "delta": 7,
+   "added_vs_baseline": 33,
+   "removed_vs_baseline": 12
+  },
+  {
+   "type": "VRF",
+   "baseline": 18,
+   "prev": 33,
+   "now": 40,
+   "delta": 7,
+   "added_vs_baseline": 34,
+   "removed_vs_baseline": 12
+  },
+  {
+   "type": "BD",
+   "baseline": 23,
+   "prev": 46,
+   "now": 59,
+   "delta": 13,
+   "added_vs_baseline": 55,
+   "removed_vs_baseline": 19
+  },
+  {
+   "type": "Subnet (BD)",
+   "baseline": 23,
+   "prev": 36,
+   "now": 46,
+   "delta": 10,
+   "added_vs_baseline": 45,
+   "removed_vs_baseline": 22
+  },
+  {
+   "type": "AP",
+   "baseline": 16,
+   "prev": 25,
+   "now": 38,
+   "delta": 13,
+   "added_vs_baseline": 35,
+   "removed_vs_baseline": 13
+  },
+  {
+   "type": "EPG",
+   "baseline": 33,
+   "prev": 40,
+   "now": 54,
+   "delta": 14,
+   "added_vs_baseline": 52,
+   "removed_vs_baseline": 31
+  }
+ ],
+ "drift_objects": {
+  "appeared": [
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Cursor_tenant1",
+    "dn": "uni/tn-Cursor_tenant1/BD-p2bd"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Cursor_tenant1",
+    "dn": "uni/tn-Cursor_tenant1/BD-p2bd/subnet-[10.94.72.5/25]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "EM-LAB",
+    "dn": "uni/tn-EM-LAB/BD-AABD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "EM-LAB",
+    "dn": "uni/tn-EM-LAB/BD-AABD/subnet-[10.10.11.254/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "EM-LAB",
+    "dn": "uni/tn-EM-LAB/ap-AAAP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "EM-LAB",
+    "dn": "uni/tn-EM-LAB/ap-AAAP/epg-AAEPG"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "MAD",
+    "dn": "uni/tn-MAD"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "MAD",
+    "dn": "uni/tn-MAD/BD-MAD_test_test_BD"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "MAD",
+    "dn": "uni/tn-MAD/ap-MAD_test_AP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "MAD",
+    "dn": "uni/tn-MAD/ap-MAD_test_AP/epg-MAD_test_test_2101_EPG"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "MAD",
+    "dn": "uni/tn-MAD/ctx-test"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Mouse",
+    "dn": "uni/tn-Mouse"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Mouse",
+    "dn": "uni/tn-Mouse/BD-BD-10"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Mouse",
+    "dn": "uni/tn-Mouse/BD-BD-10/subnet-[10.10.10.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Mouse",
+    "dn": "uni/tn-Mouse/ap-network-segment"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Mouse",
+    "dn": "uni/tn-Mouse/ap-network-segment/epg-EPG-10"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "Mouse",
+    "dn": "uni/tn-Mouse/ctx-vrf-mouse"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Prod",
+    "dn": "uni/tn-Prod"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Production",
+    "dn": "uni/tn-Production"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Production",
+    "dn": "uni/tn-Production/BD-BD-APP"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Production",
+    "dn": "uni/tn-Production/BD-BD-APP/subnet-[10.10.20.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Production",
+    "dn": "uni/tn-Production/BD-BD-WEB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "Production",
+    "dn": "uni/tn-Production/BD-BD-WEB/subnet-[10.10.10.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Production",
+    "dn": "uni/tn-Production/ap-EPG-APP"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Production",
+    "dn": "uni/tn-Production/ap-EPG-DATABASE"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Production",
+    "dn": "uni/tn-Production/ap-EPG-WEB"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "Production",
+    "dn": "uni/tn-Production/ctx-PROD-VRF"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN-CONSUMER",
+    "dn": "uni/tn-TN-CONSUMER"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN-CONSUMER-BGS",
+    "dn": "uni/tn-TN-CONSUMER-BGS"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-CONSUMER-BGS",
+    "dn": "uni/tn-TN-CONSUMER-BGS/BD-BD-CONSUMER"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-CONSUMER-BGS",
+    "dn": "uni/tn-TN-CONSUMER-BGS/BD-BD-CONSUMER/subnet-[10.10.10.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "TN-CONSUMER-BGS",
+    "dn": "uni/tn-TN-CONSUMER-BGS/ap-AP-WEB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-CONSUMER-BGS",
+    "dn": "uni/tn-TN-CONSUMER-BGS/ap-AP-WEB/epg-EPG-WEB"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN-CONSUMER-BGS",
+    "dn": "uni/tn-TN-CONSUMER-BGS/ctx-VRF-CONSUMER"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-CONSUMER",
+    "dn": "uni/tn-TN-CONSUMER/BD-BD-WEB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-CONSUMER",
+    "dn": "uni/tn-TN-CONSUMER/BD-BD-WEB/subnet-[10.10.10.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "TN-CONSUMER",
+    "dn": "uni/tn-TN-CONSUMER/ap-AP-WEB"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-CONSUMER",
+    "dn": "uni/tn-TN-CONSUMER/ap-AP-WEB/epg-EPG-WEB"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN-CONSUMER",
+    "dn": "uni/tn-TN-CONSUMER/ctx-VRF-CONSUMER"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN-PROVIDER",
+    "dn": "uni/tn-TN-PROVIDER"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TN-PROVIDER-BGS",
+    "dn": "uni/tn-TN-PROVIDER-BGS"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-PROVIDER-BGS",
+    "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-APP"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-PROVIDER-BGS",
+    "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-APP/subnet-[10.10.20.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-PROVIDER-BGS",
+    "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-DB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-PROVIDER-BGS",
+    "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-DB/subnet-[10.10.30.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "TN-PROVIDER-BGS",
+    "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-PROVIDER-BGS",
+    "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP/epg-EPG-APP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-PROVIDER-BGS",
+    "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP/epg-EPG-BD"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN-PROVIDER-BGS",
+    "dn": "uni/tn-TN-PROVIDER-BGS/ctx-VRF-PROVIDER"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-PROVIDER",
+    "dn": "uni/tn-TN-PROVIDER/BD-BD-APP"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-PROVIDER",
+    "dn": "uni/tn-TN-PROVIDER/BD-BD-APP/subnet-[10.10.20.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "TN-PROVIDER",
+    "dn": "uni/tn-TN-PROVIDER/BD-BD-DB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "TN-PROVIDER",
+    "dn": "uni/tn-TN-PROVIDER/BD-BD-DB/subnet-[10.10.30.1/24]"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "TN-PROVIDER",
+    "dn": "uni/tn-TN-PROVIDER/ap-AP-APP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-PROVIDER",
+    "dn": "uni/tn-TN-PROVIDER/ap-AP-APP/epg-EPG-APP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "TN-PROVIDER",
+    "dn": "uni/tn-TN-PROVIDER/ap-AP-APP/epg-EPG-DB"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "TN-PROVIDER",
+    "dn": "uni/tn-TN-PROVIDER/ctx-VRF-PROVIDER"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Tenant2",
+    "dn": "uni/tn-Tenant2"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "Tenant2",
+    "dn": "uni/tn-Tenant2/BD-BD2"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Tenant2",
+    "dn": "uni/tn-Tenant2/ap-App-XYZ"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tenant2",
+    "dn": "uni/tn-Tenant2/ap-App-XYZ/epg-EPG-B"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "Tenant2",
+    "dn": "uni/tn-Tenant2/ap-App-Y"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "Tenant2",
+    "dn": "uni/tn-Tenant2/ap-App-Y/epg-EPG-B"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "Tenant2",
+    "dn": "uni/tn-Tenant2/ctx-VRF-2"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "Test",
+    "dn": "uni/tn-Test"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "tn_example_tenant",
+    "dn": "uni/tn-tn_example_tenant/BD-BIGIP_111_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "tn_example_tenant",
+    "dn": "uni/tn-tn_example_tenant/BD-BIGIP_111_BD/subnet-[10.9.9.9/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "tn_example_tenant",
+    "dn": "uni/tn-tn_example_tenant/BD-BIGIP_222_BD"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "tn_example_tenant",
+    "dn": "uni/tn-tn_example_tenant/BD-BIGIP_222_BD/subnet-[10.10.10.10/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "tn_example_tenant",
+    "dn": "uni/tn-tn_example_tenant/BD-BIGIP_333_BD"
+   },
+   {
+    "type": "AP",
+    "class": "fvAp",
+    "tenant": "tn_example_tenant",
+    "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "tn_example_tenant",
+    "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "tn_example_tenant",
+    "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG"
+   },
+   {
+    "type": "EPG",
+    "class": "fvAEPg",
+    "tenant": "tn_example_tenant",
+    "dn": "uni/tn-tn_example_tenant/ap-app-profile/epg-201_EPG"
+   }
+  ],
+  "disappeared_again": [
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "NZ-ACI-LAB",
+    "dn": "uni/tn-NZ-ACI-LAB"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "NZ-ACI-LAB",
+    "dn": "uni/tn-NZ-ACI-LAB/BD-BD-APP"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "NZ-ACI-LAB",
+    "dn": "uni/tn-NZ-ACI-LAB/BD-BD-APP/subnet-[10.10.20.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "NZ-ACI-LAB",
+    "dn": "uni/tn-NZ-ACI-LAB/BD-BD-DB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "NZ-ACI-LAB",
+    "dn": "uni/tn-NZ-ACI-LAB/BD-BD-DB/subnet-[10.10.30.1/24]"
+   },
+   {
+    "type": "BD",
+    "class": "fvBD",
+    "tenant": "NZ-ACI-LAB",
+    "dn": "uni/tn-NZ-ACI-LAB/BD-BD-WEB"
+   },
+   {
+    "type": "Subnet (BD)",
+    "class": "fvSubnet",
+    "tenant": "NZ-ACI-LAB",
+    "dn": "uni/tn-NZ-ACI-LAB/BD-BD-WEB/subnet-[10.10.10.1/24]"
+   },
+   {
+    "type": "VRF",
+    "class": "fvCtx",
+    "tenant": "NZ-ACI-LAB",
+    "dn": "uni/tn-NZ-ACI-LAB/ctx-VRF-PROD"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "TESTING123",
+    "dn": "uni/tn-TESTING123"
+   },
+   {
+    "type": "Tenant",
+    "class": "fvTenant",
+    "tenant": "tenant_mylab",
+    "dn": "uni/tn-tenant_mylab"
+   }
+  ],
+  "newly_removed_from_baseline": [],
+  "restored_to_baseline": []
+ }
+}

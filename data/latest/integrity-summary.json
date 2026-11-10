@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "status": "broken",
-  "broken": 17,
-  "warnings": 77,
-  "info": 108,
-  "headline": "BROKEN RELATIONS FOUND - 17 broken, 77 warnings (7 of 30 tenants broken: LAB-TENANT, RB-Tenant, Tenant_RG, Test100, Test_9112026, VY-TN, tenant_mylab)",
-  "generated_at": "2026-11-10T08:19:14+11:00",
-  "generated_at_local": "2026-11-10 08:19:14 AEDT",
-  "pulled_at_local": "2026-11-10 08:19:02 AEDT",
+  "broken": 24,
+  "warnings": 99,
+  "info": 143,
+  "headline": "BROKEN RELATIONS FOUND - 24 broken, 99 warnings (11 of 37 tenants broken: Cursor_tenant1, LAB-TENANT, Production, RB-Tenant, Tenant_RG, Test100, Test_9112026, VY-TN, tenant_mylab, tn_example_tenant, zzzps4021_BGP)",
+  "generated_at": "2026-11-11T08:36:13+11:00",
+  "generated_at_local": "2026-11-11 08:36:13 AEDT",
+  "pulled_at_local": "2026-11-11 08:35:58 AEDT",
   "apic_url": "https://sandboxapicdc.cisco.com",
   "baseline_count": 4,
   "new_tenants": [
@@ -20,19 +20,26 @@
     "EM-LAB",
     "iTenant",
     "LAB-TENANT",
+    "MAD",
     "MGMT_LAN",
     "mjay_dev",
-    "NZ-ACI-LAB",
+    "Mouse",
+    "Prod",
+    "Production",
     "RB-Tenant",
     "Tenant-Ahmed",
-    "tenant_mylab",
+    "Tenant2",
     "Tenant_RG",
+    "Test",
     "Test100",
     "Test_9112026",
-    "TESTING123",
+    "TN-CONSUMER",
+    "TN-CONSUMER-BGS",
     "TN-LAB-ANS01",
     "TN-LAB-K01",
     "TN-LAB-K02",
+    "TN-PROVIDER",
+    "TN-PROVIDER-BGS",
     "tn_example_tenant",
     "VY-TN",
     "Zangief",
@@ -88,7 +95,7 @@
       "l3out": 1,
       "broken": 0,
       "warnings": 0,
-      "info": 9,
+      "info": 10,
       "faults_crit_major": 0,
       "faults_total": 0,
       "score": 100,
@@ -99,20 +106,20 @@
       "in_baseline": false,
       "scope": "full",
       "vrf": 1,
-      "bd": 1,
-      "subnet": 1,
+      "bd": 2,
+      "subnet": 2,
       "ap": 1,
       "epg": 1,
-      "contract": 0,
-      "filter": 0,
+      "contract": 1,
+      "filter": 1,
       "l3out": 0,
-      "broken": 0,
-      "warnings": 1,
-      "info": 3,
+      "broken": 1,
+      "warnings": 3,
+      "info": 4,
       "faults_crit_major": 0,
-      "faults_total": 0,
-      "score": 97,
-      "status": "WARN"
+      "faults_total": 1,
+      "score": 81,
+      "status": "BROKEN"
     },
     {
       "tenant": "Cursor_Tenant2",
@@ -179,19 +186,19 @@
       "in_baseline": false,
       "scope": "full",
       "vrf": 0,
-      "bd": 0,
-      "subnet": 0,
-      "ap": 0,
-      "epg": 0,
+      "bd": 1,
+      "subnet": 1,
+      "ap": 1,
+      "epg": 1,
       "contract": 0,
       "filter": 0,
       "l3out": 0,
       "broken": 0,
-      "warnings": 1,
-      "info": 0,
+      "warnings": 2,
+      "info": 2,
       "faults_crit_major": 0,
       "faults_total": 0,
-      "score": 97,
+      "score": 94,
       "status": "WARN"
     },
     {
@@ -255,6 +262,26 @@
       "status": "BROKEN"
     },
     {
+      "tenant": "MAD",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 1,
+      "subnet": 0,
+      "ap": 1,
+      "epg": 1,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 2,
+      "info": 2,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 94,
+      "status": "WARN"
+    },
+    {
       "tenant": "mgmt",
       "in_baseline": true,
       "scope": "full",
@@ -315,23 +342,23 @@
       "status": "WARN"
     },
     {
-      "tenant": "NZ-ACI-LAB",
+      "tenant": "Mouse",
       "in_baseline": false,
       "scope": "full",
       "vrf": 1,
-      "bd": 3,
-      "subnet": 3,
-      "ap": 0,
-      "epg": 0,
+      "bd": 1,
+      "subnet": 1,
+      "ap": 1,
+      "epg": 1,
       "contract": 0,
       "filter": 0,
       "l3out": 0,
       "broken": 0,
-      "warnings": 3,
+      "warnings": 1,
       "info": 3,
       "faults_crit_major": 0,
       "faults_total": 0,
-      "score": 91,
+      "score": 97,
       "status": "WARN"
     },
     {
@@ -353,6 +380,46 @@
       "faults_total": 0,
       "score": 97,
       "status": "WARN"
+    },
+    {
+      "tenant": "Prod",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 0,
+      "bd": 0,
+      "subnet": 0,
+      "ap": 0,
+      "epg": 0,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 1,
+      "info": 0,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 97,
+      "status": "WARN"
+    },
+    {
+      "tenant": "Production",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 2,
+      "subnet": 2,
+      "ap": 3,
+      "epg": 0,
+      "contract": 2,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 2,
+      "warnings": 7,
+      "info": 1,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 59,
+      "status": "BROKEN"
     },
     {
       "tenant": "RB-Tenant",
@@ -395,24 +462,24 @@
       "status": "WARN"
     },
     {
-      "tenant": "tenant_mylab",
+      "tenant": "Tenant2",
       "in_baseline": false,
       "scope": "full",
-      "vrf": 0,
-      "bd": 0,
+      "vrf": 1,
+      "bd": 1,
       "subnet": 0,
-      "ap": 0,
-      "epg": 0,
+      "ap": 2,
+      "epg": 2,
       "contract": 0,
       "filter": 0,
-      "l3out": 1,
-      "broken": 1,
-      "warnings": 1,
-      "info": 0,
-      "faults_crit_major": 1,
-      "faults_total": 2,
-      "score": 87,
-      "status": "BROKEN"
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 6,
+      "info": 4,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 82,
+      "status": "WARN"
     },
     {
       "tenant": "Tenant_RG",
@@ -429,10 +496,30 @@
       "broken": 2,
       "warnings": 4,
       "info": 0,
-      "faults_crit_major": 2,
-      "faults_total": 5,
+      "faults_crit_major": 3,
+      "faults_total": 6,
       "score": 68,
       "status": "BROKEN"
+    },
+    {
+      "tenant": "Test",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 0,
+      "bd": 0,
+      "subnet": 0,
+      "ap": 0,
+      "epg": 0,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 1,
+      "info": 0,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 97,
+      "status": "WARN"
     },
     {
       "tenant": "Test100",
@@ -475,24 +562,44 @@
       "status": "BROKEN"
     },
     {
-      "tenant": "TESTING123",
+      "tenant": "TN-CONSUMER",
       "in_baseline": false,
       "scope": "full",
-      "vrf": 0,
-      "bd": 0,
-      "subnet": 0,
-      "ap": 0,
-      "epg": 0,
+      "vrf": 1,
+      "bd": 1,
+      "subnet": 1,
+      "ap": 1,
+      "epg": 1,
       "contract": 0,
       "filter": 0,
       "l3out": 0,
       "broken": 0,
-      "warnings": 1,
-      "info": 0,
+      "warnings": 0,
+      "info": 3,
       "faults_crit_major": 0,
       "faults_total": 0,
-      "score": 97,
-      "status": "WARN"
+      "score": 100,
+      "status": "HEALTHY"
+    },
+    {
+      "tenant": "TN-CONSUMER-BGS",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 1,
+      "subnet": 1,
+      "ap": 1,
+      "epg": 1,
+      "contract": 0,
+      "filter": 0,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 0,
+      "info": 3,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 100,
+      "status": "HEALTHY"
     },
     {
       "tenant": "TN-LAB-ANS01",
@@ -555,24 +662,64 @@
       "status": "WARN"
     },
     {
+      "tenant": "TN-PROVIDER",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 2,
+      "subnet": 2,
+      "ap": 1,
+      "epg": 2,
+      "contract": 3,
+      "filter": 4,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 2,
+      "info": 6,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 94,
+      "status": "WARN"
+    },
+    {
+      "tenant": "TN-PROVIDER-BGS",
+      "in_baseline": false,
+      "scope": "full",
+      "vrf": 1,
+      "bd": 2,
+      "subnet": 2,
+      "ap": 1,
+      "epg": 2,
+      "contract": 3,
+      "filter": 4,
+      "l3out": 0,
+      "broken": 0,
+      "warnings": 2,
+      "info": 6,
+      "faults_crit_major": 0,
+      "faults_total": 0,
+      "score": 94,
+      "status": "WARN"
+    },
+    {
       "tenant": "tn_example_tenant",
       "in_baseline": false,
       "scope": "full",
       "vrf": 1,
-      "bd": 1,
-      "subnet": 1,
-      "ap": 1,
-      "epg": 0,
+      "bd": 4,
+      "subnet": 3,
+      "ap": 2,
+      "epg": 3,
       "contract": 2,
       "filter": 4,
       "l3out": 1,
-      "broken": 0,
-      "warnings": 6,
-      "info": 0,
-      "faults_crit_major": 0,
-      "faults_total": 1,
-      "score": 82,
-      "status": "WARN"
+      "broken": 2,
+      "warnings": 8,
+      "info": 6,
+      "faults_crit_major": 4,
+      "faults_total": 6,
+      "score": 56,
+      "status": "BROKEN"
     },
     {
       "tenant": "VY-TN",
@@ -586,12 +733,12 @@
       "contract": 2,
       "filter": 1,
       "l3out": 1,
-      "broken": 2,
+      "broken": 3,
       "warnings": 5,
       "info": 5,
-      "faults_crit_major": 2,
+      "faults_crit_major": 3,
       "faults_total": 5,
-      "score": 65,
+      "score": 55,
       "status": "BROKEN"
     },
     {
@@ -646,16 +793,26 @@
       "contract": 2,
       "filter": 2,
       "l3out": 1,
-      "broken": 0,
+      "broken": 1,
       "warnings": 5,
       "info": 6,
-      "faults_crit_major": 0,
+      "faults_crit_major": 1,
       "faults_total": 1,
-      "score": 85,
-      "status": "WARN"
+      "score": 75,
+      "status": "BROKEN"
     }
   ],
   "findings": [
+    {
+      "severity": "fail",
+      "check": "BD VRF missing-target",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/BD-p2bd",
+      "reason": "BD points to VRF 'p2v' which does not exist in tenant Cursor_tenant1 or in tenant common (state missing-target). The BD and every EPG in it cannot be deployed.",
+      "fix": "Create VRF 'p2v' in Cursor_tenant1 (or common), or point the BD to an existing VRF.",
+      "category": "relation",
+      "system": false
+    },
     {
       "severity": "fail",
       "check": "Contract without subjects",
@@ -684,6 +841,26 @@
       "reason": "Configuration failed for uni/tn-LAB-TENANT/out-L3OUT_TESTE node 102 eth1/4 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
       "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
       "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Contract without subjects",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/brc-BD-APP",
+      "reason": "Contract has no subject, so it permits nothing.",
+      "fix": "Add a subject with specific filters, or delete the contract.",
+      "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Contract without subjects",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/brc-BD-DB",
+      "reason": "Contract has no subject, so it permits nothing.",
+      "fix": "Add a subject with specific filters, or delete the contract.",
+      "category": "relation",
       "system": false
     },
     {
@@ -721,7 +898,7 @@
       "check": "Critical fault F0467 (EPG deployment on path failed)",
       "tenant": "Tenant_RG",
       "dn": "uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3/epg-EXT_L2",
-      "reason": "Configuration failed for uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3/epg-EXT_L2 node 101 eth1/4 due to Invalid Path Configuration, debug message: invalid-path: vlan-1410 :There is no domain, associated with both EPG and Port, that has required VLAN;",
+      "reason": "Configuration failed for node 102 due to Interface Configured as L3, debug message: port-configured-as-l3: Interface is already configured under other VRF named LAB-TENANT:LAB-VRF;",
       "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
       "category": "fault",
       "system": false
@@ -800,6 +977,16 @@
       "severity": "fail",
       "check": "Critical fault F0467 (EPG deployment on path failed)",
       "tenant": "VY-TN",
+      "dn": "uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG",
+      "reason": "Configuration failed for uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG node 102 PG-VPC-20 due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "VY-TN",
       "dn": "uni/tn-VY-TN/out-test-L3OUT",
       "reason": "Configuration failed for uni/tn-VY-TN/out-test-L3OUT node 102 eth1/30 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
       "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
@@ -827,6 +1014,36 @@
       "system": false
     },
     {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG",
+      "reason": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG node 102 eth1/1 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-333 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned t",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG",
+      "reason": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG node 102 vPC_20 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-111 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
+      "severity": "fail",
+      "check": "Critical fault F0467 (EPG deployment on path failed)",
+      "tenant": "zzzps4021_BGP",
+      "dn": "uni/tn-zzzps4021_BGP/out-test-L3OUT",
+      "reason": "Configuration failed for uni/tn-zzzps4021_BGP/out-test-L3OUT node 102 INT_VPC_RG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+      "fix": "Check the static path: interface policy group/AAEP, VLAN pool and domain must allow the EPG's encap on that port.",
+      "category": "fault",
+      "system": false
+    },
+    {
       "severity": "warn",
       "check": "EPG isolated (no contracts)",
       "tenant": "Cursor_Tenant2",
@@ -844,6 +1061,26 @@
       "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
       "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
       "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "BD unused",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/BD-p2bd",
+      "reason": "No EPG is attached to this bridge domain.",
+      "fix": "Remove the BD or attach the intended EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Contract unused",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/brc-p2ctr",
+      "reason": "Contract is neither provided nor consumed.",
+      "fix": "Delete it or attach it to the intended provider and consumer EPGs.",
+      "category": "hygiene",
       "system": false
     },
     {
@@ -928,12 +1165,22 @@
     },
     {
       "severity": "warn",
-      "check": "Tenant empty",
+      "check": "BD VRF fallback to common",
       "tenant": "EM-LAB",
-      "dn": "uni/tn-EM-LAB",
-      "reason": "Tenant has no VRF, BD, application profile, contract or L3Out.",
-      "fix": "Delete the tenant if it is no longer needed, or bring it under NaC with its intended objects.",
-      "category": "hygiene",
+      "dn": "uni/tn-EM-LAB/BD-AABD",
+      "reason": "BD has no VRF name (tnFvCtxName empty) and silently falls back to tn-common/ctx-default.",
+      "fix": "Set the VRF explicitly on the BD.",
+      "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "EPG isolated (no contracts)",
+      "tenant": "EM-LAB",
+      "dn": "uni/tn-EM-LAB/ap-AAAP/epg-AAEPG",
+      "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
+      "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
+      "category": "design",
       "system": false
     },
     {
@@ -978,6 +1225,26 @@
     },
     {
       "severity": "warn",
+      "check": "EPG isolated (no contracts)",
+      "tenant": "MAD",
+      "dn": "uni/tn-MAD/ap-MAD_test_AP/epg-MAD_test_test_2101_EPG",
+      "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
+      "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "L2 BD settings",
+      "tenant": "MAD",
+      "dn": "uni/tn-MAD/BD-MAD_test_test_BD",
+      "reason": "Layer-2 BD with arpFlood=yes, unkMacUcastAct=proxy; silent hosts may be unreachable.",
+      "fix": "For L2-only BDs use ARP flooding = yes and L2 unknown unicast = flood.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
       "check": "AP without EPGs",
       "tenant": "MGMT_LAN",
       "dn": "uni/tn-MGMT_LAN/ap-AP-MGMT",
@@ -988,9 +1255,59 @@
     },
     {
       "severity": "warn",
+      "check": "EPG isolated (no contracts)",
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse/ap-network-segment/epg-EPG-10",
+      "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
+      "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Tenant empty",
+      "tenant": "Prod",
+      "dn": "uni/tn-Prod",
+      "reason": "Tenant has no VRF, BD, application profile, contract or L3Out.",
+      "fix": "Delete the tenant if it is no longer needed, or bring it under NaC with its intended objects.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "AP without EPGs",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/ap-EPG-APP",
+      "reason": "Application profile contains no EPG.",
+      "fix": "Remove the empty application profile or add its EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "AP without EPGs",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/ap-EPG-DATABASE",
+      "reason": "Application profile contains no EPG.",
+      "fix": "Remove the empty application profile or add its EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "AP without EPGs",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/ap-EPG-WEB",
+      "reason": "Application profile contains no EPG.",
+      "fix": "Remove the empty application profile or add its EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
       "check": "BD unused",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-APP",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/BD-BD-APP",
       "reason": "No EPG is attached to this bridge domain.",
       "fix": "Remove the BD or attach the intended EPGs.",
       "category": "hygiene",
@@ -999,8 +1316,8 @@
     {
       "severity": "warn",
       "check": "BD unused",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-DB",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/BD-BD-WEB",
       "reason": "No EPG is attached to this bridge domain.",
       "fix": "Remove the BD or attach the intended EPGs.",
       "category": "hygiene",
@@ -1008,11 +1325,21 @@
     },
     {
       "severity": "warn",
-      "check": "BD unused",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-WEB",
-      "reason": "No EPG is attached to this bridge domain.",
-      "fix": "Remove the BD or attach the intended EPGs.",
+      "check": "Contract unused",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/brc-BD-APP",
+      "reason": "Contract is neither provided nor consumed.",
+      "fix": "Delete it or attach it to the intended provider and consumer EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Contract unused",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/brc-BD-DB",
+      "reason": "Contract is neither provided nor consumed.",
+      "fix": "Delete it or attach it to the intended provider and consumer EPGs.",
       "category": "hygiene",
       "system": false
     },
@@ -1054,16 +1381,6 @@
       "reason": "1 subnet(s) configured but unicast routing is disabled, so the gateway is not active.",
       "fix": "Enable unicast routing or remove the subnets.",
       "category": "design",
-      "system": false
-    },
-    {
-      "severity": "warn",
-      "check": "Tenant empty",
-      "tenant": "TESTING123",
-      "dn": "uni/tn-TESTING123",
-      "reason": "Tenant has no VRF, BD, application profile, contract or L3Out.",
-      "fix": "Delete the tenant if it is no longer needed, or bring it under NaC with its intended objects.",
-      "category": "hygiene",
       "system": false
     },
     {
@@ -1118,6 +1435,46 @@
     },
     {
       "severity": "warn",
+      "check": "Contract consumed, never provided",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/brc-CTR-WEB-DB",
+      "reason": "Consumed by 1 object(s) (e.g. tn-TN-CONSUMER/ap-AP-WEB/epg-EPG-WEB) but no provider, so it permits no flow.",
+      "fix": "Add the provider EPG(s) or remove the consumer relation.",
+      "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Contract provided, never consumed",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/brc-CTR-APP-DB",
+      "reason": "Provided by 1 object(s) (e.g. tn-TN-PROVIDER/ap-AP-APP/epg-EPG-DB) but no consumer, so it permits no flow.",
+      "fix": "Add the consumer EPG(s) or remove the provider relation.",
+      "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "BD VRF fallback to common",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-DB",
+      "reason": "BD has no VRF name (tnFvCtxName empty) and silently falls back to tn-common/ctx-default.",
+      "fix": "Set the VRF explicitly on the BD.",
+      "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Contract provided, never consumed",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/brc-CTR-BD-APP",
+      "reason": "Provided by 2 object(s) (e.g. tn-TN-PROVIDER-BGS/ap-AP-APP/epg-EPG-APP) but no consumer, so it permits no flow.",
+      "fix": "Add the consumer EPG(s) or remove the provider relation.",
+      "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "warn",
       "check": "AP without EPGs",
       "tenant": "Tenant-Ahmed",
       "dn": "uni/tn-Tenant-Ahmed/ap-App-X",
@@ -1134,6 +1491,66 @@
       "reason": "No bridge domain or L3Out is attached to this VRF.",
       "fix": "Remove the VRF or attach the BDs that should live in it.",
       "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "BD unused",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/BD-BD2",
+      "reason": "No EPG is attached to this bridge domain.",
+      "fix": "Remove the BD or attach the intended EPGs.",
+      "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "EPG BD fallback to common",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-XYZ/epg-EPG-B",
+      "reason": "EPG has no BD name and falls back to tn-common/BD-default.",
+      "fix": "Set the BD explicitly on the EPG.",
+      "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "EPG BD fallback to common",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-Y/epg-EPG-B",
+      "reason": "EPG has no BD name and falls back to tn-common/BD-default.",
+      "fix": "Set the BD explicitly on the EPG.",
+      "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "EPG isolated (no contracts)",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-XYZ/epg-EPG-B",
+      "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
+      "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "EPG isolated (no contracts)",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-Y/epg-EPG-B",
+      "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
+      "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "L3 BD without subnet",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/BD-BD2",
+      "reason": "Unicast routing is enabled but the BD has no subnet (no gateway; IP learning without a subnet).",
+      "fix": "Add the gateway subnet, or disable unicast routing if the BD is meant to be Layer-2 only.",
+      "category": "design",
       "system": false
     },
     {
@@ -1174,6 +1591,16 @@
       "reason": "Layer-2 BD with arpFlood=yes, unkMacUcastAct=proxy; silent hosts may be unreachable.",
       "fix": "For L2-only BDs use ARP flooding = yes and L2 unknown unicast = flood.",
       "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "Tenant empty",
+      "tenant": "Test",
+      "dn": "uni/tn-Test",
+      "reason": "Tenant has no VRF, BD, application profile, contract or L3Out.",
+      "fix": "Delete the tenant if it is no longer needed, or bring it under NaC with its intended objects.",
+      "category": "hygiene",
       "system": false
     },
     {
@@ -1398,29 +1825,9 @@
     },
     {
       "severity": "warn",
-      "check": "Config fault F1298",
-      "tenant": "tenant_mylab",
-      "dn": "uni/tn-tenant_mylab/out-ok/instP-EEPG-gosote",
-      "reason": "For tenant tenant_mylab, outside ok, deployment of external EPG EEPG-gosote failed on node 101. Reason Node Cannot Deploy EPG",
-      "fix": "Check that the target nodes can deploy the EPG (node role/pod, interface and VLAN config).",
-      "category": "fault",
-      "system": false
-    },
-    {
-      "severity": "warn",
-      "check": "AP without EPGs",
-      "tenant": "tn_example_tenant",
-      "dn": "uni/tn-tn_example_tenant/ap-app-profile",
-      "reason": "Application profile contains no EPG.",
-      "fix": "Remove the empty application profile or add its EPGs.",
-      "category": "hygiene",
-      "system": false
-    },
-    {
-      "severity": "warn",
       "check": "BD unused",
       "tenant": "tn_example_tenant",
-      "dn": "uni/tn-tn_example_tenant/BD-Production-BD",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_222_BD",
       "reason": "No EPG is attached to this bridge domain.",
       "fix": "Remove the BD or attach the intended EPGs.",
       "category": "hygiene",
@@ -1454,6 +1861,36 @@
       "reason": "Provided by 1 object(s) (e.g. tn-tn_example_tenant/out-my_first_l3out/instP-my_first_epg_for_bgp) but no consumer, so it permits no flow.",
       "fix": "Add the consumer EPG(s) or remove the provider relation.",
       "category": "relation",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "EPG isolated (no contracts)",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG",
+      "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
+      "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "EPG isolated (no contracts)",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG",
+      "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
+      "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "warn",
+      "check": "EPG isolated (no contracts)",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-app-profile/epg-201_EPG",
+      "reason": "EPG neither provides nor consumes any contract, so in an enforced VRF it can only talk inside itself.",
+      "fix": "Add provider/consumer contracts for the flows it needs, or remove the EPG if unused.",
+      "category": "design",
       "system": false
     },
     {
@@ -1688,6 +2125,16 @@
     },
     {
       "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "Cursor_tenant1",
+      "dn": "uni/tn-Cursor_tenant1/BD-p2bd",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
       "check": "EPG without domain",
       "tenant": "Cursor_tenant5",
       "dn": "uni/tn-Cursor_tenant5/ap-cursor5_ap/epg-app",
@@ -1818,9 +2265,69 @@
     },
     {
       "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "EM-LAB",
+      "dn": "uni/tn-EM-LAB/ap-AAAP/epg-AAEPG",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
       "check": "L3 BD flooding",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-APP",
+      "tenant": "EM-LAB",
+      "dn": "uni/tn-EM-LAB/BD-AABD",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "MAD",
+      "dn": "uni/tn-MAD/ap-MAD_test_AP/epg-MAD_test_test_2101_EPG",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "MAD",
+      "dn": "uni/tn-MAD/ap-MAD_test_AP/epg-MAD_test_test_2101_EPG",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse/ap-network-segment/epg-EPG-10",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse/ap-network-segment/epg-EPG-10",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "Mouse",
+      "dn": "uni/tn-Mouse/BD-BD-10",
       "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
       "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
       "category": "design",
@@ -1829,18 +2336,8 @@
     {
       "severity": "info",
       "check": "L3 BD flooding",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-DB",
-      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
-      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
-      "category": "design",
-      "system": false
-    },
-    {
-      "severity": "info",
-      "check": "L3 BD flooding",
-      "tenant": "NZ-ACI-LAB",
-      "dn": "uni/tn-NZ-ACI-LAB/BD-BD-WEB",
+      "tenant": "Production",
+      "dn": "uni/tn-Production/BD-BD-APP",
       "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
       "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
       "category": "design",
@@ -1894,6 +2391,66 @@
       "reason": "Filter is not referenced by any contract subject.",
       "fix": "Delete it if not needed.",
       "category": "hygiene",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "TN-CONSUMER",
+      "dn": "uni/tn-TN-CONSUMER/ap-AP-WEB/epg-EPG-WEB",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "TN-CONSUMER",
+      "dn": "uni/tn-TN-CONSUMER/ap-AP-WEB/epg-EPG-WEB",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "TN-CONSUMER",
+      "dn": "uni/tn-TN-CONSUMER/BD-BD-WEB",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "TN-CONSUMER-BGS",
+      "dn": "uni/tn-TN-CONSUMER-BGS/ap-AP-WEB/epg-EPG-WEB",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "TN-CONSUMER-BGS",
+      "dn": "uni/tn-TN-CONSUMER-BGS/ap-AP-WEB/epg-EPG-WEB",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "TN-CONSUMER-BGS",
+      "dn": "uni/tn-TN-CONSUMER-BGS/BD-BD-CONSUMER",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
       "system": false
     },
     {
@@ -2179,6 +2736,166 @@
     {
       "severity": "info",
       "check": "EPG without domain",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/ap-AP-APP/epg-EPG-APP",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/ap-AP-APP/epg-EPG-DB",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/ap-AP-APP/epg-EPG-APP",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/ap-AP-APP/epg-EPG-DB",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/BD-BD-APP",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "TN-PROVIDER",
+      "dn": "uni/tn-TN-PROVIDER/BD-BD-DB",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP/epg-EPG-APP",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP/epg-EPG-BD",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP/epg-EPG-APP",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/ap-AP-APP/epg-EPG-BD",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-APP",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "TN-PROVIDER-BGS",
+      "dn": "uni/tn-TN-PROVIDER-BGS/BD-BD-DB",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-XYZ/epg-EPG-B",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-Y/epg-EPG-B",
+      "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
+      "fix": "Associate a physical/VMM domain if the EPG should carry endpoints.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-XYZ/epg-EPG-B",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "Tenant2",
+      "dn": "uni/tn-Tenant2/ap-App-Y/epg-EPG-B",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without domain",
       "tenant": "Test100",
       "dn": "uni/tn-Test100/ap-DEV/epg-D-DB",
       "reason": "No domain (fvRsDomAtt): the EPG cannot be deployed on any leaf port or VMM.",
@@ -2428,6 +3145,16 @@
     },
     {
       "severity": "info",
+      "check": "Contract unused",
+      "tenant": "common",
+      "dn": "uni/tn-common/brc-default",
+      "reason": "Contract is neither provided nor consumed. (APIC system default object - informational)",
+      "fix": "Delete it or attach it to the intended provider and consumer EPGs.",
+      "category": "hygiene",
+      "system": true
+    },
+    {
+      "severity": "info",
       "check": "Filter unused",
       "tenant": "common",
       "dn": "uni/tn-common/flt-arp",
@@ -2505,6 +3232,66 @@
       "fix": "Remove the VRF or attach the BDs that should live in it.",
       "category": "hygiene",
       "system": true
+    },
+    {
+      "severity": "info",
+      "check": "BD uses common VRF",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_111_BD",
+      "reason": "VRF 'default' is not in tn_example_tenant; it resolved to tn-common/ctx-default (shared-services design).",
+      "fix": "OK if intended; if not, create the VRF in the tenant (a same-named VRF in the tenant takes precedence).",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "BD uses common VRF",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_222_BD",
+      "reason": "VRF 'default' is not in tn_example_tenant; it resolved to tn-common/ctx-default (shared-services design).",
+      "fix": "OK if intended; if not, create the VRF in the tenant (a same-named VRF in the tenant takes precedence).",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "BD uses common VRF",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_333_BD",
+      "reason": "VRF 'default' is not in tn_example_tenant; it resolved to tn-common/ctx-default (shared-services design).",
+      "fix": "OK if intended; if not, create the VRF in the tenant (a same-named VRF in the tenant takes precedence).",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "EPG without static path",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/ap-app-profile/epg-201_EPG",
+      "reason": "No static path bindings (fvRsPathAtt).",
+      "fix": "Expected for VMM/AAEP-bound EPGs; otherwise add static ports.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_111_BD",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
+    },
+    {
+      "severity": "info",
+      "check": "L3 BD flooding",
+      "tenant": "tn_example_tenant",
+      "dn": "uni/tn-tn_example_tenant/BD-BIGIP_222_BD",
+      "reason": "Routed BD with arpFlood=yes, unkMacUcastAct=proxy (legacy/migration style).",
+      "fix": "For a pure L3 BD consider hardware proxy and ARP flooding off.",
+      "category": "design",
+      "system": false
     },
     {
       "severity": "info",
@@ -2680,9 +3467,9 @@
   "recommendations": [
     {
       "title": "Fix the broken relations first",
-      "found": "17 broken relation(s) in 7 tenant(s): Critical fault F0467 (EPG deployment on path failed) (11); Contract without subjects (5); Major fault F0565 (1)",
+      "found": "24 broken relation(s) in 11 tenant(s): Critical fault F0467 (EPG deployment on path failed) (15); Contract without subjects (7); BD VRF missing-target (1); Major fault F0565 (1)",
       "action": "Create the missing targets (VRF, domain, L3Out, device context) or remove the stale relations; missing-target objects never deploy and APIC may silently fall back to tn-common defaults.",
-      "count": 17
+      "count": 24
     },
     {
       "title": "Contract design: no permit-any, keep vzAny/preferred groups deliberate",
@@ -2692,9 +3479,9 @@
     },
     {
       "title": "Every contract needs both a provider and a consumer; remove dead/duplicate contracts",
-      "found": "Contract provided, never consumed: 6 (e.g. tn-TN-LAB-ANS01/brc-CT-WEB-APP, tn-TN-LAB-K02/brc-CT-APP-DB); Contract consumed, never provided: 2 (e.g. tn-LAB-TENANT/brc-teste123, tn-tn_example_tenant/brc-in-contract); Contract unused: 6 (e.g. tn-TN-LAB-ANS01/brc-CT-APP-DB, tn-TN-LAB-K02/brc-CT-WEB-DB); EPG isolated (no contracts): 20 (e.g. tn-Cursor_Tenant2/ap-cursor2_ap/epg-web, tn-Cursor_Tenant3/ap-cursor3_ap/epg-web); External EPG without contracts: 1 (e.g. tn-Tenant_RG/out-rg_l3_out_ext/instP-epg_RG_EXT_ROUTED)",
+      "found": "Contract provided, never consumed: 8 (e.g. tn-TN-LAB-ANS01/brc-CT-WEB-APP, tn-TN-LAB-K02/brc-CT-APP-DB); Contract consumed, never provided: 3 (e.g. tn-LAB-TENANT/brc-teste123, tn-TN-PROVIDER/brc-CTR-WEB-DB); Contract unused: 10 (e.g. tn-Cursor_tenant1/brc-p2ctr, tn-Production/brc-BD-APP); EPG isolated (no contracts): 28 (e.g. tn-Cursor_Tenant2/ap-cursor2_ap/epg-web, tn-Cursor_Tenant3/ap-cursor3_ap/epg-web); External EPG without contracts: 1 (e.g. tn-Tenant_RG/out-rg_l3_out_ext/instP-epg_RG_EXT_ROUTED)",
       "action": "Model each flow as provider (server side) + consumer (client side) in NaC; delete unused and duplicate contracts (e.g. *-OLD) so the policy matches the intent.",
-      "count": 35
+      "count": 50
     },
     {
       "title": "Match contract scope to real usage",
@@ -2704,48 +3491,60 @@
     },
     {
       "title": "Make BD settings match their role (L2 vs L3)",
-      "found": "L3 BD without subnet: 7 (e.g. tn-LAB-TENANT/BD-LAB-BD, tn-VY-TN/BD-VY-BD02); Subnet on L2 BD: 1 (e.g. tn-RB-Tenant/BD-RB-BD); L2 BD settings: 2 (e.g. tn-RB-Tenant/BD-RB-BD, tn-Tenant_RG/BD-RG_BD_EXT_L2); L3 BD flooding: 33 (e.g. tn-Cursor_Tenant2/BD-cursor2_bd, tn-Cursor_Tenant3/BD-cursor3_bd)",
+      "found": "L3 BD without subnet: 8 (e.g. tn-LAB-TENANT/BD-LAB-BD, tn-Tenant2/BD-BD2); Subnet on L2 BD: 1 (e.g. tn-RB-Tenant/BD-RB-BD); L2 BD settings: 3 (e.g. tn-MAD/BD-MAD_test_test_BD, tn-RB-Tenant/BD-RB-BD); L3 BD flooding: 42 (e.g. tn-Cursor_Tenant2/BD-cursor2_bd, tn-Cursor_Tenant3/BD-cursor3_bd)",
       "action": "L3 BD: unicast routing + gateway subnet, hardware proxy, ARP flooding off, limit IP learning to subnet. L2 BD: unicast routing off, ARP flooding on, unknown unicast flood, no subnets.",
-      "count": 43
+      "count": 54
     },
     {
       "title": "Clean up unused objects",
-      "found": "Tenant empty: 5; VRF unused: 3; BD unused: 11; AP without EPGs: 5; Filter unused: 4; L3Out without external EPG: 1",
+      "found": "Tenant empty: 5; VRF unused: 3; BD unused: 12; AP without EPGs: 7; Filter unused: 4; L3Out without external EPG: 1",
       "action": "Delete leftovers or bring them under NaC; unused objects hide real intent and drift.",
-      "count": 29
+      "count": 32
     },
     {
       "title": "Add descriptions",
-      "found": "154 of 190 VRF/BD/AP/EPG/contract/filter/L3Out objects have no description.",
+      "found": "213 of 254 VRF/BD/AP/EPG/contract/filter/L3Out objects have no description.",
       "action": "Set descr on every object (NaC: description:) - owner, purpose, ticket/change ID.",
       "count": null
     },
     {
       "title": "Tag ownership (annotations) for NaC",
-      "found": "111 of 190 objects have no annotation; in use: 'orchestrator:ansible' x69, 'orchestrator:terraform' x10.",
+      "found": "169 of 254 objects have no annotation; in use: 'orchestrator:ansible' x75, 'orchestrator:terraform' x10.",
       "action": "Push everything through NaC/Terraform so objects carry 'orchestrator:terraform' (or a tag such as nac:owner=<team>); objects without it are hand-made and drift-prone.",
       "count": null
     },
     {
       "title": "Adopt one naming convention",
-      "found": "name styles in use: UPPER_SNAKE 118, lower 50, Mixed 22; 2 generic/VLAN/IP-style names (e.g. tn-LAB-TENANT/brc-teste123, tn-billing-test-DPYD6hPFFmE9/ap-billing-portal/epg-testers).",
+      "found": "name styles in use: UPPER_SNAKE 172, lower 55, Mixed 27; 3 generic/VLAN/IP-style names (e.g. tn-LAB-TENANT/brc-teste123, tn-MAD/ctx-test, tn-billing-test-DPYD6hPFFmE9/ap-billing-portal/epg-testers).",
       "action": "e.g. <app>_VRF, <app>_<tier>_BD, <app>_AP, <tier>_EPG, <consumer>-to-<provider>_CON, <proto>-<port>_FLT; enforce it in the NaC schema/linting.",
       "count": null
     },
     {
       "title": "Bind EPGs to a domain",
-      "found": "no domain: 28, missing domain: 0",
+      "found": "no domain: 38, missing domain: 0",
       "action": "Every EPG that should carry endpoints needs a physical/VMM domain whose VLAN pool covers the encap.",
-      "count": 28
+      "count": 38
     }
   ],
   "robot": {
     "available": true,
-    "total": 200,
-    "passed": 188,
-    "failed": 12,
+    "total": 253,
+    "passed": 236,
+    "failed": 17,
     "skipped": 0,
     "failures": [
+      {
+        "suite": "Cursor tenant1",
+        "test": "Integrity Cursor_tenant1: all named relations resolve",
+        "reason": "Unresolved relations: ['uni/tn-Cursor_tenant1/BD-p2bd/rsctx (state=missing-target, stateQual=none, tDn=-)']",
+        "kind": "integrity"
+      },
+      {
+        "suite": "Cursor tenant1",
+        "test": "Integrity BD Cursor_tenant1/p2bd: VRF resolves",
+        "reason": "uni/tn-Cursor_tenant1/BD-p2bd/rsctx is 'missing-target' (target fvCtx not found): missing-target != formed",
+        "kind": "integrity"
+      },
       {
         "suite": "LAB-TENANT",
         "test": "Integrity LAB-TENANT: no critical or major faults",
@@ -2756,6 +3555,18 @@
         "suite": "LAB-TENANT",
         "test": "Integrity contract LAB-TENANT/teste123: subjects and filters",
         "reason": "Contract uni/tn-LAB-TENANT/brc-teste123 has no subjects (permits nothing)",
+        "kind": "integrity"
+      },
+      {
+        "suite": "Production",
+        "test": "Integrity contract Production/BD-APP: subjects and filters",
+        "reason": "Contract uni/tn-Production/brc-BD-APP has no subjects (permits nothing)",
+        "kind": "integrity"
+      },
+      {
+        "suite": "Production",
+        "test": "Integrity contract Production/BD-DB: subjects and filters",
+        "reason": "Contract uni/tn-Production/brc-BD-DB has no subjects (permits nothing)",
         "kind": "integrity"
       },
       {
@@ -2777,15 +3588,9 @@
         "kind": "integrity"
       },
       {
-        "suite": "Tenant Mylab",
-        "test": "Integrity tenant_mylab: no critical or major faults",
-        "reason": "Critical/major faults: ['F0467 critical: Configuration failed for uni/tn-tenant_mylab/out-ok node 101 eth1/40 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not']",
-        "kind": "integrity"
-      },
-      {
         "suite": "Tenant RG",
         "test": "Integrity Tenant_RG: no critical or major faults",
-        "reason": "Critical/major faults: ['F0467 critical: Configuration failed for uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3/epg-EXT_L2 node 101 eth1/4 due to Invalid Path Configuration, debug message: invalid-path: vlan-1410', 'F0467 critical: Configuration failed for uni/tn-Tenant_RG/out-rg_l3_out_ext node 102 eth1/38 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Ou']",
+        "reason": "Critical/major faults: ['F0467 critical: Configuration failed for node 102 due to Interface Configured as L3, debug message: port-configured-as-l3: Interface is already configured under other VRF named', 'F0467 critical: Configuration failed for uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3/epg-EXT_L2 node 101 eth1/4 due to Invalid Path Configuration, debug message: invalid-path: vlan-1410', 'F0467 critical:",
         "kind": "integrity"
       },
       {
@@ -2813,23 +3618,35 @@
         "kind": "integrity"
       },
       {
+        "suite": "Tn Example Tenant",
+        "test": "Integrity tn_example_tenant: no critical or major faults",
+        "reason": "Critical/major faults: ['F0467 critical: Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG node 102 eth1/1 due to Invalid Path Configuration,Invalid VLAN Configura', 'F0467 critical: Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG node 102 eth1/6 due to Invalid Path Configuration,Invalid VLAN Configura', 'F0467 critical:",
+        "kind": "integrity"
+      },
+      {
         "suite": "VY-TN",
         "test": "Integrity VY-TN: no critical or major faults",
-        "reason": "Critical/major faults: ['F0467 critical: Configuration failed for uni/tn-VY-TN/out-test-L3OUT node 102 eth1/30 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is no', 'F0565 major: Deployment of EPG uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG02 failed on domain test-vmm due to EPG encapsulation value is not part of any static encapsulation block for ']",
+        "reason": "Critical/major faults: ['F0467 critical: Configuration failed for uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG node 102 PG-VPC-20 due to Invalid Path Configuration, debug message: invalid-path: Interface does not ', 'F0467 critical: Configuration failed for uni/tn-VY-TN/out-test-L3OUT node 102 eth1/30 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is no', 'F0565 major: De",
+        "kind": "integrity"
+      },
+      {
+        "suite": "zzzps4021 BGP",
+        "test": "Integrity zzzps4021_BGP: no critical or major faults",
+        "reason": "Critical/major faults: ['F0467 critical: Configuration failed for uni/tn-zzzps4021_BGP/out-test-L3OUT node 102 INT_VPC_RG due to Invalid Path Configuration, debug message: invalid-path: Interface does ']",
         "kind": "integrity"
       }
     ],
     "run_errors": 0
   },
-  "robot_rc": 12,
+  "robot_rc": 17,
   "faults": {
     "by_severity": {
       "minor": 11,
       "major": 1,
-      "warning": 5,
-      "critical": 11
+      "warning": 4,
+      "critical": 18
     },
-    "tca": 5,
+    "tca": 3,
     "critical_major": [
       {
         "tenant": "VY-TN",
@@ -2838,6 +3655,26 @@
         "dn": "uni/vmmp-VMware/dom-test-vmm/eppd-[uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG02]/fault-F0565",
         "affected": "uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG02",
         "descr": "Deployment of EPG uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG02 failed on domain test-vmm due to EPG encapsulation value is not part of any static encapsulation block for the VMM domain",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "zzzps4021_BGP",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/resPolCont/rtdOutCont/rtdOutDef-[uni/tn-zzzps4021_BGP/out-test-L3OUT]/node-102/stpathatt-[INT_VPC_RG]/nwissues/fault-F0467",
+        "affected": "uni/tn-zzzps4021_BGP/out-test-L3OUT",
+        "descr": "Configuration failed for uni/tn-zzzps4021_BGP/out-test-L3OUT node 102 INT_VPC_RG due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
+        "tca": false,
+        "covered": false
+      },
+      {
+        "tenant": "VY-TN",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG]/node-102/stpathatt-[PG-VPC-20]/nwissues/fault-F0467",
+        "affected": "uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG",
+        "descr": "Configuration failed for uni/tn-VY-TN/ap-VY-AP/epg-VY-EPG node 102 PG-VPC-20 due to Invalid Path Configuration, debug message: invalid-path: Interface does not exist;",
         "tca": false,
         "covered": true
       },
@@ -2878,6 +3715,56 @@
         "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/resPolCont/rtdOutCont/rtdOutDef-[uni/tn-Test_9112026/out-CSP-PSNXXXX_L3Out]/node-102/stpathatt-[eth1/3]/nwissues/fault-F0467",
         "affected": "uni/tn-Test_9112026/out-CSP-PSNXXXX_L3Out",
         "descr": "Configuration failed for uni/tn-Test_9112026/out-CSP-PSNXXXX_L3Out node 102 eth1/3 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "Tenant_RG",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3/epg-EXT_L2]/node-102/attEntitypathatt-[AEP_RG_ROUTED]/rsstPathAtt-[sys/conng/path-[eth1/4]]/nwissues/fault-F0467",
+        "affected": "uni/tn-Tenant_RG/ap-EXTERNAL_L2_L3/epg-EXT_L2",
+        "descr": "Configuration failed for node 102 due to Interface Configured as L3, debug message: port-configured-as-l3: Interface is already configured under other VRF named LAB-TENANT:LAB-VRF;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "tn_example_tenant",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG]/node-102/stpathatt-[vPC_20]/nwissues/fault-F0467",
+        "affected": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG",
+        "descr": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG node 102 vPC_20 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-111 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "tn_example_tenant",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG]/node-102/stpathatt-[vPC_19]/nwissues/fault-F0467",
+        "affected": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG",
+        "descr": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-HON_BIGIP_111_EPG node 102 vPC_19 due to Invalid VLAN Configuration, debug message: invalid-vlan: vlan-222 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "tn_example_tenant",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG]/node-102/stpathatt-[eth1/1]/nwissues/fault-F0467",
+        "affected": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG",
+        "descr": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG node 102 eth1/1 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-333 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
+        "tca": false,
+        "covered": true
+      },
+      {
+        "tenant": "tn_example_tenant",
+        "severity": "critical",
+        "code": "F0467",
+        "dn": "topology/pod-1/node-102/local/svc-policyelem-id-0/uni/epp/fv-[uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG]/node-102/stpathatt-[eth1/6]/nwissues/fault-F0467",
+        "affected": "uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG",
+        "descr": "Configuration failed for uni/tn-tn_example_tenant/ap-HON_BIGIP_AP/epg-DEV_BIGIP_333_EPG node 102 eth1/6 due to Invalid Path Configuration,Invalid VLAN Configuration, debug message: invalid-vlan: vlan-333 :Either the EpG is not associated with a domain or the domain does not have this vlan assigned to it;invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
         "tca": false,
         "covered": true
       },
@@ -2939,7 +3826,7 @@
         "affected": "uni/tn-tenant_mylab/out-ok",
         "descr": "Configuration failed for uni/tn-tenant_mylab/out-ok node 101 eth1/40 due to Invalid Path Configuration, debug message: invalid-path: Either the EpG/L3Out is not associated with a domain or the domain does not have this interface assigned to it;",
         "tca": false,
-        "covered": true
+        "covered": false
       },
       {
         "tenant": "Test_9112026",
