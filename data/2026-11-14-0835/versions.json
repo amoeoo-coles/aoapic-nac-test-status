@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "stamp": "2026-11-14-0835",
+ "read_at": "2026-11-14T08:35:34+11:00",
+ "read_at_local": "2026-11-14 08:35:34 AEDT",
+ "note": "",
+ "errors": [],
+ "apic": {
+  "controllers": [
+   {
+    "name": "apic1",
+    "node": "1",
+    "version": "6.1(4h)",
+    "source": "firmwareCtrlrRunning"
+   }
+  ],
+  "switches": [
+   {
+    "name": "leaf-1",
+    "node": "101",
+    "role": "leaf",
+    "version": "simsw-6.1(4h)",
+    "source": "topSystem"
+   },
+   {
+    "name": "leaf-2",
+    "node": "102",
+    "role": "leaf",
+    "version": "simsw-6.1(4h)",
+    "source": "topSystem"
+   },
+   {
+    "name": "spine-1",
+    "node": "201",
+    "role": "spine",
+    "version": "simsw-6.1(4h)",
+    "source": "topSystem"
+   }
+  ]
+ },
+ "python": "3.13.5",
+ "tools": {
+  "nac-test": "2.0.1",
+  "nac-test-pyats-common": "0.3.0",
+  "nac-yaml": "2.0.0",
+  "robotframework": "7.5",
+  "robotframework-pabot": "5.2.2",
+  "robotframework-requests": "0.9.7",
+  "requests": "2.34.2",
+  "PyYAML": "6.0.3"
+ },
+ "tools_source": "test venv (/workspace/aci-nac/.venv)",
+ "data_model": {
+  "defaults_apic_version": "5.2.1g",
+  "source": "nac-test defaults/defaults.yaml (defaults.apic.version)",
+  "data_files": 16
+ }
+}

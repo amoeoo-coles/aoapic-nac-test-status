@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "date": "2026-11-14",
+  "status": "attention",
+  "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
+  "generated_at": "2026-11-14T08:35:34+11:00",
+  "generated_at_local": "2026-11-14 08:35:34 AEDT",
+  "drift": {
+    "status": "drift",
+    "headline": "DRIFT DETECTED - tests 56/129 passed, 73 failed; 0 added, 73 removed",
+    "tests": 129,
+    "failed": 73,
+    "added": 0,
+    "removed": 73,
+    "folder": "drift/"
+  },
+  "integrity": {
+    "status": "broken",
+    "headline": "BROKEN RELATIONS FOUND - 12 broken, 7 warnings (2 of 7 tenants broken: Heroes, SnV)",
+    "broken": 12,
+    "warnings": 7,
+    "robot": {
+      "total": 57,
+      "passed": 55,
+      "failed": 2
+    },
+    "scorecard": [
+      {
+        "tenant": "common",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "Heroes",
+        "in_baseline": true,
+        "broken": 4,
+        "warnings": 0,
+        "score": 60,
+        "status": "BROKEN"
+      },
+      {
+        "tenant": "infra",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 0,
+        "score": 100,
+        "status": "HEALTHY"
+      },
+      {
+        "tenant": "mgmt",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 2,
+        "score": 94,
+        "status": "WARN"
+      },
+      {
+        "tenant": "oneaciapp",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 1,
+        "score": 97,
+        "status": "WARN"
+      },
+      {
+        "tenant": "ROR",
+        "in_baseline": true,
+        "broken": 0,
+        "warnings": 3,
+        "score": 91,
+        "status": "WARN"
+      },
+      {
+        "tenant": "SnV",
+        "in_baseline": true,
+        "broken": 8,
+        "warnings": 1,
+        "score": 17,
+        "status": "BROKEN"
+      }
+    ],
+    "folder": "integrity/"
+  }
+}

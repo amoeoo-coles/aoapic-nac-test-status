@@ -1,38 +1,30 @@
 {
   "schema": 1,
-  "date": "2026-11-11",
+  "date": "2026-11-14",
   "status": "attention",
   "headline": "DRIFT DETECTED | BROKEN RELATIONS FOUND",
-  "generated_at": "2026-11-11T08:36:13+11:00",
-  "generated_at_local": "2026-11-11 08:36:13 AEDT",
+  "generated_at": "2026-11-14T08:35:34+11:00",
+  "generated_at_local": "2026-11-14 08:35:34 AEDT",
   "drift": {
     "status": "drift",
-    "headline": "DRIFT DETECTED - tests 20/129 passed, 109 failed; 254 added, 109 removed",
+    "headline": "DRIFT DETECTED - tests 56/129 passed, 73 failed; 0 added, 73 removed",
     "tests": 129,
-    "failed": 109,
-    "added": 254,
-    "removed": 109,
+    "failed": 73,
+    "added": 0,
+    "removed": 73,
     "folder": "drift/"
   },
   "integrity": {
     "status": "broken",
-    "headline": "BROKEN RELATIONS FOUND - 24 broken, 99 warnings (11 of 37 tenants broken: Cursor_tenant1, LAB-TENANT, Production, RB-Tenant, Tenant_RG, Test100, Test_9112026, VY-TN, tenant_mylab, tn_example_tenant, zzzps4021_BGP)",
-    "broken": 24,
-    "warnings": 99,
+    "headline": "BROKEN RELATIONS FOUND - 12 broken, 7 warnings (2 of 7 tenants broken: Heroes, SnV)",
+    "broken": 12,
+    "warnings": 7,
     "robot": {
-      "total": 253,
-      "passed": 236,
-      "failed": 17
+      "total": 57,
+      "passed": 55,
+      "failed": 2
     },
     "scorecard": [
-      {
-        "tenant": "billing-test-DPYD6hPFFmE9",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 0,
-        "score": 100,
-        "status": "HEALTHY"
-      },
       {
         "tenant": "common",
         "in_baseline": true,
@@ -42,44 +34,12 @@
         "status": "HEALTHY"
       },
       {
-        "tenant": "Cursor_tenant1",
-        "in_baseline": false,
-        "broken": 1,
-        "warnings": 3,
-        "score": 81,
+        "tenant": "Heroes",
+        "in_baseline": true,
+        "broken": 4,
+        "warnings": 0,
+        "score": 60,
         "status": "BROKEN"
-      },
-      {
-        "tenant": "Cursor_Tenant2",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
-        "tenant": "Cursor_Tenant3",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
-        "tenant": "Cursor_tenant5",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 7,
-        "score": 79,
-        "status": "WARN"
-      },
-      {
-        "tenant": "EM-LAB",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 2,
-        "score": 94,
-        "status": "WARN"
       },
       {
         "tenant": "infra",
@@ -90,59 +50,11 @@
         "status": "HEALTHY"
       },
       {
-        "tenant": "iTenant",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
-        "tenant": "LAB-TENANT",
-        "in_baseline": false,
-        "broken": 3,
-        "warnings": 4,
-        "score": 58,
-        "status": "BROKEN"
-      },
-      {
-        "tenant": "MAD",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 2,
-        "score": 94,
-        "status": "WARN"
-      },
-      {
         "tenant": "mgmt",
         "in_baseline": true,
         "broken": 0,
         "warnings": 2,
         "score": 94,
-        "status": "WARN"
-      },
-      {
-        "tenant": "MGMT_LAN",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
-        "tenant": "mjay_dev",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
-        "tenant": "Mouse",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
         "status": "WARN"
       },
       {
@@ -154,171 +66,19 @@
         "status": "WARN"
       },
       {
-        "tenant": "Prod",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
-        "tenant": "Production",
-        "in_baseline": false,
-        "broken": 2,
-        "warnings": 7,
-        "score": 59,
-        "status": "BROKEN"
-      },
-      {
-        "tenant": "RB-Tenant",
-        "in_baseline": false,
-        "broken": 3,
-        "warnings": 4,
-        "score": 58,
-        "status": "BROKEN"
-      },
-      {
-        "tenant": "Tenant-Ahmed",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 2,
-        "score": 94,
-        "status": "WARN"
-      },
-      {
-        "tenant": "Tenant2",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 6,
-        "score": 82,
-        "status": "WARN"
-      },
-      {
-        "tenant": "Tenant_RG",
-        "in_baseline": false,
-        "broken": 2,
-        "warnings": 4,
-        "score": 68,
-        "status": "BROKEN"
-      },
-      {
-        "tenant": "Test",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
-        "tenant": "Test100",
-        "in_baseline": false,
-        "broken": 1,
-        "warnings": 8,
-        "score": 66,
-        "status": "BROKEN"
-      },
-      {
-        "tenant": "Test_9112026",
-        "in_baseline": false,
-        "broken": 5,
-        "warnings": 3,
-        "score": 41,
-        "status": "BROKEN"
-      },
-      {
-        "tenant": "TN-CONSUMER",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 0,
-        "score": 100,
-        "status": "HEALTHY"
-      },
-      {
-        "tenant": "TN-CONSUMER-BGS",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 0,
-        "score": 100,
-        "status": "HEALTHY"
-      },
-      {
-        "tenant": "TN-LAB-ANS01",
-        "in_baseline": false,
+        "tenant": "ROR",
+        "in_baseline": true,
         "broken": 0,
         "warnings": 3,
         "score": 91,
         "status": "WARN"
       },
       {
-        "tenant": "TN-LAB-K01",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 0,
-        "score": 100,
-        "status": "HEALTHY"
-      },
-      {
-        "tenant": "TN-LAB-K02",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 2,
-        "score": 94,
-        "status": "WARN"
-      },
-      {
-        "tenant": "TN-PROVIDER",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 2,
-        "score": 94,
-        "status": "WARN"
-      },
-      {
-        "tenant": "TN-PROVIDER-BGS",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 2,
-        "score": 94,
-        "status": "WARN"
-      },
-      {
-        "tenant": "tn_example_tenant",
-        "in_baseline": false,
-        "broken": 2,
-        "warnings": 8,
-        "score": 56,
-        "status": "BROKEN"
-      },
-      {
-        "tenant": "VY-TN",
-        "in_baseline": false,
-        "broken": 3,
-        "warnings": 5,
-        "score": 55,
-        "status": "BROKEN"
-      },
-      {
-        "tenant": "Zangief",
-        "in_baseline": false,
-        "broken": 0,
+        "tenant": "SnV",
+        "in_baseline": true,
+        "broken": 8,
         "warnings": 1,
-        "score": 97,
-        "status": "WARN"
-      },
-      {
-        "tenant": "zzzps4021",
-        "in_baseline": false,
-        "broken": 0,
-        "warnings": 8,
-        "score": 76,
-        "status": "WARN"
-      },
-      {
-        "tenant": "zzzps4021_BGP",
-        "in_baseline": false,
-        "broken": 1,
-        "warnings": 5,
-        "score": 75,
+        "score": 17,
         "status": "BROKEN"
       }
     ],
