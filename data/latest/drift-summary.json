@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "date": "2026-11-14",
+  "date": "2026-11-18",
   "status": "drift",
   "drift": true,
-  "headline": "DRIFT DETECTED - tests 56/129 passed, 73 failed; 0 added, 73 removed",
-  "generated_at": "2026-11-14T08:35:22+11:00",
-  "generated_at_local": "2026-11-14 08:35:22 AEDT",
+  "headline": "DRIFT DETECTED - tests 42/129 passed, 87 failed; 147 added, 82 removed",
+  "generated_at": "2026-11-18T07:26:01+11:00",
+  "generated_at_local": "2026-11-18 07:26:01 AEDT",
   "apic_url": "https://sandboxapicdc.cisco.com",
-  "nac_test_rc": 73,
+  "nac_test_rc": 87,
   "baseline": {
     "path": "baseline/data",
     "info": "frozen 2026-10-22 10:47 AEDT (Australia/Melbourne) by `scripts/drift_report.sh`"
@@ -15,10 +15,64 @@
   "tests": {
     "available": true,
     "total": 129,
-    "passed": 56,
-    "failed": 73,
+    "passed": 42,
+    "failed": 87,
     "skipped": 0,
     "failures": [
+      {
+        "suite": "Heroes",
+        "test": "Verify Tenant Heroes",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify VRF Heroes/Heroes_Only",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ctx-Heroes_Only not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify BD Heroes/Hero_Land",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/BD-Hero_Land not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify Subnet Heroes/Hero_Land/10.1.120.1/22",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/BD-Hero_Land/subnet-[10.1.120.1/22] not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify Subnet Heroes/Hero_Land/192.168.120.1/22",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/BD-Hero_Land/subnet-[192.168.120.1/22] not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify AP Heroes/Save_The_Planet",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ap-Save_The_Planet not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify EPG Heroes/Save_The_Planet/web",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ap-Save_The_Planet/epg-web not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify EPG Heroes/Save_The_Planet/app",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ap-Save_The_Planet/epg-app not found on APIC"
+      },
+      {
+        "suite": "Heroes",
+        "test": "Verify EPG Heroes/Save_The_Planet/db",
+        "kind": "missing",
+        "reason": "Object uni/tn-Heroes/ap-Save_The_Planet/epg-db not found on APIC"
+      },
       {
         "suite": "MUHC",
         "test": "Verify Tenant MUHC",
@@ -62,6 +116,30 @@
         "reason": "Object uni/tn-MUHC/ap-LEGACY_APR/epg-VLAN_2701_EPG not found on APIC"
       },
       {
+        "suite": "Mgmt",
+        "test": "Verify Tenant mgmt",
+        "kind": "changed",
+        "reason": "Parent suite setup failed:\nUrl: https://sandboxapicdc.cisco.com/api/aaaLogin.json Expected status: 503 != 200"
+      },
+      {
+        "suite": "Mgmt",
+        "test": "Verify VRF mgmt/inb",
+        "kind": "changed",
+        "reason": "Parent suite setup failed:\nUrl: https://sandboxapicdc.cisco.com/api/aaaLogin.json Expected status: 503 != 200"
+      },
+      {
+        "suite": "Mgmt",
+        "test": "Verify VRF mgmt/oob",
+        "kind": "changed",
+        "reason": "Parent suite setup failed:\nUrl: https://sandboxapicdc.cisco.com/api/aaaLogin.json Expected status: 503 != 200"
+      },
+      {
+        "suite": "Mgmt",
+        "test": "Verify BD mgmt/inb",
+        "kind": "changed",
+        "reason": "Parent suite setup failed:\nUrl: https://sandboxapicdc.cisco.com/api/aaaLogin.json Expected status: 503 != 200"
+      },
+      {
         "suite": "OS1",
         "test": "Verify Tenant OS1",
         "kind": "missing",
@@ -102,6 +180,12 @@
         "test": "Verify EPG OS1/APP-Prod/APP-WEB",
         "kind": "missing",
         "reason": "Object uni/tn-OS1/ap-APP-Prod/epg-APP-WEB not found on APIC"
+      },
+      {
+        "suite": "Oneaciapp",
+        "test": "Verify Tenant oneaciapp",
+        "kind": "changed",
+        "reason": "Parent suite setup failed:\nUrl: https://sandboxapicdc.cisco.com/api/aaaLogin.json Expected status: 503 != 200"
       },
       {
         "suite": "Prod",
@@ -464,53 +548,942 @@
       "type": "Tenant",
       "class": "fvTenant",
       "baseline": 16,
-      "current": 7,
-      "added": 0,
-      "removed": 9
+      "current": 35,
+      "added": 29,
+      "removed": 10
     },
     {
       "type": "VRF",
       "class": "fvCtx",
       "baseline": 18,
-      "current": 9,
-      "added": 0,
-      "removed": 9
+      "current": 30,
+      "added": 22,
+      "removed": 10
     },
     {
       "type": "BD",
       "class": "fvBD",
       "baseline": 23,
-      "current": 8,
-      "added": 0,
-      "removed": 15
+      "current": 35,
+      "added": 28,
+      "removed": 16
     },
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
       "baseline": 23,
-      "current": 8,
-      "added": 0,
-      "removed": 15
+      "current": 30,
+      "added": 24,
+      "removed": 17
     },
     {
       "type": "AP",
       "class": "fvAp",
       "baseline": 16,
-      "current": 9,
-      "added": 0,
-      "removed": 7
+      "current": 23,
+      "added": 15,
+      "removed": 8
     },
     {
       "type": "EPG",
       "class": "fvAEPg",
       "baseline": 33,
-      "current": 15,
-      "added": 0,
-      "removed": 18
+      "current": 41,
+      "added": 29,
+      "removed": 21
     }
   ],
-  "added": [],
+  "added": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Charlie_Test_Dev",
+      "dn": "uni/tn-Charlie_Test_Dev"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Jacob",
+      "dn": "uni/tn-Jacob"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Koushik",
+      "dn": "uni/tn-Koushik"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "KoushikM",
+      "dn": "uni/tn-KoushikM"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "LAB_KK",
+      "dn": "uni/tn-LAB_KK"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Lab1-TN",
+      "dn": "uni/tn-Lab1-TN"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Lab_Tenant_SAMBI_MTL",
+      "dn": "uni/tn-Lab_Tenant_SAMBI_MTL"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Pruebas",
+      "dn": "uni/tn-Pruebas"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Pune-Tenants",
+      "dn": "uni/tn-Pune-Tenants"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "RB-Tenant",
+      "dn": "uni/tn-RB-Tenant"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Sistemas",
+      "dn": "uni/tn-Sistemas"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Suresh_Tenant",
+      "dn": "uni/tn-Suresh_Tenant"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TenantPython",
+      "dn": "uni/tn-TenantPython"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "TenantPython2",
+      "dn": "uni/tn-TenantPython2"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Tenant_DEVOPS",
+      "dn": "uni/tn-Tenant_DEVOPS"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "XYZ",
+      "dn": "uni/tn-XYZ"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "aci_p03_tenant",
+      "dn": "uni/tn-aci_p03_tenant"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "aci_p03_vrf",
+      "dn": "uni/tn-aci_p03_vrf"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "charlie_terraform",
+      "dn": "uni/tn-charlie_terraform"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "l3out-bfd",
+      "dn": "uni/tn-l3out-bfd"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "test",
+      "dn": "uni/tn-test"
+    },
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "test-tenant",
+      "dn": "uni/tn-test-tenant"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV/ctx-DEV-VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/ctx-PRIVATE"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/ctx-PUBLIC"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "LAB_KK",
+      "dn": "uni/tn-LAB_KK/ctx-LAB_VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Lab1-TN",
+      "dn": "uni/tn-Lab1-TN/ctx-Lab1-VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ctx-PRD-VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ctx-PRD2-VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/ctx-PROD_VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Pune-Tenants",
+      "dn": "uni/tn-Pune-Tenants/ctx-PUNE-VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "RB-Tenant",
+      "dn": "uni/tn-RB-Tenant/ctx-RB-VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/ctx-SCADA_APP_VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/ctx-SCADA_DB_VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/ctx-SCADA_WEB_VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Suresh_Tenant",
+      "dn": "uni/tn-Suresh_Tenant/ctx-Suresh_VRF"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "Suresh_Tenant",
+      "dn": "uni/tn-Suresh_Tenant/ctx-vrf_1"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/ctx-VRF_PROD"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications/ctx-PROD"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "XYZ",
+      "dn": "uni/tn-XYZ/ctx-DEV"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "aci_p03_vrf",
+      "dn": "uni/tn-aci_p03_vrf/ctx-aci_p03_tennt"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "l3out-bfd",
+      "dn": "uni/tn-l3out-bfd/ctx-vrf-test"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "test-tenant",
+      "dn": "uni/tn-test-tenant/ctx-vrf1"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
+      "tenant": "test",
+      "dn": "uni/tn-test/ctx-test"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV/BD-10.1.200.0_24"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV/BD-10.1.201.0_24"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV/BD-10.1.255.0_24"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/BD-NET-10.20.30.0"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/BD-NET-113.211.23.0"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/BD-NET-93.0.12.0"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "LAB_KK",
+      "dn": "uni/tn-LAB_KK/BD-LAB_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Lab1-TN",
+      "dn": "uni/tn-Lab1-TN/BD-Lab1-App-BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Lab1-TN",
+      "dn": "uni/tn-Lab1-TN/BD-Lab1-Web-BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/BD-10.2.200.0_24"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/BD-10.2.201.0_24"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/BD-BD-DB"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/BD-BD-WEB"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/BD-TEST-BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Pune-Tenants",
+      "dn": "uni/tn-Pune-Tenants/BD-PUNE-BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "RB-Tenant",
+      "dn": "uni/tn-RB-Tenant/BD-BD-PRod"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/BD-SCADA_APP_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/BD-SCADA_DB_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/BD-SCADA_WEB_BD"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Suresh_Tenant",
+      "dn": "uni/tn-Suresh_Tenant/BD-BD_1"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Suresh_Tenant",
+      "dn": "uni/tn-Suresh_Tenant/BD-Bridgedomain_Suresh"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/BD-BD-DMZ"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/BD-BD_CLIENTS"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/BD-BD_SERVERS"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications/BD-Jumpbox"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications/BD-Wordpress"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "XYZ",
+      "dn": "uni/tn-XYZ/BD-DEV"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "test-tenant",
+      "dn": "uni/tn-test-tenant/BD-bd1"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV/BD-10.1.201.0_24/subnet-[10.1.201.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV/BD-10.1.255.0_24/subnet-[10.1.255.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/BD-NET-10.20.30.0/subnet-[10.20.30.1/29]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/BD-NET-93.0.12.0/subnet-[93.0.12.1/29]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/BD-NET-93.0.12.0/subnet-[93.0.12.9/29]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Lab1-TN",
+      "dn": "uni/tn-Lab1-TN/BD-Lab1-App-BD/subnet-[10.50.20.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Lab1-TN",
+      "dn": "uni/tn-Lab1-TN/BD-Lab1-Web-BD/subnet-[10.50.10.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/BD-10.2.200.0_24/subnet-[10.2.200.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/BD-10.2.201.0_24/subnet-[10.2.201.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/BD-BD-DB/subnet-[30.30.30.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/BD-BD-WEB/subnet-[20.20.20.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/BD-TEST-BD/subnet-[192.168.255.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Pune-Tenants",
+      "dn": "uni/tn-Pune-Tenants/BD-PUNE-BD/subnet-[10.10.21.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/BD-SCADA_APP_BD/subnet-[20.0.0.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/BD-SCADA_DB_BD/subnet-[10.0.0.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/BD-SCADA_WEB_BD/subnet-[30.0.0.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Suresh_Tenant",
+      "dn": "uni/tn-Suresh_Tenant/BD-Bridgedomain_Suresh/subnet-[10.1.1.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Suresh_Tenant",
+      "dn": "uni/tn-Suresh_Tenant/BD-Bridgedomain_Suresh/subnet-[10.1.2.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Suresh_Tenant",
+      "dn": "uni/tn-Suresh_Tenant/BD-Bridgedomain_Suresh/subnet-[10.1.3.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/BD-BD-DMZ/subnet-[10.10.30.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/BD-BD_CLIENTS/subnet-[10.10.20.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/BD-BD_SERVERS/subnet-[10.10.10.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications/BD-Jumpbox/subnet-[10.100.211.1/24]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications/BD-Wordpress/subnet-[10.100.210.1/24]"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV/ap-VLANS"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/ap-DATACENTER"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/ap-OFFICE"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "LAB_KK",
+      "dn": "uni/tn-LAB_KK/ap-LAB_AP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ap-VLANS"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/ap-APP-PROFILE"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "Pune-Tenants",
+      "dn": "uni/tn-Pune-Tenants/ap-PUNE-AP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/ap-SCADA_AP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/ap-APP_PROD"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications/ap-Jumpbox"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications/ap-Wordpress-Instace1"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "XYZ",
+      "dn": "uni/tn-XYZ/ap-LEGACY-XYZ-APP"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "aci_p03_tenant",
+      "dn": "uni/tn-aci_p03_tenant/ap-aci_p03"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "test-tenant",
+      "dn": "uni/tn-test-tenant/ap-ap1"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
+      "tenant": "test",
+      "dn": "uni/tn-test/ap-test_test_AP"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV/ap-VLANS/epg-VLAN1200"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "DEV",
+      "dn": "uni/tn-DEV/ap-VLANS/epg-VLAN1201"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/ap-DATACENTER/epg-CLIENTS"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/ap-DATACENTER/epg-FINANCE"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/ap-OFFICE/epg-CLIENTS"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "DevNetAcademy",
+      "dn": "uni/tn-DevNetAcademy/ap-OFFICE/epg-GUESTS"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "LAB_KK",
+      "dn": "uni/tn-LAB_KK/ap-LAB_AP/epg-LAB_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ap-VLANS/epg-VLAN2200-SRV"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ap-VLANS/epg-VLAN2200-SRV-APP"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ap-VLANS/epg-VLAN2200-SRV-DB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ap-VLANS/epg-VLAN2200-SRV-WEB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ap-VLANS/epg-VLAN2201"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ap-VLANS/epg-VLAN2201-APP"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ap-VLANS/epg-VLAN2201-DB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PRD",
+      "dn": "uni/tn-PRD/ap-VLANS/epg-VLAN2201-WEB"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/ap-APP-PROFILE/epg-DB-EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/ap-APP-PROFILE/epg-TEST-EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "PROD",
+      "dn": "uni/tn-PROD/ap-APP-PROFILE/epg-WEB-EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Pune-Tenants",
+      "dn": "uni/tn-Pune-Tenants/ap-PUNE-AP/epg-PUNE-EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/ap-SCADA_AP/epg-SCADA_APP_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/ap-SCADA_AP/epg-SCADA_DB_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "SCADA",
+      "dn": "uni/tn-SCADA/ap-SCADA_AP/epg-SCADA_WEB_EPG"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/ap-APP_PROD/epg-EPG_CLOIENTS"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/ap-APP_PROD/epg-EPG_DMZ"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "TENANT_PROD",
+      "dn": "uni/tn-TENANT_PROD/ap-APP_PROD/epg-EPG_SERVERS"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications/ap-Jumpbox/epg-Jumpbox"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "User-Applications",
+      "dn": "uni/tn-User-Applications/ap-Wordpress-Instace1/epg-Web-Tier"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "XYZ",
+      "dn": "uni/tn-XYZ/ap-LEGACY-XYZ-APP/epg-LEGACY-XYZ"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "test-tenant",
+      "dn": "uni/tn-test-tenant/ap-ap1/epg-epg1"
+    }
+  ],
   "removed": [
+    {
+      "type": "Tenant",
+      "class": "fvTenant",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes"
+    },
     {
       "type": "Tenant",
       "class": "fvTenant",
@@ -568,6 +1541,12 @@
     {
       "type": "VRF",
       "class": "fvCtx",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ctx-Heroes_Only"
+    },
+    {
+      "type": "VRF",
+      "class": "fvCtx",
       "tenant": "OS1",
       "dn": "uni/tn-OS1/ctx-OS1"
     },
@@ -618,6 +1597,12 @@
       "class": "fvCtx",
       "tenant": "tn-MGK",
       "dn": "uni/tn-tn-MGK/ctx-ctx-MGK"
+    },
+    {
+      "type": "BD",
+      "class": "fvBD",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/BD-Hero_Land"
     },
     {
       "type": "BD",
@@ -712,6 +1697,18 @@
     {
       "type": "Subnet (BD)",
       "class": "fvSubnet",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/BD-Hero_Land/subnet-[10.1.120.1/22]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/BD-Hero_Land/subnet-[192.168.120.1/22]"
+    },
+    {
+      "type": "Subnet (BD)",
+      "class": "fvSubnet",
       "tenant": "MUHC",
       "dn": "uni/tn-MUHC/BD-VLAN_2701_BD/subnet-[172.26.200.1/24]"
     },
@@ -802,6 +1799,12 @@
     {
       "type": "AP",
       "class": "fvAp",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet"
+    },
+    {
+      "type": "AP",
+      "class": "fvAp",
       "tenant": "MUHC",
       "dn": "uni/tn-MUHC/ap-LEGACY_APR"
     },
@@ -840,6 +1843,24 @@
       "class": "fvAp",
       "tenant": "prod",
       "dn": "uni/tn-prod/ap-vlans"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-app"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-db"
+    },
+    {
+      "type": "EPG",
+      "class": "fvAEPg",
+      "tenant": "Heroes",
+      "dn": "uni/tn-Heroes/ap-Save_The_Planet/epg-web"
     },
     {
       "type": "EPG",
@@ -951,13 +1972,13 @@
     }
   ],
   "faults": {
-    "critical": 52,
-    "major": 4,
-    "minor": 2,
-    "warning": 590,
+    "critical": 49,
+    "major": 10,
+    "minor": 20,
+    "warning": 626,
     "info": 0,
     "cleared": 3,
-    "total": 651
+    "total": 708
   },
   "errors": [],
   "note": null
